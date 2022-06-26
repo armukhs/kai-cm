@@ -1,0 +1,6020 @@
+[
+  {
+    "id": "6t6px3jp8",
+    "unitId": "ot1683j9i",
+    "kode": "C01",
+    "nama": "Direktur Niaga"
+  },
+  {
+    "id": "6t6py3j4p",
+    "unitId": "ot16g3j3x",
+    "kode": "CP01",
+    "nama": "Corporate Deputy Director of Passenger Transport Marketing and Sales"
+  },
+  {
+    "id": "6t6pz3jts",
+    "unitId": "ou1753j67",
+    "kode": "CPM01",
+    "nama": "Vice President Passenger Marketing"
+  },
+  {
+    "id": "6t6q03jan",
+    "unitId": "ou19l3jrl",
+    "kode": "CPMF01",
+    "nama": "Manager Passenger Forecasting and Evaluation"
+  },
+  {
+    "id": "6t6q13j71",
+    "unitId": "ou19l3jrl",
+    "kode": "CPMF02",
+    "nama": "Junior Manager Sales Data Reporting and Evaluation"
+  },
+  {
+    "id": "6t6q23jfz",
+    "unitId": "ou19l3jrl",
+    "kode": "CPMF03",
+    "nama": "Junior Manager Passenger Forecasting"
+  },
+  {
+    "id": "6t6q33jx9",
+    "unitId": "ou19l3jrl",
+    "kode": "CPMF04",
+    "nama": "Specialist Data Forecasting"
+  },
+  {
+    "id": "6t6q43jhr",
+    "unitId": "ou19m3jgo",
+    "kode": "CPMT01",
+    "nama": "Manager Passenger Regulation and Tariff"
+  },
+  {
+    "id": "6t6q53jls",
+    "unitId": "ou19m3jgo",
+    "kode": "CPMT02",
+    "nama": "Junior Manager Passenger Regulation"
+  },
+  {
+    "id": "6t6q63jds",
+    "unitId": "ou19m3jgo",
+    "kode": "CPMT03",
+    "nama": "Junior Manager Passenger Tariff"
+  },
+  {
+    "id": "6t6q73jv7",
+    "unitId": "ou19n3jah",
+    "kode": "CPMR01",
+    "nama": "Manager Research and Strategic Marketing"
+  },
+  {
+    "id": "6t6q83j51",
+    "unitId": "ou19n3jah",
+    "kode": "CPMR02",
+    "nama": "Junior Manager Passenger Research"
+  },
+  {
+    "id": "6t6q93jc3",
+    "unitId": "ou19n3jah",
+    "kode": "CPMR03",
+    "nama": "Junior Manager Passenger Strategic Marketing"
+  },
+  {
+    "id": "6t6qa3jl6",
+    "unitId": "ou19o3jz3",
+    "kode": "CPMM01",
+    "nama": "Manager Marketing Communication"
+  },
+  {
+    "id": "6t6qb3jh9",
+    "unitId": "ou19o3jz3",
+    "kode": "CPMM02",
+    "nama": "Junior Manager Marketing Communication Above The Line"
+  },
+  {
+    "id": "6u6qc3jj9",
+    "unitId": "ou19o3jz3",
+    "kode": "CPMM03",
+    "nama": "Junior Manager Marketing Communication Below The Line"
+  },
+  {
+    "id": "6u6qd3jve",
+    "unitId": "ou1763jb8",
+    "kode": "CPS01",
+    "nama": "Vice President Passenger Ticketing Sales"
+  },
+  {
+    "id": "6u6qe3jz8",
+    "unitId": "ou1763jb8",
+    "kode": "CPS02",
+    "nama": "Junior Manager Ticketing Sales Administration"
+  },
+  {
+    "id": "6u6qf3jl8",
+    "unitId": "ou19p3jwo",
+    "kode": "CPSS01",
+    "nama": "Manager Ticketing Logistic and Infrastucture"
+  },
+  {
+    "id": "6u6qg3j1q",
+    "unitId": "ou19p3jwo",
+    "kode": "CPSS02",
+    "nama": "Junior Manager Ticketing Supply and Logistic"
+  },
+  {
+    "id": "6u6qh3j08",
+    "unitId": "ou19p3jwo",
+    "kode": "CPSS03",
+    "nama": "Junior Manager Ticketing Infrasturcture and Facility"
+  },
+  {
+    "id": "6u6qi3jjk",
+    "unitId": "ou19q3j7v",
+    "kode": "CPSD01",
+    "nama": "Manager Ticket Sales and Channel Distribution"
+  },
+  {
+    "id": "6u6qj3jld",
+    "unitId": "ou19q3j7v",
+    "kode": "CPSD02",
+    "nama": "Junior Manager Channel Distribution"
+  },
+  {
+    "id": "6u6qk3jpd",
+    "unitId": "ou19q3j7v",
+    "kode": "CPSD03",
+    "nama": "Junior Manager Sales on Station"
+  },
+  {
+    "id": "6u6ql3jt5",
+    "unitId": "ou19r3jqo",
+    "kode": "CPSC01",
+    "nama": "Manager Ticketing Center"
+  },
+  {
+    "id": "6u6qm3jb3",
+    "unitId": "ou19r3jqo",
+    "kode": "CPSC02",
+    "nama": "Junior Manager Sales Setting"
+  },
+  {
+    "id": "6u6qn3jio",
+    "unitId": "ou19r3jqo",
+    "kode": "CPSC03",
+    "nama": "Junior Manager Sales Process"
+  },
+  {
+    "id": "6u6qo3jc1",
+    "unitId": "ou19r3jqo",
+    "kode": "CPSC04",
+    "nama": "Sales Analyst"
+  },
+  {
+    "id": "6u6qp3j7v",
+    "unitId": "ou19s3j1a",
+    "kode": "CPSG01",
+    "nama": "Manager Group Customer and Support Service"
+  },
+  {
+    "id": "6u6qq3j6s",
+    "unitId": "ou19s3j1a",
+    "kode": "CPSG02",
+    "nama": "Junior Manager Group Customer"
+  },
+  {
+    "id": "6u6qr3jdg",
+    "unitId": "ou19s3j1a",
+    "kode": "CPSG03",
+    "nama": "Junior Manager Support Service"
+  },
+  {
+    "id": "6u6qs3j47",
+    "unitId": "ou1773jq5",
+    "kode": "CPD01",
+    "nama": "Vice President Digital Business"
+  },
+  {
+    "id": "6u6qt3jnc",
+    "unitId": "ou19t3jdx",
+    "kode": "CPDD01",
+    "nama": "Manager Digital Business Development"
+  },
+  {
+    "id": "6u6qu3ji3",
+    "unitId": "ou19t3jdx",
+    "kode": "CPDD02",
+    "nama": "Junior Manager Business Development"
+  },
+  {
+    "id": "6u6qv3je4",
+    "unitId": "ou19t3jdx",
+    "kode": "CPDD03",
+    "nama": "Junior Manager Partnership Development"
+  },
+  {
+    "id": "6u6qw3jbd",
+    "unitId": "ou19u3jd0",
+    "kode": "CPDO01",
+    "nama": "Manager Digital Business Operation"
+  },
+  {
+    "id": "6u6qx3jws",
+    "unitId": "ou19u3jd0",
+    "kode": "CPDO02",
+    "nama": "Junior Manager Customer Contact"
+  },
+  {
+    "id": "6u6qy3j4c",
+    "unitId": "ou19u3jd0",
+    "kode": "CPDO03",
+    "nama": "Junior Manager Sales and Distribution"
+  },
+  {
+    "id": "6u6qz3jp5",
+    "unitId": "ou19v3jll",
+    "kode": "CPDS01",
+    "nama": "Manager Settlement"
+  },
+  {
+    "id": "6u6r03jr5",
+    "unitId": "ou19v3jll",
+    "kode": "CPDS02",
+    "nama": "Junior Manager Settlement Deposit Payment"
+  },
+  {
+    "id": "6u6r13jvo",
+    "unitId": "ou19v3jll",
+    "kode": "CPDS03",
+    "nama": "Junior Manager Settlement Non Deposit Payment"
+  },
+  {
+    "id": "6u6r23jlk",
+    "unitId": "ou19w3j7g",
+    "kode": "CPDC01",
+    "nama": "Manager Card Management"
+  },
+  {
+    "id": "6u6r33jon",
+    "unitId": "ou19w3j7g",
+    "kode": "CPDC02",
+    "nama": "Junior Manager E-Money"
+  },
+  {
+    "id": "6u6r43j2z",
+    "unitId": "ou19w3j7g",
+    "kode": "CPDC03",
+    "nama": "Junior Manager Card Administrator and Membership"
+  },
+  {
+    "id": "6u6r53jhr",
+    "unitId": "ou19w3j7g",
+    "kode": "CPDC04",
+    "nama": "Junior Manager Alliance and Partnership"
+  },
+  {
+    "id": "6u6r63j57",
+    "unitId": "ou1783jde",
+    "kode": "CPF01",
+    "nama": "Vice President Passenger Facility"
+  },
+  {
+    "id": "6u6r73j0y",
+    "unitId": "ou1783jde",
+    "kode": "CPF02",
+    "nama": "Junior Manager Administration and Budgeting"
+  },
+  {
+    "id": "6u6r83jox",
+    "unitId": "ou19x3jk7",
+    "kode": "CPFB01",
+    "nama": "Manager Facility and Cleanliness on Board"
+  },
+  {
+    "id": "6u6r93jxz",
+    "unitId": "ou19x3jk7",
+    "kode": "CPFB02",
+    "nama": "Junior Manager Facility on Board"
+  },
+  {
+    "id": "6u6ra3jcm",
+    "unitId": "ou19x3jk7",
+    "kode": "CPFB03",
+    "nama": "Junior Manager Cleanliness on Board"
+  },
+  {
+    "id": "6u6rb3j82",
+    "unitId": "ou19y3jx5",
+    "kode": "CPFS01",
+    "nama": "Manager Facility and Cleanliness on Station"
+  },
+  {
+    "id": "6u6rc3jro",
+    "unitId": "ou19y3jx5",
+    "kode": "CPFS02",
+    "nama": "Junior Manager Facility on Station"
+  },
+  {
+    "id": "6u6rd3j0m",
+    "unitId": "ou19y3jx5",
+    "kode": "CPFS03",
+    "nama": "Junior Manager Cleanliness on Station"
+  },
+  {
+    "id": "6u6re3jvs",
+    "unitId": "ou19z3joq",
+    "kode": "CPFC01",
+    "nama": "Manager Service Operation Control"
+  },
+  {
+    "id": "6u6rf3jyk",
+    "unitId": "ou19z3joq",
+    "kode": "CPFC02",
+    "nama": "Junior Manager Operation Evaluation and Reporting"
+  },
+  {
+    "id": "6u6rg3jrd",
+    "unitId": "ou19z3joq",
+    "kode": "CPFC03",
+    "nama": "Operator Pusat Pengendali Pelayanan"
+  },
+  {
+    "id": "6u6rh3j1t",
+    "unitId": "ou1a03jod",
+    "kode": "CPFQ01",
+    "nama": "Manager Facility and Cleanliness Quality Assurance"
+  },
+  {
+    "id": "6u6ri3jfl",
+    "unitId": "ou1a03jod",
+    "kode": "CPFQ02",
+    "nama": "Quality Controller"
+  },
+  {
+    "id": "6u6rj3jug",
+    "unitId": "ou1a03jod",
+    "kode": "CPFQ03",
+    "nama": "Junior Manager Standard on Station"
+  },
+  {
+    "id": "6u6rk3jzp",
+    "unitId": "ou1a03jod",
+    "kode": "CPFQ04",
+    "nama": "Junior Manager Standard on Board"
+  },
+  {
+    "id": "6u6rl3jak",
+    "unitId": "ou1793jxr",
+    "kode": "CPC01",
+    "nama": "Vice President Customer Care"
+  },
+  {
+    "id": "6u6rm3jl3",
+    "unitId": "ou1793jxr",
+    "kode": "CPC02",
+    "nama": "Junior Manager Financial and Administration 1"
+  },
+  {
+    "id": "6u6rn3jwf",
+    "unitId": "ou1a13j0p",
+    "kode": "CPCS01",
+    "nama": "Manager Customer Service on Station"
+  },
+  {
+    "id": "6v6ro3j6m",
+    "unitId": "ou1a13j0p",
+    "kode": "CPCS02",
+    "nama": "Junior Manager Service Planning and Development on Station"
+  },
+  {
+    "id": "6v6rp3jaj",
+    "unitId": "ou1a13j0p",
+    "kode": "CPCS03",
+    "nama": "Junior Manager Passenger Service on Station"
+  },
+  {
+    "id": "6v6rq3j6x",
+    "unitId": "ou1a23j43",
+    "kode": "CPCT01",
+    "nama": "Manager Customer Service on Train"
+  },
+  {
+    "id": "6v6rr3jug",
+    "unitId": "ou1a23j43",
+    "kode": "CPCT02",
+    "nama": "Junior Manager Service Planning and Development on Train"
+  },
+  {
+    "id": "6v6rs3jtt",
+    "unitId": "ou1a23j43",
+    "kode": "CPCT03",
+    "nama": "Junior Manager Service Controling and Evaluation on Train"
+  },
+  {
+    "id": "6v6rt3ju6",
+    "unitId": "ou1a23j43",
+    "kode": "CPCT04",
+    "nama": "Junior Manager Passenger Service on Train"
+  },
+  {
+    "id": "6v6ru3j3n",
+    "unitId": "ou1a33jsd",
+    "kode": "CPCA01",
+    "nama": "Manager Quality Service Assurance"
+  },
+  {
+    "id": "6v6rv3j7s",
+    "unitId": "ou1a33jsd",
+    "kode": "CPCA02",
+    "nama": "Junior Manager Quality Service Assurance on Station"
+  },
+  {
+    "id": "6v6rw3jem",
+    "unitId": "ou1a33jsd",
+    "kode": "CPCA03",
+    "nama": "Junior Manager Quality Service Assurance on Train"
+  },
+  {
+    "id": "6v6rx3jyi",
+    "unitId": "ou1a33jsd",
+    "kode": "CPCA04",
+    "nama": "Junior Manager Quality Service Assurance Contact Center"
+  },
+  {
+    "id": "6v6ry3jov",
+    "unitId": "ou1a43j7i",
+    "kode": "CPCC01",
+    "nama": "Manager Call Center"
+  },
+  {
+    "id": "6v6rz3jb9",
+    "unitId": "ou1a43j7i",
+    "kode": "CPCC02",
+    "nama": "Junior Manager Inbound"
+  },
+  {
+    "id": "6v6s03j3a",
+    "unitId": "ou1a43j7i",
+    "kode": "CPCC03",
+    "nama": "Junior Manager Call Center Development"
+  },
+  {
+    "id": "6v6s13jpa",
+    "unitId": "ou1a53jwq",
+    "kode": "CPCR01",
+    "nama": "Manager Customer Relation and Digital Community"
+  },
+  {
+    "id": "6v6s23jub",
+    "unitId": "ou1a53jwq",
+    "kode": "CPCR02",
+    "nama": "Junior Manager Customer Relation"
+  },
+  {
+    "id": "6v6s33jqv",
+    "unitId": "ou1a53jwq",
+    "kode": "CPCR03",
+    "nama": "Junior Manager Digital Community"
+  },
+  {
+    "id": "6v6s43j70",
+    "unitId": "ou1a63jl4",
+    "kode": "CPCL01",
+    "nama": "Manager Customer Loyalty"
+  },
+  {
+    "id": "6v6s53j8n",
+    "unitId": "ou1a63jl4",
+    "kode": "CPCL02",
+    "nama": "Junior Manager Member Loyalty"
+  },
+  {
+    "id": "6v6s63j1b",
+    "unitId": "ou1a63jl4",
+    "kode": "CPCL03",
+    "nama": "Junior Manager Retention"
+  },
+  {
+    "id": "6v6s73jse",
+    "unitId": "ot16h3jt4",
+    "kode": "CF01",
+    "nama": "Corporate Deputy Director of Freight Marketing and Sales"
+  },
+  {
+    "id": "6v6s83jta",
+    "unitId": "ou17a3jxp",
+    "kode": "CFT01",
+    "nama": "Vice President Terminal and Logistics"
+  },
+  {
+    "id": "6v6s93j7f",
+    "unitId": "ou1a73jgx",
+    "kode": "CFTL01",
+    "nama": "Manager Strategic Logistics"
+  },
+  {
+    "id": "6v6sa3jq2",
+    "unitId": "ou1a73jgx",
+    "kode": "CFTL02",
+    "nama": "Junior Manager Supply Chain Logistics"
+  },
+  {
+    "id": "6v6sb3jzk",
+    "unitId": "ou1a73jgx",
+    "kode": "CFTL03",
+    "nama": "Junior Manager Supply and Demand Logistics"
+  },
+  {
+    "id": "6v6sc3jdd",
+    "unitId": "ou1a83jcx",
+    "kode": "CFTT01",
+    "nama": "Manager Strategic Terminal"
+  },
+  {
+    "id": "6v6sd3je9",
+    "unitId": "ou1a83jcx",
+    "kode": "CFTT02",
+    "nama": "Junior Manager Terminal Development"
+  },
+  {
+    "id": "6v6se3jc2",
+    "unitId": "ou1a83jcx",
+    "kode": "CFTT03",
+    "nama": "Junior Manager Terminal Management Service"
+  },
+  {
+    "id": "6v6sf3jab",
+    "unitId": "ou17b3jsh",
+    "kode": "CFP01",
+    "nama": "Vice President Freight Product Development and Planning"
+  },
+  {
+    "id": "6w6sg3je9",
+    "unitId": "ou1a93j5u",
+    "kode": "CFPI01",
+    "nama": "Manager Freight Product Infrastructure"
+  },
+  {
+    "id": "6w6sh3jic",
+    "unitId": "ou1a93j5u",
+    "kode": "CFPI02",
+    "nama": "Junior Manager Freight Product Track"
+  },
+  {
+    "id": "6w6si3jze",
+    "unitId": "ou1a93j5u",
+    "kode": "CFPI03",
+    "nama": "Junior Manager Freight Product Terminal"
+  },
+  {
+    "id": "6w6sj3j3e",
+    "unitId": "ou1aa3j16",
+    "kode": "CFPE01",
+    "nama": "Manager Evaluation and Data Information"
+  },
+  {
+    "id": "6w6sk3jrq",
+    "unitId": "ou1aa3j16",
+    "kode": "CFPE02",
+    "nama": "Junior Manager Evaluation and Data Information Retail and Corporate"
+  },
+  {
+    "id": "6w6sl3jmi",
+    "unitId": "ou1ab3jo8",
+    "kode": "CFPR01",
+    "nama": "Manager Freight Product Development and Rollingstock"
+  },
+  {
+    "id": "6w6sm3jk4",
+    "unitId": "ou1ab3jo8",
+    "kode": "CFPR02",
+    "nama": "Junior Manager Freight Product Development"
+  },
+  {
+    "id": "6w6sn3jdj",
+    "unitId": "ou1ab3jo8",
+    "kode": "CFPR03",
+    "nama": "Junior Manager Freight Rollingstock"
+  },
+  {
+    "id": "6w6so3j0o",
+    "unitId": "ou17c3j49",
+    "kode": "CFS01",
+    "nama": "Vice President Freight Marketing, Sales and Customer Care"
+  },
+  {
+    "id": "6w6sp3jdz",
+    "unitId": "ou1ac3j0i",
+    "kode": "CFSP01",
+    "nama": "Manager Freight Pricing"
+  },
+  {
+    "id": "6w6sq3j1k",
+    "unitId": "ou1ac3j0i",
+    "kode": "CFSP02",
+    "nama": "Junior Manager Freight Pricing Retail"
+  },
+  {
+    "id": "6w6sr3jhg",
+    "unitId": "ou1ac3j0i",
+    "kode": "CFSP03",
+    "nama": "Junior Manager Freight Pricing Corporate"
+  },
+  {
+    "id": "6w6ss3jkz",
+    "unitId": "ou1ad3jql",
+    "kode": "CFSC01",
+    "nama": "Manager Freight Customer Care"
+  },
+  {
+    "id": "6w6st3j0y",
+    "unitId": "ou1ad3jql",
+    "kode": "CFSC02",
+    "nama": "Junior Manager Freight Customer Care"
+  },
+  {
+    "id": "6w6su3jtg",
+    "unitId": "ou1ad3jql",
+    "kode": "CFSC03",
+    "nama": "Junior Manager Call Center"
+  },
+  {
+    "id": "6w6sv3jsh",
+    "unitId": "ou1ae3j2e",
+    "kode": "CFSS01",
+    "nama": "Manager Freight Contract"
+  },
+  {
+    "id": "6w6sw3j8t",
+    "unitId": "ou1ae3j2e",
+    "kode": "CFSS02",
+    "nama": "Junior Manager Freight Contract Retail"
+  },
+  {
+    "id": "6w6sx3j9n",
+    "unitId": "ou1ae3j2e",
+    "kode": "CFSS03",
+    "nama": "Junior Manager Freight Contract Corporate"
+  },
+  {
+    "id": "6w6sy3jtu",
+    "unitId": "ou1af3j7o",
+    "kode": "CFSM01",
+    "nama": "Manager Freight Marketing and Sales"
+  },
+  {
+    "id": "6w6sz3j3u",
+    "unitId": "ou1af3j7o",
+    "kode": "CFSM02",
+    "nama": "Junior Manager Freight Marketing Retail and Corporate"
+  },
+  {
+    "id": "6w6t03jou",
+    "unitId": "ou1af3j7o",
+    "kode": "CFSM03",
+    "nama": "Junior Manager Freight Sales Income"
+  },
+  {
+    "id": "6w6t13j2i",
+    "unitId": "ou17d3j0c",
+    "kode": "CCC01",
+    "nama": "Vice President Non Transport Commercialization"
+  },
+  {
+    "id": "6w6t23jww",
+    "unitId": "ou1ag3jjz",
+    "kode": "CCCR01",
+    "nama": "Manager Row And Station Commercialization"
+  },
+  {
+    "id": "6w6t33jh6",
+    "unitId": "ou1ag3jjz",
+    "kode": "CCCR02",
+    "nama": "Assistant Manager Row Commercialization of Java Area"
+  },
+  {
+    "id": "6w6t43jha",
+    "unitId": "ou1ag3jjz",
+    "kode": "CCCR03",
+    "nama": "Assistant Manager Station Commercialization of Java Area"
+  },
+  {
+    "id": "6w6t53jfj",
+    "unitId": "ou1ag3jjz",
+    "kode": "CCCR04",
+    "nama": "Assistant Manager Row And Station Commercialization of Sumatera Area"
+  },
+  {
+    "id": "6w6t63joz",
+    "unitId": "ou1ah3j3g",
+    "kode": "CCCA01",
+    "nama": "Manager Advertising, Website And Documentation"
+  },
+  {
+    "id": "6w6t73j4y",
+    "unitId": "ou1ah3j3g",
+    "kode": "CCCA02",
+    "nama": "Assistant Manager Advertising And Website"
+  },
+  {
+    "id": "6w6t83jn1",
+    "unitId": "ou1ah3j3g",
+    "kode": "CCCA03",
+    "nama": "Assistant Manager Documentation Administration"
+  },
+  {
+    "id": "6w6t93jti",
+    "unitId": "ou1ah3j3g",
+    "kode": "CCCA04",
+    "nama": "Assistant Manager Contract Controlling"
+  },
+  {
+    "id": "6w6ta3j4z",
+    "unitId": "ou1ai3jun",
+    "kode": "CCCN01",
+    "nama": "Manager Non Row Commercialization"
+  },
+  {
+    "id": "6w6tb3jxq",
+    "unitId": "ou1ai3jun",
+    "kode": "CCCN02",
+    "nama": "Assistant Manager Non Row Commercialization In Java"
+  },
+  {
+    "id": "6w6tc3jqc",
+    "unitId": "ou1ai3jun",
+    "kode": "CCCN03",
+    "nama": "Assistant Manager Non Row Commercialization In Sumatera"
+  },
+  {
+    "id": "6w6td3jcf",
+    "unitId": "ou1ai3jun",
+    "kode": "CCCN04",
+    "nama": "Assistant Manager Corporate House"
+  },
+  {
+    "id": "6w6te3j3d",
+    "unitId": "ou1ai3jun",
+    "kode": "CCCN05",
+    "nama": "Historic Building Lawangsewu Specialist"
+  },
+  {
+    "id": "6w6tf3jzl",
+    "unitId": "ou1ai3jun",
+    "kode": "CCCN06",
+    "nama": "Indonesian Railway Museum Specialist"
+  },
+  {
+    "id": "6w6tg3jkp",
+    "unitId": "ou1ai3jun",
+    "kode": "CCCN07",
+    "nama": "Bondowoso Rail and Train Museum Specialist"
+  },
+  {
+    "id": "6w6th3j8n",
+    "unitId": "ou1ai3jun",
+    "kode": "CCCN08",
+    "nama": "Sawahlunto Rail and Train Museum Specialist"
+  },
+  {
+    "id": "6w6ti3jm6",
+    "unitId": "ot1693jiv",
+    "kode": "O01",
+    "nama": "Direktur Operasi"
+  },
+  {
+    "id": "6w6tj3ji3",
+    "unitId": "ot16i3jui",
+    "kode": "OT01",
+    "nama": "Corporate Deputy Director of Operation"
+  },
+  {
+    "id": "6w6tk3jg7",
+    "unitId": "ot16i3jui",
+    "kode": "OT02",
+    "nama": "Railway Operation Specialist"
+  },
+  {
+    "id": "6w6tl3jip",
+    "unitId": "ot16i3jui",
+    "kode": "OT03",
+    "nama": "Coaching and Consulting Specialist"
+  },
+  {
+    "id": "6w6tm3jxu",
+    "unitId": "ou17e3j24",
+    "kode": "OTR01",
+    "nama": "Vice President Train Operation Planning"
+  },
+  {
+    "id": "6w6tn3jij",
+    "unitId": "ou1aj3jhi",
+    "kode": "OTRR01",
+    "nama": "Manager Rollingstock Operation Planning"
+  },
+  {
+    "id": "6w6to3j41",
+    "unitId": "ou1aj3jhi",
+    "kode": "OTRR02",
+    "nama": "Junior Manager Tractive Rail Vehicle Operating Planning"
+  },
+  {
+    "id": "6w6tp3js4",
+    "unitId": "ou1aj3jhi",
+    "kode": "OTRR03",
+    "nama": "Junior Manager Coaches Operating Planning"
+  },
+  {
+    "id": "6w6tq3jl4",
+    "unitId": "ou1aj3jhi",
+    "kode": "OTRR04",
+    "nama": "Junior Manager Wagon Operating Planning"
+  },
+  {
+    "id": "6w6tr3jxj",
+    "unitId": "ou1ak3jdf",
+    "kode": "OTRP01",
+    "nama": "Manager Traffic Planning"
+  },
+  {
+    "id": "6w6ts3jul",
+    "unitId": "ou1ak3jdf",
+    "kode": "OTRP02",
+    "nama": "Junior Manager Train Diagram Planning"
+  },
+  {
+    "id": "6w6tt3jb8",
+    "unitId": "ou1ak3jdf",
+    "kode": "OTRP03",
+    "nama": "Junior Manager Non Train Diagram Planning"
+  },
+  {
+    "id": "6w6tu3jlv",
+    "unitId": "ou1ak3jdf",
+    "kode": "OTRP04",
+    "nama": "Junior Manager Traffic Engineering"
+  },
+  {
+    "id": "6w6tv3jr5",
+    "unitId": "ou1ak3jdf",
+    "kode": "OTRP05",
+    "nama": "Junior Manager Terminal Program and Line Capacity"
+  },
+  {
+    "id": "6w6tw3j0r",
+    "unitId": "ou17f3jyx",
+    "kode": "OTP01",
+    "nama": "Vice President Train Operation Control and Evaluation"
+  },
+  {
+    "id": "6w6tx3jcp",
+    "unitId": "ou1al3jvt",
+    "kode": "OTPT01",
+    "nama": "Manager Traffic Control"
+  },
+  {
+    "id": "6w6ty3jhe",
+    "unitId": "ou1al3jvt",
+    "kode": "OTPT02",
+    "nama": "Junior Manager Operation Control of Passenger and Freight Java Area"
+  },
+  {
+    "id": "6w6tz3jfl",
+    "unitId": "ou1al3jvt",
+    "kode": "OTPT03",
+    "nama": "Junior Manager Operation Control of DMU/DEMU/EMU Java Area"
+  },
+  {
+    "id": "6x6u03jfm",
+    "unitId": "ou1al3jvt",
+    "kode": "OTPT04",
+    "nama": "Junior Manager Operation Control of Passenger and Freight Sumatera Area"
+  },
+  {
+    "id": "6x6u13j4y",
+    "unitId": "ou1al3jvt",
+    "kode": "OTPT05",
+    "nama": "Junior Manager Operation Control of Infrastructure Operation"
+  },
+  {
+    "id": "6x6u23j0y",
+    "unitId": "ou1am3jjt",
+    "kode": "OTPR01",
+    "nama": "Manager Rollingstock Operation Control and Evaluation"
+  },
+  {
+    "id": "6x6u33jeh",
+    "unitId": "ou1am3jjt",
+    "kode": "OTPR02",
+    "nama": "Junior Manager Tractive Rail Vehicle Operation Control and Evaluation"
+  },
+  {
+    "id": "6x6u43juz",
+    "unitId": "ou1am3jjt",
+    "kode": "OTPR03",
+    "nama": "Junior Manager Coaches Operation Control and Evaluation"
+  },
+  {
+    "id": "6x6u53jsg",
+    "unitId": "ou1am3jjt",
+    "kode": "OTPR04",
+    "nama": "Junior Manager Wagon Operation Control and Evaluation"
+  },
+  {
+    "id": "6x6u63jcy",
+    "unitId": "ou1an3j80",
+    "kode": "OTPE01",
+    "nama": "Manager Traffic Evaluation"
+  },
+  {
+    "id": "6x6u73jjx",
+    "unitId": "ou1an3j80",
+    "kode": "OTPE02",
+    "nama": "Junior Manager Traffic Evaluation of Passenger Train"
+  },
+  {
+    "id": "6x6u83jd6",
+    "unitId": "ou1an3j80",
+    "kode": "OTPE03",
+    "nama": "Junior Manager Traffic Evaluation of Freight Train"
+  },
+  {
+    "id": "6x6u93jih",
+    "unitId": "ou1an3j80",
+    "kode": "OTPE04",
+    "nama": "Junior Manager Traffic Evaluation of DMU/DEMU/EMU"
+  },
+  {
+    "id": "6x6ua3j9j",
+    "unitId": "ou1an3j80",
+    "kode": "OTPE05",
+    "nama": "Junior Manager Traffic Performance Evaluation"
+  },
+  {
+    "id": "6x6ub3jop",
+    "unitId": "ou17g3jpj",
+    "kode": "OTA01",
+    "nama": "Vice President Train Crew Management"
+  },
+  {
+    "id": "6x6uc3jd0",
+    "unitId": "ou1ao3j88",
+    "kode": "OTAP01",
+    "nama": "Manager Train Crew Planning"
+  },
+  {
+    "id": "6x6ud3jdh",
+    "unitId": "ou1ao3j88",
+    "kode": "OTAP02",
+    "nama": "Junior Manager Train Crew Facility"
+  },
+  {
+    "id": "6x6ue3jfl",
+    "unitId": "ou1ao3j88",
+    "kode": "OTAP03",
+    "nama": "Junior Manager Train Crew Assignment"
+  },
+  {
+    "id": "6x6uf3j60",
+    "unitId": "ou1ao3j88",
+    "kode": "OTAP04",
+    "nama": "Junior Manager Train Crew Development"
+  },
+  {
+    "id": "6x6ug3juv",
+    "unitId": "ou1ap3jtb",
+    "kode": "OTAC01",
+    "nama": "Manager Train Crew Control and Evaluation"
+  },
+  {
+    "id": "6x6uh3jyh",
+    "unitId": "ou1ap3jtb",
+    "kode": "OTAC02",
+    "nama": "Junior Manager Train Crew Control"
+  },
+  {
+    "id": "6x6ui3j4y",
+    "unitId": "ou1ap3jtb",
+    "kode": "OTAC03",
+    "nama": "Junior Manager Train Crew Evaluation"
+  },
+  {
+    "id": "6x6uj3jp6",
+    "unitId": "ou1ap3jtb",
+    "kode": "OTAC04",
+    "nama": "Junior Manager Train Crew Regulation"
+  },
+  {
+    "id": "6x6uk3ji1",
+    "unitId": "ou17h3jm7",
+    "kode": "OTN01",
+    "nama": "Vice President Non Train Crew Management"
+  },
+  {
+    "id": "6x6ul3jhr",
+    "unitId": "ou1aq3j2u",
+    "kode": "OTNP01",
+    "nama": "Manager Non Train Crew Planning and Evaluation"
+  },
+  {
+    "id": "6x6um3jvx",
+    "unitId": "ou1aq3j2u",
+    "kode": "OTNP02",
+    "nama": "Junior Manager Non Train Crew Assignment Planning and Evaluation"
+  },
+  {
+    "id": "6x6un3jfe",
+    "unitId": "ou1aq3j2u",
+    "kode": "OTNP03",
+    "nama": "Junior Manager Development Planning and Evaluation"
+  },
+  {
+    "id": "6x6uo3je6",
+    "unitId": "ou1aq3j2u",
+    "kode": "OTNP04",
+    "nama": "Junior Manager IO Administration"
+  },
+  {
+    "id": "6x6up3j8a",
+    "unitId": "ou1ar3j5x",
+    "kode": "OTNC01",
+    "nama": "Manager Non Train Crew Control"
+  },
+  {
+    "id": "6x6uq3jcp",
+    "unitId": "ou1ar3j5x",
+    "kode": "OTNC02",
+    "nama": "Junior Manager Non Train Crew Control Station"
+  },
+  {
+    "id": "6x6ur3jf2",
+    "unitId": "ou1ar3j5x",
+    "kode": "OTNC03",
+    "nama": "Junior Manager Non Train Crew Control Operation Center"
+  },
+  {
+    "id": "6x6us3jnz",
+    "unitId": "ou1ar3j5x",
+    "kode": "OTNC04",
+    "nama": "Junior Manager Non Train Crew Regulation"
+  },
+  {
+    "id": "6x6ut3j6r",
+    "unitId": "ou17i3j5w",
+    "kode": "OTS01",
+    "nama": "General Manager Operation Sumatera Selatan"
+  },
+  {
+    "id": "6x6uu3jxs",
+    "unitId": "ou1as3jn1",
+    "kode": "OTSR01",
+    "nama": "Manager Traffic Plan and Evaluation Sumatera Selatan"
+  },
+  {
+    "id": "6x6uv3j5i",
+    "unitId": "ou1as3jn1",
+    "kode": "OTSR02",
+    "nama": "Assistant Manager Perencanaan, Evaluasi dan Tata Usaha"
+  },
+  {
+    "id": "6x6uw3jvd",
+    "unitId": "ou1at3jfv",
+    "kode": "OTSP01",
+    "nama": "Manager Traffic Control Sumatera Selatan"
+  },
+  {
+    "id": "6x6ux3j3e",
+    "unitId": "ou1at3jfv",
+    "kode": "OTSP02",
+    "nama": "Assistant Manager Pengendalian OPKA"
+  },
+  {
+    "id": "6x6uy3js1",
+    "unitId": "ou1at3jfv",
+    "kode": "OTSP03",
+    "nama": "Assistant Manager Operator Radio"
+  },
+  {
+    "id": "6x6uz3ji0",
+    "unitId": "ou1at3jfv",
+    "kode": "OTSP04",
+    "nama": "Assistant Manager Pengendalian Sarana"
+  },
+  {
+    "id": "6x6v03j1r",
+    "unitId": "ot16a3jg4",
+    "kode": "T01",
+    "nama": "Direktur Pengelolaan Prasarana"
+  },
+  {
+    "id": "6x6v13jiw",
+    "unitId": "ot16j3j38",
+    "kode": "TJ01",
+    "nama": "Corporate Deputy Director of Track and Bridge"
+  },
+  {
+    "id": "6x6v23jw4",
+    "unitId": "ou17j3j75",
+    "kode": "TJT01",
+    "nama": "Vice President Track"
+  },
+  {
+    "id": "6x6v33jxd",
+    "unitId": "ou1au3jum",
+    "kode": "TJTM01",
+    "nama": "Manager Track Maintenance"
+  },
+  {
+    "id": "6x6v43j6l",
+    "unitId": "ou1au3jum",
+    "kode": "TJTM02",
+    "nama": "Track Maintenance Specialist"
+  },
+  {
+    "id": "6x6v53jw2",
+    "unitId": "ou1av3j74",
+    "kode": "TJTE01",
+    "nama": "Manager Track Evaluation"
+  },
+  {
+    "id": "6x6v63jg2",
+    "unitId": "ou1av3j74",
+    "kode": "TJTE02",
+    "nama": "Track Evaluation Specialist"
+  },
+  {
+    "id": "6x6v73ji9",
+    "unitId": "ou17k3jw5",
+    "kode": "TJF01",
+    "nama": "Vice President Facility and Bridge"
+  },
+  {
+    "id": "6x6v83jtx",
+    "unitId": "ou1aw3jrv",
+    "kode": "TJFF01",
+    "nama": "Manager Facility Maintenance"
+  },
+  {
+    "id": "6x6v93j37",
+    "unitId": "ou1aw3jrv",
+    "kode": "TJFF02",
+    "nama": "Facility Maintenance Specialist"
+  },
+  {
+    "id": "6x6va3j6c",
+    "unitId": "ou1ax3j0b",
+    "kode": "TJFB01",
+    "nama": "Manager Bridge Maintenance"
+  },
+  {
+    "id": "6x6vb3jfj",
+    "unitId": "ou1ax3j0b",
+    "kode": "TJFB02",
+    "nama": "Bridge Maintenance Specialist"
+  },
+  {
+    "id": "6x6vc3jhs",
+    "unitId": "ou1ay3jr3",
+    "kode": "TJFE01",
+    "nama": "Manager Facility and Bridge Evaluation"
+  },
+  {
+    "id": "6x6vd3jlp",
+    "unitId": "ou1ay3jr3",
+    "kode": "TJFE02",
+    "nama": "Facility and Bridge Evaluation Specialist"
+  },
+  {
+    "id": "6x6ve3jhr",
+    "unitId": "ou1az3jho",
+    "kode": "TJJP01",
+    "nama": "Senior Manager Track and Bridge Planning and Budgeting"
+  },
+  {
+    "id": "6x6vf3j6n",
+    "unitId": "ou1az3jho",
+    "kode": "TJJP02",
+    "nama": "Junior Manager Track Planning and Budgeting"
+  },
+  {
+    "id": "6x6vg3jpy",
+    "unitId": "ou1az3jho",
+    "kode": "TJJP03",
+    "nama": "Junior Manager Bridge Program and Budgeting"
+  },
+  {
+    "id": "6x6vh3jwd",
+    "unitId": "ou1az3jho",
+    "kode": "TJJP04",
+    "nama": "Junior Manager Facility Planning and Budgeting"
+  },
+  {
+    "id": "6x6vi3jus",
+    "unitId": "ou1b03jrr",
+    "kode": "TJJK01",
+    "nama": "Kepala UPT Balai Yasa Jembatan Kiaracondong"
+  },
+  {
+    "id": "6x6vj3jbl",
+    "unitId": "ou1b03jrr",
+    "kode": "TJJK02",
+    "nama": "Junior Manager Perencanaan dan Quality Control"
+  },
+  {
+    "id": "6y6vk3jdg",
+    "unitId": "ou1b03jrr",
+    "kode": "TJJK03",
+    "nama": "Junior Manager Produksi"
+  },
+  {
+    "id": "6y6vl3jvj",
+    "unitId": "ou1b03jrr",
+    "kode": "TJJK04",
+    "nama": "Junior Manager Perbengkelan"
+  },
+  {
+    "id": "6y6vm3jyk",
+    "unitId": "ou1b13j0w",
+    "kode": "TJJC01",
+    "nama": "Kepala UPT Balai Yasa Mekanik Jalan Rel Cirebonprujakan"
+  },
+  {
+    "id": "6y6vn3jfr",
+    "unitId": "ou1b13j0w",
+    "kode": "TJJC02",
+    "nama": "Junior Manager Perencanaan dan Administrasi"
+  },
+  {
+    "id": "6y6vo3jqq",
+    "unitId": "ou1b13j0w",
+    "kode": "TJJC03",
+    "nama": "Junior Supervisor Administrasi dan Pergudangan"
+  },
+  {
+    "id": "6y6vp3jeb",
+    "unitId": "ou1b13j0w",
+    "kode": "TJJC04",
+    "nama": "Junior Manager Pemeliharaan dan Perbaikan Mesin Berat"
+  },
+  {
+    "id": "6y6vq3jwd",
+    "unitId": "ou1b13j0w",
+    "kode": "TJJC05",
+    "nama": "Supervisor Engine dan Mekanik"
+  },
+  {
+    "id": "6y6vr3jb8",
+    "unitId": "ou1b13j0w",
+    "kode": "TJJC06",
+    "nama": "Supervisor Hidrolik dan Pneumatik"
+  },
+  {
+    "id": "6y6vs3jvh",
+    "unitId": "ou1b13j0w",
+    "kode": "TJJC07",
+    "nama": "Supervisor Elektrik"
+  },
+  {
+    "id": "6y6vt3jqs",
+    "unitId": "ou1b13j0w",
+    "kode": "TJJC08",
+    "nama": "Junior Manager Quality Control"
+  },
+  {
+    "id": "6y6vu3jgl",
+    "unitId": "ou1b13j0w",
+    "kode": "TJJC09",
+    "nama": "Junior Supervisor Final Check"
+  },
+  {
+    "id": "6y6vv3j8t",
+    "unitId": "ou1b13j0w",
+    "kode": "TJJC10",
+    "nama": "Junior Supervisor Workshop and Facility"
+  },
+  {
+    "id": "6y6vw3jdl",
+    "unitId": "ou1b23jhr",
+    "kode": "TJJM01",
+    "nama": "Kepala UPT Balai Yasa Mekanik Jalan Rel Prabumulih"
+  },
+  {
+    "id": "6y6vx3jum",
+    "unitId": "ou1b23jhr",
+    "kode": "TJJM02",
+    "nama": "Senior Supervisor Pergudangan dan Administrasi"
+  },
+  {
+    "id": "6y6vy3j6z",
+    "unitId": "ou1b23jhr",
+    "kode": "TJJM03",
+    "nama": "Senior Supervisor Pemeliharaan dan Perbaikan"
+  },
+  {
+    "id": "6y6vz3jy6",
+    "unitId": "ou1b23jhr",
+    "kode": "TJJM04",
+    "nama": "Senior Supervisor Quality Control"
+  },
+  {
+    "id": "6y6w03jlw",
+    "unitId": "ot16k3jpv",
+    "kode": "TS01",
+    "nama": "Corporate Deputy Director of Signalling, Telecommunication, and Electricity"
+  },
+  {
+    "id": "6y6w13jr7",
+    "unitId": "ou17l3jjq",
+    "kode": "TSM01",
+    "nama": "Vice President Signalling Maintenance"
+  },
+  {
+    "id": "6y6w23jpc",
+    "unitId": "ou1b33jnh",
+    "kode": "TSMM01",
+    "nama": "Manager Mechanical Signalling Maintenance"
+  },
+  {
+    "id": "6y6w33jlc",
+    "unitId": "ou1b33jnh",
+    "kode": "TSMM02",
+    "nama": "Junior Manager Outdoor Mechanical Signalling Maintenance"
+  },
+  {
+    "id": "6y6w43jvy",
+    "unitId": "ou1b33jnh",
+    "kode": "TSMM03",
+    "nama": "Junior Manager Indoor Mechanical Signalling Maintenance"
+  },
+  {
+    "id": "6y6w53jei",
+    "unitId": "ou1b43jhz",
+    "kode": "TSME01",
+    "nama": "Manager Electrical Signalling Maintenance"
+  },
+  {
+    "id": "6y6w63jll",
+    "unitId": "ou1b43jhz",
+    "kode": "TSME02",
+    "nama": "Junior Manager Indoor Electrical Signalling Maintenance"
+  },
+  {
+    "id": "6y6w73jk5",
+    "unitId": "ou1b43jhz",
+    "kode": "TSME03",
+    "nama": "Junior Manager Outdoor Electrical Signalling Maintenance"
+  },
+  {
+    "id": "6y6w83jn1",
+    "unitId": "ou1b53j97",
+    "kode": "TSMW01",
+    "nama": "Manager Wayside Equipment Maintenance"
+  },
+  {
+    "id": "6y6w93jyb",
+    "unitId": "ou1b53j97",
+    "kode": "TSMW02",
+    "nama": "Junior Manager Trackside ATP/ATO Maintenance"
+  },
+  {
+    "id": "6y6wa3jaa",
+    "unitId": "ou1b53j97",
+    "kode": "TSMW03",
+    "nama": "Junior Manager Trackside To Train Communication Maintenance"
+  },
+  {
+    "id": "6y6wb3jyc",
+    "unitId": "ou1b63j01",
+    "kode": "TSMT01",
+    "nama": "Manager Train Control Maintenance"
+  },
+  {
+    "id": "6y6wc3jvo",
+    "unitId": "ou1b63j01",
+    "kode": "TSMT02",
+    "nama": "Junior Manager Onboard Equipment Maintenance"
+  },
+  {
+    "id": "6y6wd3j12",
+    "unitId": "ou1b63j01",
+    "kode": "TSMT03",
+    "nama": "Junior Manager Train Supervisory Maintenance"
+  },
+  {
+    "id": "6y6we3j9d",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS01",
+    "nama": "Kepala UPT Balai Yasa Sintelis dan LAA CIKUDPATEUH (Kepala UPT Balai Yasa Sintelis dan LAA)"
+  },
+  {
+    "id": "6y6wf3jn0",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS02",
+    "nama": "Junior Manager STE Workshop Planning Administration"
+  },
+  {
+    "id": "6y6wg3j90",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS03",
+    "nama": "Specialist of Tools and Facility"
+  },
+  {
+    "id": "6y6wh3j66",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS04",
+    "nama": "Junior Manager STE Workshop Engineering"
+  },
+  {
+    "id": "6y6wi3jj2",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS05",
+    "nama": "Specialist of Signal Engineering"
+  },
+  {
+    "id": "6y6wj3jjn",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS06",
+    "nama": "Specialist of Telecommunication Engineering"
+  },
+  {
+    "id": "6y6wk3j34",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS07",
+    "nama": "Specialist of Overhead Line / Catenary Engineering"
+  },
+  {
+    "id": "6y6wl3jes",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS08",
+    "nama": "Junior Manager STE Workshop Production and Repair"
+  },
+  {
+    "id": "6y6wm3jj5",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS09",
+    "nama": "Specialist of Signalling Production and Repair"
+  },
+  {
+    "id": "6y6wn3jmj",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS10",
+    "nama": "Specialist of Telecommunication Production and Repair"
+  },
+  {
+    "id": "6y6wo3jem",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS11",
+    "nama": "Specialist of Overhead Line / Catenary Production and Repair"
+  },
+  {
+    "id": "6y6wp3jij",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS12",
+    "nama": "Junior Manager Workshop Quality Control"
+  },
+  {
+    "id": "6y6wq3jaq",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS13",
+    "nama": "Specialist of Testing and Evaluation"
+  },
+  {
+    "id": "6y6wr3jqd",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS14",
+    "nama": "Specialist of Hardware and Software Integration"
+  },
+  {
+    "id": "6y6ws3j5k",
+    "unitId": "ou1b83jla",
+    "kode": "TSSS15",
+    "nama": "Specialist of Tools Calibration"
+  },
+  {
+    "id": "6y6wt3j18",
+    "unitId": "ou17m3j3b",
+    "kode": "TSC01",
+    "nama": "Vice President Telecommunication and Electicity Maintenance"
+  },
+  {
+    "id": "6y6wu3ju7",
+    "unitId": "ou1b93ju3",
+    "kode": "TSCC01",
+    "nama": "Manager Overhead Catenary and Third Rail Maintenance"
+  },
+  {
+    "id": "6y6wv3jyh",
+    "unitId": "ou1b93ju3",
+    "kode": "TSCC02",
+    "nama": "Junior Manager Third Rail Maintenance"
+  },
+  {
+    "id": "6y6ww3jet",
+    "unitId": "ou1b93ju3",
+    "kode": "TSCC03",
+    "nama": "Junior Manager  Overhead Catenary Maintenance"
+  },
+  {
+    "id": "6y6wx3jgw",
+    "unitId": "ou1ba3jwl",
+    "kode": "TSCP01",
+    "nama": "Manager Substation and Power Supply Maintenance"
+  },
+  {
+    "id": "6y6wy3j9y",
+    "unitId": "ou1ba3jwl",
+    "kode": "TSCP02",
+    "nama": "Junior Manager Substation  Maintenance"
+  },
+  {
+    "id": "6y6wz3jac",
+    "unitId": "ou1ba3jwl",
+    "kode": "TSCP03",
+    "nama": "Junior Manager Control Power Supply"
+  },
+  {
+    "id": "6y6x03jxr",
+    "unitId": "ou1bb3jxq",
+    "kode": "TSCN01",
+    "nama": "Manager Telecommunication Network Maintenance"
+  },
+  {
+    "id": "6y6x13jqs",
+    "unitId": "ou1bb3jxq",
+    "kode": "TSCN02",
+    "nama": "Junior Manager Transmission Network Maintenance; "
+  },
+  {
+    "id": "6y6x23j4l",
+    "unitId": "ou1bb3jxq",
+    "kode": "TSCN03",
+    "nama": "Junior Manager Network Element Maintenance."
+  },
+  {
+    "id": "6y6x33jtz",
+    "unitId": "ou1bc3j4n",
+    "kode": "TSCS01",
+    "nama": "Manager Telecommunication System Maintenance"
+  },
+  {
+    "id": "6y6x43j7k",
+    "unitId": "ou1bc3j4n",
+    "kode": "TSCS02",
+    "nama": "Junior Manager Railway Operation Telephone Maintenance"
+  },
+  {
+    "id": "6y6x53jgh",
+    "unitId": "ou1bc3j4n",
+    "kode": "TSCS03",
+    "nama": "Junior Manager Train Dispathcing Maintenance"
+  },
+  {
+    "id": "6y6x63j55",
+    "unitId": "ou1b73jve",
+    "kode": "TSSP01",
+    "nama": "Manager STE Program, Budgeting, Evaluation, and Technical Support"
+  },
+  {
+    "id": "6y6x73jnx",
+    "unitId": "ou1b73jve",
+    "kode": "TSSP02",
+    "nama": "Junior Manager STE Program and Administration"
+  },
+  {
+    "id": "6y6x83jd4",
+    "unitId": "ou1b73jve",
+    "kode": "TSSP03",
+    "nama": "Junior Manager STE Budgeting and Procurement"
+  },
+  {
+    "id": "6y6x93jjv",
+    "unitId": "ou1b73jve",
+    "kode": "TSSP04",
+    "nama": "Junior Manager STE Evaluation"
+  },
+  {
+    "id": "6y6xa3jk4",
+    "unitId": "ou1b73jve",
+    "kode": "TSSP05",
+    "nama": "Junior Manager STE Technical Support"
+  },
+  {
+    "id": "6z6xb3jh6",
+    "unitId": "ou17n3jvx",
+    "kode": "TTA01",
+    "nama": "Vice President Infrastructure Assets"
+  },
+  {
+    "id": "6z6xc3j4g",
+    "unitId": "ou1bd3jfy",
+    "kode": "TTAT01",
+    "nama": "Manager Track Assets and Track Geometry"
+  },
+  {
+    "id": "6z6xd3ja3",
+    "unitId": "ou1bd3jfy",
+    "kode": "TTAT02",
+    "nama": "Junior Manager Track Geometry"
+  },
+  {
+    "id": "6z6xe3ju9",
+    "unitId": "ou1bd3jfy",
+    "kode": "TTAT03",
+    "nama": "Track Assets Planning and Evaluation Specialist"
+  },
+  {
+    "id": "6z6xf3j8w",
+    "unitId": "ou1bd3jfy",
+    "kode": "TTAT04",
+    "nama": "Track Assets Program Implementation Specialist"
+  },
+  {
+    "id": "6z6xg3j4z",
+    "unitId": "ou1bd3jfy",
+    "kode": "TTAT05",
+    "nama": "Special Equipment Specialist"
+  },
+  {
+    "id": "6z6xh3jzg",
+    "unitId": "ou1be3jaf",
+    "kode": "TTAB01",
+    "nama": "Manager Bridge and Building Assets"
+  },
+  {
+    "id": "6z6xi3jxz",
+    "unitId": "ou1be3jaf",
+    "kode": "TTAB02",
+    "nama": "Bridge Assets Planning and Evaluation Specialist"
+  },
+  {
+    "id": "6z6xj3jdz",
+    "unitId": "ou1be3jaf",
+    "kode": "TTAB03",
+    "nama": "Bridge Assets Program Implementation Specialist"
+  },
+  {
+    "id": "6z6xk3jos",
+    "unitId": "ou1be3jaf",
+    "kode": "TTAB04",
+    "nama": "Building Assets Planning And Evaluation Specialist"
+  },
+  {
+    "id": "6z6xl3j3p",
+    "unitId": "ou1be3jaf",
+    "kode": "TTAB05",
+    "nama": "Building Assets Program Implementation Specialist"
+  },
+  {
+    "id": "6z6xm3jl8",
+    "unitId": "ov1bf3jra",
+    "kode": "TTAE01",
+    "nama": "Manager Track and Bridge Engineering Maintenance"
+  },
+  {
+    "id": "6z6xn3jwx",
+    "unitId": "ov1bf3jra",
+    "kode": "TTAE02",
+    "nama": "Track Engineering Maintenance Spesialist"
+  },
+  {
+    "id": "6z6xo3jr5",
+    "unitId": "ov1bf3jra",
+    "kode": "TTAE03",
+    "nama": "Brigde Engineering Maintenance Spesialist"
+  },
+  {
+    "id": "6z6xp3j9o",
+    "unitId": "ov1bg3jgs",
+    "kode": "TTAS01",
+    "nama": "Manager Signalling, Telecommunication, and Electricity Assets"
+  },
+  {
+    "id": "6z6xq3j3n",
+    "unitId": "ov1bg3jgs",
+    "kode": "TTAS02",
+    "nama": "STE Assets Planning and Evaluation Specialist"
+  },
+  {
+    "id": "6z6xr3jt7",
+    "unitId": "ov1bg3jgs",
+    "kode": "TTAS03",
+    "nama": "Signalling and Telecommunication Assets Program Implementation Specialist"
+  },
+  {
+    "id": "6z6xs3jjo",
+    "unitId": "ov1bg3jgs",
+    "kode": "TTAS04",
+    "nama": "Electrical Assets Program Implementation Specialist"
+  },
+  {
+    "id": "6z6xt3jke",
+    "unitId": "ov1bh3jdp",
+    "kode": "TTAC01",
+    "nama": "Manager Signalling, Telecommunication, and Electricity Engineering Maintenance"
+  },
+  {
+    "id": "6z6xu3jtx",
+    "unitId": "ov1bh3jdp",
+    "kode": "TTAC02",
+    "nama": "Signalling Engineering Maintenance Specialist"
+  },
+  {
+    "id": "6z6xv3jag",
+    "unitId": "ov1bh3jdp",
+    "kode": "TTAC03",
+    "nama": "Telecomunication and Electricity Engineering Maintenance Specialist"
+  },
+  {
+    "id": "6z6xw3jb7",
+    "unitId": "ot16b3jlb",
+    "kode": "R01",
+    "nama": "Managing Director of Rolling Stock"
+  },
+  {
+    "id": "6z6xx3jg1",
+    "unitId": "ot16l3j1x",
+    "kode": "RR01",
+    "nama": "Corporate Deputy Director of Rollingstock Maintenance"
+  },
+  {
+    "id": "6z6xy3jr7",
+    "unitId": "ou17o3j6r",
+    "kode": "RRP01",
+    "nama": "Vice President Rollingstock Planning"
+  },
+  {
+    "id": "6z6xz3jd5",
+    "unitId": "ov1bi3j0j",
+    "kode": "RRPT01",
+    "nama": "Manager Maintenance Planning and Budgeting TRV"
+  },
+  {
+    "id": "6z6y03jeg",
+    "unitId": "ov1bi3j0j",
+    "kode": "RRPT02",
+    "nama": "Junior Manager Locomotives Maintenance Planning and Budgeting"
+  },
+  {
+    "id": "6z6y13ja7",
+    "unitId": "ov1bi3j0j",
+    "kode": "RRPT03",
+    "nama": "Junior Manager DMU/DEMU/EMU Maintenance Planning and Budgeting"
+  },
+  {
+    "id": "6z6y23jvb",
+    "unitId": "ov1bj3jvo",
+    "kode": "RRPC01",
+    "nama": "Manager Maintenance Planning and Budgeting Coaches"
+  },
+  {
+    "id": "6z6y33jzx",
+    "unitId": "ov1bj3jvo",
+    "kode": "RRPC02",
+    "nama": "Junior Manager Coaches Maintenance Planning and Budgeting"
+  },
+  {
+    "id": "6z6y43j83",
+    "unitId": "ov1bj3jvo",
+    "kode": "RRPC03",
+    "nama": "Junior Manager Power Car Maintenance Planning and Budgeting"
+  },
+  {
+    "id": "6z6y53jfz",
+    "unitId": "ov1bk3jli",
+    "kode": "RRPW01",
+    "nama": "Manager Maintenance Planning and Budgeting Wagons"
+  },
+  {
+    "id": "6z6y63jhq",
+    "unitId": "ov1bk3jli",
+    "kode": "RRPW02",
+    "nama": "Junior Manager Wagons Line Maintenance Planning and Budgeting"
+  },
+  {
+    "id": "6z6y73j36",
+    "unitId": "ov1bk3jli",
+    "kode": "RRPW03",
+    "nama": "Junior Manager Wagons Overhaul Maintenance Planning and Budgeting"
+  },
+  {
+    "id": "6z6y83jx0",
+    "unitId": "ov1bl3jan",
+    "kode": "RRPF01",
+    "nama": "Manager Maintenance Planning and Budgeting Facilities and K3L"
+  },
+  {
+    "id": "6z6y93jm9",
+    "unitId": "ov1bl3jan",
+    "kode": "RRPF02",
+    "nama": "Junior Manager Facilities Maintenance Planning and Budgeting"
+  },
+  {
+    "id": "6z6ya3jwv",
+    "unitId": "ov1bl3jan",
+    "kode": "RRPF03",
+    "nama": "Junior Manager K3L Maintenance Planning and Budget"
+  },
+  {
+    "id": "6z6yb3jtg",
+    "unitId": "ov1bm3jcz",
+    "kode": "RRPM01",
+    "nama": "Manager Maintenance Standard and Evaluation"
+  },
+  {
+    "id": "6z6yc3juv",
+    "unitId": "ov1bm3jcz",
+    "kode": "RRPM02",
+    "nama": "Junior Manager Maintenance Standard"
+  },
+  {
+    "id": "6z6yd3jcx",
+    "unitId": "ov1bm3jcz",
+    "kode": "RRPM03",
+    "nama": "Junior Manager Evaluation"
+  },
+  {
+    "id": "6z6ye3je5",
+    "unitId": "ou17p3j9l",
+    "kode": "RRC01",
+    "nama": "Vice President Coaches and Wagons"
+  },
+  {
+    "id": "6z6yf3jr1",
+    "unitId": "ov1bn3job",
+    "kode": "RRCL01",
+    "nama": "Manager Coaches and Wagons Line Maintenance"
+  },
+  {
+    "id": "6z6yg3juh",
+    "unitId": "ov1bn3job",
+    "kode": "RRCL02",
+    "nama": "Specialist of Coaches Line Maintenance"
+  },
+  {
+    "id": "6z6yh3jcw",
+    "unitId": "ov1bn3job",
+    "kode": "RRCL03",
+    "nama": "Specialist of Wagons Line Maintenance"
+  },
+  {
+    "id": "6z6yi3jnc",
+    "unitId": "ov1bo3jo9",
+    "kode": "RRCO01",
+    "nama": "Manager Coaches and Wagons Overhaul"
+  },
+  {
+    "id": "6z6yj3jsy",
+    "unitId": "ov1bo3jo9",
+    "kode": "RRCO02",
+    "nama": "Specialist of Coaches Overhaul"
+  },
+  {
+    "id": "6z6yk3j3f",
+    "unitId": "ov1bo3jo9",
+    "kode": "RRCO03",
+    "nama": "Specialist of Wagons Overhaul"
+  },
+  {
+    "id": "6z6yl3jht",
+    "unitId": "ov1bp3jga",
+    "kode": "RRCP01",
+    "nama": "Manager Power Car Overhaul and Line Maintenance"
+  },
+  {
+    "id": "6z6ym3jf1",
+    "unitId": "ov1bp3jga",
+    "kode": "RRCP02",
+    "nama": "Specialist of Power Car Overhaul"
+  },
+  {
+    "id": "6z6yn3jbw",
+    "unitId": "ov1bp3jga",
+    "kode": "RRCP03",
+    "nama": "Specialist of Power Car Line Maintenance"
+  },
+  {
+    "id": "6z6yo3j2g",
+    "unitId": "ov1bq3jk9",
+    "kode": "RRCF01",
+    "nama": "Manager Coaches and Wagons Maintenance Facilities"
+  },
+  {
+    "id": "6z6yp3jf9",
+    "unitId": "ov1bq3jk9",
+    "kode": "RRCF02",
+    "nama": "Specialist of  Workshop Maintenance Facilities"
+  },
+  {
+    "id": "6z6yq3jvc",
+    "unitId": "ov1bq3jk9",
+    "kode": "RRCF03",
+    "nama": "Specialist of Depot Maintenance Facilities"
+  },
+  {
+    "id": "6z6yr3jyf",
+    "unitId": "ou17q3jzk",
+    "kode": "RRT01",
+    "nama": "Vice President Tractive Rail Vehicles"
+  },
+  {
+    "id": "6z6ys3jzz",
+    "unitId": "ov1br3jjs",
+    "kode": "RRTL01",
+    "nama": "Manager Locomotives Overhaul and Line Maintenance"
+  },
+  {
+    "id": "6z6yt3j1e",
+    "unitId": "ov1br3jjs",
+    "kode": "RRTL02",
+    "nama": "Specialist of Locomotives Overhaul"
+  },
+  {
+    "id": "6z6yu3jid",
+    "unitId": "ov1br3jjs",
+    "kode": "RRTL03",
+    "nama": "Specialist of Locomotives Line Maintenance"
+  },
+  {
+    "id": "6z6yv3jlc",
+    "unitId": "ov1bs3jsd",
+    "kode": "RRTO01",
+    "nama": "Manager DMU/DEMU/EMU Overhaul"
+  },
+  {
+    "id": "6z6yw3jxa",
+    "unitId": "ov1bs3jsd",
+    "kode": "RRTO02",
+    "nama": "Specialist of DMU/DEMU/EMU Overhaul"
+  },
+  {
+    "id": "6z6yx3j2u",
+    "unitId": "ov1bt3ju8",
+    "kode": "RRTM01",
+    "nama": "Manager DMU/DEMU/EMU Line Maintenance"
+  },
+  {
+    "id": "6z6yy3j9a",
+    "unitId": "ov1bt3ju8",
+    "kode": "RRTM02",
+    "nama": "Specialist of DMU/DEMU/EMU Line Maintenance"
+  },
+  {
+    "id": "706yz3j24",
+    "unitId": "ov1bu3jer",
+    "kode": "RRTF01",
+    "nama": "Manager Tractive Rail Vehicles Maintenance Facilities"
+  },
+  {
+    "id": "706z03jxk",
+    "unitId": "ov1bu3jer",
+    "kode": "RRTF02",
+    "nama": "Specialist of Tractive Rail Vehicles Maintenance Facilities"
+  },
+  {
+    "id": "706z13jb1",
+    "unitId": "ot16m3jag",
+    "kode": "RT01",
+    "nama": "Corporate Deputy Director of Technical Engineering and Rollingstock Asset"
+  },
+  {
+    "id": "706z23j9m",
+    "unitId": "ou17r3jke",
+    "kode": "RTE01",
+    "nama": "Vice President Technical Engineering of Rollingstock"
+  },
+  {
+    "id": "706z33j0c",
+    "unitId": "ov1bv3jvl",
+    "kode": "RTED01",
+    "nama": "Manager Technical Development and Cooperation Program"
+  },
+  {
+    "id": "706z43jof",
+    "unitId": "ov1bv3jvl",
+    "kode": "RTED02",
+    "nama": "Junior Manager Technical Development"
+  },
+  {
+    "id": "706z53jum",
+    "unitId": "ov1bv3jvl",
+    "kode": "RTED03",
+    "nama": "Specialist of Electrical "
+  },
+  {
+    "id": "706z63jyc",
+    "unitId": "ov1bv3jvl",
+    "kode": "RTED04",
+    "nama": "Specialist of Ergonomics Design"
+  },
+  {
+    "id": "706z73js2",
+    "unitId": "ov1bv3jvl",
+    "kode": "RTED05",
+    "nama": "Junior Manager External Technical Cooperation"
+  },
+  {
+    "id": "706z83j5r",
+    "unitId": "ov1bv3jvl",
+    "kode": "RTED06",
+    "nama": "Specialist of Mechanical"
+  },
+  {
+    "id": "706z93jzx",
+    "unitId": "ov1bv3jvl",
+    "kode": "RTED07",
+    "nama": "Specialist of Visualization Design"
+  },
+  {
+    "id": "706za3jw5",
+    "unitId": "ov1bw3jk5",
+    "kode": "RTER01",
+    "nama": "Manager Traction/ Rolling Stock Reliability"
+  },
+  {
+    "id": "706zb3jee",
+    "unitId": "ov1bw3jk5",
+    "kode": "RTER02",
+    "nama": "Junior Manager Evaluation of Traction / Rollingstock Reliability"
+  },
+  {
+    "id": "706zc3jt6",
+    "unitId": "ov1bw3jk5",
+    "kode": "RTER03",
+    "nama": "Specialist of Vibration"
+  },
+  {
+    "id": "706zd3jb9",
+    "unitId": "ov1bw3jk5",
+    "kode": "RTER04",
+    "nama": "Specialist of Dynamic Railways"
+  },
+  {
+    "id": "706ze3j97",
+    "unitId": "ov1bw3jk5",
+    "kode": "RTER05",
+    "nama": "Junior Manager Evaluation of Component Reliability"
+  },
+  {
+    "id": "706zf3jqp",
+    "unitId": "ov1bw3jk5",
+    "kode": "RTER06",
+    "nama": "Specialist of Material"
+  },
+  {
+    "id": "706zg3jx7",
+    "unitId": "ov1bw3jk5",
+    "kode": "RTER07",
+    "nama": "Specialist of Structure"
+  },
+  {
+    "id": "706zh3j3u",
+    "unitId": "ov1bx3j96",
+    "kode": "RTEE01",
+    "nama": "Manager Traction / Rolling Stock Engineering"
+  },
+  {
+    "id": "706zi3j70",
+    "unitId": "ov1bx3j96",
+    "kode": "RTEE02",
+    "nama": "Junior Manager Locomotive Engineering"
+  },
+  {
+    "id": "706zj3jh1",
+    "unitId": "ov1bx3j96",
+    "kode": "RTEE03",
+    "nama": "Specialist of Combustion Engine"
+  },
+  {
+    "id": "706zk3j2x",
+    "unitId": "ov1bx3j96",
+    "kode": "RTEE04",
+    "nama": "Specialist of Fluid System"
+  },
+  {
+    "id": "706zl3jvd",
+    "unitId": "ov1bx3j96",
+    "kode": "RTEE05",
+    "nama": "Junior Manager Coaches and Wagons Engineering"
+  },
+  {
+    "id": "706zm3jrb",
+    "unitId": "ov1bx3j96",
+    "kode": "RTEE06",
+    "nama": "Specialist of HVAC"
+  },
+  {
+    "id": "706zn3jy7",
+    "unitId": "ov1bx3j96",
+    "kode": "RTEE07",
+    "nama": "Specialist of Air Brake System"
+  },
+  {
+    "id": "706zo3j6l",
+    "unitId": "ov1bx3j96",
+    "kode": "RTEE08",
+    "nama": "Junior Manager TRV DMU/ DEMU/ EMU Engineering"
+  },
+  {
+    "id": "706zp3ju7",
+    "unitId": "ov1bx3j96",
+    "kode": "RTEE09",
+    "nama": "Specialist of Control System"
+  },
+  {
+    "id": "706zq3je1",
+    "unitId": "ov1bx3j96",
+    "kode": "RTEE10",
+    "nama": "Specialist of Electrical Propulsion"
+  },
+  {
+    "id": "706zr3jum",
+    "unitId": "ou17s3jq1",
+    "kode": "RTA01",
+    "nama": "Vice President Rollingstock Assets"
+  },
+  {
+    "id": "706zs3jci",
+    "unitId": "ov1by3jtc",
+    "kode": "RTAC01",
+    "nama": "Manager Rollingstock Assets Worthiness Certification"
+  },
+  {
+    "id": "706zt3jh7",
+    "unitId": "ov1by3jtc",
+    "kode": "RTAC02",
+    "nama": "Specialist of TRV Worthiness Certification"
+  },
+  {
+    "id": "706zu3j3y",
+    "unitId": "ov1by3jtc",
+    "kode": "RTAC03",
+    "nama": "Specialist of Coaches Worthiness Certification"
+  },
+  {
+    "id": "706zv3jnq",
+    "unitId": "ov1by3jtc",
+    "kode": "RTAC04",
+    "nama": "Specialist of Wagons Worthiness Certification"
+  },
+  {
+    "id": "706zw3jtu",
+    "unitId": "ov1bz3jtm",
+    "kode": "RTAE01",
+    "nama": "Manager Rollingstock Assets Control and Evaluation"
+  },
+  {
+    "id": "706zx3jdo",
+    "unitId": "ov1bz3jtm",
+    "kode": "RTAE02",
+    "nama": "Specialist of Rollingstock Assets Control"
+  },
+  {
+    "id": "706zy3j5v",
+    "unitId": "ov1bz3jtm",
+    "kode": "RTAE03",
+    "nama": "Specialist of Rollingstock Assets Evaluation"
+  },
+  {
+    "id": "706zz3jv6",
+    "unitId": "ov1c03jr8",
+    "kode": "RTAF01",
+    "nama": "Manager Facilities Rollingstock Assets and Rollingstock Assets Conservation"
+  },
+  {
+    "id": "707003jy2",
+    "unitId": "ov1c03jr8",
+    "kode": "RTAF02",
+    "nama": "Specialist of Facilities Rollingstock Assets"
+  },
+  {
+    "id": "707013jmp",
+    "unitId": "ov1c03jr8",
+    "kode": "RTAF03",
+    "nama": "Specialist of Rollingstock Assets Conservation"
+  },
+  {
+    "id": "707023jia",
+    "unitId": "ot16c3jj6",
+    "kode": "S01",
+    "nama": "Direktur Keselamatan dan Keamanan"
+  },
+  {
+    "id": "707033jq7",
+    "unitId": "ot16n3jyf",
+    "kode": "SK01",
+    "nama": "Corporate Deputy Director of Security"
+  },
+  {
+    "id": "707043j4i",
+    "unitId": "ou17t3ju8",
+    "kode": "SKO01",
+    "nama": "Vice President Security Operation and Administration"
+  },
+  {
+    "id": "707053j8i",
+    "unitId": "ov1c13jbd",
+    "kode": "SKOA01",
+    "nama": "Manager Security Administration"
+  },
+  {
+    "id": "707063jy0",
+    "unitId": "ov1c13jbd",
+    "kode": "SKOA02",
+    "nama": "Junior Manager Security Finance"
+  },
+  {
+    "id": "707073jgz",
+    "unitId": "ov1c13jbd",
+    "kode": "SKOA03",
+    "nama": "Junior Manager Security Personnel and Relation"
+  },
+  {
+    "id": "707083j7o",
+    "unitId": "ov1c23jz7",
+    "kode": "SKOB01",
+    "nama": "Manager Security On Board"
+  },
+  {
+    "id": "707093jvd",
+    "unitId": "ov1c23jz7",
+    "kode": "SKOB02",
+    "nama": "Junior Manager Security On Board"
+  },
+  {
+    "id": "7070a3jx0",
+    "unitId": "ov1c33jsj",
+    "kode": "SKOV01",
+    "nama": "Manager Security Vital Object and Assets"
+  },
+  {
+    "id": "7070b3j7k",
+    "unitId": "ov1c33jsj",
+    "kode": "SKOV02",
+    "nama": "Junior Manager Security Vital Objects and Assets"
+  },
+  {
+    "id": "7070c3j6q",
+    "unitId": "ov1c43je7",
+    "kode": "SKOI01",
+    "nama": "Manager Security Intelligence"
+  },
+  {
+    "id": "7070d3j3d",
+    "unitId": "ov1c43je7",
+    "kode": "SKOI02",
+    "nama": "Junior Manager Security Intelligence"
+  },
+  {
+    "id": "7070e3jsy",
+    "unitId": "ou17u3j74",
+    "kode": "SSS01",
+    "nama": "Vice President Safety"
+  },
+  {
+    "id": "7070f3j8r",
+    "unitId": "ov1c53jze",
+    "kode": "SSSH01",
+    "nama": "Senior Manager Occupational Health and Environment"
+  },
+  {
+    "id": "7070g3juz",
+    "unitId": "ov1c63je6",
+    "kode": "SSSE01",
+    "nama": "Manager Environment"
+  },
+  {
+    "id": "7070h3jv8",
+    "unitId": "ov1c63je6",
+    "kode": "SSSE02",
+    "nama": "Junior Manager Environment"
+  },
+  {
+    "id": "7070i3jye",
+    "unitId": "ov1c73jwb",
+    "kode": "SSSO01",
+    "nama": "Manager Occupational Health & Safety"
+  },
+  {
+    "id": "7070j3jdl",
+    "unitId": "ov1c73jwb",
+    "kode": "SSSO02",
+    "nama": "Junior Manager Occupational Health Safety"
+  },
+  {
+    "id": "7070k3jd5",
+    "unitId": "ov1c83jb5",
+    "kode": "SSSM01",
+    "nama": "Manager Safety Management Office"
+  },
+  {
+    "id": "7070l3jak",
+    "unitId": "ov1c83jb5",
+    "kode": "SSSM02",
+    "nama": "Junior Manager Safety Management Office"
+  },
+  {
+    "id": "7070m3j3r",
+    "unitId": "ov1c83jb5",
+    "kode": "SSSM03",
+    "nama": "Safety Performance Analyst"
+  },
+  {
+    "id": "7070n3jdj",
+    "unitId": "ov1c83jb5",
+    "kode": "SSSM04",
+    "nama": "Safety Finance & Administration Officer"
+  },
+  {
+    "id": "7070o3jxy",
+    "unitId": "ov1c93jxh",
+    "kode": "SSSA01",
+    "nama": "Manager Safety Audit And Investigation"
+  },
+  {
+    "id": "7070p3jvq",
+    "unitId": "ov1c93jxh",
+    "kode": "SSSA02",
+    "nama": "Junior Manager Safety Audit"
+  },
+  {
+    "id": "7070q3jz9",
+    "unitId": "ov1c93jxh",
+    "kode": "SSSA03",
+    "nama": "Junior Manager Safety Investigation"
+  },
+  {
+    "id": "7070r3j80",
+    "unitId": "ov1ca3j4z",
+    "kode": "SSSI01",
+    "nama": "Manager Safety Inspection"
+  },
+  {
+    "id": "7070s3jhb",
+    "unitId": "ov1ca3j4z",
+    "kode": "SSSI02",
+    "nama": "Junior Manager Safety Inspection"
+  },
+  {
+    "id": "7170t3jgv",
+    "unitId": "ov1cb3jm5",
+    "kode": "SSSR01",
+    "nama": "Manager Safety Review and Recommendation"
+  },
+  {
+    "id": "7170u3jg8",
+    "unitId": "ov1cb3jm5",
+    "kode": "SSSR02",
+    "nama": "Junior Manager Safety Review and Recommendation"
+  },
+  {
+    "id": "7170v3ja9",
+    "unitId": "ou17v3j24",
+    "kode": "SSD01",
+    "nama": "Vice President Safety Standard"
+  },
+  {
+    "id": "7170w3jpe",
+    "unitId": "ov1cc3jnm",
+    "kode": "SSDI01",
+    "nama": "Manager Safety Standard Of Infrastructure Maintenance"
+  },
+  {
+    "id": "7170x3j77",
+    "unitId": "ov1cc3jnm",
+    "kode": "SSDI02",
+    "nama": "Junior Manager Safety Standard of Infrastructure Maintenance"
+  },
+  {
+    "id": "7170y3jgv",
+    "unitId": "ov1cd3j53",
+    "kode": "SSDT01",
+    "nama": "Manager Safety Standard Of Railway Traffic Operation"
+  },
+  {
+    "id": "7170z3jjk",
+    "unitId": "ov1cd3j53",
+    "kode": "SSDT02",
+    "nama": "Junior Manager Safety Standard Of Railway Traffic Operation"
+  },
+  {
+    "id": "717103jws",
+    "unitId": "ov1cd3j53",
+    "kode": "SSDT03",
+    "nama": "Junior Manager Safety Standard Of Railway Regulation"
+  },
+  {
+    "id": "717113j85",
+    "unitId": "ov1ce3jiu",
+    "kode": "SSDR01",
+    "nama": "Manager Safety Standard Of Rollingstock Maintenance"
+  },
+  {
+    "id": "717123jnf",
+    "unitId": "ov1ce3jiu",
+    "kode": "SSDR02",
+    "nama": "Junior Manager Safety Standard of Rollingstock and Calibration Maintenance"
+  },
+  {
+    "id": "717133jv1",
+    "unitId": "ot16o3jpc",
+    "kode": "SN01",
+    "nama": "Corporate Deputy Director of Non Railway Assets"
+  },
+  {
+    "id": "717143jmq",
+    "unitId": "ov1cf3j0q",
+    "kode": "SNNB01",
+    "nama": "Senior Manager Program, Budgeting, and Certification"
+  },
+  {
+    "id": "717153jaz",
+    "unitId": "ov1cf3j0q",
+    "kode": "SNNB02",
+    "nama": "Junior Manager Program and Budgeting"
+  },
+  {
+    "id": "717163jte",
+    "unitId": "ov1cf3j0q",
+    "kode": "SNNB03",
+    "nama": "Junior Manager Assets Custody"
+  },
+  {
+    "id": "717173jem",
+    "unitId": "ov1cf3j0q",
+    "kode": "SNNB04",
+    "nama": "Junior Manager Assets Certification"
+  },
+  {
+    "id": "717183j89",
+    "unitId": "ov1cg3jyn",
+    "kode": "SNNP01",
+    "nama": "Senior Manager Problem Assets Handling and Assets Control"
+  },
+  {
+    "id": "717193j79",
+    "unitId": "ov1cg3jyn",
+    "kode": "SNNP02",
+    "nama": "Junior Manager Problem Assets Handling"
+  },
+  {
+    "id": "7171a3jg7",
+    "unitId": "ov1cg3jyn",
+    "kode": "SNNP03",
+    "nama": "Junior Manager Assets Control"
+  },
+  {
+    "id": "7171b3jm0",
+    "unitId": "ov1cg3jyn",
+    "kode": "SNNP04",
+    "nama": "Junior Manager Liaison"
+  },
+  {
+    "id": "7171c3jel",
+    "unitId": "ot16d3jyk",
+    "kode": "M01",
+    "nama": "Managing Director of Human Capital and General Affairs"
+  },
+  {
+    "id": "7171d3j77",
+    "unitId": "ot16p3jbo",
+    "kode": "MT01",
+    "nama": "Corporate Deputy Director Training and Education"
+  },
+  {
+    "id": "7171e3j5w",
+    "unitId": "ou17w3ju6",
+    "kode": "MTL01",
+    "nama": "Ketua Lembaga Sertifikasi Profesi PT Kereta Api Indonesia (Persero)"
+  },
+  {
+    "id": "7171f3jc7",
+    "unitId": "ov1ch3jeu",
+    "kode": "MTLM01",
+    "nama": "Kepala Bidang Manajemen Mutu"
+  },
+  {
+    "id": "7171g3jw0",
+    "unitId": "ov1ci3jf0",
+    "kode": "MTLS01",
+    "nama": "Kepala Bidang Sertifikasi"
+  },
+  {
+    "id": "7171h3j8n",
+    "unitId": "ov1cj3j2m",
+    "kode": "MTLA01",
+    "nama": "Kepala Bidang Administrasi"
+  },
+  {
+    "id": "7171i3jme",
+    "unitId": "ov1ck3jfq",
+    "kode": "MTAF01",
+    "nama": "Manager Administration and Facility Training Center"
+  },
+  {
+    "id": "7171j3jdr",
+    "unitId": "ov1ck3jfq",
+    "kode": "MTAF02",
+    "nama": "Junior Manager Financial & General Affairs"
+  },
+  {
+    "id": "7171k3jl2",
+    "unitId": "ov1ck3jfq",
+    "kode": "MTAF03",
+    "nama": "Junior Manager Facility"
+  },
+  {
+    "id": "7171l3j30",
+    "unitId": "ov1cl3jn1",
+    "kode": "MTTS01",
+    "nama": "Manager Sriwijaya Training Center Ascep Sunarto"
+  },
+  {
+    "id": "7171m3j9r",
+    "unitId": "ov1cl3jn1",
+    "kode": "MTTS02",
+    "nama": "Assistant Manager Financial and General Affairs"
+  },
+  {
+    "id": "7171n3jr5",
+    "unitId": "ov1cl3jn1",
+    "kode": "MTTS03",
+    "nama": "Assistant Manager Training Reporting and Evaluation"
+  },
+  {
+    "id": "7171o3jqh",
+    "unitId": "ov1cl3jn1",
+    "kode": "MTTS04",
+    "nama": "Assistant Manager Facility and Laboratory"
+  },
+  {
+    "id": "7171p3jo7",
+    "unitId": "ou17x3j7g",
+    "kode": "MTN01",
+    "nama": "Vice President Training Non Railways and Certification"
+  },
+  {
+    "id": "7171q3j11",
+    "unitId": "ov1cm3joy",
+    "kode": "MTNC01",
+    "nama": "Manager Certification and Cooperation"
+  },
+  {
+    "id": "7171r3jal",
+    "unitId": "ov1cm3joy",
+    "kode": "MTNC02",
+    "nama": "Junior Manager Certification"
+  },
+  {
+    "id": "7171s3jn6",
+    "unitId": "ov1cm3joy",
+    "kode": "MTNC03",
+    "nama": "Junior Manager Cooperation"
+  },
+  {
+    "id": "7171t3j1a",
+    "unitId": "ov1cn3j9n",
+    "kode": "MTNT01",
+    "nama": "Manager Training Non Railways"
+  },
+  {
+    "id": "7171u3jot",
+    "unitId": "ov1cn3j9n",
+    "kode": "MTNT02",
+    "nama": "Junior Manager Internal Training"
+  },
+  {
+    "id": "7171v3jsv",
+    "unitId": "ov1cn3j9n",
+    "kode": "MTNT03",
+    "nama": "Junior Manager Training Support"
+  },
+  {
+    "id": "7171w3jdt",
+    "unitId": "ou17y3jp9",
+    "kode": "MTR01",
+    "nama": "Vice President Planning of Training and Education"
+  },
+  {
+    "id": "7171x3jnk",
+    "unitId": "ov1co3jy5",
+    "kode": "MTRP01",
+    "nama": "Manager Program, Standardization and Evaluation"
+  },
+  {
+    "id": "7171y3juo",
+    "unitId": "ov1co3jy5",
+    "kode": "MTRP02",
+    "nama": "Junior Manager Training Program and Evaluation"
+  },
+  {
+    "id": "7171z3jnp",
+    "unitId": "ov1co3jy5",
+    "kode": "MTRP03",
+    "nama": "Junior Manager Standardization"
+  },
+  {
+    "id": "717203jg1",
+    "unitId": "ov1cp3jio",
+    "kode": "MTRC01",
+    "nama": "Manager Curriculum"
+  },
+  {
+    "id": "717213je0",
+    "unitId": "ov1cp3jio",
+    "kode": "MTRC02",
+    "nama": "Junior Manager Operation Training Curriculum"
+  },
+  {
+    "id": "717223j70",
+    "unitId": "ov1cp3jio",
+    "kode": "MTRC03",
+    "nama": "Curriculum Specialist of Operation Training"
+  },
+  {
+    "id": "717233jo4",
+    "unitId": "ov1cp3jio",
+    "kode": "MTRC04",
+    "nama": "Junior Manager Maintenance Training Curriculum"
+  },
+  {
+    "id": "717243jbh",
+    "unitId": "ov1cp3jio",
+    "kode": "MTRC05",
+    "nama": "Curriculum Specialist of Maintenance Training"
+  },
+  {
+    "id": "717253jnz",
+    "unitId": "ov1cp3jio",
+    "kode": "MTRC06",
+    "nama": "Junior Manager Non Railways Training Curriculum"
+  },
+  {
+    "id": "717263jgt",
+    "unitId": "ov1cp3jio",
+    "kode": "MTRC07",
+    "nama": "Curriculum Specialist of Non Railways Training"
+  },
+  {
+    "id": "717273jw3",
+    "unitId": "ov1cq3jk1",
+    "kode": "MTRE01",
+    "nama": "Manager E-Learning"
+  },
+  {
+    "id": "717283j5m",
+    "unitId": "ov1cq3jk1",
+    "kode": "MTRE02",
+    "nama": "Development Specialist"
+  },
+  {
+    "id": "717293jvv",
+    "unitId": "ov1cq3jk1",
+    "kode": "MTRE03",
+    "nama": "E-Learning Specialist"
+  },
+  {
+    "id": "7172a3j2q",
+    "unitId": "ov1cq3jk1",
+    "kode": "MTRE04",
+    "nama": "Library Specialist"
+  },
+  {
+    "id": "7172b3j9j",
+    "unitId": "ou17z3j02",
+    "kode": "MTS01",
+    "nama": "General Manager Signalling, Telecommunication and Electricity Training Center Bandung"
+  },
+  {
+    "id": "7172c3j5d",
+    "unitId": "ov1cr3jla",
+    "kode": "MTSI01",
+    "nama": "Manager Implementation Training Center"
+  },
+  {
+    "id": "7172d3jmp",
+    "unitId": "ov1cr3jla",
+    "kode": "MTSI02",
+    "nama": "Assistant Manager Training Implementation"
+  },
+  {
+    "id": "7172e3j5e",
+    "unitId": "ov1cr3jla",
+    "kode": "MTSI03",
+    "nama": "Assistant Manager Report and Evaluation"
+  },
+  {
+    "id": "7172f3jji",
+    "unitId": "ov1cr3jla",
+    "kode": "MTSI04",
+    "nama": "Assistant Manager Field Training and Laboratory"
+  },
+  {
+    "id": "7172g3j1h",
+    "unitId": "ov1cs3je2",
+    "kode": "MTSA01",
+    "nama": "Manager Administration and Facility Training Center"
+  },
+  {
+    "id": "7172h3jdl",
+    "unitId": "ov1cs3je2",
+    "kode": "MTSA02",
+    "nama": "Assistant Manager Financial Administration"
+  },
+  {
+    "id": "7172i3jen",
+    "unitId": "ov1cs3je2",
+    "kode": "MTSA03",
+    "nama": "Assistant Manager General Affairs"
+  },
+  {
+    "id": "7172j3jbj",
+    "unitId": "ov1cs3je2",
+    "kode": "MTSA04",
+    "nama": "Assistant Manager Facilities"
+  },
+  {
+    "id": "7172k3j67",
+    "unitId": "ou1803ju6",
+    "kode": "MTE01",
+    "nama": "General Manager Tractive Vehicle Engineering Training Center Darman Prasetyo"
+  },
+  {
+    "id": "7172l3j80",
+    "unitId": "ov1ct3jnp",
+    "kode": "MTEI01",
+    "nama": "Manager Implementation Training Center"
+  },
+  {
+    "id": "7172m3jh2",
+    "unitId": "ov1ct3jnp",
+    "kode": "MTEI02",
+    "nama": "Assistant Manager Training Implementation"
+  },
+  {
+    "id": "7172n3jrw",
+    "unitId": "ov1ct3jnp",
+    "kode": "MTEI03",
+    "nama": "Assistant Manager Report and Evaluation"
+  },
+  {
+    "id": "7172o3jyh",
+    "unitId": "ov1ct3jnp",
+    "kode": "MTEI04",
+    "nama": "Assistant Manager Field Training and Laboratory"
+  },
+  {
+    "id": "7172p3je8",
+    "unitId": "ov1cu3j4p",
+    "kode": "MTEA01",
+    "nama": "Manager Administration and Facility Training Center"
+  },
+  {
+    "id": "7172q3jzp",
+    "unitId": "ov1cu3j4p",
+    "kode": "MTEA02",
+    "nama": "Assistant Manager Financial Administration"
+  },
+  {
+    "id": "7272r3jq7",
+    "unitId": "ov1cu3j4p",
+    "kode": "MTEA03",
+    "nama": "Assistant Manager General Affairs"
+  },
+  {
+    "id": "7272s3jgg",
+    "unitId": "ov1cu3j4p",
+    "kode": "MTEA04",
+    "nama": "Assistant Manager Facilities"
+  },
+  {
+    "id": "7272t3jo7",
+    "unitId": "ou1813j8s",
+    "kode": "MTP01",
+    "nama": "General Manager Railway Engineering Training Center Sofyan Hadi"
+  },
+  {
+    "id": "7272u3jpr",
+    "unitId": "ov1cv3jux",
+    "kode": "MTPI01",
+    "nama": "Manager Implementation Training Center"
+  },
+  {
+    "id": "7272v3jl1",
+    "unitId": "ov1cv3jux",
+    "kode": "MTPI02",
+    "nama": "Assistant Manager Training Implementation"
+  },
+  {
+    "id": "7272w3jmp",
+    "unitId": "ov1cv3jux",
+    "kode": "MTPI03",
+    "nama": "Assistant Manager Report and Evaluation"
+  },
+  {
+    "id": "7272x3jy3",
+    "unitId": "ov1cv3jux",
+    "kode": "MTPI04",
+    "nama": "Assistant Manager Field Training and Laboratory"
+  },
+  {
+    "id": "7272y3jyc",
+    "unitId": "ov1cw3juh",
+    "kode": "MTPA01",
+    "nama": "Manager Administration and Facility Training Center"
+  },
+  {
+    "id": "7272z3jkb",
+    "unitId": "ov1cw3juh",
+    "kode": "MTPA02",
+    "nama": "Assistant Manager Financial Administration"
+  },
+  {
+    "id": "727303jht",
+    "unitId": "ov1cw3juh",
+    "kode": "MTPA03",
+    "nama": "Assistant Manager General Affairs"
+  },
+  {
+    "id": "727313jl6",
+    "unitId": "ov1cw3juh",
+    "kode": "MTPA04",
+    "nama": "Assistant Manager Facilities"
+  },
+  {
+    "id": "727323jrj",
+    "unitId": "ou1823jxa",
+    "kode": "MTO01",
+    "nama": "General Manager Operational and Marketing Training Center Agus Suroto"
+  },
+  {
+    "id": "727333jfw",
+    "unitId": "ov1cx3jna",
+    "kode": "MTOI01",
+    "nama": "Manager Implementation Training Center"
+  },
+  {
+    "id": "727343jwy",
+    "unitId": "ov1cx3jna",
+    "kode": "MTOI02",
+    "nama": "Assistant Manager Training Implementation"
+  },
+  {
+    "id": "727353jyz",
+    "unitId": "ov1cx3jna",
+    "kode": "MTOI03",
+    "nama": "Assistant Manager Report and Evaluation"
+  },
+  {
+    "id": "727363j79",
+    "unitId": "ov1cx3jna",
+    "kode": "MTOI04",
+    "nama": "Assistant Manager Field Training and Laboratory"
+  },
+  {
+    "id": "727373js8",
+    "unitId": "ov1cy3jhp",
+    "kode": "MTOA01",
+    "nama": "Manager Administration and Facility Training Center"
+  },
+  {
+    "id": "727383j3e",
+    "unitId": "ov1cy3jhp",
+    "kode": "MTOA02",
+    "nama": "Assistant Manager Financial Administration"
+  },
+  {
+    "id": "727393jl3",
+    "unitId": "ov1cy3jhp",
+    "kode": "MTOA03",
+    "nama": "Assistant Manager General Affairs"
+  },
+  {
+    "id": "7273a3jqv",
+    "unitId": "ov1cy3jhp",
+    "kode": "MTOA04",
+    "nama": "Assistant Manager Facilities"
+  },
+  {
+    "id": "7273b3jg8",
+    "unitId": "ot16q3jez",
+    "kode": "MC01",
+    "nama": "Corporate Deputy Director Of Personal Care, Control, and Development"
+  },
+  {
+    "id": "7273c3jvu",
+    "unitId": "ou1833jrt",
+    "kode": "MCA01",
+    "nama": "Vice President Personnel Administration"
+  },
+  {
+    "id": "7273d3jxx",
+    "unitId": "ov1cz3jmf",
+    "kode": "MCAP01",
+    "nama": "Manager Payroll"
+  },
+  {
+    "id": "7273e3jd9",
+    "unitId": "ov1cz3jmf",
+    "kode": "MCAP02",
+    "nama": "Junior Manager Payroll Data Verification"
+  },
+  {
+    "id": "7273f3jkb",
+    "unitId": "ov1cz3jmf",
+    "kode": "MCAP03",
+    "nama": "Junior Manager Payroll Process"
+  },
+  {
+    "id": "7273g3jzy",
+    "unitId": "ov1cz3jmf",
+    "kode": "MCAP04",
+    "nama": "Junior Manager Tax and Financial Reporting"
+  },
+  {
+    "id": "7273h3jsj",
+    "unitId": "ov1cz3jmf",
+    "kode": "MCAP05",
+    "nama": "Junior Manager Employee Insurance"
+  },
+  {
+    "id": "7273i3jqt",
+    "unitId": "ov1d03jus",
+    "kode": "MCAM01",
+    "nama": "Manager Mutation, Retirement and Personnel Database"
+  },
+  {
+    "id": "7273j3jbf",
+    "unitId": "ov1d03jus",
+    "kode": "MCAM02",
+    "nama": "Junior Manager Mutation Administration"
+  },
+  {
+    "id": "7273k3j1n",
+    "unitId": "ov1d03jus",
+    "kode": "MCAM03",
+    "nama": "Junior Manager Retirement"
+  },
+  {
+    "id": "7273l3jdh",
+    "unitId": "ov1d03jus",
+    "kode": "MCAM04",
+    "nama": "Junior Manager Personnel Documentation and Database"
+  },
+  {
+    "id": "7273m3jl7",
+    "unitId": "ov1d03jus",
+    "kode": "MCAM05",
+    "nama": "HR Data Based Specialist 1"
+  },
+  {
+    "id": "7273n3jo3",
+    "unitId": "ov1d03jus",
+    "kode": "MCAM06",
+    "nama": "HR Data Based Specialist 2"
+  },
+  {
+    "id": "7273o3j8j",
+    "unitId": "ov1d03jus",
+    "kode": "MCAM07",
+    "nama": "HR Data Based Specialist 3"
+  },
+  {
+    "id": "7273p3jr4",
+    "unitId": "ov1d03jus",
+    "kode": "MCAM08",
+    "nama": "HR Data Based Specialist 4"
+  },
+  {
+    "id": "7273q3j4r",
+    "unitId": "ov1d13jqi",
+    "kode": "MCAR01",
+    "nama": "Manager Recruitment, Placement and on Boarding"
+  },
+  {
+    "id": "7273r3j6d",
+    "unitId": "ov1d13jqi",
+    "kode": "MCAR02",
+    "nama": "Junior Manager Recruitment"
+  },
+  {
+    "id": "7273s3ji9",
+    "unitId": "ov1d13jqi",
+    "kode": "MCAR03",
+    "nama": "Junior Manager Placement and on Boarding"
+  },
+  {
+    "id": "7273t3jtk",
+    "unitId": "ou1843jjn",
+    "kode": "MCI01",
+    "nama": "Vice President Industrial Relation"
+  },
+  {
+    "id": "7273u3jqg",
+    "unitId": "ov1d23jmo",
+    "kode": "MCIC01",
+    "nama": "Manager Compensation and Benefit"
+  },
+  {
+    "id": "7273v3j0h",
+    "unitId": "ov1d23jmo",
+    "kode": "MCIC02",
+    "nama": "Junior Manager Compensation and Benefit Program"
+  },
+  {
+    "id": "7273w3jbz",
+    "unitId": "ov1d23jmo",
+    "kode": "MCIC03",
+    "nama": "Junior Manager Compensation and Benefit Evaluation"
+  },
+  {
+    "id": "7273x3jbi",
+    "unitId": "ov1d33j82",
+    "kode": "MCIR01",
+    "nama": "Manager Employee Regulation"
+  },
+  {
+    "id": "7273y3js3",
+    "unitId": "ov1d33j82",
+    "kode": "MCIR02",
+    "nama": "Junior Manager Employee Regulation"
+  },
+  {
+    "id": "7273z3jib",
+    "unitId": "ov1d33j82",
+    "kode": "MCIR03",
+    "nama": "Junior Manager Evaluation Regulation"
+  },
+  {
+    "id": "727403j05",
+    "unitId": "ov1d43jko",
+    "kode": "MCII01",
+    "nama": "Manager Industrial Relation and Employee Engagement"
+  },
+  {
+    "id": "727413jnj",
+    "unitId": "ov1d43jko",
+    "kode": "MCII02",
+    "nama": "Junior Manager Industrial Relation"
+  },
+  {
+    "id": "727423jzm",
+    "unitId": "ov1d43jko",
+    "kode": "MCII03",
+    "nama": "Junior Manager Employee Engagement"
+  },
+  {
+    "id": "727433j77",
+    "unitId": "ov1d53jxr",
+    "kode": "MCIG01",
+    "nama": "Manager General Affairs"
+  },
+  {
+    "id": "727443j5u",
+    "unitId": "ov1d53jxr",
+    "kode": "MCIG02",
+    "nama": "Junior Manager General Affair Planning & Evaluation"
+  },
+  {
+    "id": "727453jn1",
+    "unitId": "ov1d53jxr",
+    "kode": "MCIG03",
+    "nama": "Junior Manager General Affairs Control"
+  },
+  {
+    "id": "727463jrm",
+    "unitId": "ou1853ju4",
+    "kode": "MCO01",
+    "nama": "Vice President Organization Development"
+  },
+  {
+    "id": "727473j6m",
+    "unitId": "ov1d63j5v",
+    "kode": "MCOP01",
+    "nama": "Manager Human Resources Planning"
+  },
+  {
+    "id": "727483j8c",
+    "unitId": "ov1d63j5v",
+    "kode": "MCOP02",
+    "nama": "Junior Manager Workforce Analysis and Job Evaluation"
+  },
+  {
+    "id": "727493j07",
+    "unitId": "ov1d63j5v",
+    "kode": "MCOP03",
+    "nama": "Junior Manager Workforce Planning and Formation"
+  },
+  {
+    "id": "7274a3j97",
+    "unitId": "ov1d73jur",
+    "kode": "MCOB01",
+    "nama": "Manager Business Process"
+  },
+  {
+    "id": "7274b3jl3",
+    "unitId": "ov1d73jur",
+    "kode": "MCOB02",
+    "nama": "Junior Manager Business Process Implementation"
+  },
+  {
+    "id": "7274c3jjx",
+    "unitId": "ov1d73jur",
+    "kode": "MCOB03",
+    "nama": "Junior Manager Business Process Evaluation"
+  },
+  {
+    "id": "7274d3jlv",
+    "unitId": "ov1d83jhc",
+    "kode": "MCOD01",
+    "nama": "Manager Organization Design"
+  },
+  {
+    "id": "7274e3jlx",
+    "unitId": "ov1d83jhc",
+    "kode": "MCOD02",
+    "nama": "Junior Manager Organization Change and Development"
+  },
+  {
+    "id": "7274f3jlq",
+    "unitId": "ov1d83jhc",
+    "kode": "MCOD03",
+    "nama": "Junior Manager Organization Report and Application"
+  },
+  {
+    "id": "7274g3jr4",
+    "unitId": "ou1863jh4",
+    "kode": "MCD01",
+    "nama": "Vice President Assessment and Human Resources Development"
+  },
+  {
+    "id": "7274h3j04",
+    "unitId": "ov1d93j3p",
+    "kode": "MCDC01",
+    "nama": "Manager Competency Development and Evaluation"
+  },
+  {
+    "id": "7274i3j25",
+    "unitId": "ov1d93j3p",
+    "kode": "MCDC02",
+    "nama": "Junior Manager Competency Directory Development"
+  },
+  {
+    "id": "7274j3jdi",
+    "unitId": "ov1d93j3p",
+    "kode": "MCDC03",
+    "nama": "Junior Manager Performance and Competency Evaluation"
+  },
+  {
+    "id": "7274k3jv4",
+    "unitId": "ov1da3joe",
+    "kode": "MCDA01",
+    "nama": "Manager Assessment"
+  },
+  {
+    "id": "7274l3j5n",
+    "unitId": "ov1da3joe",
+    "kode": "MCDA02",
+    "nama": "Junior Manager Assessment and Psychology"
+  },
+  {
+    "id": "7274m3jnh",
+    "unitId": "ov1da3joe",
+    "kode": "MCDA03",
+    "nama": "Junior Manager Assessment Material Design"
+  },
+  {
+    "id": "7274n3jw9",
+    "unitId": "ov1db3jq7",
+    "kode": "MCDD01",
+    "nama": "Manager Talent Management"
+  },
+  {
+    "id": "7274o3jzp",
+    "unitId": "ov1db3jq7",
+    "kode": "MCDD02",
+    "nama": "Junior Manager Career Development"
+  },
+  {
+    "id": "7274p3jc5",
+    "unitId": "ov1db3jq7",
+    "kode": "MCDD03",
+    "nama": "Junior Manager Learning Development"
+  },
+  {
+    "id": "7374q3j0y",
+    "unitId": "ou1873j9y",
+    "kode": "MMH01",
+    "nama": "Vice President Health"
+  },
+  {
+    "id": "7374r3jwn",
+    "unitId": "ov1dc3jhr",
+    "kode": "MMHS01",
+    "nama": "Manager Health Service"
+  },
+  {
+    "id": "7374s3ja8",
+    "unitId": "ov1dc3jhr",
+    "kode": "MMHS02",
+    "nama": "Junior Manager Health Service Program"
+  },
+  {
+    "id": "7374t3jg2",
+    "unitId": "ov1dc3jhr",
+    "kode": "MMHS03",
+    "nama": "Junior Manager Health Service Evaluation"
+  },
+  {
+    "id": "7374u3j08",
+    "unitId": "ov1dd3jb5",
+    "kode": "MMHC01",
+    "nama": "Manager Health Members and Claim"
+  },
+  {
+    "id": "7374v3jzc",
+    "unitId": "ov1dd3jb5",
+    "kode": "MMHC02",
+    "nama": "Junior Manager Health Members"
+  },
+  {
+    "id": "7374w3j7g",
+    "unitId": "ov1dd3jb5",
+    "kode": "MMHC03",
+    "nama": "Junior Manager Health Claim"
+  },
+  {
+    "id": "7374x3j16",
+    "unitId": "ov1de3jn2",
+    "kode": "MMHO01",
+    "nama": "Manager Health Occupational"
+  },
+  {
+    "id": "7374y3joc",
+    "unitId": "ov1de3jn2",
+    "kode": "MMHO02",
+    "nama": "Junior Manager Health Assessment"
+  },
+  {
+    "id": "7374z3jvj",
+    "unitId": "ov1de3jn2",
+    "kode": "MMHO03",
+    "nama": "Junior Manager Health Promotive and Preventive"
+  },
+  {
+    "id": "737503jxo",
+    "unitId": "ov1df3jh2",
+    "kode": "MMHP01",
+    "nama": "Manager Health Public Services"
+  },
+  {
+    "id": "737513jl5",
+    "unitId": "ov1df3jh2",
+    "kode": "MMHP02",
+    "nama": "Junior Manager Health Surveillance and Coordination"
+  },
+  {
+    "id": "737523jaz",
+    "unitId": "ov1df3jh2",
+    "kode": "MMHP03",
+    "nama": "Junior Manager Crisis Centre Java Area"
+  },
+  {
+    "id": "737533jd6",
+    "unitId": "ov1df3jh2",
+    "kode": "MMHP04",
+    "nama": "Junior Manager Crisis Centre Non Java Area"
+  },
+  {
+    "id": "737543jrs",
+    "unitId": "ot16e3jwb",
+    "kode": "P01",
+    "nama": "Direktur Perencanaan Strategis dan Pengembangan Usaha"
+  },
+  {
+    "id": "737553j43",
+    "unitId": "ot16r3jht",
+    "kode": "PE01",
+    "nama": "Corporate Deputy Director of Existing Business Development"
+  },
+  {
+    "id": "737563j2z",
+    "unitId": "ou1883jdp",
+    "kode": "PEP01",
+    "nama": "Vice President Development Planning"
+  },
+  {
+    "id": "737573jrw",
+    "unitId": "ov1dg3j8r",
+    "kode": "PEPB01",
+    "nama": "Manager Business and Development Planning"
+  },
+  {
+    "id": "737583jc9",
+    "unitId": "ov1dg3j8r",
+    "kode": "PEPB02",
+    "nama": "Junior Manager Railway Planning"
+  },
+  {
+    "id": "737593j00",
+    "unitId": "ov1dg3j8r",
+    "kode": "PEPB03",
+    "nama": "Junior Manager Non Railway Planning"
+  },
+  {
+    "id": "7375a3jfx",
+    "unitId": "ov1dh3j09",
+    "kode": "PEPF01",
+    "nama": "Manager Financial Planning"
+  },
+  {
+    "id": "7375b3ji7",
+    "unitId": "ov1dh3j09",
+    "kode": "PEPF02",
+    "nama": "Junior Manager Budgeting Planning"
+  },
+  {
+    "id": "7375c3j6e",
+    "unitId": "ov1dh3j09",
+    "kode": "PEPF03",
+    "nama": "Junior Manager Non Budgeting Planning"
+  },
+  {
+    "id": "7375d3jm7",
+    "unitId": "ou1893jgz",
+    "kode": "PEE01",
+    "nama": "Vice President Technical Engineering of Infrastructure"
+  },
+  {
+    "id": "7375e3j6t",
+    "unitId": "ov1di3jhg",
+    "kode": "PEEP01",
+    "nama": "Manager Project and Certificate Engineering"
+  },
+  {
+    "id": "7375f3j3t",
+    "unitId": "ov1di3jhg",
+    "kode": "PEEP02",
+    "nama": "Junior Manager Project and Certificate Engineering"
+  },
+  {
+    "id": "7375g3jz4",
+    "unitId": "ov1di3jhg",
+    "kode": "PEEP03",
+    "nama": "Junior Manager Project Budgeting"
+  },
+  {
+    "id": "7375h3jp0",
+    "unitId": "ov1dj3jks",
+    "kode": "PEEB01",
+    "nama": "Manager Bridge and Building Engineering"
+  },
+  {
+    "id": "7375i3j7v",
+    "unitId": "ov1dj3jks",
+    "kode": "PEEB02",
+    "nama": "Junior Manager Bridge/Structure Design"
+  },
+  {
+    "id": "7375j3j61",
+    "unitId": "ov1dj3jks",
+    "kode": "PEEB03",
+    "nama": "Junior Manager Building/Structure Design"
+  },
+  {
+    "id": "7375k3jcp",
+    "unitId": "ov1dk3jh3",
+    "kode": "PEET01",
+    "nama": "Manager Track Engineering"
+  },
+  {
+    "id": "7375l3jkr",
+    "unitId": "ov1dk3jh3",
+    "kode": "PEET02",
+    "nama": "Junior Manager Soil Mechanic Laboratory"
+  },
+  {
+    "id": "7375m3jnl",
+    "unitId": "ov1dk3jh3",
+    "kode": "PEET03",
+    "nama": "Junior Manager Track Surveying Engineering"
+  },
+  {
+    "id": "7375n3j9v",
+    "unitId": "ov1dk3jh3",
+    "kode": "PEET04",
+    "nama": "Junior Manager Track Design Engineering & Evaluation"
+  },
+  {
+    "id": "7375o3jp8",
+    "unitId": "ov1dl3jm6",
+    "kode": "PEES01",
+    "nama": "Manager Signalling and Train Control Engineering"
+  },
+  {
+    "id": "7375p3jtz",
+    "unitId": "ov1dl3jm6",
+    "kode": "PEES02",
+    "nama": "Junior Manager Signalling Mechanic Engineering"
+  },
+  {
+    "id": "7375q3j31",
+    "unitId": "ov1dl3jm6",
+    "kode": "PEES03",
+    "nama": "Junior Manager Electric Signalling & Train Control Engineering"
+  },
+  {
+    "id": "7375r3jqh",
+    "unitId": "ov1dm3jkd",
+    "kode": "PEEM01",
+    "nama": "Manager Telecommunication Engineering"
+  },
+  {
+    "id": "7375s3jun",
+    "unitId": "ov1dm3jkd",
+    "kode": "PEEM02",
+    "nama": "Junior Manager Train Dispatching & Switching Telecommunication Engineering"
+  },
+  {
+    "id": "7375t3jxv",
+    "unitId": "ov1dm3jkd",
+    "kode": "PEEM03",
+    "nama": "Junior Manager Radio Network & Optical Network Engineering"
+  },
+  {
+    "id": "7375u3jmw",
+    "unitId": "ov1dn3j6j",
+    "kode": "PEEE01",
+    "nama": "Manager Catenary, Substation and Mechanical Electrical Engineering"
+  },
+  {
+    "id": "7375v3j7n",
+    "unitId": "ov1dn3j6j",
+    "kode": "PEEE02",
+    "nama": "Junior Manager Catenary & Substation Engineering"
+  },
+  {
+    "id": "7375w3jp7",
+    "unitId": "ov1dn3j6j",
+    "kode": "PEEE03",
+    "nama": "Junior Manager Mechanical & Electrical Engineering"
+  },
+  {
+    "id": "7375x3jj0",
+    "unitId": "ov1dn3j6j",
+    "kode": "PEEE04",
+    "nama": "Infrastructure Technical Engineering Specialist"
+  },
+  {
+    "id": "7375y3jsc",
+    "unitId": "ou18a3jsv",
+    "kode": "PEI01",
+    "nama": "Vice President Investment Planning of Existing Business"
+  },
+  {
+    "id": "7375z3juy",
+    "unitId": "ov1do3j6h",
+    "kode": "PEIA01",
+    "nama": "Manager Investment Program and Administration of Existing Business"
+  },
+  {
+    "id": "737603jgm",
+    "unitId": "ov1do3j6h",
+    "kode": "PEIA02",
+    "nama": "Junior Manager Investment Program and Administration of Existing Business"
+  },
+  {
+    "id": "737613j8x",
+    "unitId": "ov1dp3j56",
+    "kode": "PEIM01",
+    "nama": "Manager Investment Monitoring and Control of Existing Business"
+  },
+  {
+    "id": "737623j4b",
+    "unitId": "ov1dp3j56",
+    "kode": "PEIM02",
+    "nama": "Junior Manager Investment Monitoring and Control of Existing Business"
+  },
+  {
+    "id": "737633jvz",
+    "unitId": "ov1dp3j56",
+    "kode": "PEIM03",
+    "nama": "Senior Investment Analyst of Commercialization and Operation"
+  },
+  {
+    "id": "737643jjk",
+    "unitId": "ov1dp3j56",
+    "kode": "PEIM04",
+    "nama": "Senior Investment Analyst of Rollingstock"
+  },
+  {
+    "id": "737653jle",
+    "unitId": "ov1dp3j56",
+    "kode": "PEIM05",
+    "nama": "Senior Investment Analyst of Infrastructure"
+  },
+  {
+    "id": "737663j4a",
+    "unitId": "ov1dp3j56",
+    "kode": "PEIM06",
+    "nama": "Junior Investment Analyst  of Rolling Stock"
+  },
+  {
+    "id": "737673jdr",
+    "unitId": "ov1dp3j56",
+    "kode": "PEIM07",
+    "nama": "Junior Investment Analyst of Commercialization & Operation"
+  },
+  {
+    "id": "737683jk7",
+    "unitId": "ou18b3jzr",
+    "kode": "PEC01",
+    "nama": "Vice President Existing Business Development Controlling"
+  },
+  {
+    "id": "737693jl4",
+    "unitId": "ov1dq3j7m",
+    "kode": "PECP01",
+    "nama": "Manager Performance Control of Existing Business"
+  },
+  {
+    "id": "7376a3jy4",
+    "unitId": "ov1dq3j7m",
+    "kode": "PECP02",
+    "nama": "Junior Manager Track & Bridge Control of Existing Business"
+  },
+  {
+    "id": "7376b3j2y",
+    "unitId": "ov1dq3j7m",
+    "kode": "PECP03",
+    "nama": "Junior Manager Signalling & Telecommunication Control of Existing Business"
+  },
+  {
+    "id": "7376c3j9q",
+    "unitId": "ov1dq3j7m",
+    "kode": "PECP04",
+    "nama": "Junior Manager Overhead Catenary Control of Existing Business"
+  },
+  {
+    "id": "7376d3j61",
+    "unitId": "ov1dr3jzr",
+    "kode": "PECE01",
+    "nama": "Manager Evaluation of Existing Business"
+  },
+  {
+    "id": "7376e3jaz",
+    "unitId": "ov1dr3jzr",
+    "kode": "PECE02",
+    "nama": "Junior Manager Track & Bridge Evaluation of Existing Business"
+  },
+  {
+    "id": "7376f3j4t",
+    "unitId": "ov1dr3jzr",
+    "kode": "PECE03",
+    "nama": "Junior Manager Signalling & Telecommunication Evaluation of Existing Business"
+  },
+  {
+    "id": "7376g3jv4",
+    "unitId": "ov1dr3jzr",
+    "kode": "PECE04",
+    "nama": "Junior Manager Overhead Catenary Evaluation of Existing Business"
+  },
+  {
+    "id": "7376h3jj3",
+    "unitId": "ov1ds3j2d",
+    "kode": "PEMA01",
+    "nama": "Manager Administration"
+  },
+  {
+    "id": "7376i3jev",
+    "unitId": "ov1ds3j2d",
+    "kode": "PEMA02",
+    "nama": "Assistant Manager Administration"
+  },
+  {
+    "id": "7376j3jm9",
+    "unitId": "ot16s3jbs",
+    "kode": "PP01",
+    "nama": "Corporate Deputy Director of Newe Business Development and Strategic Projects"
+  },
+  {
+    "id": "7376k3j15",
+    "unitId": "ou18c3jjy",
+    "kode": "PPS01",
+    "nama": "Vice President Strategic Project Development"
+  },
+  {
+    "id": "7376l3j0x",
+    "unitId": "ov1dt3jc6",
+    "kode": "PPSP01",
+    "nama": "Manager Planning and Business Analyst"
+  },
+  {
+    "id": "7376m3jt1",
+    "unitId": "ov1dt3jc6",
+    "kode": "PPSP02",
+    "nama": "Junior Manager Data Planning"
+  },
+  {
+    "id": "7476n3j31",
+    "unitId": "ov1dt3jc6",
+    "kode": "PPSP03",
+    "nama": "Junior Manager Financial Business Analyst"
+  },
+  {
+    "id": "7476o3jl6",
+    "unitId": "ov1du3j9s",
+    "kode": "PPSE01",
+    "nama": "Manager Evaluation and Monitoring"
+  },
+  {
+    "id": "7476p3j23",
+    "unitId": "ov1du3j9s",
+    "kode": "PPSE02",
+    "nama": "Junior Manager Evaluation"
+  },
+  {
+    "id": "7476q3jax",
+    "unitId": "ov1du3j9s",
+    "kode": "PPSE03",
+    "nama": "Junior Manager Monitoring & Report"
+  },
+  {
+    "id": "7476r3j9i",
+    "unitId": "ou18d3jrj",
+    "kode": "PPU01",
+    "nama": "Vice President Urban Transport Development"
+  },
+  {
+    "id": "7476s3jwv",
+    "unitId": "ov1dv3jqd",
+    "kode": "PPUR01",
+    "nama": "Manager Railway Development"
+  },
+  {
+    "id": "7476t3jto",
+    "unitId": "ov1dv3jqd",
+    "kode": "PPUR02",
+    "nama": "Junior Manager Railway Business Program & Development"
+  },
+  {
+    "id": "7476u3js7",
+    "unitId": "ov1dv3jqd",
+    "kode": "PPUR03",
+    "nama": "Junior Manager Railway Business Program & Legal Assessment"
+  },
+  {
+    "id": "7476v3jte",
+    "unitId": "ov1dw3j64",
+    "kode": "PPUN01",
+    "nama": "Manager Non Railway Development"
+  },
+  {
+    "id": "7476w3j3m",
+    "unitId": "ov1dw3j64",
+    "kode": "PPUN02",
+    "nama": "Junior Manager Non Railway Business Program & Development"
+  },
+  {
+    "id": "7476x3jmw",
+    "unitId": "ov1dw3j64",
+    "kode": "PPUN03",
+    "nama": "Junior Manager Non Railway Business Program & Legal Assessment"
+  },
+  {
+    "id": "7476y3jc5",
+    "unitId": "ou18e3jz3",
+    "kode": "PPC01",
+    "nama": "Vice President New Business Development Controlling"
+  },
+  {
+    "id": "7476z3jfo",
+    "unitId": "ov1dx3jap",
+    "kode": "PPCP01",
+    "nama": "Manager Performance Control of New Business"
+  },
+  {
+    "id": "747703je6",
+    "unitId": "ov1dx3jap",
+    "kode": "PPCP02",
+    "nama": "Junior Manager Track & Bridge Control of New Business"
+  },
+  {
+    "id": "747713j7p",
+    "unitId": "ov1dx3jap",
+    "kode": "PPCP03",
+    "nama": "Junior Manager Signalling & Telecommunication Control of New Business"
+  },
+  {
+    "id": "747723jwu",
+    "unitId": "ov1dx3jap",
+    "kode": "PPCP04",
+    "nama": "Junior Manager Overhead Catenary Control of New Business"
+  },
+  {
+    "id": "747733j79",
+    "unitId": "ov1dy3j3i",
+    "kode": "PPCE01",
+    "nama": "Manager Evaluation of New Business"
+  },
+  {
+    "id": "747743jj3",
+    "unitId": "ov1dy3j3i",
+    "kode": "PPCE02",
+    "nama": "Junior Manager Track and Bridge Evaluation of New Business"
+  },
+  {
+    "id": "747753j0h",
+    "unitId": "ov1dy3j3i",
+    "kode": "PPCE03",
+    "nama": "Junior Manager Signalling & Telecommunication Evaluation of New Business"
+  },
+  {
+    "id": "747763jkw",
+    "unitId": "ov1dy3j3i",
+    "kode": "PPCE04",
+    "nama": "Junior Manager Overhead Catenary Evaluation of New Business"
+  },
+  {
+    "id": "747773jsr",
+    "unitId": "ot16t3jwv",
+    "kode": "PS01",
+    "nama": "Corporate Deputy Director of Subsidiary Management"
+  },
+  {
+    "id": "747783jig",
+    "unitId": "ou18f3jwi",
+    "kode": "PSM01",
+    "nama": "Vice President Subsidiary Monitoring and Evaluation"
+  },
+  {
+    "id": "747793j3o",
+    "unitId": "ov1dz3j21",
+    "kode": "PSMB01",
+    "nama": "Manager Subsidiary Business"
+  },
+  {
+    "id": "7477a3jlw",
+    "unitId": "ov1dz3j21",
+    "kode": "PSMB02",
+    "nama": "Junior Manager Subsidiary Business"
+  },
+  {
+    "id": "7477b3jxg",
+    "unitId": "ov1e03j08",
+    "kode": "PSMF01",
+    "nama": "Manager Subsidiary Finance"
+  },
+  {
+    "id": "7477c3jkk",
+    "unitId": "ov1e03j08",
+    "kode": "PSMF02",
+    "nama": "Junior Manager Subsidiary Finance Analysis"
+  },
+  {
+    "id": "7477d3jzj",
+    "unitId": "ov1e03j08",
+    "kode": "PSMF03",
+    "nama": "Junior Manager Subsidiary Finance Monitoring"
+  },
+  {
+    "id": "7477e3jyq",
+    "unitId": "ov1e13jrh",
+    "kode": "PSML01",
+    "nama": "Manager Subsidiary Litigation and Compliance"
+  },
+  {
+    "id": "7477f3jd1",
+    "unitId": "ov1e13jrh",
+    "kode": "PSML02",
+    "nama": "Junior Manager Subsidiary Litigation and Compliance"
+  },
+  {
+    "id": "7477g3jcu",
+    "unitId": "ot16u3jbi",
+    "kode": "PB01",
+    "nama": "Corporate Deputy Director of Preservation, Architecture, and Building"
+  },
+  {
+    "id": "7477h3js3",
+    "unitId": "ou18g3j0h",
+    "kode": "PBA01",
+    "nama": "Vice President Architecture and Preservation"
+  },
+  {
+    "id": "7477i3jfd",
+    "unitId": "ov1e23jxo",
+    "kode": "PBAS01",
+    "nama": "Manager Architecture of Station and Passenger Facility"
+  },
+  {
+    "id": "7477j3jl6",
+    "unitId": "ov1e23jxo",
+    "kode": "PBAS02",
+    "nama": "Assistant Manager Station Architecture"
+  },
+  {
+    "id": "7477k3jl1",
+    "unitId": "ov1e23jxo",
+    "kode": "PBAS03",
+    "nama": "Assistant Manager Passenger Facility"
+  },
+  {
+    "id": "7477l3jv3",
+    "unitId": "ov1e33jb2",
+    "kode": "PBAN01",
+    "nama": "Manager Architecture of Non Station and Design Standardization"
+  },
+  {
+    "id": "7477m3jx6",
+    "unitId": "ov1e33jb2",
+    "kode": "PBAN02",
+    "nama": "Assistant Manager Non Station Architecture"
+  },
+  {
+    "id": "7477n3jln",
+    "unitId": "ov1e33jb2",
+    "kode": "PBAN03",
+    "nama": "Assistant Manager Design Guidelines"
+  },
+  {
+    "id": "7477o3j3h",
+    "unitId": "ov1e43j0y",
+    "kode": "PBAP01",
+    "nama": "Manager Preservation and Documentation"
+  },
+  {
+    "id": "7477p3jsb",
+    "unitId": "ov1e43j0y",
+    "kode": "PBAP02",
+    "nama": "Assistant Manager Preservation and Museum Control"
+  },
+  {
+    "id": "7477q3jm4",
+    "unitId": "ov1e43j0y",
+    "kode": "PBAP03",
+    "nama": "Assistant Manager Planning and Research"
+  },
+  {
+    "id": "7477r3jn5",
+    "unitId": "ov1e43j0y",
+    "kode": "PBAP04",
+    "nama": "Assistant Manager Documentation, Education, and Promotion"
+  },
+  {
+    "id": "7477s3jvt",
+    "unitId": "ou18h3juo",
+    "kode": "PBB01",
+    "nama": "Vice President Building"
+  },
+  {
+    "id": "7477t3j0r",
+    "unitId": "ov1e53jhy",
+    "kode": "PBBP01",
+    "nama": "Manager Building Planning and Budgeting"
+  },
+  {
+    "id": "7477u3jn9",
+    "unitId": "ov1e53jhy",
+    "kode": "PBBP02",
+    "nama": "Assistant Manager Building Station Planning anel Budgeting"
+  },
+  {
+    "id": "7477v3jcn",
+    "unitId": "ov1e53jhy",
+    "kode": "PBBP03",
+    "nama": "Assistant Manager Building Non Station Planning and Budgeting"
+  },
+  {
+    "id": "7477w3jjs",
+    "unitId": "ov1e63jnr",
+    "kode": "PBBE01",
+    "nama": "Manager Building Monitoring and Evaluation"
+  },
+  {
+    "id": "7477x3jec",
+    "unitId": "ov1e63jnr",
+    "kode": "PBBE02",
+    "nama": "Assistant Manager Building Station Monitoring and Evaluation"
+  },
+  {
+    "id": "7477y3j4w",
+    "unitId": "ov1e63jnr",
+    "kode": "PBBE03",
+    "nama": "Controller of Building Station"
+  },
+  {
+    "id": "7477z3jkf",
+    "unitId": "ov1e63jnr",
+    "kode": "PBBE04",
+    "nama": "Assistant Manager Building Non Station Monitoring and Evaluation"
+  },
+  {
+    "id": "747803j88",
+    "unitId": "ov1e63jnr",
+    "kode": "PBBE05",
+    "nama": "Controller of Building Non Station"
+  },
+  {
+    "id": "747813jho",
+    "unitId": "ov1e73jcj",
+    "kode": "PBBM01",
+    "nama": "Manager Mechanical Electrical Planning and Evaluation"
+  },
+  {
+    "id": "747823j1w",
+    "unitId": "ov1e73jcj",
+    "kode": "PBBM02",
+    "nama": "Assistant Manager Mechanical Electrical Planning and Design"
+  },
+  {
+    "id": "747833jnl",
+    "unitId": "ov1e73jcj",
+    "kode": "PBBM03",
+    "nama": "Assistant Manager Mechanical Electrical Monitoring and Evaluation"
+  },
+  {
+    "id": "747843jy7",
+    "unitId": "ov1e73jcj",
+    "kode": "PBBM04",
+    "nama": "Controller of Mechanical Electrical"
+  },
+  {
+    "id": "747853ji2",
+    "unitId": "ot16v3jwe",
+    "kode": "PA01",
+    "nama": "Corporate Deputy Directorof Assets Development"
+  },
+  {
+    "id": "747863jxd",
+    "unitId": "ou18i3j5k",
+    "kode": "PAD01",
+    "nama": "Vice President Assets Development Planning"
+  },
+  {
+    "id": "747873j2g",
+    "unitId": "ov1e83j5s",
+    "kode": "PADT01",
+    "nama": "Manager Assets Development Technical Research"
+  },
+  {
+    "id": "747883j2h",
+    "unitId": "ov1e83j5s",
+    "kode": "PADT02",
+    "nama": "Junior Manager Railway Research"
+  },
+  {
+    "id": "747893j87",
+    "unitId": "ov1e83j5s",
+    "kode": "PADT03",
+    "nama": "Junior Manager Non Railway Research"
+  },
+  {
+    "id": "7478a3jj8",
+    "unitId": "ov1e93jqb",
+    "kode": "PADB01",
+    "nama": "Manager Assets Development Business Research"
+  },
+  {
+    "id": "7478b3jea",
+    "unitId": "ov1e93jqb",
+    "kode": "PADB02",
+    "nama": "Junior Manager Market and Financial Research"
+  },
+  {
+    "id": "7478c3jel",
+    "unitId": "ov1e93jqb",
+    "kode": "PADB03",
+    "nama": "Junior Manager Research Administration"
+  },
+  {
+    "id": "7478d3jpe",
+    "unitId": "ou18j3jon",
+    "kode": "PAP01",
+    "nama": "Vice President Assets Partnership"
+  },
+  {
+    "id": "7478e3jul",
+    "unitId": "ov1ea3je6",
+    "kode": "PAPS01",
+    "nama": "Manager Strategic Marketing and New Partnership"
+  },
+  {
+    "id": "7478f3jg2",
+    "unitId": "ov1ea3je6",
+    "kode": "PAPS02",
+    "nama": "Junior Manager Strategic Marketing"
+  },
+  {
+    "id": "7478g3j8u",
+    "unitId": "ov1ea3je6",
+    "kode": "PAPS03",
+    "nama": "Junior Manager New Partnership"
+  },
+  {
+    "id": "7478h3jyv",
+    "unitId": "ov1eb3j4c",
+    "kode": "PAPE01",
+    "nama": "Manager Evaluation and Partnership Relation"
+  },
+  {
+    "id": "7478i3jrz",
+    "unitId": "ov1eb3j4c",
+    "kode": "PAPE02",
+    "nama": "Junior Manager Evaluation"
+  },
+  {
+    "id": "7478j3jao",
+    "unitId": "ov1eb3j4c",
+    "kode": "PAPE03",
+    "nama": "Junior Manager Partner Relations and Administration"
+  },
+  {
+    "id": "7578k3jf2",
+    "unitId": "ou18k3jnx",
+    "kode": "PPA01",
+    "nama": "Vice President Non Railway Assets Administration"
+  },
+  {
+    "id": "7578l3jng",
+    "unitId": "ov1ec3jvd",
+    "kode": "PPAD01",
+    "nama": "Manager Portal and Data Handling"
+  },
+  {
+    "id": "7578m3jnv",
+    "unitId": "ov1ec3jvd",
+    "kode": "PPAD02",
+    "nama": "Assistant Manager Portal and Data Handling Java Area"
+  },
+  {
+    "id": "7578n3jmy",
+    "unitId": "ov1ec3jvd",
+    "kode": "PPAD03",
+    "nama": "Assistant Manager Portal and Data Handling Sumatera Area"
+  },
+  {
+    "id": "7578o3j8q",
+    "unitId": "ov1ec3jvd",
+    "kode": "PPAD04",
+    "nama": "Assistant Manager Data Handling Document Legal and Ownership Assets"
+  },
+  {
+    "id": "7578p3j85",
+    "unitId": "ov1ed3j18",
+    "kode": "PPAL01",
+    "nama": "Manager Legal Contract Review"
+  },
+  {
+    "id": "7578q3jr3",
+    "unitId": "ov1ed3j18",
+    "kode": "PPAL02",
+    "nama": "Assistant Manager Legal Contract Review Java Area"
+  },
+  {
+    "id": "7578r3jiq",
+    "unitId": "ov1ed3j18",
+    "kode": "PPAL03",
+    "nama": "Assistant Manager Legal Contract Review Sumatera Area"
+  },
+  {
+    "id": "7578s3jvl",
+    "unitId": "ot16f3j45",
+    "kode": "K01",
+    "nama": "Direktur Keuangan"
+  },
+  {
+    "id": "7578t3jmd",
+    "unitId": "ou16w3jzk",
+    "kode": "KC01",
+    "nama": "Corporate Deputy Director of Finance Consolidation"
+  },
+  {
+    "id": "7578u3jfo",
+    "unitId": "ou18l3ja2",
+    "kode": "KCF01",
+    "nama": "Vice President Corporate Finance"
+  },
+  {
+    "id": "7578v3js7",
+    "unitId": "ov1ee3j7m",
+    "kode": "KCFC01",
+    "nama": "Manager Corporate Financing"
+  },
+  {
+    "id": "7578w3jve",
+    "unitId": "ov1ee3j7m",
+    "kode": "KCFC02",
+    "nama": "Junior Manager Operating Funding and Administration"
+  },
+  {
+    "id": "7578x3jkf",
+    "unitId": "ov1ee3j7m",
+    "kode": "KCFC03",
+    "nama": "Junior Manager Project Funding and Administration"
+  },
+  {
+    "id": "7578y3jar",
+    "unitId": "ov1ee3j7m",
+    "kode": "KCFC04",
+    "nama": "Junior Manager Funding and Retail Banking Agreement"
+  },
+  {
+    "id": "7578z3jyx",
+    "unitId": "ov1ef3jg4",
+    "kode": "KCFP01",
+    "nama": "Manager Financial Planning and Evaluation"
+  },
+  {
+    "id": "757903je1",
+    "unitId": "ov1ef3jg4",
+    "kode": "KCFP02",
+    "nama": "Junior Manager Financial Planning"
+  },
+  {
+    "id": "757913jo7",
+    "unitId": "ov1ef3jg4",
+    "kode": "KCFP03",
+    "nama": "Junior Manager Financial Planning (Evaluation)"
+  },
+  {
+    "id": "757923jqe",
+    "unitId": "ov1eg3jxs",
+    "kode": "KCFB01",
+    "nama": "Manager Bond Monitoring and Institutional Relationship"
+  },
+  {
+    "id": "757933j8q",
+    "unitId": "ov1eg3jxs",
+    "kode": "KCFB02",
+    "nama": "Junior Manager Bond Analysis and Reporting"
+  },
+  {
+    "id": "757943jw7",
+    "unitId": "ou18m3jx3",
+    "kode": "KCA01",
+    "nama": "Vice President Budgeting"
+  },
+  {
+    "id": "757953jp7",
+    "unitId": "ov1eh3jq5",
+    "kode": "KCAP01",
+    "nama": "Manager Budget Program"
+  },
+  {
+    "id": "757963j3n",
+    "unitId": "ov1eh3jq5",
+    "kode": "KCAP02",
+    "nama": "Junior Manager Head Office Budget Program"
+  },
+  {
+    "id": "757973j9z",
+    "unitId": "ov1eh3jq5",
+    "kode": "KCAP03",
+    "nama": "Junior Manager Area Budget Program"
+  },
+  {
+    "id": "757983jo1",
+    "unitId": "ov1ei3jbg",
+    "kode": "KCAA01",
+    "nama": "Manager HQ Budget Authorization"
+  },
+  {
+    "id": "757993jxk",
+    "unitId": "ov1ei3jbg",
+    "kode": "KCAA02",
+    "nama": "Junior Manager Budget Implementation"
+  },
+  {
+    "id": "7579a3jcz",
+    "unitId": "ov1ei3jbg",
+    "kode": "KCAA03",
+    "nama": "Junior Manager Budget Administration"
+  },
+  {
+    "id": "7579b3jxs",
+    "unitId": "ov1ej3j8t",
+    "kode": "KCAE01",
+    "nama": "Manager Budget Control and Evaluation"
+  },
+  {
+    "id": "7579c3jnp",
+    "unitId": "ov1ej3j8t",
+    "kode": "KCAE02",
+    "nama": "Junior Manager Budget Control and Evaluation"
+  },
+  {
+    "id": "7579d3jiu",
+    "unitId": "ou18n3j9n",
+    "kode": "KCW01",
+    "nama": "Vice President Financial Administration"
+  },
+  {
+    "id": "7579e3jo7",
+    "unitId": "ov1ek3j0l",
+    "kode": "KCWT01",
+    "nama": "Manager HQ Treasury"
+  },
+  {
+    "id": "7579f3jz1",
+    "unitId": "ov1ek3j0l",
+    "kode": "KCWT02",
+    "nama": "Junior Manager HQ Treasury 1"
+  },
+  {
+    "id": "7579g3j5a",
+    "unitId": "ov1ek3j0l",
+    "kode": "KCWT03",
+    "nama": "Junior Manager HQ Treasury 2"
+  },
+  {
+    "id": "7579h3jpv",
+    "unitId": "ov1ek3j0l",
+    "kode": "KCWT04",
+    "nama": "Junior Manager HQ Treasury 3"
+  },
+  {
+    "id": "7579i3jwi",
+    "unitId": "ov1ek3j0l",
+    "kode": "KCWT05",
+    "nama": "Junior Manager HQ Treasury 4"
+  },
+  {
+    "id": "7579j3j38",
+    "unitId": "ov1el3jp9",
+    "kode": "KCWD01",
+    "nama": "Manager HQ Disbursement Verification"
+  },
+  {
+    "id": "7579k3j3v",
+    "unitId": "ov1el3jp9",
+    "kode": "KCWD02",
+    "nama": "Junior Manager Verification"
+  },
+  {
+    "id": "7579l3j4o",
+    "unitId": "ov1el3jp9",
+    "kode": "KCWD03",
+    "nama": "Junior Manager External Disbursement"
+  },
+  {
+    "id": "7579m3jch",
+    "unitId": "ov1em3j1y",
+    "kode": "KCWR01",
+    "nama": "Manager HQ Reporting"
+  },
+  {
+    "id": "7579n3jr2",
+    "unitId": "ov1em3j1y",
+    "kode": "KCWR02",
+    "nama": "Junior Manager Reconciliation"
+  },
+  {
+    "id": "7579o3jaz",
+    "unitId": "ov1em3j1y",
+    "kode": "KCWR03",
+    "nama": "Junior Manager Journal Transaction"
+  },
+  {
+    "id": "7579p3jwo",
+    "unitId": "ov1en3jjn",
+    "kode": "KCWI01",
+    "nama": "Manager Import Administration and Insurance"
+  },
+  {
+    "id": "7579q3jvp",
+    "unitId": "ov1en3jjn",
+    "kode": "KCWI02",
+    "nama": "Junior Manager Import Administration"
+  },
+  {
+    "id": "7579r3joz",
+    "unitId": "ov1en3jjn",
+    "kode": "KCWI03",
+    "nama": "Junior Manager Insurance and Administration"
+  },
+  {
+    "id": "7579s3jfc",
+    "unitId": "ov1eo3jh0",
+    "kode": "KCWC01",
+    "nama": "Manager Collection"
+  },
+  {
+    "id": "7579t3jzu",
+    "unitId": "ov1eo3jh0",
+    "kode": "KCWC02",
+    "nama": "Junior Manager Collection Administration And Evaluation"
+  },
+  {
+    "id": "7579u3jwd",
+    "unitId": "ov1eo3jh0",
+    "kode": "KCWC03",
+    "nama": "Junior Manager Collection Monitoring And Reconciliation"
+  },
+  {
+    "id": "7579v3ji7",
+    "unitId": "ou18o3jxb",
+    "kode": "KCC01",
+    "nama": "Vice President General Accounting"
+  },
+  {
+    "id": "7579w3ji1",
+    "unitId": "ov1ep3ji6",
+    "kode": "KCCF01",
+    "nama": "Manager Financial Statement"
+  },
+  {
+    "id": "7579x3jgc",
+    "unitId": "ov1ep3ji6",
+    "kode": "KCCF02",
+    "nama": "Junior Manager Aset and Revenue"
+  },
+  {
+    "id": "7579y3j6l",
+    "unitId": "ov1ep3ji6",
+    "kode": "KCCF03",
+    "nama": "Junior Manager Liabilites and Expense"
+  },
+  {
+    "id": "7579z3jsi",
+    "unitId": "ov1ep3ji6",
+    "kode": "KCCF04",
+    "nama": "Junior Manager Financial Statement Report"
+  },
+  {
+    "id": "757a03jv4",
+    "unitId": "ov1eq3jaz",
+    "kode": "KCCC01",
+    "nama": "Manager Management Report & Consolidation"
+  },
+  {
+    "id": "757a13jwe",
+    "unitId": "ov1eq3jaz",
+    "kode": "KCCC02",
+    "nama": "Junior Manager Consolidation Report"
+  },
+  {
+    "id": "757a23jra",
+    "unitId": "ov1eq3jaz",
+    "kode": "KCCC03",
+    "nama": "Junior Manager Management Report"
+  },
+  {
+    "id": "757a33j5b",
+    "unitId": "ov1er3jp2",
+    "kode": "KCCS01",
+    "nama": "Manager Accounting System"
+  },
+  {
+    "id": "757a43jdr",
+    "unitId": "ov1er3jp2",
+    "kode": "KCCS02",
+    "nama": "Junior Manager Accounting Regulation"
+  },
+  {
+    "id": "757a53jn4",
+    "unitId": "ov1er3jp2",
+    "kode": "KCCS03",
+    "nama": "Junior Manager Financial Regulation"
+  },
+  {
+    "id": "757a63jx7",
+    "unitId": "ou18p3jsh",
+    "kode": "KCT01",
+    "nama": "Vice President Tax"
+  },
+  {
+    "id": "757a73jxw",
+    "unitId": "ov1es3jy4",
+    "kode": "KCTS01",
+    "nama": "Manager Strategic Tax Plan, Efficiency, and Litigation"
+  },
+  {
+    "id": "757a83jsh",
+    "unitId": "ov1es3jy4",
+    "kode": "KCTS02",
+    "nama": "Specialist of Tax Planning, Litigation and Advisory"
+  },
+  {
+    "id": "757a93jv7",
+    "unitId": "ov1et3jh3",
+    "kode": "KCTA01",
+    "nama": "Manager Tax Accounting & Compliance"
+  },
+  {
+    "id": "757aa3jqe",
+    "unitId": "ov1et3jh3",
+    "kode": "KCTA02",
+    "nama": "Specialist of VAT"
+  },
+  {
+    "id": "757ab3j9l",
+    "unitId": "ov1et3jh3",
+    "kode": "KCTA03",
+    "nama": "Specialist of Income Tax"
+  },
+  {
+    "id": "757ac3jjw",
+    "unitId": "ou16x3jbt",
+    "kode": "KR01",
+    "nama": "Corporate Deputy Director of Revenue and Cost Consolidation"
+  },
+  {
+    "id": "767ad3jk0",
+    "unitId": "ou18q3jnx",
+    "kode": "KRP01",
+    "nama": "Vice President PSO, IMO and TAC"
+  },
+  {
+    "id": "767ae3j2s",
+    "unitId": "ov1eu3j3i",
+    "kode": "KRPP01",
+    "nama": "Manager Public Service Obligation"
+  },
+  {
+    "id": "767af3j1o",
+    "unitId": "ov1eu3j3i",
+    "kode": "KRPP02",
+    "nama": "Junior Manager Public Service Obligation Program"
+  },
+  {
+    "id": "767ag3jt9",
+    "unitId": "ov1eu3j3i",
+    "kode": "KRPP03",
+    "nama": "Junior Manager Public Service Obligation Realization"
+  },
+  {
+    "id": "767ah3jqu",
+    "unitId": "ov1ev3jpc",
+    "kode": "KRPT01",
+    "nama": "Manager Track Access Charge dan Pioneering Train"
+  },
+  {
+    "id": "767ai3joq",
+    "unitId": "ov1ev3jpc",
+    "kode": "KRPT02",
+    "nama": "Junior Manager Track Access Charge"
+  },
+  {
+    "id": "767aj3jb7",
+    "unitId": "ov1ev3jpc",
+    "kode": "KRPT03",
+    "nama": "Junior Manager Pioneering Train Program"
+  },
+  {
+    "id": "767ak3jg0",
+    "unitId": "ov1ev3jpc",
+    "kode": "KRPT04",
+    "nama": "Junior Manager Pioneering Train Realization"
+  },
+  {
+    "id": "767al3jb8",
+    "unitId": "ov1ew3jvx",
+    "kode": "KRPM01",
+    "nama": "Manager Infrastructure Maintenance Operation"
+  },
+  {
+    "id": "767am3j6w",
+    "unitId": "ov1ew3jvx",
+    "kode": "KRPM02",
+    "nama": "Junior Manager Infrastructure Maintenance Operation Program"
+  },
+  {
+    "id": "767an3jv2",
+    "unitId": "ov1ew3jvx",
+    "kode": "KRPM03",
+    "nama": "Junior Manager Infrastructure Maintenance Operation Realization"
+  },
+  {
+    "id": "767ao3jil",
+    "unitId": "ou18r3jkb",
+    "kode": "KRB01",
+    "nama": "Vice President Cost Accounting"
+  },
+  {
+    "id": "767ap3jv1",
+    "unitId": "ov1ex3j5m",
+    "kode": "KRBP01",
+    "nama": "Manager Passenger Cost Accounting"
+  },
+  {
+    "id": "767aq3j4z",
+    "unitId": "ov1ex3j5m",
+    "kode": "KRBP02",
+    "nama": "Junior Manager Passenger PSO Cost Accounting"
+  },
+  {
+    "id": "767ar3jfm",
+    "unitId": "ov1ex3j5m",
+    "kode": "KRBP03",
+    "nama": "Junior Manager Non PSO Cost Accounting"
+  },
+  {
+    "id": "767as3j9m",
+    "unitId": "ov1ey3j2o",
+    "kode": "KRBF01",
+    "nama": "Manager Freight Cost Accounting"
+  },
+  {
+    "id": "767at3jvr",
+    "unitId": "ov1ey3j2o",
+    "kode": "KRBF02",
+    "nama": "Junior Manager Freight Cost Accounting"
+  },
+  {
+    "id": "767au3jmr",
+    "unitId": "ov1ey3j2o",
+    "kode": "KRBF03",
+    "nama": "Junior Manager Freight Evaluation Cost Accounting"
+  },
+  {
+    "id": "767av3j5e",
+    "unitId": "ov1ez3jq5",
+    "kode": "KRBI01",
+    "nama": "Manager IMO, TAC and Operating Cost Accounting"
+  },
+  {
+    "id": "767aw3jrl",
+    "unitId": "ov1ez3jq5",
+    "kode": "KRBI02",
+    "nama": "Junior Manager IMO Cost Accounting"
+  },
+  {
+    "id": "767ax3jog",
+    "unitId": "ov1ez3jq5",
+    "kode": "KRBI03",
+    "nama": "Junior Manager TAC Cost Accounting"
+  },
+  {
+    "id": "767ay3jyj",
+    "unitId": "ou18s3jtt",
+    "kode": "KRR01",
+    "nama": "Vice President Revenue and Cost Comptroller"
+  },
+  {
+    "id": "767az3j2z",
+    "unitId": "ov1f03jpa",
+    "kode": "KRRW01",
+    "nama": "Manager Revenue and Cost Comptroller West Java Area"
+  },
+  {
+    "id": "767b03jfm",
+    "unitId": "ov1f03jpa",
+    "kode": "KRRW02",
+    "nama": "Junior Manager Verifikasi Piutang Angkutan dan Non Angkutan West Java Area"
+  },
+  {
+    "id": "767b13jue",
+    "unitId": "ov1f03jpa",
+    "kode": "KRRW03",
+    "nama": "Junior Manager Pengendalian Pendapatan dan Pembiayaan West Java Area"
+  },
+  {
+    "id": "767b23jg8",
+    "unitId": "ov1f13jt6",
+    "kode": "KRRC01",
+    "nama": "Manager Revenue and Cost Comptroller Central Java Area"
+  },
+  {
+    "id": "767b33jqj",
+    "unitId": "ov1f13jt6",
+    "kode": "KRRC02",
+    "nama": "Junior Manager Verifikasi Piutang Angkutan dan Non Angkutan Central Java Area"
+  },
+  {
+    "id": "767b43jr4",
+    "unitId": "ov1f13jt6",
+    "kode": "KRRC03",
+    "nama": "Junior Manager Pengendalian Pendapatan dan Pembiayaan Central Java Area"
+  },
+  {
+    "id": "767b53jsa",
+    "unitId": "ov1f23jon",
+    "kode": "KRRE01",
+    "nama": "Manager Revenue and Cost Comptroller East Java Area"
+  },
+  {
+    "id": "767b63j0v",
+    "unitId": "ov1f23jon",
+    "kode": "KRRE02",
+    "nama": "Junior Manager Verifikasi Piutang Angkutan dan Non Angkutan East Java Area"
+  },
+  {
+    "id": "767b73jog",
+    "unitId": "ov1f23jon",
+    "kode": "KRRE03",
+    "nama": "Junior Manager Pengendalian Pendapatan dan Pembiayaan East Java Area"
+  },
+  {
+    "id": "767b83jg9",
+    "unitId": "ov1f33jbm",
+    "kode": "KRRS01",
+    "nama": "Manager Revenue and Cost Comptroller Sumatera Area"
+  },
+  {
+    "id": "767b93j3u",
+    "unitId": "ov1f33jbm",
+    "kode": "KRRS02",
+    "nama": "Junior Manager Verifikasi Piutang Angkutan dan Non Angkutan Sumatera Area"
+  },
+  {
+    "id": "767ba3jw5",
+    "unitId": "ov1f33jbm",
+    "kode": "KRRS03",
+    "nama": "Junior Manager Pengendalian Pendapatan dan Pembiayaan Sumatera Area"
+  },
+  {
+    "id": "767bb3jxq",
+    "unitId": "ou16y3jv6",
+    "kode": "KI01",
+    "nama": "Corporate Deputy Director of Information System"
+  },
+  {
+    "id": "767bc3j6z",
+    "unitId": "ou18t3j8x",
+    "kode": "KIP01",
+    "nama": "Vice President IT Planning and Governance"
+  },
+  {
+    "id": "767bd3jsw",
+    "unitId": "ov1f43j9b",
+    "kode": "KIPP01",
+    "nama": "Manager IT Planning and Architecture"
+  },
+  {
+    "id": "767be3jyy",
+    "unitId": "ov1f43j9b",
+    "kode": "KIPP02",
+    "nama": "Junior Manager IT Planning"
+  },
+  {
+    "id": "767bf3jtu",
+    "unitId": "ov1f43j9b",
+    "kode": "KIPP03",
+    "nama": "Junior Manager IT Architecture"
+  },
+  {
+    "id": "767bg3jn3",
+    "unitId": "ov1f43j9b",
+    "kode": "KIPP04",
+    "nama": "IT Specialist Level 2 IT Architecture"
+  },
+  {
+    "id": "767bh3jvr",
+    "unitId": "ov1f53j3f",
+    "kode": "KIPO01",
+    "nama": "Manager IT PMO and Budget Control"
+  },
+  {
+    "id": "767bi3jbo",
+    "unitId": "ov1f53j3f",
+    "kode": "KIPO02",
+    "nama": "Junior Manager Project Management"
+  },
+  {
+    "id": "767bj3jkt",
+    "unitId": "ov1f53j3f",
+    "kode": "KIPO03",
+    "nama": "Junior Manager Budget Control"
+  },
+  {
+    "id": "767bk3jmp",
+    "unitId": "ov1f63jog",
+    "kode": "KIPC01",
+    "nama": "Manager IT Policy and Compliance"
+  },
+  {
+    "id": "767bl3jy5",
+    "unitId": "ov1f63jog",
+    "kode": "KIPC02",
+    "nama": "Junior Manager Quality Assurance and Compliance"
+  },
+  {
+    "id": "767bm3j4r",
+    "unitId": "ov1f63jog",
+    "kode": "KIPC03",
+    "nama": "Junior Manager IT Policy and Risk"
+  },
+  {
+    "id": "767bn3j9i",
+    "unitId": "ov1f63jog",
+    "kode": "KIPC04",
+    "nama": "IT Specialist Level 2 Quality Assurance"
+  },
+  {
+    "id": "767bo3j3e",
+    "unitId": "ou18u3jzf",
+    "kode": "KID01",
+    "nama": "Vice President IT Design and Development"
+  },
+  {
+    "id": "767bp3j8i",
+    "unitId": "ov1f73jst",
+    "kode": "KIDA01",
+    "nama": "Manager Analysis and Design"
+  },
+  {
+    "id": "767bq3j06",
+    "unitId": "ov1f73jst",
+    "kode": "KIDA02",
+    "nama": "Junior Manager System Analyst"
+  },
+  {
+    "id": "767br3jna",
+    "unitId": "ov1f73jst",
+    "kode": "KIDA03",
+    "nama": "Junior Manager System Design"
+  },
+  {
+    "id": "767bs3jrn",
+    "unitId": "ov1f73jst",
+    "kode": "KIDA04",
+    "nama": "Junior Manager Technical Writer & Documentation"
+  },
+  {
+    "id": "767bt3j6l",
+    "unitId": "ov1f73jst",
+    "kode": "KIDA05",
+    "nama": "IT Specialist Level 1 System Analyst & Design"
+  },
+  {
+    "id": "767bu3jes",
+    "unitId": "ov1f73jst",
+    "kode": "KIDA06",
+    "nama": "IT Specialist Level 2 System Analyst & Design"
+  },
+  {
+    "id": "767bv3j0v",
+    "unitId": "ov1f73jst",
+    "kode": "KIDA07",
+    "nama": "IT Specialist Level 2 Database Architecture"
+  },
+  {
+    "id": "767bw3j8x",
+    "unitId": "ov1f83j8k",
+    "kode": "KIDD01",
+    "nama": "Manager Development"
+  },
+  {
+    "id": "767bx3j97",
+    "unitId": "ov1f83j8k",
+    "kode": "KIDD02",
+    "nama": "Junior Manager Development 1"
+  },
+  {
+    "id": "767by3jvw",
+    "unitId": "ov1f83j8k",
+    "kode": "KIDD03",
+    "nama": "Junior Manager Development 2"
+  },
+  {
+    "id": "767bz3j6h",
+    "unitId": "ov1f83j8k",
+    "kode": "KIDD04",
+    "nama": "IT Specialist Level 1 Development"
+  },
+  {
+    "id": "777c03jia",
+    "unitId": "ov1f83j8k",
+    "kode": "KIDD05",
+    "nama": "IT Specialist Level 2 Development"
+  },
+  {
+    "id": "777c13j3v",
+    "unitId": "ov1f83j8k",
+    "kode": "KIDD06",
+    "nama": "IT Specialist Level 3 Development"
+  },
+  {
+    "id": "777c23j4b",
+    "unitId": "ov1f93jtp",
+    "kode": "KIDC01",
+    "nama": "Manager Quality Control and Implementation"
+  },
+  {
+    "id": "777c33jnm",
+    "unitId": "ov1f93jtp",
+    "kode": "KIDC02",
+    "nama": "Junior Manager Quality Control"
+  },
+  {
+    "id": "777c43j7s",
+    "unitId": "ov1f93jtp",
+    "kode": "KIDC03",
+    "nama": "Junior Manager Implementation"
+  },
+  {
+    "id": "777c53jwy",
+    "unitId": "ou18v3jqu",
+    "kode": "KIO01",
+    "nama": "Vice President IT Operation"
+  },
+  {
+    "id": "777c63jjp",
+    "unitId": "ov1fa3j49",
+    "kode": "KION01",
+    "nama": "Manager Network and Security Operation"
+  },
+  {
+    "id": "777c73jtp",
+    "unitId": "ov1fa3j49",
+    "kode": "KION02",
+    "nama": "Junior Manager IT Network and Infrastructure"
+  },
+  {
+    "id": "777c83j9n",
+    "unitId": "ov1fa3j49",
+    "kode": "KION03",
+    "nama": "Junior Manager Security Operation"
+  },
+  {
+    "id": "777c93j81",
+    "unitId": "ov1fa3j49",
+    "kode": "KION04",
+    "nama": "IT Specialist Level 2 Network Engineer"
+  },
+  {
+    "id": "777ca3j14",
+    "unitId": "ov1fa3j49",
+    "kode": "KION05",
+    "nama": "IT Specialist Level 3 Junior Network Engineer"
+  },
+  {
+    "id": "777cb3jyy",
+    "unitId": "ov1fa3j49",
+    "kode": "KION06",
+    "nama": "IT Specialist Level 3 Junior Security Engineer"
+  },
+  {
+    "id": "777cc3jra",
+    "unitId": "ov1fb3jqp",
+    "kode": "KIOA01",
+    "nama": "Manager IT Application and Data Center"
+  },
+  {
+    "id": "777cd3jrc",
+    "unitId": "ov1fb3jqp",
+    "kode": "KIOA02",
+    "nama": "Junior Manager Data Center"
+  },
+  {
+    "id": "777ce3jaz",
+    "unitId": "ov1fb3jqp",
+    "kode": "KIOA03",
+    "nama": "Junior Manager Application Management"
+  },
+  {
+    "id": "777cf3jm9",
+    "unitId": "ov1fb3jqp",
+    "kode": "KIOA04",
+    "nama": "IT Specialist Level 1 Database Administrator"
+  },
+  {
+    "id": "777cg3j6v",
+    "unitId": "ov1fb3jqp",
+    "kode": "KIOA05",
+    "nama": "IT Specialist Level 2 Operating System"
+  },
+  {
+    "id": "777ch3jrb",
+    "unitId": "ov1fb3jqp",
+    "kode": "KIOA06",
+    "nama": "IT Specialist Level 3 Junior Data Center Engineer"
+  },
+  {
+    "id": "777ci3jux",
+    "unitId": "ov1fb3jqp",
+    "kode": "KIOA07",
+    "nama": "IT Specialist Level 3 Core Application Operation"
+  },
+  {
+    "id": "777cj3j22",
+    "unitId": "ov1fb3jqp",
+    "kode": "KIOA08",
+    "nama": "IT Specialist Level 3 Junior Non Core Application Operation"
+  },
+  {
+    "id": "777ck3j0r",
+    "unitId": "ov1fc3jga",
+    "kode": "KIOS01",
+    "nama": "Manager Service Desk, End User Support, and Performance Reporting"
+  },
+  {
+    "id": "777cl3jdl",
+    "unitId": "ov1fc3jga",
+    "kode": "KIOS02",
+    "nama": "Junior Manager Service Desk and End User Support"
+  },
+  {
+    "id": "777cm3j75",
+    "unitId": "ov1fc3jga",
+    "kode": "KIOS03",
+    "nama": "Junior Manager Performance Reporting and Administration"
+  },
+  {
+    "id": "777cn3jze",
+    "unitId": "ou18w3jae",
+    "kode": "KIR01",
+    "nama": "Vice President Enterprise Resource Planning"
+  },
+  {
+    "id": "777co3jb2",
+    "unitId": "ov1fd3jf0",
+    "kode": "KIRF01",
+    "nama": "Manager ERP Finance"
+  },
+  {
+    "id": "777cp3jvd",
+    "unitId": "ov1fd3jf0",
+    "kode": "KIRF02",
+    "nama": "Junior Manager ERP Financial Data"
+  },
+  {
+    "id": "777cq3j3k",
+    "unitId": "ov1fd3jf0",
+    "kode": "KIRF03",
+    "nama": "IT Specialist Level 1 ERP Finance"
+  },
+  {
+    "id": "777cr3jxu",
+    "unitId": "ov1fd3jf0",
+    "kode": "KIRF04",
+    "nama": "IT Specialist Level 3 Junior ERP System & Business Analyst Finance"
+  },
+  {
+    "id": "777cs3ja7",
+    "unitId": "ov1fe3jnq",
+    "kode": "KIRL01",
+    "nama": "Manager ERP Logistic"
+  },
+  {
+    "id": "777ct3jat",
+    "unitId": "ov1fe3jnq",
+    "kode": "KIRL02",
+    "nama": "Junior Manager ERP Logistic Data"
+  },
+  {
+    "id": "777cu3j8k",
+    "unitId": "ov1fe3jnq",
+    "kode": "KIRL03",
+    "nama": "IT Specialist Level 1 ERP Logistic"
+  },
+  {
+    "id": "777cv3jm4",
+    "unitId": "ov1fe3jnq",
+    "kode": "KIRL04",
+    "nama": "IT Specialist Level 2 ERP System & Business Analyst Logistic"
+  },
+  {
+    "id": "777cw3j1c",
+    "unitId": "ov1fe3jnq",
+    "kode": "KIRL05",
+    "nama": "IT Specialist Level 3 Junior ERP System and Business Analyst Logistic"
+  },
+  {
+    "id": "777cx3jyy",
+    "unitId": "ov1ff3jy8",
+    "kode": "KIRH01",
+    "nama": "Manager ERP Human Resource"
+  },
+  {
+    "id": "777cy3jqs",
+    "unitId": "ov1ff3jy8",
+    "kode": "KIRH02",
+    "nama": "IT Specialist Level 1 ERP Human Resource"
+  },
+  {
+    "id": "777cz3j23",
+    "unitId": "ov1ff3jy8",
+    "kode": "KIRH03",
+    "nama": "IT Specialist Level 2 Employee Administrator"
+  },
+  {
+    "id": "777d03jij",
+    "unitId": "ov1ff3jy8",
+    "kode": "KIRH04",
+    "nama": "IT Specialist Level 2 Payroll"
+  },
+  {
+    "id": "777d13jmx",
+    "unitId": "ov1fg3jmz",
+    "kode": "KIRS01",
+    "nama": "Manager ERP Support and Operation"
+  },
+  {
+    "id": "777d23jvd",
+    "unitId": "ov1fg3jmz",
+    "kode": "KIRS02",
+    "nama": "Junior Manager ERP Project Controller"
+  },
+  {
+    "id": "777d33jzi",
+    "unitId": "ov1fg3jmz",
+    "kode": "KIRS03",
+    "nama": "IT Specialist Level 1 Basis"
+  },
+  {
+    "id": "777d43jwz",
+    "unitId": "ov1fg3jmz",
+    "kode": "KIRS04",
+    "nama": "IT Specialist Level 2 ERP System Administrator"
+  },
+  {
+    "id": "777d53jas",
+    "unitId": "ou16z3jr2",
+    "kode": "KG01",
+    "nama": "Corporate Deputy Direction of Logistic"
+  },
+  {
+    "id": "777d63j0u",
+    "unitId": "ou18x3j0g",
+    "kode": "KGR01",
+    "nama": "Vice President Rollingstock Material Logistic"
+  },
+  {
+    "id": "777d73j1f",
+    "unitId": "ov1fh3jms",
+    "kode": "KGRP01",
+    "nama": "Manager Rollingstock Procurement Plan"
+  },
+  {
+    "id": "777d83je2",
+    "unitId": "ov1fh3jms",
+    "kode": "KGRP02",
+    "nama": "Junior Manager Tractive Vehicle Procurement Plan"
+  },
+  {
+    "id": "777d93j9g",
+    "unitId": "ov1fh3jms",
+    "kode": "KGRP03",
+    "nama": "Junior Manager Facilities Procurement Plan"
+  },
+  {
+    "id": "777da3jyw",
+    "unitId": "ov1fi3jge",
+    "kode": "KGRS01",
+    "nama": "Manager Rollingstock Procurement Process"
+  },
+  {
+    "id": "777db3jh9",
+    "unitId": "ov1fi3jge",
+    "kode": "KGRS02",
+    "nama": "Junior Manager Tractive Vehicle Procurement Process"
+  },
+  {
+    "id": "777dc3j0f",
+    "unitId": "ow1fj3jqf",
+    "kode": "KGRE01",
+    "nama": "Manager Rollingstock Procurement Evaluation"
+  },
+  {
+    "id": "777dd3jac",
+    "unitId": "ow1fj3jqf",
+    "kode": "KGRE02",
+    "nama": "Junior Manager Tractive Vehicle Procurement Evaluation"
+  },
+  {
+    "id": "777de3jxz",
+    "unitId": "ow1fj3jqf",
+    "kode": "KGRE03",
+    "nama": "Junior Manager Facilities Procurement Evaluation"
+  },
+  {
+    "id": "777df3jim",
+    "unitId": "ou18y3jsu",
+    "kode": "KGI01",
+    "nama": "Vice President Infrastructure and General Material Logistic"
+  },
+  {
+    "id": "777dg3j35",
+    "unitId": "ow1fk3j0j",
+    "kode": "KGIP01",
+    "nama": "Manager Procurement Planning Of Goods and Consulting Services"
+  },
+  {
+    "id": "777dh3jrn",
+    "unitId": "ow1fk3j0j",
+    "kode": "KGIP02",
+    "nama": "Junior Manager Procurement Planning Of Goods"
+  },
+  {
+    "id": "777di3jh6",
+    "unitId": "ow1fk3j0j",
+    "kode": "KGIP03",
+    "nama": "Junior Manager Procurement Planning Of Consulting Services"
+  },
+  {
+    "id": "777dj3jpg",
+    "unitId": "ow1fl3jhp",
+    "kode": "KGIS01",
+    "nama": "Manager Procurement Processing Of Goods and Consulting Services"
+  },
+  {
+    "id": "777dk3ji3",
+    "unitId": "ow1fl3jhp",
+    "kode": "KGIS02",
+    "nama": "Junior Manager Procurement Processing Of Goods"
+  },
+  {
+    "id": "777dl3jur",
+    "unitId": "ow1fl3jhp",
+    "kode": "KGIS03",
+    "nama": "Junior Manager Procurement Processing Of Consulting Services"
+  },
+  {
+    "id": "777dm3jov",
+    "unitId": "ow1fm3jb9",
+    "kode": "KGIE01",
+    "nama": "Manager Procurement Evaluation Of Goods and Consulting Services"
+  },
+  {
+    "id": "777dn3js3",
+    "unitId": "ow1fm3jb9",
+    "kode": "KGIE02",
+    "nama": "Junior Manager Procurement Evaluation Of Goods"
+  },
+  {
+    "id": "777do3jby",
+    "unitId": "ow1fm3jb9",
+    "kode": "KGIE03",
+    "nama": "Junior Manager Procurement Evaluation Of Consulting Services"
+  },
+  {
+    "id": "777dp3jda",
+    "unitId": "ou18z3jbc",
+    "kode": "KGS01",
+    "nama": "Vice President Material Stock"
+  },
+  {
+    "id": "787dq3j02",
+    "unitId": "ow1fn3jeu",
+    "kode": "KGSW01",
+    "nama": "Manager of Warehousing"
+  },
+  {
+    "id": "787dr3j2n",
+    "unitId": "ow1fn3jeu",
+    "kode": "KGSW02",
+    "nama": "Junior Manager of Warehousing Process"
+  },
+  {
+    "id": "787ds3j1q",
+    "unitId": "ow1fn3jeu",
+    "kode": "KGSW03",
+    "nama": "Junior Manager of Warehousing Report"
+  },
+  {
+    "id": "787dt3jjg",
+    "unitId": "ow1fo3j1i",
+    "kode": "KGSS01",
+    "nama": "Manager of Stock Information System"
+  },
+  {
+    "id": "787du3jah",
+    "unitId": "ow1fo3j1i",
+    "kode": "KGSS02",
+    "nama": "Junior Manager of Stock Information"
+  },
+  {
+    "id": "787dv3jza",
+    "unitId": "ow1fo3j1i",
+    "kode": "KGSS03",
+    "nama": "Junior Manager of Implementation Stock & BBM Applications"
+  },
+  {
+    "id": "787dw3jlc",
+    "unitId": "ow1fp3jtt",
+    "kode": "KGSL01",
+    "nama": "Manager of Logistic Regulation"
+  },
+  {
+    "id": "787dx3jnc",
+    "unitId": "ow1fp3jtt",
+    "kode": "KGSL02",
+    "nama": "Junior Manager of Logistic Regulation"
+  },
+  {
+    "id": "787dy3j9t",
+    "unitId": "ow1fp3jtt",
+    "kode": "KGSL03",
+    "nama": "Junior Manager of BBM Subsidy"
+  },
+  {
+    "id": "787dz3j7v",
+    "unitId": "ow1fp3jtt",
+    "kode": "KGSL04",
+    "nama": "Material Stock Specialist"
+  },
+  {
+    "id": "787e03jw1",
+    "unitId": "ou1903jwt",
+    "kode": "KGU01",
+    "nama": "Vice President Pengadaan Barang dan Jasa"
+  },
+  {
+    "id": "787e13j04",
+    "unitId": "ow1fq3jgt",
+    "kode": "KGUK01",
+    "nama": "Manager Kesekretariatan Pengadaan Barang dan Jasa / Procurement Administration"
+  },
+  {
+    "id": "787e23j3l",
+    "unitId": "ow1fr3jt2",
+    "kode": "KGUS01",
+    "nama": "Manager Pengadaan Barang dan Jasa Bidang Sarana / Rollingstock Procurement"
+  },
+  {
+    "id": "787e33jge",
+    "unitId": "ow1fr3jt2",
+    "kode": "KGUS02",
+    "nama": "Junior Manager Pengadaan Barang dan Jasa Bidang Sarana / Rollingstock Procurement"
+  },
+  {
+    "id": "787e43jwk",
+    "unitId": "ow1fs3jv7",
+    "kode": "KGUP01",
+    "nama": "Manager Pengadaan Barang dan Jasa Bidang Prasarana dan Umum / Infrastructure and General Procurement"
+  },
+  {
+    "id": "787e53js9",
+    "unitId": "ow1fs3jv7",
+    "kode": "KGUP02",
+    "nama": "Junior Manager Pengadaan Barang dan Jasa Bidang Prasarana dan Umum / Infrastructure and General Procurement"
+  },
+  {
+    "id": "787e63jx8",
+    "unitId": "ou1703jud",
+    "kode": "UI01",
+    "nama": "Executive Vice President Internal Audit"
+  },
+  {
+    "id": "787e73j2y",
+    "unitId": "ou1913j2n",
+    "kode": "UI001",
+    "nama": "Vice President General Audit 1"
+  },
+  {
+    "id": "787e83j8b",
+    "unitId": "ou1923js9",
+    "kode": "UIP01",
+    "nama": "Senior Auditor 1 General Audit 1"
+  },
+  {
+    "id": "787e93jge",
+    "unitId": "ou1923js9",
+    "kode": "UIP02",
+    "nama": "Senior Auditor 2"
+  },
+  {
+    "id": "787ea3jnw",
+    "unitId": "ou1923js9",
+    "kode": "UIP03",
+    "nama": "Auditor 1"
+  },
+  {
+    "id": "787eb3j6v",
+    "unitId": "ou1923js9",
+    "kode": "UIP04",
+    "nama": "Auditor 2"
+  },
+  {
+    "id": "787ec3jyg",
+    "unitId": "ou1923js9",
+    "kode": "UIP05",
+    "nama": "Vice President General Audit 2"
+  },
+  {
+    "id": "787ed3joa",
+    "unitId": "ou1923js9",
+    "kode": "UIP06",
+    "nama": "Senior Auditor 1 General Audit 1"
+  },
+  {
+    "id": "787ee3jwi",
+    "unitId": "ou1923js9",
+    "kode": "UIP07",
+    "nama": "Senior Auditor 2"
+  },
+  {
+    "id": "787ef3jib",
+    "unitId": "ou1923js9",
+    "kode": "UIP08",
+    "nama": "Auditor 1"
+  },
+  {
+    "id": "787eg3jw5",
+    "unitId": "ou1923js9",
+    "kode": "UIP09",
+    "nama": "Auditor 2"
+  },
+  {
+    "id": "787eh3ju3",
+    "unitId": "ou1933jz8",
+    "kode": "UIS01",
+    "nama": "Vice President Special Audit"
+  },
+  {
+    "id": "787ei3j5a",
+    "unitId": "ou1943jjh",
+    "kode": "UIA01",
+    "nama": "Vice President Evaluation, Monitoring & Administration"
+  },
+  {
+    "id": "787ej3jw9",
+    "unitId": "ow1ft3je6",
+    "kode": "UIAE01",
+    "nama": "Manager Evaluation, Monitoring External and Special Audit"
+  },
+  {
+    "id": "787ek3j54",
+    "unitId": "ow1ft3je6",
+    "kode": "UIAE02",
+    "nama": "Assistant Manager Evaluation and Monitoring External Audit"
+  },
+  {
+    "id": "787el3j99",
+    "unitId": "ow1ft3je6",
+    "kode": "UIAE03",
+    "nama": "Assistant Manager Evaluation and Monitoring Special Audit"
+  },
+  {
+    "id": "787em3jgz",
+    "unitId": "ow1fu3j3g",
+    "kode": "UIAO01",
+    "nama": "Manager Evaluation, Monitoring Operational Audit"
+  },
+  {
+    "id": "787en3jk0",
+    "unitId": "ow1fu3j3g",
+    "kode": "UIAO02",
+    "nama": "Assistant Manager Evaluation and Monitoring Operational Audit"
+  },
+  {
+    "id": "787eo3j3d",
+    "unitId": "ow1fu3j3g",
+    "kode": "UIAO03",
+    "nama": "Assistant Manager Data Processing and Internal Audit Report"
+  },
+  {
+    "id": "787ep3j2n",
+    "unitId": "ow1fv3jjo",
+    "kode": "UIAA01",
+    "nama": "Manager Program and Administration Internal Audit"
+  },
+  {
+    "id": "787eq3j1i",
+    "unitId": "ow1fv3jjo",
+    "kode": "UIAA02",
+    "nama": "Assistant Manager Program and Finance Administration Internal Audit"
+  },
+  {
+    "id": "787er3jj5",
+    "unitId": "ow1fv3jjo",
+    "kode": "UIAA03",
+    "nama": "Assistant Manager General Administration Internal Audit"
+  },
+  {
+    "id": "787es3jrj",
+    "unitId": "ou1713jy5",
+    "kode": "UR01",
+    "nama": "Executive Vice President of Risk Management"
+  },
+  {
+    "id": "787et3jnf",
+    "unitId": "ou1953j0p",
+    "kode": "URP01",
+    "nama": "Risk Analyst Level 1 Bidang Usaha Angkutan Penumpang"
+  },
+  {
+    "id": "787eu3jhy",
+    "unitId": "ou1963j31",
+    "kode": "URB01",
+    "nama": "Risk Analyst Level 1 Bidang Usaha Angkutan Barang"
+  },
+  {
+    "id": "787ev3jdr",
+    "unitId": "ou1973jim",
+    "kode": "URN01",
+    "nama": "Risk Analyst Level 1 Bidang Usaha Non Angkutan"
+  },
+  {
+    "id": "787ew3jyb",
+    "unitId": "ou1983j46",
+    "kode": "URD01",
+    "nama": "Vice President Dissemination and Risk Management Procedures"
+  },
+  {
+    "id": "787ex3j2c",
+    "unitId": "ow1fw3jxs",
+    "kode": "URDF01",
+    "nama": "Manager Risk Management Framework Design and Implementation"
+  },
+  {
+    "id": "787ey3j7v",
+    "unitId": "ow1fw3jxs",
+    "kode": "URDF02",
+    "nama": "Assistant Manager Design Implementation"
+  },
+  {
+    "id": "787ez3jy1",
+    "unitId": "ow1fx3jaw",
+    "kode": "URDP01",
+    "nama": "Manager Risk Management Process Implementation"
+  },
+  {
+    "id": "787f03jd1",
+    "unitId": "ow1fx3jaw",
+    "kode": "URDP02",
+    "nama": "Assistant Manager Process Assessment"
+  },
+  {
+    "id": "787f13jwi",
+    "unitId": "ou1993jq7",
+    "kode": "URC01",
+    "nama": "Vice President Risk Control and Mitigations"
+  },
+  {
+    "id": "787f23jvl",
+    "unitId": "ow1fy3j7a",
+    "kode": "URCF01",
+    "nama": "Manager Risk Management Framework Monitoring, Review and Improvement"
+  },
+  {
+    "id": "787f33jid",
+    "unitId": "ow1fy3j7a",
+    "kode": "URCF02",
+    "nama": "Assistant Manager Design Monitoring"
+  },
+  {
+    "id": "787f43j1s",
+    "unitId": "ow1fz3jq9",
+    "kode": "URCP01",
+    "nama": "Manager Risk Management Process Monitoring, Review and Improvement"
+  },
+  {
+    "id": "787f53jos",
+    "unitId": "ow1fz3jq9",
+    "kode": "URCP02",
+    "nama": "Assistant Manager Process Assessment Monitoring"
+  },
+  {
+    "id": "787f63j8r",
+    "unitId": "ow1g03j1m",
+    "kode": "URCA01",
+    "nama": "Manager Administration"
+  },
+  {
+    "id": "787f73j1g",
+    "unitId": "ow1g03j1m",
+    "kode": "URCA02",
+    "nama": "Assistant Manager Financial and General Administration"
+  },
+  {
+    "id": "787f83jld",
+    "unitId": "ou1723jou",
+    "kode": "UL01",
+    "nama": "Executive Vice President Legal"
+  },
+  {
+    "id": "787f93jj2",
+    "unitId": "ou19a3jcz",
+    "kode": "ULB01",
+    "nama": "Vice President Legal Business"
+  },
+  {
+    "id": "787fa3jpf",
+    "unitId": "ow1g13jpk",
+    "kode": "ULBC01",
+    "nama": "Manager Legal Corporate Commercial and Banking"
+  },
+  {
+    "id": "787fb3j52",
+    "unitId": "ow1g13jpk",
+    "kode": "ULBC02",
+    "nama": "Legal Corporate Commercial and Banking Specialist"
+  },
+  {
+    "id": "787fc3j0a",
+    "unitId": "ow1g23jc1",
+    "kode": "ULBP01",
+    "nama": "Manager Legal Procurement"
+  },
+  {
+    "id": "787fd3jz2",
+    "unitId": "ow1g23jc1",
+    "kode": "ULBP02",
+    "nama": "Legal Procurement Specialist"
+  },
+  {
+    "id": "787fe3j8r",
+    "unitId": "ow1g33jv2",
+    "kode": "ULBI01",
+    "nama": "Manager Legal Investment and Project Financing"
+  },
+  {
+    "id": "787ff3j2p",
+    "unitId": "ow1g33jv2",
+    "kode": "ULBI02",
+    "nama": "Legal Investment and Project Financing Specialist"
+  },
+  {
+    "id": "787fg3j3h",
+    "unitId": "ou19b3jll",
+    "kode": "ULP01",
+    "nama": "Vice President Policy and Regulations"
+  },
+  {
+    "id": "787fh3j0p",
+    "unitId": "ow1g43jtl",
+    "kode": "ULPI01",
+    "nama": "Manager of Institutions Relation"
+  },
+  {
+    "id": "787fi3jvj",
+    "unitId": "ow1g43jtl",
+    "kode": "ULPI02",
+    "nama": "Legal Institutions Relation Specialist"
+  },
+  {
+    "id": "787fj3j2v",
+    "unitId": "ow1g53jme",
+    "kode": "ULPP01",
+    "nama": "Manager of Policy"
+  },
+  {
+    "id": "787fk3jkh",
+    "unitId": "ow1g53jme",
+    "kode": "ULPP02",
+    "nama": "Policy Specialist"
+  },
+  {
+    "id": "787fl3jf2",
+    "unitId": "ow1g63jeh",
+    "kode": "ULPR01",
+    "nama": "Manager of Regulations Analysis"
+  },
+  {
+    "id": "787fm3jqi",
+    "unitId": "ow1g63jeh",
+    "kode": "ULPR02",
+    "nama": "Regulations Analysis Specialist"
+  },
+  {
+    "id": "787fn3j60",
+    "unitId": "ou19c3j3f",
+    "kode": "ULL01",
+    "nama": "Vice President Legal Dispute Resolution"
+  },
+  {
+    "id": "797fo3je2",
+    "unitId": "ow1g73j0v",
+    "kode": "ULLP01",
+    "nama": "Manager of Public Law Litigation"
+  },
+  {
+    "id": "797fp3j4q",
+    "unitId": "ow1g73j0v",
+    "kode": "ULLP02",
+    "nama": "Public Law Litigation Specialist"
+  },
+  {
+    "id": "797fq3j7q",
+    "unitId": "ow1g83jho",
+    "kode": "ULLV01",
+    "nama": "Manager of Private Law Litigation"
+  },
+  {
+    "id": "797fr3j99",
+    "unitId": "ow1g83jho",
+    "kode": "ULLV02",
+    "nama": "Private Law Litigation Specialist"
+  },
+  {
+    "id": "797fs3jwl",
+    "unitId": "ou1733jj4",
+    "kode": "US01",
+    "nama": "Executive Vice President Corporate Secretary"
+  },
+  {
+    "id": "797ft3jv2",
+    "unitId": "ou19d3j6e",
+    "kode": "USI01",
+    "nama": "Investor Relations"
+  },
+  {
+    "id": "797fu3jkl",
+    "unitId": "ou19e3j2i",
+    "kode": "USD01",
+    "nama": "Vice President Corporate Document Management"
+  },
+  {
+    "id": "797fv3jm8",
+    "unitId": "ow1g93jgm",
+    "kode": "USDG01",
+    "nama": "Manager General Document and Files"
+  },
+  {
+    "id": "797fw3jzl",
+    "unitId": "ow1g93jgm",
+    "kode": "USDG02",
+    "nama": "Assistant Manager General Document"
+  },
+  {
+    "id": "797fx3jtt",
+    "unitId": "ow1g93jgm",
+    "kode": "USDG03",
+    "nama": "Assistant Manager General Archives"
+  },
+  {
+    "id": "797fy3jg8",
+    "unitId": "ow1g93jgm",
+    "kode": "USDG04",
+    "nama": "Assistant Manager Electronic Document"
+  },
+  {
+    "id": "797fz3jma",
+    "unitId": "ow1g93jgm",
+    "kode": "USDG05",
+    "nama": "Assistant Manager Telegraphy Java Area"
+  },
+  {
+    "id": "797g03jrk",
+    "unitId": "ow1g93jgm",
+    "kode": "USDG06",
+    "nama": "Assistant Manager Telegraphy Sumatera Area"
+  },
+  {
+    "id": "797g13jl9",
+    "unitId": "ow1ga3je0",
+    "kode": "USDA01",
+    "nama": "Manager Asset Ownership Documents and Files"
+  },
+  {
+    "id": "797g23juy",
+    "unitId": "ow1ga3je0",
+    "kode": "USDA02",
+    "nama": "Assistant Manager Land Ownership Document"
+  },
+  {
+    "id": "797g33jsu",
+    "unitId": "ow1ga3je0",
+    "kode": "USDA03",
+    "nama": "Assistant Manager Building Ownership Document"
+  },
+  {
+    "id": "797g43j61",
+    "unitId": "ow1ga3je0",
+    "kode": "USDA04",
+    "nama": "Assistant Manager Track & Bridge Document"
+  },
+  {
+    "id": "797g53jjz",
+    "unitId": "ow1ga3je0",
+    "kode": "USDA05",
+    "nama": "Assistant Manager Signal & Rolling Stock Document"
+  },
+  {
+    "id": "797g63jo2",
+    "unitId": "ow1gb3jz2",
+    "kode": "USDL01",
+    "nama": "Manager Legal Documents & Files"
+  },
+  {
+    "id": "797g73j73",
+    "unitId": "ow1gb3jz2",
+    "kode": "USDL02",
+    "nama": "Assistant Manager Legal Document"
+  },
+  {
+    "id": "797g83j92",
+    "unitId": "ow1gb3jz2",
+    "kode": "USDL03",
+    "nama": "Assistant Manager Legal Archives"
+  },
+  {
+    "id": "797g93jnq",
+    "unitId": "ow1gb3jz2",
+    "kode": "USDL04",
+    "nama": "Assistant Manager Record Center"
+  },
+  {
+    "id": "797ga3j59",
+    "unitId": "ou19f3jay",
+    "kode": "USP01",
+    "nama": "Vice President Public Relations"
+  },
+  {
+    "id": "797gb3j5p",
+    "unitId": "ow1gc3jtj",
+    "kode": "USPI01",
+    "nama": "Manager Internal Relations"
+  },
+  {
+    "id": "797gc3j7i",
+    "unitId": "ow1gc3jtj",
+    "kode": "USPI02",
+    "nama": "Assistant Manager Internal Media and Documentation"
+  },
+  {
+    "id": "797gd3jvs",
+    "unitId": "ow1gd3j2o",
+    "kode": "USPE01",
+    "nama": "Manager External Relations"
+  },
+  {
+    "id": "797ge3jey",
+    "unitId": "ow1gd3j2o",
+    "kode": "USPE02",
+    "nama": "Assistant Manager Media Relations"
+  },
+  {
+    "id": "797gf3je2",
+    "unitId": "ow1gd3j2o",
+    "kode": "USPE03",
+    "nama": "Assistant Manager Media Reporting"
+  },
+  {
+    "id": "797gg3jqq",
+    "unitId": "ow1ge3ju3",
+    "kode": "USPC01",
+    "nama": "Manager Corporate Image Care"
+  },
+  {
+    "id": "797gh3jyv",
+    "unitId": "ow1ge3ju3",
+    "kode": "USPC02",
+    "nama": "Assistant Manager Web Corporate, BUMN Portal and Social Media"
+  },
+  {
+    "id": "797gi3j3u",
+    "unitId": "ow1ge3ju3",
+    "kode": "USPC03",
+    "nama": "Assistant Manager Visual Communication Media"
+  },
+  {
+    "id": "797gj3j2c",
+    "unitId": "ow1gf3jdz",
+    "kode": "USPP01",
+    "nama": "Manager Public Information Care"
+  },
+  {
+    "id": "797gk3jvu",
+    "unitId": "ow1gf3jdz",
+    "kode": "USPP02",
+    "nama": "Assistant Manager Helpdesk Information"
+  },
+  {
+    "id": "797gl3jr7",
+    "unitId": "ow1gg3jfp",
+    "kode": "USPM01",
+    "nama": "Manager Multimedia"
+  },
+  {
+    "id": "797gm3jbt",
+    "unitId": "ow1gg3jfp",
+    "kode": "USPM02",
+    "nama": "Junior Manager Commercial Multimedia"
+  },
+  {
+    "id": "797gn3j8s",
+    "unitId": "ow1gg3jfp",
+    "kode": "USPM03",
+    "nama": "Junior Manager Non Commercial Multimedia"
+  },
+  {
+    "id": "797go3jq3",
+    "unitId": "ou19g3j79",
+    "kode": "USQ01",
+    "nama": "Vice President Quality Assurance and Good Corporate Governance"
+  },
+  {
+    "id": "797gp3jqs",
+    "unitId": "ow1gh3jea",
+    "kode": "USQA01",
+    "nama": "Assesor of Quality Assurance"
+  },
+  {
+    "id": "797gq3jpu",
+    "unitId": "ow1gi3jwo",
+    "kode": "USQR01",
+    "nama": "Regulator & Evaluation of Quality Assurance Specialist"
+  },
+  {
+    "id": "797gr3j9n",
+    "unitId": "ow1gj3jp4",
+    "kode": "USQP01",
+    "nama": "Manager Quality Planning"
+  },
+  {
+    "id": "797gs3jf2",
+    "unitId": "ow1gj3jp4",
+    "kode": "USQP02",
+    "nama": "Assistant Manager Quality Program"
+  },
+  {
+    "id": "797gt3j57",
+    "unitId": "ow1gj3jp4",
+    "kode": "USQP03",
+    "nama": "Assistant Manager Quality Assesment"
+  },
+  {
+    "id": "797gu3jd8",
+    "unitId": "ow1gk3ji7",
+    "kode": "USQM01",
+    "nama": "Manager Quality Management"
+  },
+  {
+    "id": "797gv3jya",
+    "unitId": "ow1gk3ji7",
+    "kode": "USQM02",
+    "nama": "Assistant Manager Quality Implementation"
+  },
+  {
+    "id": "797gw3jwl",
+    "unitId": "ow1gk3ji7",
+    "kode": "USQM03",
+    "nama": "Assistant Manager Quality Maintenance"
+  },
+  {
+    "id": "797gx3j8l",
+    "unitId": "ow1gl3jh7",
+    "kode": "USQI01",
+    "nama": "Manager Quality Improvement"
+  },
+  {
+    "id": "797gy3jnr",
+    "unitId": "ow1gl3jh7",
+    "kode": "USQI02",
+    "nama": "Assistant Manager Quality Evaluation"
+  },
+  {
+    "id": "797gz3jqe",
+    "unitId": "ow1gl3jh7",
+    "kode": "USQI03",
+    "nama": "Assistant Manager Quality Enhancement"
+  },
+  {
+    "id": "797h03jh8",
+    "unitId": "ow1gm3jvl",
+    "kode": "USQG01",
+    "nama": "Manager Good Corporate Governance and Whistleblowing System"
+  },
+  {
+    "id": "797h13jsr",
+    "unitId": "ow1gm3jvl",
+    "kode": "USQG02",
+    "nama": "Assistant Manager Good Corporate Governance"
+  },
+  {
+    "id": "797h23j3r",
+    "unitId": "ow1gm3jvl",
+    "kode": "USQG03",
+    "nama": "Assistant Manager Whistleblowing System"
+  },
+  {
+    "id": "797h33j84",
+    "unitId": "ou19h3jq9",
+    "kode": "USC01",
+    "nama": "Vice President Corporate Culture and General Facilities"
+  },
+  {
+    "id": "797h43jx4",
+    "unitId": "ow1gn3j6g",
+    "kode": "USCC01",
+    "nama": "Manager Corporate Culture"
+  },
+  {
+    "id": "797h53jqx",
+    "unitId": "ow1gn3j6g",
+    "kode": "USCC02",
+    "nama": "Junior Manager Corporate Culture Development"
+  },
+  {
+    "id": "797h63jjb",
+    "unitId": "ow1gn3j6g",
+    "kode": "USCC03",
+    "nama": "Junior Manager Corporate Culture Deployment"
+  },
+  {
+    "id": "797h73jbf",
+    "unitId": "ow1go3jwv",
+    "kode": "USCF01",
+    "nama": "Manager General Facilities of Head Office"
+  },
+  {
+    "id": "797h83j4q",
+    "unitId": "ow1go3jwv",
+    "kode": "USCF02",
+    "nama": "Junior Manager Office Building and Mechanical Electrical"
+  },
+  {
+    "id": "797h93jim",
+    "unitId": "ow1go3jwv",
+    "kode": "USCF03",
+    "nama": "Junior Manager Housekeeping and Services"
+  },
+  {
+    "id": "797ha3jid",
+    "unitId": "ow1go3jwv",
+    "kode": "USCF04",
+    "nama": "Junior Manager Office Facilities"
+  },
+  {
+    "id": "797hb3j64",
+    "unitId": "ow1gp3j86",
+    "kode": "USCP01",
+    "nama": "Manager Protocol and Secretary of Head Office"
+  },
+  {
+    "id": "7a7hc3jab",
+    "unitId": "ow1gp3j86",
+    "kode": "USCP02",
+    "nama": "Sekretaris Direksi"
+  },
+  {
+    "id": "7a7hd3jyh",
+    "unitId": "ow1gp3j86",
+    "kode": "USCP03",
+    "nama": "Junior Manager Protocol"
+  },
+  {
+    "id": "7a7he3j0r",
+    "unitId": "ow1gp3j86",
+    "kode": "USCP04",
+    "nama": "Junior Manager Secretary"
+  },
+  {
+    "id": "7a7hf3j5k",
+    "unitId": "ou19i3j7g",
+    "kode": "USS01",
+    "nama": "Vice President Corporate Social Responsibility"
+  },
+  {
+    "id": "7a7hg3jfn",
+    "unitId": "ow1gq3jdn",
+    "kode": "USSP01",
+    "nama": "Manager Partnership and Participations"
+  },
+  {
+    "id": "7a7hh3ju9",
+    "unitId": "ow1gq3jdn",
+    "kode": "USSP02",
+    "nama": "Assistant Manager Partnership Program"
+  },
+  {
+    "id": "7a7hi3jg6",
+    "unitId": "ow1gq3jdn",
+    "kode": "USSP03",
+    "nama": "Assistant Manager Environmental Development"
+  },
+  {
+    "id": "7a7hj3jov",
+    "unitId": "ow1gr3jl8",
+    "kode": "USSC01",
+    "nama": "Manager Community Relations"
+  },
+  {
+    "id": "7a7hk3j15",
+    "unitId": "ow1gr3jl8",
+    "kode": "USSC02",
+    "nama": "Assistant Manager Internal Community Relations"
+  },
+  {
+    "id": "7a7hl3jdz",
+    "unitId": "ow1gr3jl8",
+    "kode": "USSC03",
+    "nama": "Assistant Manager Eksternal Community Relations"
+  },
+  {
+    "id": "7a7hm3j5w",
+    "unitId": "ou1743j3m",
+    "kode": "UP01",
+    "nama": "Executive Vice President Project Management Office"
+  },
+  {
+    "id": "7a7hn3jd3",
+    "unitId": "ou19j3jag",
+    "kode": "UPC01",
+    "nama": "Vice President Change Management"
+  },
+  {
+    "id": "7a7ho3jc8",
+    "unitId": "ou19k3jzq",
+    "kode": "UPP01",
+    "nama": "Vice President Project Management"
+  },
+  {
+    "id": "7a7hp3jqk",
+    "unitId": "ou19k3jzq",
+    "kode": "UPP02",
+    "nama": "Project Delivery Leader 1"
+  },
+  {
+    "id": "7a7hq3jud",
+    "unitId": "ou19k3jzq",
+    "kode": "UPP03",
+    "nama": "Project Delivery Leader 2"
+  },
+  {
+    "id": "7a7hr3j8p",
+    "unitId": "ou19k3jzq",
+    "kode": "UPP04",
+    "nama": "Project Delivery Leader 3"
+  }
+]

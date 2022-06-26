@@ -5,6 +5,9 @@ import { getCookie, setCookies } from 'cookies-next';
 import Head from 'next/head';
 import { MantineProvider, ColorScheme, ColorSchemeProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
+import { SWRConfig } from 'swr';
+import fetchJson from 'lib/fetchJson';
+import { SessionProvider } from 'components/SessionProvider/SessionProvider';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -24,13 +27,35 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
         <link rel="shortcut icon" href="/favicon.svg" />
       </Head>
 
-      <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-        <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
-          <NotificationsProvider>
-            <Component {...pageProps} />
-          </NotificationsProvider>
-        </MantineProvider>
-      </ColorSchemeProvider>
+      <SWRConfig
+        value={{
+          fetcher: fetchJson,
+          onError: (err) => {
+            console.log(err);
+          },
+        }}
+      >
+        <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
+          <MantineProvider
+            theme={{
+              colorScheme,
+              fontSizes: {
+                sm: 13.75,
+                md: 14.5,
+                lg: 16,
+              },
+            }}
+            withGlobalStyles
+            withNormalizeCSS
+          >
+            <NotificationsProvider>
+              <SessionProvider>
+                <Component {...pageProps} />
+              </SessionProvider>
+            </NotificationsProvider>
+          </MantineProvider>
+        </ColorSchemeProvider>
+      </SWRConfig>
     </>
   );
 }

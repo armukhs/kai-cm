@@ -1,0 +1,250 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Unit {
+  id            String          @id @default(cuid())
+  parentId      String?
+  kode          String          @unique
+  tipe          String
+  level         Int             @default(1)
+  nama          String
+  created       DateTime?       @default(now())
+  updated       DateTime?       @updatedAt
+  // Relations
+  Parent        Unit?           @relation("UnitToUnit", fields: [parentId], references: [id])
+  Children      Unit[]          @relation("UnitToUnit")
+  Jabatan       Jabatan[]
+  User          User[]
+  Project       Project[]
+  UnitPerubahan UnitPerubahan[]
+  UnitRencana   UnitRencana[]
+}
+
+model Jabatan {
+  id        String      @id @default(cuid())
+  unitId    String
+  kode      String      @unique
+  tipe      String?
+  nama      String
+  created   DateTime?   @default(now())
+  updated   DateTime?   @updatedAt
+  // Relations
+  Unit      Unit        @relation(fields: [unitId], references: [id])
+  User      User?
+  Perubahan Perubahan[]
+  Rencana   Rencana[]
+}
+
+// - roles: "admin cmadmin project manager staff superguest"
+model User {
+  id               String             @id @default(cuid())
+  deleted          DateTime?
+  unitId           String?
+  jabatanId        String?            @unique // optional for superadmin
+  nipp             String             @unique
+  email            String             @unique
+  nama             String
+  roles            String?
+  created          DateTime?          @default(now())
+  updated          DateTime?          @updatedAt
+  // Relations
+  Unit             Unit?              @relation(fields: [unitId], references: [id])
+  Jabatan          Jabatan?           @relation(fields: [jabatanId], references: [id])
+  Hash             Hash?
+  AsManager        Project[]          @relation("Manager")
+  AsMentor         Project[]          @relation("Mentor")
+  AsStaff          Project[]          @relation("Staff")
+  Komentar         Komentar[]
+  KomentarProgress KomentarProgress[]
+}
+
+model Hash {
+  userId String @unique
+  hash   String
+  // Relations
+  User   User   @relation(fields: [userId], references: [id])
+}
+
+model Project {
+  id            String          @id @default(cuid())
+  unitId        String
+  managerId     String
+  mentorId      String?
+  staffId       String?
+  judul         String
+  deskripsi     String?
+  tujuan        String?
+  target        String?
+  tglMulai      String?
+  tglSelesai    String?
+  isDeleted     Boolean         @default(false)
+  tglKonfirmasi DateTime?       @db.Date
+  tglBatal      DateTime?       @db.Date
+  proses        Int             @default(0)
+  teknologi     Int             @default(0)
+  budaya        Int             @default(0)
+  kompetensi    Int             @default(0)
+  peran         Int             @default(0)
+  struktur      Int             @default(0)
+  rencana       Int             @default(0)
+  progres       Int             @default(0)
+  lainnya       Int             @default(0)
+  tagarKAI      String?
+  created       DateTime?       @default(now())
+  updated       DateTime?       @updatedAt
+  // Relations
+  Unit          Unit            @relation(fields: [unitId], references: [id])
+  Manager       User            @relation("Manager", fields: [managerId], references: [id])
+  Mentor        User?           @relation("Mentor", fields: [mentorId], references: [id])
+  Staff         User?           @relation("Staff", fields: [staffId], references: [id])
+  Perubahan     Perubahan[]
+  UnitPerubahan UnitPerubahan[]
+  Komentar      Komentar[]
+  Rencana       Rencana[]
+  Kesiapan      Kesiapan?
+}
+
+// ProjectGuest
+
+model Perubahan {
+  id            String          @id
+  picId         String?
+  projectId     String
+  type          String
+  kondisi       String?
+  perubahan     String
+  created       DateTime?       @default(now())
+  updated       DateTime?       @updatedAt
+  // Relations
+  Project       Project         @relation(fields: [projectId], references: [id])
+  PIC           Jabatan?        @relation(fields: [picId], references: [id])
+  UnitPerubahan UnitPerubahan[]
+}
+
+model UnitPerubahan {
+  type        String    @default("")
+  projectId   String
+  unitId      String
+  perubahanId String
+  //
+  Unit        Unit      @relation(fields: [unitId], references: [id])
+  Project     Project   @relation(fields: [projectId], references: [id])
+  Perubahan   Perubahan @relation(fields: [perubahanId], references: [id])
+
+  @@unique([unitId, perubahanId])
+}
+
+model Komentar {
+  id        String    @id
+  projectId String
+  userId    String
+  type      String
+  value     String
+  created   DateTime? @default(now())
+  // Relations
+  Project   Project   @relation(fields: [projectId], references: [id])
+  User      User      @relation(fields: [userId], references: [id])
+}
+
+model Invitation {
+  id        Int       @id @default(autoincrement())
+  token     String    @default(cuid())
+  fromName  String
+  fromEmail String
+  nama      String
+  nipp      String
+  email     String
+  jabatan   String
+  jabatanId String
+  unitId    String?
+  roles     String
+  created   DateTime? @default(now())
+}
+
+model Rencana {
+  id               String             @id
+  projectId        String
+  picId            String?
+  type             String
+  rencana          String?
+  audien           String
+  waktu            String
+  tempat           String
+  tolokUkur        String
+  monitoring       String
+  created          DateTime?          @default(now())
+  updated          DateTime?          @updatedAt
+  //
+  Project          Project            @relation(fields: [projectId], references: [id])
+  PIC              Jabatan?           @relation(fields: [picId], references: [id])
+  UnitRencana      UnitRencana[]
+  Progress         Progress[]
+  KomentarProgress KomentarProgress[]
+}
+
+model UnitRencana {
+  unitId    String
+  rencanaId String
+  //
+  Unit      Unit    @relation(fields: [unitId], references: [id])
+  Rencana   Rencana @relation(fields: [rencanaId], references: [id])
+
+  @@unique([unitId, rencanaId])
+}
+
+model Kesiapan {
+  projectId              String
+  sepakat_dengan_misi    Int       @default(0)
+  komunikasi_terbuka     Int       @default(0)
+  percaya_bawahan        Int       @default(0)
+  ide_bawahan            Int       @default(0)
+  interaksi_bersahabat   Int       @default(0)
+  saling_percaya         Int       @default(0)
+  kinerja_teamwork       Int       @default(0)
+  lingkungan_koperatif   Int       @default(0)
+  saling_menghargai      Int       @default(0)
+  kompetensi_memadai     Int       @default(0)
+  ekspektasi_realistis   Int       @default(0)
+  komunikasi_intens      Int       @default(0)
+  tanpa_isu_otoritas     Int       @default(0)
+  tanpa_isu_hilang_kerja Int       @default(0)
+  optimis_terhadap_hasil Int       @default(0)
+  nyaman_dengan_hasil    Int       @default(0)
+  updated                DateTime? @updatedAt
+  //
+  Project                Project   @relation(fields: [projectId], references: [id])
+
+  @@unique([projectId])
+}
+
+// Progress
+model Progress {
+  id        String    @id
+  rencanaId String
+  type      String
+  progress  String
+  created   DateTime? @default(now())
+  //
+  Rencana   Rencana   @relation(fields: [rencanaId], references: [id])
+}
+
+model KomentarProgress {
+  id        String    @id
+  rencanaId String
+  userId    String
+  type      String
+  value     String
+  created   DateTime? @default(now())
+  // Relations
+  Rencana   Rencana   @relation(fields: [rencanaId], references: [id])
+  User      User      @relation(fields: [userId], references: [id])
+}
