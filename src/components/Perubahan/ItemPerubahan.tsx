@@ -87,12 +87,20 @@ export default function ItemPerubahan({
                 <td></td>
                 <td>
                   <Box py={5}>
-                    <Button size="xs" radius={0} color="dark" variant="filled" onClick={onClick}>
+                    <Button
+                      size="xs"
+                      mr={10}
+                      mb={10}
+                      radius={0}
+                      color="dark"
+                      variant="filled"
+                      onClick={onClick}
+                    >
                       Edit Perubahan
                     </Button>
                     <Button
                       size="xs"
-                      ml={10}
+                      mb={10}
                       color="red"
                       radius={0}
                       variant="filled"
@@ -100,7 +108,7 @@ export default function ItemPerubahan({
                         setDeleteDialog(true);
                       }}
                     >
-                      Delete Perubahan
+                      Delete
                     </Button>
                   </Box>
                 </td>
