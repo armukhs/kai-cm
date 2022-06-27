@@ -1,7 +1,8 @@
 import { Button, Paper, Text } from '@mantine/core';
+import Link from 'next/link';
 import { Dispatch } from 'react';
 
-export default function PerubahanEmpty({
+export default function ProjectsEmpty({
   canCreate,
   onClick,
 }: {
@@ -13,15 +14,18 @@ export default function PerubahanEmpty({
       <Text size="sm">Tidak ada data perubahan teknlogi dalam proyek ini.</Text>
 
       {canCreate && (
-        <Button
-          mt={20}
-          style={{ fontWeight: 500 }}
-          color="indigo"
-          radius={0}
-          onClick={() => onClick('new')}
-        >
-          Create Perubahan
-        </Button>
+        <Link href="/new" passHref>
+          <Button
+            component="a"
+            mt={20}
+            style={{ fontWeight: 500 }}
+            color="indigo"
+            radius={0}
+            onClick={() => {}}
+          >
+            Create Perubahan
+          </Button>
+        </Link>
       )}
     </Paper>
   );

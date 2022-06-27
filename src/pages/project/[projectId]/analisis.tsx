@@ -8,15 +8,28 @@ import Analisis from 'components/Analisis/Analisis';
 export default function ProjectPage({
   user,
   project,
-  analisis,
+  bobot,
+  kesiapan,
+  units,
 }: {
   user: SessionUser;
   project: any;
-  analisis: any;
+  bobot: any;
+  kesiapan: any;
+  units: any[];
 }) {
   if (!project) return <ProjectNotFound />;
 
-  return <Analisis title="Analisis" user={user} project={project} analisis={analisis} />;
+  return (
+    <Analisis
+      title="Analisis"
+      user={user}
+      project={project}
+      bobot={bobot}
+      kesiapan={kesiapan}
+      units={units}
+    />
+  );
 }
 
 // @ts-ignore
@@ -35,9 +48,10 @@ export const getServerSideProps = withIronSessionSsr(async function ({ req, res 
   }
 
   let projectId = extractProjectId(req.url as string);
-  const rs = await __getAnalisis(projectId);
+  // @ts-ignore
+  const { project, bobot, kesiapan, units } = await __getAnalisis(projectId);
 
   return {
-    props: { user: user as SessionUser, project: rs?.project, analisis: rs?.analisis },
+    props: { user: user as SessionUser, project, bobot, kesiapan, units },
   };
 }, sessionOptions);

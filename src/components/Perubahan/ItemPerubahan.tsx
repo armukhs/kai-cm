@@ -60,26 +60,26 @@ export default function ItemPerubahan({
             </tr>
             {data.kondisi && (
               <tr>
-                <td style={{ width: 150, paddingLeft: 14, whiteSpace: 'nowrap' }}>
+                <td style={{ width: 110, paddingLeft: 14, whiteSpace: 'nowrap' }}>
                   Kondisi sekarang:
                 </td>
                 <td>{data.kondisi}</td>
               </tr>
             )}
             <tr>
-              <td style={{ width: 150, paddingLeft: 14, whiteSpace: 'nowrap' }}>
+              <td style={{ width: 110, paddingLeft: 14, whiteSpace: 'nowrap' }}>
                 Bentuk Perubahan:
               </td>
               <td>{data.perubahan}</td>
             </tr>
             <tr>
-              <td style={{ width: 150, paddingLeft: 14, whiteSpace: 'nowrap' }}>Unit Terdampak:</td>
+              <td style={{ width: 110, paddingLeft: 14, whiteSpace: 'nowrap' }}>Unit Terdampak:</td>
               <td>
                 <DaftarUnitTerdampak ids={daftarIdTerdampak()} units={units} />
               </td>
             </tr>
             <tr>
-              <td style={{ width: 150, paddingLeft: 14, whiteSpace: 'nowrap' }}>PIC Perubahan:</td>
+              <td style={{ width: 110, paddingLeft: 14, whiteSpace: 'nowrap' }}>PIC Perubahan:</td>
               <td>{pic(data.picId) ? pic(data.picId)?.nama : '(belum ditentukan)'}</td>
             </tr>
             {canEdit && !deleteDialog && (

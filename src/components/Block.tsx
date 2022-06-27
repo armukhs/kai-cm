@@ -10,7 +10,7 @@ export default function Block({
 }: {
   info?: string;
   show: boolean;
-  mode: BlockType;
+  mode?: BlockType;
   children: ReactNode;
 }) {
   const desc = <span style={{ display: 'none', height: 0, width: 0 }}>{info}</span>;

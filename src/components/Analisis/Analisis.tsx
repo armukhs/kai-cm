@@ -1,6 +1,7 @@
 import { Avatar, Group, Paper, Table, Tabs, Text } from '@mantine/core';
 import Layout from 'components/Layout/Layout';
 import PageTitle from 'components/PageTitle/PageTitle';
+import Pojo from 'components/Pojo';
 import { SessionUser } from 'lib/session';
 import useAuthApi from 'lib/useAuthApi';
 import { useEffect, useState } from 'react';
@@ -10,41 +11,44 @@ import FormAnalisis from './FormAnalisis';
 export default function Analisis({
   user,
   project,
-  analisis,
+  bobot,
+  kesiapan,
+  units,
   title,
 }: {
   user: SessionUser;
   project: any;
-  analisis: any;
+  bobot: any;
+  kesiapan: any;
+  units: any[];
   title: string;
 }) {
   const { data, mutate } = useAuthApi('analisis', project.id);
   const isMentor = user.id == project.mentorId;
 
-  const [syncData, setSyncData] = useState(analisis);
+  const [syncData, setSyncData] = useState(kesiapan);
 
   useEffect(() => {
     if (data) {
-      setSyncData(data.analisis);
+      setSyncData(data.kesiapan);
     }
   }, [data]);
 
-  function bobot() {
+  function bobotVal() {
     return (
-      analisis.topLevel +
-      analisis.unitStrukturVal +
-      analisis.unitPeranVal +
-      analisis.unitBudayaVal +
-      analisis.unitKompetensiVal +
-      analisis.unitLainnyaVal +
-      analisis.topProsesLevel +
-      analisis.topTeknologiLevel
+      bobot.topLevel +
+      bobot.unitStrukturVal +
+      bobot.unitPeranVal +
+      bobot.unitBudayaVal +
+      bobot.unitKompetensiVal +
+      bobot.unitLainnyaVal +
+      bobot.topProsesLevel +
+      bobot.topTeknologiLevel
     );
   }
 
   return (
     <Layout title={`Analisis & Rekomendasi - ${project.judul}`} user={user} project={project}>
-      {/* <h2 style={{ marginTop: 0, fontWeight: 500 }}>{title}</h2> */}
       <PageTitle prefix="" title="Analisis" />
 
       <Tabs
@@ -55,7 +59,7 @@ export default function Analisis({
       >
         <Tabs.Tab label="Bobot Perubahan">
           <BobotNilai
-            nilai={bobot()}
+            nilai={bobotVal()}
             info="Berdasar jumlah dan jenis unit-unit terdampak beserta level organisasinya."
           />
 
@@ -74,7 +78,7 @@ export default function Analisis({
                 </tr>
                 <tr>
                   <td style={{ paddingLeft: 24 }}>Level Unit Perubahan Tertinggi</td>
-                  <td align="center">{analisis.topLevel}</td>
+                  <td align="center">{bobot.topLevel}</td>
                 </tr>
 
                 <tr style={{ backgroundColor: '#fcfcfc' }}>
@@ -86,23 +90,23 @@ export default function Analisis({
                 </tr>
                 <tr>
                   <td style={{ paddingLeft: 24 }}>Peran &amp; Tanggugjawab</td>
-                  <td align="center">{analisis.unitPeranVal}</td>
+                  <td align="center">{bobot.unitPeranVal}</td>
                 </tr>
                 <tr>
                   <td style={{ paddingLeft: 24 }}>Budaya Kerja</td>
-                  <td align="center">{analisis.unitBudayaVal}</td>
+                  <td align="center">{bobot.unitBudayaVal}</td>
                 </tr>
                 <tr>
                   <td style={{ paddingLeft: 24 }}>Knowledge, Skill, Ability</td>
-                  <td align="center">{analisis.unitKompetensiVal}</td>
+                  <td align="center">{bobot.unitKompetensiVal}</td>
                 </tr>
                 <tr>
                   <td style={{ paddingLeft: 24 }}>Struktur Organisasi</td>
-                  <td align="center">{analisis.unitStrukturVal}</td>
+                  <td align="center">{bobot.unitStrukturVal}</td>
                 </tr>
                 <tr>
                   <td style={{ paddingLeft: 24 }}>Pola Kerja, Dll.</td>
-                  <td align="center">{analisis.unitLainnyaVal}</td>
+                  <td align="center">{bobot.unitLainnyaVal}</td>
                 </tr>
 
                 <tr style={{ backgroundColor: '#fcfcfc' }}>
@@ -114,7 +118,7 @@ export default function Analisis({
                 </tr>
                 <tr>
                   <td style={{ paddingLeft: 24 }}>Level Unit Perubahan Tertinggi</td>
-                  <td align="center">{analisis.topProsesLevel}</td>
+                  <td align="center">{bobot.topProsesLevel}</td>
                 </tr>
 
                 <tr style={{ backgroundColor: '#fcfcfc' }}>
@@ -126,14 +130,14 @@ export default function Analisis({
                 </tr>
                 <tr>
                   <td style={{ paddingLeft: 24 }}>Level Unit Perubahan Tertinggi</td>
-                  <td align="center">{analisis.topTeknologiLevel}</td>
+                  <td align="center">{bobot.topTeknologiLevel}</td>
                 </tr>
               </tbody>
             </Table>
           </Paper>
         </Tabs.Tab>
         <Tabs.Tab label="Analisis Kesiapan">
-          <FormAnalisis data={syncData} canEdit={isMentor} mutate={mutate} />
+          <FormAnalisis project={project} data={syncData} canEdit={isMentor} mutate={mutate} />
         </Tabs.Tab>
       </Tabs>
     </Layout>

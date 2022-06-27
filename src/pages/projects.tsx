@@ -1,30 +1,56 @@
-import { InferGetServerSidePropsType } from 'next';
 import { withIronSessionSsr } from 'iron-session/next';
 import { DefaultUser, sessionOptions, SessionUser } from 'lib/session';
 import Layout from 'components/Layout/Layout';
-import prisma from 'lib/db';
-import Link from 'next/link';
-import { Button } from '@mantine/core';
+import { Space } from '@mantine/core';
+import { __getProjects } from 'lib/queries/getProjects';
+import Projects from 'components/Projects/Projects';
+import PageTitle from 'components/PageTitle/PageTitle';
+import ButtonPrimary from 'components/PageTitle/ButtonPrimary';
+import Block from 'components/Block';
+import useAuthApi from 'lib/useAuthApi';
+import { useEffect, useState } from 'react';
+import ProjectsEmpty from 'components/Projects/ProjectsEmpty';
 
-// InferGetServerSidePropsType<typeof getServerSideProps>
+export default function Page({
+  user,
+  projects,
+  assignments,
+}: {
+  user: SessionUser;
+  projects: any[];
+  assignments: any[];
+}) {
+  const { data } = useAuthApi('projects');
+  const hasProjects = user.roles.includes('project');
+  const hasAssignments = user.roles.includes('mentor');
 
-export default function Page({ user, projects }: { user: SessionUser; projects: any[] }) {
+  const [projectsSync, setProjectsSync] = useState(projects);
+  const [assignmentsSync, setAssignmentsSync] = useState(assignments);
+
+  useEffect(() => {
+    if (data) {
+      setProjectsSync(data.projects);
+      setAssignmentsSync(data.assignments);
+    }
+    return () => {};
+  }, [data]);
+
   return (
     <Layout title="Honocoroko" user={user}>
-      <h2 style={{ marginTop: 0 }}>My Projects</h2>
-      {projects &&
-        projects.map((project: any) => (
-          <div key={project.id} style={{ marginBottom: 6 }}>
-            <Link href={`/project/${project.id}`}>
-              <a>{project.judul}</a>
-            </Link>
-          </div>
-        ))}
-      <Link href="/new" passHref>
-        <Button component="a">New Project</Button>
-      </Link>
-      {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
-      {/* <pre>{JSON.stringify(projects, null, 2)}</pre> */}
+      <Block info="__USER_PROJECT__" show={hasProjects}>
+        <PageTitle prefix="" title="My Projects">
+          {projectsSync.length > 0 && <ButtonPrimary label="New Projects" onClick={() => {}} />}
+        </PageTitle>
+        {projectsSync.length == 0 && <ProjectsEmpty canCreate={true} onClick={() => {}} />}
+        {projectsSync.length > 0 && <Projects projects={projectsSync} />}
+      </Block>
+
+      {hasProjects && hasAssignments && <Space h={20} />}
+
+      <Block info="__USER_PROJECT__" show={hasAssignments}>
+        <PageTitle prefix="" title="My Assigments" />
+        <Projects projects={assignmentsSync} />
+      </Block>
     </Layout>
   );
 }
@@ -44,28 +70,10 @@ export const getServerSideProps = withIronSessionSsr(async function ({ req, res 
     };
   }
 
-  const projects = await prisma.project.findMany({
-    where: {
-      OR: [{ managerId: user.id }, { staffId: user.id }],
-    },
-    select: {
-      id: true,
-      managerId: true,
-      mentorId: true,
-      staffId: true,
-      judul: true,
-      Unit: { select: { id: true, kode: true, nama: true } },
-      Manager: {
-        select: { id: true, nama: true, Jabatan: { select: { kode: true, nama: true } } },
-      },
-      Mentor: {
-        select: { id: true, nama: true, Jabatan: { select: { kode: true, nama: true } } },
-      },
-    },
-    orderBy: { created: 'asc' },
-  });
+  // @ts-ignore
+  const { projects, assignments } = await __getProjects(user.id);
 
   return {
-    props: { user: user as SessionUser, projects: projects },
+    props: { user: user as SessionUser, projects, assignments },
   };
 }, sessionOptions);

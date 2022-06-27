@@ -4,8 +4,9 @@ import { NextApiRequest, NextApiResponse } from 'next';
 export default async function getAnalisis(req: NextApiRequest, res: NextApiResponse) {
   try {
     const projectId = req.query.option as string;
-    const rs = await __getAnalisis(projectId);
-    return res.json({ project: rs?.project, analisis: rs?.analisis });
+    // @ts-ignore
+    const { project, bobot, kesiapan, units } = await __getAnalisis(projectId);
+    return res.json({ project, bobot, kesiapan, units });
   } catch (error) {
     console.log(error);
   }
@@ -120,7 +121,7 @@ export async function __getAnalisis(projectId: string) {
 
     if (topLevel == 4 && topLevelCount > 1) topLevel = 5;
 
-    const analisis = {
+    const bobot = {
       topLevel,
       topLevelCount,
       topProsesLevel,
@@ -137,13 +138,21 @@ export async function __getAnalisis(projectId: string) {
       unitBudayaVal,
       unitKompetensiVal,
       unitLainnyaVal,
-      kesiapan: JSON.parse(JSON.stringify(kesiapan)),
-      units: units,
     };
+
+    const _kesiapan = { ...kesiapan };
+    delete _kesiapan.updated;
+
+    // const analisis = {
+    //   kesiapan: JSON.parse(JSON.stringify(kesiapan)),
+    //   units: units,
+    // };
 
     return {
       project: JSON.parse(JSON.stringify(project)),
-      analisis,
+      bobot,
+      kesiapan: _kesiapan,
+      units,
     };
   } catch (error) {
     console.log(error);

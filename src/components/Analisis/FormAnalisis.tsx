@@ -1,15 +1,6 @@
-import {
-  Avatar,
-  Button,
-  Checkbox,
-  Group,
-  NativeSelect,
-  Paper,
-  Table,
-  Text,
-  Title,
-} from '@mantine/core';
+import { Button, Checkbox, NativeSelect, Paper, Table, Text } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import Pojo from 'components/Pojo';
 import fetchJson from 'lib/fetchJson';
 import { createPostData } from 'lib/utils';
 import { useEffect, useState } from 'react';
@@ -18,114 +9,73 @@ import BobotNilai from './BobotNilai';
 
 export default function FormAnalisis({
   data,
+  project,
   canEdit,
   mutate,
 }: {
   data: any;
+  project: any;
   canEdit: boolean;
   mutate: KeyedMutator<any>;
 }) {
   const form = useForm({
-    initialValues: {
-      projectId: data.projectId,
-      sepakat_dengan_misi: data.kesiapan.sepakat_dengan_misi,
-      komunikasi_terbuka: data.kesiapan.komunikasi_terbuka,
-      percaya_bawahan: data.kesiapan.percaya_bawahan,
-      ide_bawahan: data.kesiapan.ide_bawahan,
-      interaksi_bersahabat: data.kesiapan.interaksi_bersahabat,
-      saling_percaya: data.kesiapan.saling_percaya,
-      kinerja_teamwork: data.kesiapan.kinerja_teamwork,
-      lingkungan_koperatif: data.kesiapan.lingkungan_koperatif,
-      saling_menghargai: data.kesiapan.saling_menghargai,
-      kompetensi_memadai: data.kesiapan.kompetensi_memadai,
-      ekspektasi_realistis: data.kesiapan.ekspektasi_realistis,
-      komunikasi_intens: data.kesiapan.komunikasi_intens,
-      tanpa_isu_otoritas: data.kesiapan.tanpa_isu_otoritas,
-      tanpa_isu_hilang_kerja: data.kesiapan.tanpa_isu_hilang_kerja,
-      optimis_terhadap_hasil: data.kesiapan.optimis_terhadap_hasil,
-      nyaman_dengan_hasil: data.kesiapan.nyaman_dengan_hasil,
-    },
+    initialValues: { ...data },
   });
 
   function kepemimpinan() {
     const sum =
-      form.values['sepakat_dengan_misi'] +
-      form.values['komunikasi_terbuka'] +
-      form.values['percaya_bawahan'] +
-      form.values['ide_bawahan'];
+      parseInt(form.values['sepakat_dengan_misi']) +
+      parseInt(form.values['komunikasi_terbuka']) +
+      parseInt(form.values['percaya_bawahan']) +
+      parseInt(form.values['ide_bawahan']);
     return sum == 0 ? 0 : sum / 4;
   }
 
   function lingkungan() {
     const sum =
-      form.values['interaksi_bersahabat'] +
-      form.values['saling_percaya'] +
-      form.values['kinerja_teamwork'] +
-      form.values['lingkungan_koperatif'] +
-      form.values['saling_menghargai'];
+      parseInt(form.values['interaksi_bersahabat']) +
+      parseInt(form.values['saling_percaya']) +
+      parseInt(form.values['kinerja_teamwork']) +
+      parseInt(form.values['lingkungan_koperatif']) +
+      parseInt(form.values['saling_menghargai']);
     return sum == 0 ? 0 : sum / 5;
   }
 
   function komitmen() {
     const sum =
-      form.values['kompetensi_memadai'] +
-      form.values['ekspektasi_realistis'] +
-      form.values['komunikasi_intens'];
+      parseInt(form.values['kompetensi_memadai']) +
+      parseInt(form.values['ekspektasi_realistis']) +
+      parseInt(form.values['komunikasi_intens']);
     return sum == 0 ? 0 : sum / 3;
   }
 
   function resistensi() {
     const sum =
-      form.values['tanpa_isu_otoritas'] +
-      form.values['tanpa_isu_hilang_kerja'] +
-      form.values['optimis_terhadap_hasil'] +
-      form.values['nyaman_dengan_hasil'];
+      parseInt(form.values['tanpa_isu_otoritas']) +
+      parseInt(form.values['tanpa_isu_hilang_kerja']) +
+      parseInt(form.values['optimis_terhadap_hasil']) +
+      parseInt(form.values['nyaman_dengan_hasil']);
     return sum == 0 ? 0 : sum / 4;
   }
 
   function nilaiKesiapan() {
     const sum = kepemimpinan() + lingkungan() + komitmen() + resistensi();
-    return sum == 0 ? 0.0 : sum / 4;
+    return sum; // == 0 ? 0.0 : sum / 4;
   }
-
-  useEffect(() => {
-    if (data) {
-      form.setFieldValue('sepakat_dengan_misi', data.kesiapan.sepakat_dengan_misi);
-      form.setFieldValue('komunikasi_terbuka', data.kesiapan.komunikasi_terbuka);
-      form.setFieldValue('percaya_bawahan', data.kesiapan.percaya_bawahan);
-      form.setFieldValue('ide_bawahan', data.kesiapan.ide_bawahan);
-      form.setFieldValue('interaksi_bersahabat', data.kesiapan.interaksi_bersahabat);
-      form.setFieldValue('saling_percaya', data.kesiapan.saling_percaya);
-      form.setFieldValue('kinerja_teamwork', data.kesiapan.kinerja_teamwork);
-      form.setFieldValue('lingkungan_koperatif', data.kesiapan.lingkungan_koperatif);
-      form.setFieldValue('saling_menghargai', data.kesiapan.saling_menghargai);
-      form.setFieldValue('kompetensi_memadai', data.kesiapan.kompetensi_memadai);
-      form.setFieldValue('ekspektasi_realistis', data.kesiapan.ekspektasi_realistis);
-      form.setFieldValue('komunikasi_intens', data.kesiapan.komunikasi_intens);
-      form.setFieldValue('tanpa_isu_otoritas', data.kesiapan.tanpa_isu_otoritas);
-      form.setFieldValue('tanpa_isu_hilang_kerja', data.kesiapan.tanpa_isu_hilang_kerja);
-      form.setFieldValue('optimis_terhadap_hasil', data.kesiapan.optimis_terhadap_hasil);
-      form.setFieldValue('nyaman_dengan_hasil', data.kesiapan.nyaman_dengan_hasil);
-      // form.setFieldValue('tglKonfirmasi', data.tglKonfirmasi);
-      setFinal(data.tglKonfirmasi != null);
-    }
-  }, [data]);
 
   useEffect(() => {
     if (!hasAllValues()) setFinal(false);
   }, [form.values]);
 
   function postValues() {
-    const original = {};
-    Object.keys(form.values).forEach((key: string) => {
-      if (key != 'projectId' && key != 'tglKonfirmasi') {
-        // @ts-ignore
-        original[key] = parseInt(form.values[key]);
-      }
+    const copy = { ...form.values };
+    delete copy.projectId;
+    Object.keys(copy).forEach((key: string) => {
+      copy[key] = parseInt(copy[key]);
     });
     return {
-      projectId: data.id,
-      data: original,
+      projectId: data.projectId,
+      data: copy,
       isFinal: final,
     };
   }
@@ -144,7 +94,7 @@ export default function FormAnalisis({
   }
 
   const [submitting, setSubmitting] = useState(false);
-  const [final, setFinal] = useState(data.tglKonfirmasi != null);
+  const [final, setFinal] = useState(project.tglKonfirmasi != null);
 
   async function saveAnalisis() {
     setSubmitting(true);
@@ -299,7 +249,7 @@ export default function FormAnalisis({
 
       <p style={{ fontSize: 13 }}>
         Tgl Konfirmasi:{' '}
-        {data.tglKonfirmasi ? data.tglKonfirmasi.substring(0, 10) : 'Belum ditetapkan'}
+        {project.tglKonfirmasi ? project.tglKonfirmasi.substring(0, 10) : 'Belum ditetapkan'}
       </p>
 
       {canEdit && (

@@ -3,6 +3,7 @@ import getKomentar from './getKomentar';
 import getOrganization from './getOrganization';
 import getPerubahan from './getPerubahan';
 import getProject from './getProject';
+import getProjects from './getProjects';
 import getRencana from './getRencana';
 
 export const QUERIES = {
@@ -14,4 +15,5 @@ export const AUTH_QUERIES = {
   komentar: getKomentar,
   analisis: getAnalisis,
   rencana: getRencana,
+  projects: getProjects,
 };
