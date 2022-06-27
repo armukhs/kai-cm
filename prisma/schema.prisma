@@ -87,7 +87,8 @@ model Project {
   tglMulai      String?
   tglSelesai    String?
   isDeleted     Boolean         @default(false)
-  tglKonfirmasi DateTime?       @db.Date
+  tglKonfirmasi DateTime?       @db.Date // Konfirmasi analisis
+  tglApproval   DateTime?       @db.Date // Approval untuk rencana
   tglBatal      DateTime?       @db.Date
   proses        Int             @default(0)
   teknologi     Int             @default(0)

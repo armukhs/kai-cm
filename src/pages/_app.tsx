@@ -39,6 +39,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
           <MantineProvider
             theme={{
               colorScheme,
+              primaryColor: 'indigo',
               fontSizes: {
                 sm: 13.75,
                 md: 14.5,

@@ -151,11 +151,11 @@ export default function FormProject({
           required
           mb={7}
         />
-        <Button mt={15} type="submit">
+        <Button mt={15} type="submit" radius={0} color="indigo">
           {data ? 'Save Project' : 'Register Project'}
         </Button>
         <Show when={onCancel !== undefined} display="inline-block">
-          <Button mt={15} ml={10} variant="outline" onClick={onCancel}>
+          <Button mt={15} ml={10} variant="outline" radius={0} color="red" onClick={onCancel}>
             Cancel
           </Button>
         </Show>

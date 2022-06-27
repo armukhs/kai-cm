@@ -64,7 +64,7 @@ export default createStyles((theme) => ({
 
   sidebarInnerWithProject: {
     position: 'sticky',
-    top: 57,
+    top: 71,
   },
 
   main: {

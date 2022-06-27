@@ -29,7 +29,7 @@ export default function ProjectInfo({ user, project }: { user: SessionUser; proj
 
       {!showForm && (
         <>
-          <Paper withBorder sx={{ borderColor: '#ddd' }}>
+          <Paper withBorder sx={(theme) => ({ borderColor: theme.colors.gray[5] })}>
             <Table>
               <tbody style={{ verticalAlign: 'top' }}>
                 <tr>
@@ -80,15 +80,15 @@ export default function ProjectInfo({ user, project }: { user: SessionUser; proj
           {allowEdit && (
             <div style={{ marginTop: 20 }}>
               <Button
+                style={{ fontWeight: 500 }}
                 color="dark"
-                size="xs"
-                radius={3}
+                radius={0}
                 onClick={() => {
                   setShowForm(true);
                   window.scrollTo(0, 1);
                 }}
               >
-                Edit
+                Edit Project Info
               </Button>
             </div>
           )}

@@ -220,9 +220,14 @@ export default function FormPerubahan({
         </Box>
 
         <Box mt={20}>
-          <Button type="submit">Save Perubahan</Button>
+          <Button type="submit" radius={0} color="indigo">
+            Save Perubahan
+          </Button>
           <Button
             ml={10}
+            variant="outline"
+            radius={0}
+            color="red"
             onClick={() => {
               reset();
               onCancel();

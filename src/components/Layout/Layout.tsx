@@ -52,7 +52,7 @@ export default function Layout({
         <Header />
       </div>
 
-      {project && <ProjectBar title={project.judul} />}
+      {project && <ProjectBar project={project} />}
 
       <div className={classes.container} style={{ paddingBottom: 100 }}>
         <div className={classes.sidebarToggle}>

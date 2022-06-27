@@ -48,7 +48,7 @@ export default function ItemPerubahan({
         <Box color="white">asas</Box>
       </Overlay> */}
       <LoadingOverlay visible={submitting} />
-      <Paper withBorder sx={{ borderColor: '#ddd' }}>
+      <Paper withBorder sx={(theme) => ({ borderColor: theme.colors.gray[5], overflow: 'hidden' })}>
         <Table fontSize={13.5}>
           <tbody style={{ verticalAlign: 'top' }}>
             <tr>
@@ -94,9 +94,8 @@ export default function ItemPerubahan({
                       size="xs"
                       ml={10}
                       color="red"
-                      sx={{ backgroundColor: 'white' }}
                       radius={0}
-                      variant="outline"
+                      variant="filled"
                       onClick={() => {
                         setDeleteDialog(true);
                       }}
@@ -122,6 +121,7 @@ export default function ItemPerubahan({
                       size="xs"
                       mt={6}
                       color="red"
+                      radius={0}
                       variant="filled"
                       onClick={handelDelete}
                     >
@@ -131,6 +131,7 @@ export default function ItemPerubahan({
                       size="xs"
                       mt={6}
                       ml={10}
+                      radius={0}
                       color="red"
                       variant="outline"
                       onClick={() => {
