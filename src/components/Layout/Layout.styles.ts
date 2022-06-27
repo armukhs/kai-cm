@@ -39,7 +39,7 @@ export default createStyles((theme) => ({
     flexGrow: 0,
     flexShrink: 1,
     flexBasis: 220,
-    paddingTop: 20,
+    paddingTop: 30,
     paddingRight: 50,
 
     '@media (max-width: 799px)': {
@@ -74,7 +74,7 @@ export default createStyles((theme) => ({
     width: '100%',
     maxWidth: 720,
     marginTop: 0,
-    paddingTop: 20,
+    paddingTop: 30,
     marginRight: 'auto',
     marginLeft: 'auto',
     minWidth: 0,

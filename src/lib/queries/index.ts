@@ -1,3 +1,4 @@
+import getAnalisis from './getAnalisis';
 import getKomentar from './getKomentar';
 import getOrganization from './getOrganization';
 import getPerubahan from './getPerubahan';
@@ -10,4 +11,5 @@ export const AUTH_QUERIES = {
   project: getProject,
   perubahan: getPerubahan,
   komentar: getKomentar,
+  analisis: getAnalisis,
 };
