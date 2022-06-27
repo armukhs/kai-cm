@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from 'lib/db';
 import cuid from 'cuid';
+import { __getPerubahan } from 'lib/queries/getPerubahan';
 
 export default async function savePerubahan(req: NextApiRequest, res: NextApiResponse) {
   try {
@@ -17,7 +18,7 @@ export default async function savePerubahan(req: NextApiRequest, res: NextApiRes
 
     if (!id || id == '') {
       // NEW
-      const rs = await prisma.perubahan.create({
+      await prisma.perubahan.create({
         data: {
           id: cuid.slug(),
           projectId: projectId,
@@ -32,9 +33,9 @@ export default async function savePerubahan(req: NextApiRequest, res: NextApiRes
           },
         },
       });
-      console.log(rs);
+      // console.log(rs);
 
-      res.json(rs);
+      // res.json(rs);
     } else {
       // UPDATE
 
@@ -43,7 +44,7 @@ export default async function savePerubahan(req: NextApiRequest, res: NextApiRes
         where: { perubahanId: id },
       });
 
-      const rs = await prisma.perubahan.update({
+      await prisma.perubahan.update({
         where: { id: id },
         data: {
           picId: picId ? picId : null,
@@ -57,8 +58,11 @@ export default async function savePerubahan(req: NextApiRequest, res: NextApiRes
         },
       });
 
-      res.json(rs);
+      // res.json(rs);
     }
+    // @ts-ignore
+    const { project, perubahans } = await __getPerubahan(type, projectId);
+    res.json({ project, perubahans });
   } catch (error) {
     console.log(error);
     res.status(500).json(error);

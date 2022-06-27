@@ -1,7 +1,9 @@
 import { createStyles } from '@mantine/core';
 export default createStyles((theme) => ({
   projectBar: {
-    backgroundColor: 'rgba(255,255,255,.95)',
+    backgroundColor: 'white',
+    // paddingBottom: 10,
+    // boxShadow: '0 3px 5px rgba(255,255,255, 0.9)',
   },
 
   projectBarFixed: {
@@ -13,8 +15,8 @@ export default createStyles((theme) => ({
   },
 
   projectBarInner: {
-    paddingTop: 7,
-    paddingBottom: 7,
+    paddingTop: 0,
+    paddingBottom: 0,
     backgroundColor: 'white',
     borderBottomColor: theme.colors.indigo[3],
     borderBottomStyle: 'solid',
@@ -25,6 +27,7 @@ export default createStyles((theme) => ({
   },
 
   homeIcon: {
+    display: 'flex',
     color: theme.colors.gray[6],
     ':hover': {
       color: theme.colors.indigo[6],
@@ -39,5 +42,18 @@ export default createStyles((theme) => ({
   label: {
     flexBasis: 75,
     flexShrink: 0,
+  },
+
+  truncate: {
+    width: 'calc(100vw - 200px)',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    '@media (min-width: 640px)': {
+      width: 'calc(100vw - 260px)',
+    },
+    '@media (min-width: 1000px)': {
+      width: 750,
+    },
   },
 }));

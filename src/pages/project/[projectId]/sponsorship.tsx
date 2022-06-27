@@ -1,22 +1,25 @@
 import { withIronSessionSsr } from 'iron-session/next';
 import { DefaultUser, sessionOptions, SessionUser } from 'lib/session';
-import Layout from 'components/Layout/Layout';
-import prisma from 'lib/db';
-import Link from 'next/link';
-import { Button } from '@mantine/core';
+import { extractProjectId } from 'lib/utils';
+import ProjectNotFound from 'components/ProjectNotFound/ProjectNotFound';
+import { __getRencana } from 'lib/queries/getRencana';
+import Rencana from 'components/Rencana/Rencana';
 
-export default function ProjectPage({ user, project }: { user: SessionUser; project: any }) {
-  return (
-    <Layout title="Honocoroko" user={user} project={project}>
-      <h2 style={{ marginTop: 0 }}>Project Section</h2>
+const TYPE = 'sponsorship';
+const TITLE = 'Rencana Sponsorship';
 
-      <Link href="/new" passHref>
-        <Button component="a">New Project</Button>
-      </Link>
-      {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
-      <pre>{JSON.stringify(project, null, 2)}</pre>
-    </Layout>
-  );
+export default function ProjectPage({
+  user,
+  project,
+  rencanas,
+}: {
+  user: SessionUser;
+  project: any;
+  rencanas: any[];
+}) {
+  if (!project) return <ProjectNotFound />;
+
+  return <Rencana user={user} project={project} rencanas={rencanas} type={TYPE} title={TITLE} />;
 }
 
 // @ts-ignore
@@ -34,35 +37,10 @@ export const getServerSideProps = withIronSessionSsr(async function ({ req, res 
     };
   }
 
-  const url = req.url;
-  let projectId = '';
-  if (url?.includes('projectId')) {
-    projectId = url.split('=').pop() as string;
-  } else {
-    projectId = url?.split('/').pop() as string;
-  }
-  console.log('ID', projectId);
-
-  const project = await prisma.project.findFirst({
-    where: { id: projectId },
-    select: {
-      id: true,
-      managerId: true,
-      mentorId: true,
-      staffId: true,
-      judul: true,
-      Unit: { select: { id: true, kode: true, nama: true } },
-      Manager: {
-        select: { id: true, nama: true, Jabatan: { select: { kode: true, nama: true } } },
-      },
-      Mentor: {
-        select: { id: true, nama: true, Jabatan: { select: { kode: true, nama: true } } },
-      },
-    },
-    orderBy: { created: 'asc' },
-  });
+  let projectId = extractProjectId(req.url as string);
+  const rs = await __getRencana(TYPE, projectId);
 
   return {
-    props: { user: user as SessionUser, project: project },
+    props: { user: user as SessionUser, project: rs?.project, rencanas: rs?.rencanas },
   };
 }, sessionOptions);

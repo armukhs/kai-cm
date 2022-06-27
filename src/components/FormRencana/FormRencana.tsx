@@ -7,25 +7,24 @@ import {
   ScrollArea,
   Text,
   Textarea,
+  TextInput,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import PICSelector from 'components/PICSelector/PICSelector';
-import Pojo from 'components/Pojo';
 import TopUnitSelect from 'components/TopUnitSelect/TopUnitSelect';
 import fetchJson from 'lib/fetchJson';
 import { createPostData } from 'lib/utils';
 import { Dispatch, useEffect, useRef, useState } from 'react';
-import { useStyles } from './FormPerubahan.styles';
 
-export default function FormPerubahan({
+export default function FormRencana({
   data,
   units,
   topUnits,
   pic,
   dataJabatan,
   mutate,
-  onSuccess,
   onCancel,
+  onSuccess,
 }: {
   data: any;
   units: any[];
@@ -36,22 +35,15 @@ export default function FormPerubahan({
   onSuccess: Dispatch<any>;
   onCancel: () => void;
 }) {
-  const { classes } = useStyles();
   const [submitting, setSubmitting] = useState(false);
   const [kodeInduk, setKodeInduk] = useState(topUnits ? topUnits[0]?.kode : '');
   const [daftarIDTerdampak, setDaftarIDTerdampak] = useState<string[]>([]);
   const [daftarUnitTerdampak, setDaftarUnitTerdampak] = useState<any[]>([]);
+
   const [picId, setPicId] = useState('');
 
   const form = useForm({
-    initialValues: {
-      id: '',
-      picId: '',
-      projectId: '',
-      type: '',
-      kondisi: '',
-      perubahan: '',
-    },
+    initialValues: { ...data },
   });
 
   useEffect(() => {
@@ -68,50 +60,30 @@ export default function FormPerubahan({
     return () => {};
   }, [daftarIDTerdampak, setDaftarUnitTerdampak]);
 
-  useEffect(() => {
-    if (data?.projectId) {
-      form.setFieldValue('type', data.type);
-      form.setFieldValue('projectId', data.projectId);
-    }
-    if (data?.id) {
-      form.setFieldValue('id', data.id);
-      form.setFieldValue('picId', data.picId || '');
-      form.setFieldValue('projectId', data.projectId);
-      form.setFieldValue('type', data.type);
-      form.setFieldValue('kondisi', data.kondisi);
-      form.setFieldValue('perubahan', data.perubahan);
+  function cleanUp(param: string) {
+    const lines = param.split('\n');
+    let items: string[] = [];
+    lines.forEach((l) => {
+      if (l.length > 0) items.push(l);
+    });
 
-      if (data.UnitPerubahan.length > 0) {
-        const ids: string[] = [];
-        data.UnitPerubahan.forEach((d: any) => ids.push(d.unitId));
-        setDaftarIDTerdampak(ids);
-      }
-    }
-
-    return () => {};
-  }, [data]);
-
-  function reset() {
-    setDaftarIDTerdampak([]);
-    setDaftarUnitTerdampak([]);
-    setKodeInduk(topUnits[0].kode);
-    form.setFieldValue('id', '');
-    form.setFieldValue('kondisi', '');
-    form.setFieldValue('perubahan', '');
+    if (items.length > 0) return items.join('\n');
+    return '';
   }
 
   async function handleSubmit(values: typeof form.values) {
     setSubmitting(true);
     const body = { ...values, unitTerdampak: [''] };
+    body.tolokUkur = cleanUp(values['tolokUkur']);
     body.unitTerdampak = daftarIDTerdampak;
     console.log(body);
 
     try {
-      const url = '/api/auth/post?subject=save-perubahan';
+      const url = '/api/auth/post?subject=save-rencana';
       const rs: any = await fetchJson(url, createPostData(body));
       if (rs) {
-        mutate(rs?.perubahans);
-        onSuccess(rs?.perubahans.length - 1);
+        mutate(rs?.rencanas);
+        onSuccess(rs?.rencanas.length - 1);
       }
       onCancel();
       window.scrollTo(0, 0);
@@ -127,50 +99,67 @@ export default function FormPerubahan({
   return (
     <div style={{ position: 'relative' }}>
       <LoadingOverlay visible={submitting} />
-      {/* <Pojo object={form.values} /> */}
-      {/* <Pojo object={data} /> */}
       <form onSubmit={form.onSubmit((values) => handleSubmit(values))}>
-        {data && (data.type == 'proses' || data.type == 'teknologi') && (
-          <Box mb={10}>
-            <Text className={classes.label}>Kondisi Sekarang</Text>
-            <Textarea
-              {...form.getInputProps('kondisi')}
-              autosize
-              minRows={3}
-              required
-              onKeyDown={(e) => {
-                if (e.code == 'Enter') {
-                  e.preventDefault();
-                }
-              }}
-            />
-          </Box>
-        )}
+        <Textarea
+          {...form.getInputProps('rencana')}
+          autosize
+          label="Rencana Kegiatan"
+          minRows={3}
+          mb={10}
+          required
+          onKeyDown={(e) => {
+            if (e.code == 'Enter') {
+              e.preventDefault();
+            }
+          }}
+        />
+
+        <Textarea
+          {...form.getInputProps('audien')}
+          autosize
+          label="Audien"
+          minRows={2}
+          mb={10}
+          required
+          onKeyDown={(e) => {
+            if (e.code == 'Enter') {
+              e.preventDefault();
+            }
+          }}
+        />
+
+        <TextInput {...form.getInputProps('waktu')} label="Waktu" mb={10} required />
+        <TextInput {...form.getInputProps('tempat')} label="Tempat" mb={10} required />
+
+        <Textarea
+          {...form.getInputProps('tolokUkur')}
+          autosize
+          label="Tolok Ukur"
+          minRows={3}
+          mb={10}
+          required
+        />
+
+        <TextInput {...form.getInputProps('monitoring')} label="Monitoring" mb={10} required />
 
         <Box mb={10}>
-          <Text className={classes.label}>Bentuk Perubahan</Text>
-          <Textarea
-            {...form.getInputProps('perubahan')}
-            autosize
-            minRows={3}
-            required
-            onKeyDown={(e) => {
-              if (e.code == 'Enter') {
-                e.preventDefault();
-              }
-            }}
-          />
-        </Box>
+          <Text sx={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>Unit Tedampak</Text>
 
-        <Box mb={10}>
-          <Text className={classes.label}>Unit Tedampak</Text>
           <Paper withBorder sx={{ borderColor: '#d4d4d4' }}>
-            <div className={classes.unitsWrap}>
+            <div
+              style={{
+                padding: 7,
+                paddingLeft: 10,
+                minHeight: 65,
+                borderBottom: '1px solid #d4d4d4',
+                fontSize: 14,
+              }}
+            >
               {daftarUnitTerdampak.map((unit) => (
                 <UnitTerdampak key={unit.kode} unit={unit} />
               ))}
             </div>
-            <div className={classes.topUnitsWrap}>
+            <div style={{ padding: 7, borderBottom: '1px solid #d4d4d4' }}>
               <TopUnitSelect
                 parents={topUnits}
                 selected={kodeInduk}
@@ -180,7 +169,11 @@ export default function FormPerubahan({
             </div>
 
             <ScrollArea
-              className={classes.scrollArea}
+              style={{
+                height: 168,
+                paddingTop: 7,
+                paddingLeft: 10,
+              }}
               // @ts-ignore
               viewportRef={viewport}
             >
@@ -210,7 +203,7 @@ export default function FormPerubahan({
         </Box>
 
         <Box my={20}>
-          <Text className={classes.label}>PIC Perubahan</Text>
+          <Text sx={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>PIC Perubahan</Text>
           <Text sx={{ fontSize: 13, fontWeight: 500, marginBottom: 4, color: 'gray' }}>
             {pic ? pic.label : 'Pilih PIC'}
           </Text>
@@ -225,7 +218,7 @@ export default function FormPerubahan({
 
         <Box mt={20}>
           <Button type="submit" radius={0} color="indigo">
-            Save Perubahan
+            Save Rencana
           </Button>
           <Button
             ml={10}
@@ -233,7 +226,7 @@ export default function FormPerubahan({
             radius={0}
             color="red"
             onClick={() => {
-              reset();
+              // reset();
               onCancel();
               window.scrollTo(0, 0);
             }}

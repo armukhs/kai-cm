@@ -1,10 +1,9 @@
-import { Button, Text } from '@mantine/core';
+import { Button, Tabs } from '@mantine/core';
 import Block from 'components/Block';
 import FormPerubahan from 'components/FormPerubahan/FormPerubahan';
 import FormKomentar from 'components/Komentar/FormKomentar';
 import Komentar from 'components/Komentar/Komentar';
 import Layout from 'components/Layout/Layout';
-import Pojo from 'components/Pojo';
 import { SessionUser } from 'lib/session';
 import useApi from 'lib/useApi';
 import useAuthApi from 'lib/useAuthApi';
@@ -59,6 +58,7 @@ export default function Perubahan({
   const [form, setForm] = useState<string | boolean>(false);
   const [perubahan, setPerubahan] = useState<any>(newPerubahan());
   const [PIC, setPIC] = useState<any>(null);
+  const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
     if (syncData) setData(syncData.perubahans);
@@ -68,7 +68,6 @@ export default function Perubahan({
   return (
     <Layout title={`Perubahan ${title} - ${project.judul}`} user={user} project={project}>
       <h2 style={{ marginTop: 0, fontWeight: 500 }}>Perubahan {title}</h2>
-      {/* <Pojo object={perubahan} /> */}
 
       <Block info="__FORM_VIEW__" show={form == 'new'} mode="new">
         <FormPerubahan
@@ -76,7 +75,8 @@ export default function Perubahan({
           units={org?.units}
           topUnits={org?.parents}
           pic={PIC}
-          mutate={mutate}
+          mutate={setData}
+          onSuccess={setActiveTab}
           dataJabatan={org?.jabatans}
           onCancel={() => {
             setForm(false);
@@ -92,7 +92,8 @@ export default function Perubahan({
           units={org?.units}
           topUnits={org?.parents}
           pic={PIC}
-          mutate={mutate}
+          mutate={setData}
+          onSuccess={() => {}}
           dataJabatan={org?.jabatans}
           onCancel={() => {
             setForm(false);
@@ -107,24 +108,40 @@ export default function Perubahan({
       </Block>
 
       <Block info="__" show={!form && data.length > 0} mode="block">
-        {data.map((perubahan: any, index: number) => (
-          <ItemPerubahan
-            key={perubahan.id}
-            data={perubahan}
-            units={org?.units}
-            mutate={mutate}
-            index={index}
-            canEdit={canEdit && allowEdit}
-            pic={getJabatan}
-            onClick={() => {
-              window.scrollTo(0, 0);
-              setPerubahan(perubahan);
-              setForm('edit');
-              // Activate PIC
-              setPIC(getJabatan(perubahan.picId));
+        {/* Prevents Tabs being rendered (which cause error if data is empty), since Block parent is server-rendered */}
+        {data.length > 0 && (
+          <Tabs
+            active={activeTab}
+            onTabChange={setActiveTab}
+            variant="default"
+            styles={{
+              body: { paddingTop: 20 },
+              tabLabel: { fontWeight: 500 },
             }}
-          />
-        ))}
+          >
+            {data.map((perubahan: any, index: number) => (
+              <Tabs.Tab key={perubahan.id} label={`P${index + 1}`}>
+                <ItemPerubahan
+                  key={perubahan.id}
+                  data={perubahan}
+                  units={org?.units}
+                  mutate={mutate}
+                  index={index}
+                  canEdit={canEdit && allowEdit}
+                  pic={getJabatan}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    setPerubahan(perubahan);
+                    setForm('edit');
+                    // Activate PIC
+                    setPIC(getJabatan(perubahan.picId));
+                  }}
+                />
+              </Tabs.Tab>
+            ))}
+          </Tabs>
+        )}
+        <span style={{ display: 'none' }}>AFTER TABS</span>
         {canCreate && (
           <Button
             style={{ fontWeight: 500 }}

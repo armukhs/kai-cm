@@ -18,9 +18,15 @@ export default function TopUnitSelect({
         parents.map((unit) => (
           <Button
             key={unit.kode}
-            color={unit.kode == selected ? 'blue' : 'gray'}
+            // color={unit.kode == selected ? 'indigo' : 'gray'}
             size="xs"
-            sx={{ width: 32, paddingLeft: 4, paddingRight: 4 }}
+            sx={(theme) => ({
+              width: 32,
+              paddingLeft: 4,
+              paddingRight: 4,
+              backgroundColor:
+                unit.kode == selected ? theme.colors.indigo[8] : theme.colors.gray[4],
+            })}
             onClick={() => {
               callback(unit.kode);
               if (effect) effect();

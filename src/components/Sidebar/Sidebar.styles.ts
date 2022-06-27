@@ -19,8 +19,8 @@ export const useStyles = createStyles((theme) => ({
     },
   },
   anchorTextActive: {
-    fontWeight: 600,
-    color: theme.colors.indigo[9],
+    fontWeight: 500,
+    color: theme.colors.orange[7],
     '&:hover': {
       color: theme.colors.orange[7],
     },

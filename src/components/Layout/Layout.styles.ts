@@ -51,9 +51,6 @@ export default createStyles((theme) => ({
       width: '100%',
       paddingTop: 0,
       paddingBottom: 20,
-      // marginBottom: 25,
-      // borderTop: '1px solid #ddd',
-      // borderBottom: '1px solid #ddd',
     },
   },
 
@@ -64,7 +61,7 @@ export default createStyles((theme) => ({
 
   sidebarInnerWithProject: {
     position: 'sticky',
-    top: 71,
+    top: 85,
   },
 
   main: {
