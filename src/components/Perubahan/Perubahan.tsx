@@ -1,6 +1,8 @@
 import { Button, Text } from '@mantine/core';
 import Block from 'components/Block';
 import FormPerubahan from 'components/FormPerubahan/FormPerubahan';
+import FormKomentar from 'components/Komentar/FormKomentar';
+import Komentar from 'components/Komentar/Komentar';
 import Layout from 'components/Layout/Layout';
 import Pojo from 'components/Pojo';
 import { SessionUser } from 'lib/session';
@@ -139,34 +141,11 @@ export default function Perubahan({
           </Button>
         )}
       </Block>
+
+      <Block info="KOMENTAR" show={!form} mode="block">
+        <Komentar projectId={project.id} type={type} />
+        {allowEdit && <FormKomentar type={type} projectId={project.id} userId={user.id} />}
+      </Block>
     </Layout>
   );
 }
-
-/*
-Blank - Editable
-Blank - Locked
-
-Non Blank - Editable
-Non Blank - Locked
-
-<CanCreate>
-  <Button />
-</CanCreate>
-
-<Empty>
-  <p>Tidak ada data perubahan teknologi dalam proyek ini.</p>
-  <CanCreate>
-    <Button />
-  </CanCreate>
-</Empty>
-
-<Daftar>
-  <ItemPerubahan />
-  <ItemPerubahan />
-</Daftar>
-<CanCreate>
-  <Button />
-</CanCreate>
-
-*/

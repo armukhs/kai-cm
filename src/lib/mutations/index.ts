@@ -1,5 +1,6 @@
 import deletePerubahan from './deletePerubahan';
 import registerProject from './registerProject';
+import saveKomentar from './saveKomentar';
 import savePerubahan from './savePerubahan';
 import saveProject from './saveProject';
 
@@ -9,4 +10,5 @@ export const AUTH_MUTATIONS = {
   'save-project': saveProject,
   'save-perubahan': savePerubahan,
   'delete-perubahan': deletePerubahan,
+  'save-komentar': saveKomentar,
 };
