@@ -12,7 +12,7 @@ export default function RencanaEmpty({
 }) {
   return (
     <Paper px={16} py={50} mb={28} withBorder sx={{ borderColor: '#ddd', textAlign: 'center' }}>
-      <Text size="sm">Proyek ini belum/tidak memiliki {title}.</Text>
+      <Text size="sm">Proyek ini belum/tidak memiliki Rencana {title}.</Text>
 
       {canCreate && (
         <Button mt={20} style={{ fontWeight: 500 }} color="indigo" radius={0} onClick={onClick}>

@@ -6,7 +6,7 @@ import { __getRencana } from 'lib/queries/getRencana';
 import Rencana from 'components/Rencana/Rencana';
 
 const TYPE = 'sponsorship';
-const TITLE = 'Rencana Sponsorship';
+const TITLE = 'Sponsorship';
 
 export default function ProjectPage({
   user,

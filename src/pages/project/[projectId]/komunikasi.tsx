@@ -6,7 +6,7 @@ import { __getRencana } from 'lib/queries/getRencana';
 import Rencana from 'components/Rencana/Rencana';
 
 const TYPE = 'komunikasi';
-const TITLE = 'Rencana Komunikasi';
+const TITLE = 'Komunikasi';
 
 export default function ProjectPage({
   user,

@@ -4,6 +4,7 @@ import FormProject from 'components/FormProject/FormProject';
 import FormKomentar from 'components/Komentar/FormKomentar';
 import Komentar from 'components/Komentar/Komentar';
 import Layout from 'components/Layout/Layout';
+import PageTitle from 'components/PageTitle/PageTitle';
 import { SessionUser } from 'lib/session';
 import useAuthApi from 'lib/useAuthApi';
 import { useEffect, useState } from 'react';
@@ -28,7 +29,7 @@ export default function ProjectInfo({ user, project }: { user: SessionUser; proj
 
   return (
     <Layout title={`Project: ${project.judul}`} user={user} project={project}>
-      <h2 style={{ marginTop: 0, fontWeight: 500 }}>Project Info</h2>
+      <PageTitle prefix="" title="Project Info" />
 
       <Block info="__FORM_VIEW__" show={showForm} mode="new">
         <FormProject

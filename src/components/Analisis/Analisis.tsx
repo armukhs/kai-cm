@@ -1,5 +1,6 @@
 import { Avatar, Group, Paper, Table, Tabs, Text } from '@mantine/core';
 import Layout from 'components/Layout/Layout';
+import PageTitle from 'components/PageTitle/PageTitle';
 import { SessionUser } from 'lib/session';
 import useAuthApi from 'lib/useAuthApi';
 import { useEffect, useState } from 'react';
@@ -42,8 +43,9 @@ export default function Analisis({
   }
 
   return (
-    <Layout title={`Perubahan ${title} - ${project.judul}`} user={user} project={project}>
-      <h2 style={{ marginTop: 0, fontWeight: 500 }}>{title}</h2>
+    <Layout title={`Analisis & Rekomendasi - ${project.judul}`} user={user} project={project}>
+      {/* <h2 style={{ marginTop: 0, fontWeight: 500 }}>{title}</h2> */}
+      <PageTitle prefix="" title="Analisis" />
 
       <Tabs
         variant="default"
@@ -125,32 +127,6 @@ export default function Analisis({
                 <tr>
                   <td style={{ paddingLeft: 24 }}>Level Unit Perubahan Tertinggi</td>
                   <td align="center">{analisis.topTeknologiLevel}</td>
-                </tr>
-
-                <tr style={{ backgroundColor: '#f0f0f0' }}>
-                  <td style={{ paddingLeft: 10, paddingRight: 14 }}>
-                    <Text my={3} size="sm" weight={600}>
-                      Nilai Bobot Perubahan
-                    </Text>
-                  </td>
-                  <td
-                    style={{
-                      textAlign: 'center',
-                      fontWeight: 600,
-                      width: 40,
-                      paddingLeft: 10,
-                      paddingRight: 14,
-                    }}
-                  >
-                    {analisis.topLevel +
-                      analisis.unitStrukturVal +
-                      analisis.unitPeranVal +
-                      analisis.unitBudayaVal +
-                      analisis.unitKompetensiVal +
-                      analisis.unitLainnyaVal +
-                      analisis.topProsesLevel +
-                      analisis.topTeknologiLevel}
-                  </td>
                 </tr>
               </tbody>
             </Table>

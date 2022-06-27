@@ -82,37 +82,37 @@ export default function ItemRencana({
               </td>
             </tr>
             <tr>
-              <td style={{ width: 150, paddingLeft: 14, whiteSpace: 'nowrap' }}>Kegiatan:</td>
+              <td style={{ width: 120, paddingLeft: 14, whiteSpace: 'nowrap' }}>Kegiatan:</td>
               <td>{data.rencana}</td>
             </tr>
             <tr>
-              <td style={{ width: 150, paddingLeft: 14, whiteSpace: 'nowrap' }}>Audien:</td>
+              <td style={{ width: 120, paddingLeft: 14, whiteSpace: 'nowrap' }}>Audien:</td>
               <td>{data.audien}</td>
             </tr>
             <tr>
-              <td style={{ width: 150, paddingLeft: 14, whiteSpace: 'nowrap' }}>Waktu:</td>
+              <td style={{ width: 120, paddingLeft: 14, whiteSpace: 'nowrap' }}>Waktu:</td>
               <td>{data.waktu}</td>
             </tr>
             <tr>
-              <td style={{ width: 150, paddingLeft: 14, whiteSpace: 'nowrap' }}>Tempat:</td>
+              <td style={{ width: 120, paddingLeft: 14, whiteSpace: 'nowrap' }}>Tempat:</td>
               <td>{data.tempat}</td>
             </tr>
             <tr>
-              <td style={{ width: 150, paddingLeft: 14, whiteSpace: 'nowrap' }}>Tolok Ukur:</td>
+              <td style={{ width: 120, paddingLeft: 14, whiteSpace: 'nowrap' }}>Tolok Ukur:</td>
               <td>{parseAsLines(data.tolokUkur)}</td>
             </tr>
             <tr>
-              <td style={{ width: 150, paddingLeft: 14, whiteSpace: 'nowrap' }}>Unit Terdampak:</td>
+              <td style={{ width: 120, paddingLeft: 14, whiteSpace: 'nowrap' }}>Unit Terdampak:</td>
               <td>
                 <DaftarUnitTerdampak ids={daftarIdTerdampak()} units={units} />
               </td>
             </tr>
             <tr>
-              <td style={{ width: 150, paddingLeft: 14, whiteSpace: 'nowrap' }}>Monitoring:</td>
+              <td style={{ width: 120, paddingLeft: 14, whiteSpace: 'nowrap' }}>Monitoring:</td>
               <td>{data.monitoring}</td>
             </tr>
             <tr>
-              <td style={{ width: 150, paddingLeft: 14, whiteSpace: 'nowrap' }}>PIC Kegiatan:</td>
+              <td style={{ width: 120, paddingLeft: 14, whiteSpace: 'nowrap' }}>PIC Kegiatan:</td>
               <td>{pic(data.picId) ? pic(data.picId)?.nama : '(belum ditentukan)'}</td>
             </tr>
             {canEdit && !deleteDialog && (

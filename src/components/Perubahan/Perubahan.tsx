@@ -1,9 +1,11 @@
 import { Button, Tabs } from '@mantine/core';
 import Block from 'components/Block';
+import ButtonPrimary from 'components/PageTitle/ButtonPrimary';
 import FormPerubahan from 'components/FormPerubahan/FormPerubahan';
 import FormKomentar from 'components/Komentar/FormKomentar';
 import Komentar from 'components/Komentar/Komentar';
 import Layout from 'components/Layout/Layout';
+import PageTitle from 'components/PageTitle/PageTitle';
 import { SessionUser } from 'lib/session';
 import useApi from 'lib/useApi';
 import useAuthApi from 'lib/useAuthApi';
@@ -55,8 +57,7 @@ export default function Perubahan({
   }
 
   const [data, setData] = useState(perubahans);
-  const [form, setForm] = useState<string | boolean>(false);
-  const [perubahan, setPerubahan] = useState<any>(newPerubahan());
+  const [perubahan, setPerubahan] = useState<any>(null);
   const [PIC, setPIC] = useState<any>(null);
   const [activeTab, setActiveTab] = useState(0);
 
@@ -67,26 +68,13 @@ export default function Perubahan({
 
   return (
     <Layout title={`Perubahan ${title} - ${project.judul}`} user={user} project={project}>
-      <h2 style={{ marginTop: 0, fontWeight: 500 }}>Perubahan {title}</h2>
+      <PageTitle prefix="Perubahan" title={title}>
+        {canCreate && perubahans.length > 0 && !perubahan && (
+          <ButtonPrimary label="Add Perubahan" onClick={() => setPerubahan(newPerubahan())} />
+        )}
+      </PageTitle>
 
-      <Block info="__FORM_VIEW__" show={form == 'new'} mode="new">
-        <FormPerubahan
-          data={newPerubahan()}
-          units={org?.units}
-          topUnits={org?.parents}
-          pic={PIC}
-          mutate={setData}
-          onSuccess={setActiveTab}
-          dataJabatan={org?.jabatans}
-          onCancel={() => {
-            setForm(false);
-            setPerubahan(null);
-            setPIC(null);
-          }}
-        />
-      </Block>
-
-      <Block info="__FORM_VIEW__" show={form == 'edit'} mode="new">
+      <Block info="__FORM_VIEW__" show={perubahan != null} mode="new">
         <FormPerubahan
           data={perubahan}
           units={org?.units}
@@ -96,18 +84,17 @@ export default function Perubahan({
           onSuccess={() => {}}
           dataJabatan={org?.jabatans}
           onCancel={() => {
-            setForm(false);
             setPerubahan(null);
             setPIC(null);
           }}
         />
       </Block>
 
-      <Block info="__" show={!form && data.length == 0} mode="block">
-        <PerubahanEmpty canCreate onClick={setForm} />
+      <Block info="__" show={!perubahan && data.length == 0} mode="block">
+        <PerubahanEmpty canCreate onClick={() => setPerubahan(newPerubahan())} />
       </Block>
 
-      <Block info="__" show={!form && data.length > 0} mode="block">
+      <Block info="__" show={!perubahan && data.length > 0} mode="block">
         {/* Prevents Tabs being rendered (which cause error if data is empty), since Block parent is server-rendered */}
         {data.length > 0 && (
           <Tabs
@@ -133,8 +120,6 @@ export default function Perubahan({
                   onClick={() => {
                     window.scrollTo(0, 0);
                     setPerubahan(perubahan);
-                    setForm('edit');
-                    // Activate PIC
                     setPIC(getJabatan(perubahan.picId));
                   }}
                 />
@@ -143,24 +128,9 @@ export default function Perubahan({
           </Tabs>
         )}
         <span style={{ display: 'none' }}>AFTER TABS</span>
-        {canCreate && (
-          <Button
-            style={{ fontWeight: 500 }}
-            color="indigo"
-            // variant="outline"
-            radius={0}
-            onClick={() => {
-              setPerubahan(newPerubahan());
-              setForm('new');
-              window.scrollTo(0, 0);
-            }}
-          >
-            Add Perubahan
-          </Button>
-        )}
       </Block>
 
-      <Block info="KOMENTAR" show={!form} mode="block">
+      <Block info="KOMENTAR" show={!perubahan} mode="block">
         <Komentar projectId={project.id} type={type} />
         {allowEdit && <FormKomentar type={type} projectId={project.id} userId={user.id} />}
       </Block>

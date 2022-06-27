@@ -1,8 +1,10 @@
 import { Button, Tabs, Text } from '@mantine/core';
 import Block from 'components/Block';
+import ButtonPrimary from 'components/PageTitle/ButtonPrimary';
 import FormRencana from 'components/FormRencana/FormRencana';
 import Locomotive from 'components/Icons/Locomotive';
 import Layout from 'components/Layout/Layout';
+import PageTitle from 'components/PageTitle/PageTitle';
 import Pojo from 'components/Pojo';
 import { SessionUser } from 'lib/session';
 import useApi from 'lib/useApi';
@@ -72,8 +74,12 @@ export default function Rencana({
   }, [syncData]);
   //
   return (
-    <Layout title={`Perubahan ${title} - ${project.judul}`} user={user} project={project}>
-      <h2 style={{ marginTop: 0, fontWeight: 500 }}>{title}</h2>
+    <Layout title={`Rencana ${title} - ${project.judul}`} user={user} project={project}>
+      <PageTitle prefix="Rencana" title={title}>
+        {canCreate && data.length > 0 && !rencana && (
+          <ButtonPrimary label="Add Rencana" onClick={() => setRencana(newRencana())} />
+        )}
+      </PageTitle>
 
       <Block info="__FORM_VIEW__" show={rencana != null} mode="new">
         <FormRencana
@@ -135,17 +141,6 @@ export default function Rencana({
             ))}
           </Tabs>
         )}
-        <Button
-          style={{ fontWeight: 500 }}
-          color="indigo"
-          radius={0}
-          onClick={() => {
-            setRencana(newRencana());
-            window.scrollTo(0, 0);
-          }}
-        >
-          Add Perubahan
-        </Button>
       </Block>
     </Layout>
   );
