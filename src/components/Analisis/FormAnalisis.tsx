@@ -1,9 +1,20 @@
-import { Button, Checkbox, NativeSelect, Paper, Table, Text, Title } from '@mantine/core';
+import {
+  Avatar,
+  Button,
+  Checkbox,
+  Group,
+  NativeSelect,
+  Paper,
+  Table,
+  Text,
+  Title,
+} from '@mantine/core';
 import { useForm } from '@mantine/form';
 import fetchJson from 'lib/fetchJson';
 import { createPostData } from 'lib/utils';
 import { useEffect, useState } from 'react';
 import { KeyedMutator } from 'swr';
+import BobotNilai from './BobotNilai';
 
 export default function FormAnalisis({
   data,
@@ -33,9 +44,49 @@ export default function FormAnalisis({
       tanpa_isu_hilang_kerja: data.kesiapan.tanpa_isu_hilang_kerja,
       optimis_terhadap_hasil: data.kesiapan.optimis_terhadap_hasil,
       nyaman_dengan_hasil: data.kesiapan.nyaman_dengan_hasil,
-      // tglKonfirmasi: data.tglKonfirmasi,
     },
   });
+
+  function kepemimpinan() {
+    const sum =
+      form.values['sepakat_dengan_misi'] +
+      form.values['komunikasi_terbuka'] +
+      form.values['percaya_bawahan'] +
+      form.values['ide_bawahan'];
+    return sum == 0 ? 0 : sum / 4;
+  }
+
+  function lingkungan() {
+    const sum =
+      form.values['interaksi_bersahabat'] +
+      form.values['saling_percaya'] +
+      form.values['kinerja_teamwork'] +
+      form.values['lingkungan_koperatif'] +
+      form.values['saling_menghargai'];
+    return sum == 0 ? 0 : sum / 5;
+  }
+
+  function komitmen() {
+    const sum =
+      form.values['kompetensi_memadai'] +
+      form.values['ekspektasi_realistis'] +
+      form.values['komunikasi_intens'];
+    return sum == 0 ? 0 : sum / 3;
+  }
+
+  function resistensi() {
+    const sum =
+      form.values['tanpa_isu_otoritas'] +
+      form.values['tanpa_isu_hilang_kerja'] +
+      form.values['optimis_terhadap_hasil'] +
+      form.values['nyaman_dengan_hasil'];
+    return sum == 0 ? 0 : sum / 4;
+  }
+
+  function nilaiKesiapan() {
+    const sum = kepemimpinan() + lingkungan() + komitmen() + resistensi();
+    return sum == 0 ? 0.0 : sum / 4;
+  }
 
   useEffect(() => {
     if (data) {
@@ -108,10 +159,7 @@ export default function FormAnalisis({
 
   return (
     <div>
-      <Text size="sm" mb={15} color="gray">
-        Berdasar hasil analisis 16 aspek.
-      </Text>
-
+      <BobotNilai nilai={nilaiKesiapan()} info="Berdasar hasil analisis 16 aspek." />
       <Paper withBorder sx={(theme) => ({ borderColor: theme.colors.gray[5], overflow: 'hidden' })}>
         <Table fontSize={13.5}>
           <tbody style={{ verticalAlign: 'middle' }}>
@@ -268,8 +316,6 @@ export default function FormAnalisis({
           </Button>
         </>
       )}
-
-      {/* <Pojo obj={form.values['ekspektasi_realistis']} /> */}
     </div>
   );
 }

@@ -62,12 +62,8 @@ export default function ItemRencana({
 
   return (
     <div style={{ marginBottom: 30, position: 'relative' }}>
-      {/* <Overlay opacity={0.4} color="#000" p={16}>
-        <Box color="white">asas</Box>
-      </Overlay> */}
       <LoadingOverlay visible={submitting} />
-      {/* <Pojo obj={data} /> */}
-      <Paper withBorder sx={{ borderColor: '#ddd' }}>
+      <Paper withBorder sx={(theme) => ({ borderColor: theme.colors.gray[5], overflow: 'hidden' })}>
         <Table fontSize={13.5}>
           <tbody style={{ verticalAlign: 'top' }}>
             <tr>

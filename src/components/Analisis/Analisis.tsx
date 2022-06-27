@@ -1,8 +1,9 @@
-import { Paper, Table, Tabs, Text } from '@mantine/core';
+import { Avatar, Group, Paper, Table, Tabs, Text } from '@mantine/core';
 import Layout from 'components/Layout/Layout';
 import { SessionUser } from 'lib/session';
 import useAuthApi from 'lib/useAuthApi';
 import { useEffect, useState } from 'react';
+import BobotNilai from './BobotNilai';
 import FormAnalisis from './FormAnalisis';
 
 export default function Analisis({
@@ -27,15 +28,34 @@ export default function Analisis({
     }
   }, [data]);
 
+  function bobot() {
+    return (
+      analisis.topLevel +
+      analisis.unitStrukturVal +
+      analisis.unitPeranVal +
+      analisis.unitBudayaVal +
+      analisis.unitKompetensiVal +
+      analisis.unitLainnyaVal +
+      analisis.topProsesLevel +
+      analisis.topTeknologiLevel
+    );
+  }
+
   return (
     <Layout title={`Perubahan ${title} - ${project.judul}`} user={user} project={project}>
       <h2 style={{ marginTop: 0, fontWeight: 500 }}>{title}</h2>
 
-      <Tabs variant="default">
+      <Tabs
+        variant="default"
+        styles={{
+          root: { marginTop: -12 },
+        }}
+      >
         <Tabs.Tab label="Bobot Perubahan">
-          <Text size="sm" mb={15} color="gray">
-            Berdasar jumlah dan jenis unit-unit terdampak beserta level organisasinya.
-          </Text>
+          <BobotNilai
+            nilai={bobot()}
+            info="Berdasar jumlah dan jenis unit-unit terdampak beserta level organisasinya."
+          />
 
           <Paper
             withBorder

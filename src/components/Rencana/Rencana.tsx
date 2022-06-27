@@ -110,6 +110,7 @@ export default function Rencana({
             onTabChange={setActiveTab}
             variant="default"
             styles={{
+              root: { marginTop: -12 },
               body: { paddingTop: 20 },
               tabLabel: { fontWeight: 500 },
             }}
