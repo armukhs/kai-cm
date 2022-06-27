@@ -1,11 +1,11 @@
-import { withIronSessionSsr } from 'iron-session/next';
+// import { withIronSessionSsr } from 'iron-session/next';
 import { Box, Container, Divider, Paper } from '@mantine/core';
 import FormLogin from 'components/FormLogin/FormLogin';
 import Logo from 'components/Header/Logo';
-import { DefaultUser, SessionUser, sessionOptions } from 'lib/session';
+// import { DefaultUser, SessionUser, sessionOptions } from 'lib/session';
 import useUser from 'lib/useUser';
 
-export default function Page({ user }: { user: SessionUser }) {
+export default function Page() {
   const { mutateUser } = useUser({ redirectTo: '/projects', redirectIfFound: true });
 
   return (
@@ -22,21 +22,21 @@ export default function Page({ user }: { user: SessionUser }) {
 }
 
 // @ts-ignore
-export const getServerSideProps = withIronSessionSsr(async function ({ req, res }) {
-  const user = req.session.user;
+// export const getServerSideProps = withIronSessionSsr(async function ({ req, res }) {
+//   const user = req.session.user;
 
-  if (user && user.isLoggedIn) {
-    return {
-      redirect: {
-        destination: '/projects',
-        permanent: false,
-      },
-    };
-  }
+//   if (user && user.isLoggedIn) {
+//     return {
+//       redirect: {
+//         destination: '/projects',
+//         permanent: false,
+//       },
+//     };
+//   }
 
-  return {
-    props: {
-      user: DefaultUser,
-    },
-  };
-}, sessionOptions);
+//   return {
+//     props: {
+//       user: DefaultUser,
+//     },
+//   };
+// }, sessionOptions);
