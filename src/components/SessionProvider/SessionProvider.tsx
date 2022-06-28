@@ -20,6 +20,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (user) setSessionUser(user);
+    return () => {};
   }, [user]);
 
   return (

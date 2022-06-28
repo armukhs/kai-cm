@@ -12,7 +12,7 @@ export default function Page() {
         <Paper p="md" shadow="xs" withBorder>
           <Logo />
           <Divider my={20} />
-          <FormLogin mutate={mutateUser} />
+          <FormLogin mutateUser={mutateUser} />
         </Paper>
       </Container>
     </Box>

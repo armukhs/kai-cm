@@ -10,7 +10,7 @@ import useStyles from './Header.styles';
 export default function HeaderRight() {
   const router = useRouter();
   const { sessionUser } = useContext(SessionContext);
-  // const { mutateUser } = useUser();
+  const { mutateUser } = useUser();
   const { classes } = useStyles();
 
   return (
@@ -28,8 +28,8 @@ export default function HeaderRight() {
               color="gray"
               onClick={async (e: React.MouseEvent<HTMLAnchorElement>) => {
                 e.preventDefault();
-                // mutateUser(await fetchJson('/api/logout', { method: 'POST' }));
-                await fetchJson('/api/logout', { method: 'POST' });
+                mutateUser(await fetchJson('/api/logout', { method: 'POST' }));
+                // await fetchJson('/api/logout', { method: 'POST' });
                 router.push('/');
               }}
             >

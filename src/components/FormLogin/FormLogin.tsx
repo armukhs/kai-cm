@@ -1,5 +1,5 @@
 import { FormEvent, useContext, useState } from 'react';
-import { KeyedMutator } from 'swr';
+import { KeyedMutator, mutate } from 'swr';
 import { useForm } from '@mantine/form';
 import { Button, LoadingOverlay, Stack, Text, TextInput } from '@mantine/core';
 import fetchJson, { FetchError } from 'lib/fetchJson';
@@ -8,11 +8,11 @@ import SessionContext from 'components/SessionProvider/SessionProvider';
 import Show from 'components/Show';
 
 export default function FormLogin({
-  mutate,
+  mutateUser,
   formInput,
   handler,
 }: {
-  mutate: KeyedMutator<SessionUser>;
+  mutateUser: KeyedMutator<SessionUser>;
   formInput?: typeof form;
   handler?: (e: FormEvent) => void;
 }) {
@@ -31,15 +31,32 @@ export default function FormLogin({
 
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
+    console.log('Send login @', new Date());
+
     setSubmitting(true);
     try {
-      const rs = await fetchJson('/api/login', {
+      const rs: SessionUser = await fetchJson('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form.values),
       });
+
+      console.log('Login response @', new Date());
+
       setSessionUser(rs as SessionUser);
-      mutate(rs as SessionUser);
+      // Experiment fetching right during login
+      console.log(`mutate('/api/auth/get?subject=projects')`, new Date());
+      mutate('/api/auth/get?subject=projects');
+
+      if (rs.roles.includes('admin')) {
+        console.log(`mutate('/api/auth/get?subject=admin-projects');`, new Date());
+        mutate('/api/auth/get?subject=admin-projects');
+      }
+      console.log('Mutating user', new Date());
+
+      mutateUser(rs as SessionUser);
+
+      console.log('After mutating user (should redirect)', new Date());
     } catch (error) {
       if (error instanceof FetchError) {
         setErrorMsg(error.data.message);
