@@ -31,7 +31,7 @@ export default function FormLogin({
 
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
-    console.log('Send login @', new Date());
+    console.log(new Date(), Date.now(), 'Sending login...');
 
     setSubmitting(true);
     try {
@@ -41,22 +41,24 @@ export default function FormLogin({
         body: JSON.stringify(form.values),
       });
 
-      console.log('Login response @', new Date());
+      console.log(new Date(), Date.now(), 'Login response received');
 
       setSessionUser(rs as SessionUser);
       // Experiment fetching right during login
-      console.log(`mutate('/api/auth/get?subject=projects')`, new Date());
-      mutate('/api/auth/get?subject=projects');
+      console.log(new Date(), Date.now(), `mutate('/api/auth/get?subject=projects')`);
+      mutate('/api/auth/get?subject=projects', fetchJson('/api/auth/get?subject=projects'));
 
       if (rs.roles.includes('admin')) {
-        console.log(`mutate('/api/auth/get?subject=admin-projects');`, new Date());
-        mutate('/api/auth/get?subject=admin-projects');
+        console.log(new Date(), Date.now(), `mutate('/api/auth/get?subject=admin-projects');`);
+        mutate(
+          '/api/auth/get?subject=admin-projects',
+          fetchJson('/api/auth/get?subject=admin-projects')
+        );
       }
-      console.log('Mutating user', new Date());
 
+      console.log(new Date(), Date.now(), 'Mutating user');
       mutateUser(rs as SessionUser);
-
-      console.log('After mutating user (should redirect)', new Date());
+      console.log(new Date(), Date.now(), 'After mutating user (should redirect)');
     } catch (error) {
       if (error instanceof FetchError) {
         setErrorMsg(error.data.message);

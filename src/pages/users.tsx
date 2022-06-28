@@ -9,8 +9,10 @@ export default function Page() {
   const { sessionUser: user } = useContext(SessionContext);
   const { mutateUser } = useUser({ redirectTo: '/' });
 
-  <Layout title="Users - KAI CM Projects" user={user}>
-    <PageTitle title="Users" />
-    <Pojo object={user} />
-  </Layout>;
+  return (
+    <Layout title="Users - KAI CM Projects" user={user}>
+      <PageTitle title="Users" />
+      <Pojo object={user} />
+    </Layout>
+  );
 }

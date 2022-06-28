@@ -8,7 +8,7 @@ export const useStyles = createStyles((theme) => ({
     paddingTop: 10,
     paddingBottom: 10,
     borderColor: theme.colors.gray[3],
-    cursor: 'pointer',
+    cursor: 'default',
     ':hover': {
       borderColor: theme.colors.indigo[2],
     },
@@ -27,10 +27,20 @@ export const useStyles = createStyles((theme) => ({
     color: theme.colors.indigo[5],
   },
 
-  title: {
+  truncate: {
     overflow: 'hidden',
     whiteSpace: 'nowrap',
     textOverflow: 'ellipsis',
+  },
+
+  anchor: {
+    color: theme.colors.gray[9],
+    textDecoration: 'none',
+    fontWeight: 500,
+    // maxWidth: 400,
+    ':hover': {
+      textDecoration: 'underline',
+    },
   },
 
   formHidden: {

@@ -6,6 +6,9 @@ import { createPostData } from 'lib/utils';
 import { Dispatch, useState } from 'react';
 import { useStyles } from './NewProjectCard.styles';
 import ButtonXS from 'components/ButtonXS';
+import Link from 'next/link';
+import cfg from 'lib/config';
+import { useElementSize } from '@mantine/hooks';
 
 export default function NewProjectCard({
   project,
@@ -42,6 +45,8 @@ export default function NewProjectCard({
     setSubmitting(false);
   }
 
+  const { ref, width } = useElementSize();
+
   return (
     <Paper
       withBorder
@@ -56,13 +61,24 @@ export default function NewProjectCard({
         <Box className={classes.iconWrap}>
           <LayersIcon width={26} height={26} />
         </Box>
-        <div style={{ marginLeft: 40 }}>
-          <Text size="xs" color="gray">
+        <div ref={ref} style={{ marginLeft: 40 }}>
+          <Text size="xs" color="gray" className={classes.truncate}>
             {project.Unit.nama}
           </Text>
-          <Text size="md" weight={400} className={classes.title}>
-            {project.judul}
-          </Text>
+          <div style={{ display: 'flex' }}>
+            <Link href={`${cfg.PROJECTPATH}/${project.id}`}>
+              <a
+                className={classes.anchor}
+                style={{ maxWidth: width - 10 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Text className={classes.truncate}>
+                  {project.judul} preloading the data when the user
+                </Text>
+              </a>
+            </Link>
+            <div style={{ flexGrow: 1 }}>&nbsp;</div>
+          </div>
         </div>
       </div>
 
