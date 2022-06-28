@@ -14,7 +14,7 @@ export default function Komentar({ projectId, type }: { projectId: string; type:
       <Title order={4} style={{ fontWeight: 400, borderBottom: '1px solid #aaa' }}>
         Saran &amp; Komentar
       </Title>
-      {!data && !error && <div>&nbsp;</div>}
+      {!data && !error && <div></div>}
       {data &&
         data.map((komentar: any) => (
           <Box key={komentar.id} style={{ fontSize: 12.3, marginBottom: 20 }}>

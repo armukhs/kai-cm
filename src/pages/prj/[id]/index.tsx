@@ -24,10 +24,17 @@ export default function CSR() {
     useSWR(link);
   });
 
+  if (!data) {
+    return (
+      <Layout title={`${TITLE} - ${data ? data.judul : '...'}`} user={user} projectId={id}>
+        <PageTitle title={TITLE} />
+      </Layout>
+    );
+  }
+
   return (
     <Layout title={`${TITLE} - ${data ? data.judul : '...'}`} user={user} projectId={id}>
-      {!data && <PageTitle title={TITLE} />}
-      {data && <ProjectInfo user={user} project={data} />}
+      <ProjectInfo user={user} project={data} />
     </Layout>
   );
 }

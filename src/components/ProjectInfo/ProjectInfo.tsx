@@ -11,7 +11,10 @@ import { useEffect, useState } from 'react';
 
 export default function ProjectInfo({ user, project }: { user: SessionUser; project: any }) {
   const canEdit = user.id == project.managerId || user.id == project.staffId;
-  const allowEdit = canEdit && project.tglKonfirmasi == null;
+  // const allowEdit = canEdit && project.tglKonfirmasi == null;
+  const allowEdit = !project.tglKonfirmasi;
+  const canCreate = canEdit && allowEdit;
+
   const { data: syncData } = useAuthApi('project', project.id);
 
   const [data, setData] = useState(project);
@@ -92,7 +95,7 @@ export default function ProjectInfo({ user, project }: { user: SessionUser; proj
             </tbody>
           </Table>
         </Paper>
-        {allowEdit && (
+        {canCreate && (
           <div style={{ marginTop: 20 }}>
             <Button
               style={{ fontWeight: 500 }}

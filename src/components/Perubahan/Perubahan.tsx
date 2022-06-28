@@ -90,7 +90,7 @@ export default function Perubahan({
       </Block>
 
       <Block info="__" show={!perubahan && data.length == 0} mode="block">
-        <PerubahanEmpty canCreate onClick={() => setPerubahan(newPerubahan())} />
+        <PerubahanEmpty canCreate={canCreate} onClick={() => setPerubahan(newPerubahan())} />
       </Block>
 
       <Block info="__" show={!perubahan && data.length > 0} mode="block">
