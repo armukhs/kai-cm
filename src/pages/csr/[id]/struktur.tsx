@@ -4,6 +4,8 @@ import useAuthApi from 'lib/useAuthApi';
 import useUser from 'lib/useUser';
 import SessionContext from 'components/SessionProvider/SessionProvider';
 import Perubahan from 'components/Perubahan/Perubahan';
+import Layout from 'components/Layout/Layout';
+import PageTitle from 'components/PageTitle/PageTitle';
 
 const TYPE = 'struktur';
 const TITLE = 'Perubahan Struktur Organisasi';
@@ -16,16 +18,18 @@ export default function CSR() {
   const id = router.query['id'] as string;
   const { data, error, mutate } = useAuthApi('perubahan', TYPE, id);
 
-  // Loading...
-  // if (!user || !user.isLoggedIn || !data) return <></>;
-
   return (
-    <Perubahan
-      type={TYPE}
-      title={TITLE}
-      user={user}
-      project={data.project}
-      perubahans={data.perubahans}
-    />
+    <Layout title={`${TITLE} - ${data ? data.project.judul : '...'}`} user={user} projectId={id}>
+      {!data && <PageTitle title={TITLE} />}
+      {data && (
+        <Perubahan
+          type={TYPE}
+          title={TITLE}
+          user={user}
+          project={data.project}
+          perubahans={data.perubahans}
+        />
+      )}
+    </Layout>
   );
 }

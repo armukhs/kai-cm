@@ -13,21 +13,24 @@ import { useEffect, useState } from 'react';
 import ItemRencana from './ItemRencana';
 import RencanaEmpty from './RencanaEmpty';
 import RencanaNotReady from './RencanaNotReady';
+import { KeyedMutator } from 'swr';
 
 export default function Rencana({
+  type,
+  title,
   user,
   project,
   rencanas,
-  type,
-  title,
+  mutate,
 }: {
   user: SessionUser;
-  project: any;
-  rencanas: any[];
   type: string;
   title: string;
+  project: any;
+  rencanas: any[];
+  mutate: KeyedMutator<any>;
 }) {
-  const { data: syncData, mutate } = useAuthApi('rencana', type, project.id);
+  // const { data: syncData, mutate } = useAuthApi('rencana', type, project.id);
   const { data: org } = useApi('organisasi');
 
   const [data, setData] = useState(rencanas);
@@ -68,14 +71,14 @@ export default function Rencana({
     return null;
   }
 
-  useEffect(() => {
-    if (syncData) {
-      setData(syncData.rencanas);
-    }
-  }, [syncData]);
+  // useEffect(() => {
+  //   if (syncData) {
+  //     setData(syncData.rencanas);
+  //   }
+  // }, [syncData]);
   //
   return (
-    <Layout title={`Rencana ${title} - ${project.judul}`} user={user} project={project}>
+    <>
       <PageTitle
         title={title}
         button={titleHasButton ? 'New Perubahan' : ''}
@@ -143,6 +146,6 @@ export default function Rencana({
           </Tabs>
         )}
       </Block>
-    </Layout>
+    </>
   );
 }

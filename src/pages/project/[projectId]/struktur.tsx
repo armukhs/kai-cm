@@ -1,48 +1,35 @@
-import { withIronSessionSsr } from 'iron-session/next';
-import { DefaultUser, sessionOptions, SessionUser } from 'lib/session';
-import { __getPerubahan } from 'lib/queries/getPerubahan';
-import ProjectNotFound from 'components/ProjectNotFound/ProjectNotFound';
+import { useContext } from 'react';
+import { useRouter } from 'next/router';
+import useAuthApi from 'lib/useAuthApi';
+import useUser from 'lib/useUser';
+import SessionContext from 'components/SessionProvider/SessionProvider';
 import Perubahan from 'components/Perubahan/Perubahan';
-import { extractProjectId } from 'lib/utils';
+import Layout from 'components/Layout/Layout';
+import PageTitle from 'components/PageTitle/PageTitle';
 
 const TYPE = 'struktur';
-const TITLE = 'Struktur Organisasi';
+const TITLE = 'Perubahan Struktur Organisasi';
 
-export default function ProjectPage({
-  user,
-  project,
-  perubahans,
-}: {
-  user: SessionUser;
-  project: any;
-  perubahans: any[];
-}) {
-  if (!project) return <ProjectNotFound />;
+export default function CSR() {
+  const { sessionUser: user } = useContext(SessionContext);
+  const { mutateUser } = useUser({ redirectTo: '/' });
+
+  const router = useRouter();
+  const id = router.query['id'] as string;
+  const { data, error, mutate } = useAuthApi('perubahan', TYPE, id);
 
   return (
-    <Perubahan type={TYPE} title={TITLE} user={user} project={project} perubahans={perubahans} />
+    <Layout title={`${TITLE} - ${data ? data.project.judul : '...'}`} user={user} projectId={id}>
+      {!data && <PageTitle title={TITLE} />}
+      {data && (
+        <Perubahan
+          type={TYPE}
+          title={TITLE}
+          user={user}
+          project={data.project}
+          perubahans={data.perubahans}
+        />
+      )}
+    </Layout>
   );
 }
-
-// @ts-ignore
-export const getServerSideProps = withIronSessionSsr(async function ({ req, res }) {
-  const user = req.session.user;
-
-  if (user === undefined || !user.isLoggedIn) {
-    res.setHeader('location', '/');
-    res.statusCode = 302;
-    res.end();
-    return {
-      props: {
-        user: DefaultUser,
-      },
-    };
-  }
-
-  let projectId = extractProjectId(req.url as string);
-  const rs = await __getPerubahan(TYPE, projectId);
-
-  return {
-    props: { user: user as SessionUser, project: rs?.project, perubahans: rs?.perubahans },
-  };
-}, sessionOptions);

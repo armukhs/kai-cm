@@ -1,13 +1,15 @@
+import { useContext } from 'react';
+import Link from 'next/link';
 import { useWindowScroll } from '@mantine/hooks';
 import useStyles from './ProjectBar.styles';
 import * as layoutStyles from 'components/Layout/Layout.styles';
-import { Home2 } from 'tabler-icons-react';
-import Link from 'next/link';
 import Locomotive from 'components/Icons/Locomotive';
+import useAuthApi from 'lib/useAuthApi';
 
-export default function ProjectBar({ project }: { project: any }) {
+export default function ProjectBar({ id }: { id: string }) {
   const { classes, cx } = useStyles();
   const { classes: layout } = layoutStyles.default();
+  const { data: project } = useAuthApi('project', id);
 
   const [scroll] = useWindowScroll();
   return (
@@ -40,14 +42,16 @@ export default function ProjectBar({ project }: { project: any }) {
                       <td width={70}>PROYEK:</td>
                       <td>
                         <div className={classes.truncate} style={{ fontWeight: 600 }}>
-                          {project.judul}
+                          {project ? project.judul : '...'}
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td width={70}>UNIT:</td>
                       <td>
-                        <div className={classes.truncate}>{project.Unit.nama}</div>
+                        <div className={classes.truncate}>
+                          {project ? project.Unit.nama : 'Unit Name'}
+                        </div>
                       </td>
                     </tr>
                   </tbody>

@@ -1,10 +1,8 @@
-import { Button, Tabs } from '@mantine/core';
+import { Tabs } from '@mantine/core';
 import Block from 'components/Block';
-import ButtonPrimary from 'components/PageTitle/ButtonPrimary';
 import FormPerubahan from 'components/FormPerubahan/FormPerubahan';
 import FormKomentar from 'components/Komentar/FormKomentar';
 import Komentar from 'components/Komentar/Komentar';
-import Layout from 'components/Layout/Layout';
 import PageTitle from 'components/PageTitle/PageTitle';
 import { SessionUser } from 'lib/session';
 import useApi from 'lib/useApi';
@@ -68,7 +66,7 @@ export default function Perubahan({
   }
 
   return (
-    <Layout title={`${title} - ${project.judul}`} user={user} project={project}>
+    <>
       <PageTitle
         title={title}
         button={titleHasButton ? 'New Perubahan' : ''}
@@ -135,6 +133,6 @@ export default function Perubahan({
         <Komentar projectId={project.id} type={type} />
         {allowEdit && <FormKomentar type={type} projectId={project.id} userId={user.id} />}
       </Block>
-    </Layout>
+    </>
   );
 }

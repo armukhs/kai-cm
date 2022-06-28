@@ -28,7 +28,7 @@ export default function ProjectInfo({ user, project }: { user: SessionUser; proj
   }
 
   return (
-    <Layout title={`Project: ${project.judul}`} user={user} project={project}>
+    <>
       <PageTitle title="Project Info" />
 
       <Block info="__FORM_VIEW__" show={showForm} mode="new">
@@ -113,6 +113,6 @@ export default function ProjectInfo({ user, project }: { user: SessionUser; proj
         <Komentar projectId={project.id} type="project" />
         {allowEdit && <FormKomentar type="project" projectId={project.id} userId={user.id} />}
       </Block>
-    </Layout>
+    </>
   );
 }

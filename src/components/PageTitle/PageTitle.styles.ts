@@ -14,6 +14,7 @@ export const useStyles = createStyles((theme) => ({
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
+    lineHeight: '36px',
     // '@media (max-width: 450px)': {},
   },
 

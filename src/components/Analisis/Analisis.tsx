@@ -5,6 +5,7 @@ import Pojo from 'components/Pojo';
 import { SessionUser } from 'lib/session';
 import useAuthApi from 'lib/useAuthApi';
 import { useEffect, useState } from 'react';
+import { KeyedMutator } from 'swr';
 import BobotNilai from './BobotNilai';
 import FormAnalisis from './FormAnalisis';
 
@@ -15,6 +16,7 @@ export default function Analisis({
   kesiapan,
   units,
   title,
+  mutate,
 }: {
   user: SessionUser;
   project: any;
@@ -22,17 +24,18 @@ export default function Analisis({
   kesiapan: any;
   units: any[];
   title: string;
+  mutate: KeyedMutator<any>;
 }) {
-  const { data, mutate } = useAuthApi('analisis', project.id);
+  // const { data, mutate } = useAuthApi('analisis', project.id);
   const isMentor = user.id == project.mentorId;
 
   const [syncData, setSyncData] = useState(kesiapan);
 
-  useEffect(() => {
-    if (data) {
-      setSyncData(data.kesiapan);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (data) {
+  //     setSyncData(data.kesiapan);
+  //   }
+  // }, [data]);
 
   function bobotVal() {
     return (
@@ -48,9 +51,7 @@ export default function Analisis({
   }
 
   return (
-    <Layout title={`Analisis & Rekomendasi - ${project.judul}`} user={user} project={project}>
-      <PageTitle title={title} />
-
+    <>
       <Tabs
         variant="default"
         styles={{
@@ -140,6 +141,6 @@ export default function Analisis({
           <FormAnalisis project={project} data={syncData} canEdit={isMentor} mutate={mutate} />
         </Tabs.Tab>
       </Tabs>
-    </Layout>
+    </>
   );
 }

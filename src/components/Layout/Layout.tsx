@@ -11,12 +11,12 @@ import { SessionUser } from 'lib/session';
 export default function Layout({
   title,
   user,
-  project,
+  projectId,
   children,
 }: {
   title: string;
   user: SessionUser;
-  project?: any;
+  projectId?: string;
   children: ReactNode;
 }) {
   const { classes, cx } = useStyles();
@@ -52,7 +52,7 @@ export default function Layout({
         <Header />
       </div>
 
-      {project && <ProjectBar project={project} />}
+      {projectId && <ProjectBar id={projectId} />}
 
       <div className={classes.container} style={{ paddingBottom: 100 }}>
         <div className={classes.sidebarToggle}>
@@ -67,8 +67,8 @@ export default function Layout({
         </div>
         <div className={classes.withSidebar}>
           <div id="sidebarwrap" className={classes.sidebarwrap}>
-            <div className={project ? classes.sidebarInnerWithProject : classes.sidebarInner}>
-              <Sidebar isAdmin={isAdmin} project={project} />
+            <div className={projectId ? classes.sidebarInnerWithProject : classes.sidebarInner}>
+              <Sidebar isAdmin={isAdmin} projectId={projectId} />
             </div>
           </div>
           <main className={classes.main}>{children}</main>

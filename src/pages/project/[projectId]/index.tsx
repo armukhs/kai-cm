@@ -1,42 +1,42 @@
-import { withIronSessionSsr } from 'iron-session/next';
-import { DefaultUser, sessionOptions, SessionUser } from 'lib/session';
-import { __getProject } from 'lib/queries/getProject';
-import ProjectNotFound from 'components/ProjectNotFound/ProjectNotFound';
+import { useContext } from 'react';
+import { useRouter } from 'next/router';
+import useAuthApi from 'lib/useAuthApi';
+import useUser from 'lib/useUser';
+import SessionContext from 'components/SessionProvider/SessionProvider';
+import Perubahan from 'components/Perubahan/Perubahan';
+import Layout from 'components/Layout/Layout';
+import PageTitle from 'components/PageTitle/PageTitle';
 import ProjectInfo from 'components/ProjectInfo/ProjectInfo';
+import useSWR from 'swr';
 
-export default function ProjectPage({ user, project }: { user: SessionUser; project: any }) {
-  if (!project) return <ProjectNotFound />;
-  return <ProjectInfo user={user} project={project} />;
+const TITLE = 'Project Info';
+
+export default function CSR() {
+  const { sessionUser: user } = useContext(SessionContext);
+  const { mutateUser } = useUser({ redirectTo: '/' });
+
+  const router = useRouter();
+  const id = router.query['id'] as string;
+  const { data, error, mutate } = useAuthApi('project', id);
+
+  // Testing preload project data
+  const prefix = `/api/auth/get?subject=perubahan&option=`;
+  useSWR(prefix + `proses&extra=${id}`);
+  useSWR(prefix + `teknologi&extra=${id}`);
+  useSWR(prefix + `struktur&extra=${id}`);
+  useSWR(prefix + `peran&extra=${id}`);
+  useSWR(prefix + `budaya&extra=${id}`);
+  useSWR(prefix + `kompetensi&extra=${id}`);
+  useSWR(prefix + `lainnya&extra=${id}`);
+  const prefix2 = `/api/auth/get?subject=rencana&option`;
+  useSWR(prefix2 + `komunikasi&extra=${id}`);
+  useSWR(prefix2 + `sponsorship&extra=${id}`);
+  useSWR(prefix2 + `development&extra=${id}`);
+
+  return (
+    <Layout title={`${TITLE} - ${data ? data.judul : '...'}`} user={user} projectId={id}>
+      {!data && <PageTitle title={TITLE} />}
+      {data && <ProjectInfo user={user} project={data} />}
+    </Layout>
+  );
 }
-
-// @ts-ignore
-export const getServerSideProps = withIronSessionSsr(async function ({ req, res }) {
-  const user = req.session.user;
-
-  if (user === undefined || !user.isLoggedIn) {
-    res.setHeader('location', '/');
-    res.statusCode = 302;
-    res.end();
-    return {
-      props: {
-        user: DefaultUser,
-      },
-    };
-  }
-
-  const url = req.url;
-  let projectId = '';
-  if (url?.includes('projectId')) {
-    projectId = url.split('=').pop() as string;
-  } else {
-    projectId = url?.split('/').pop() as string;
-  }
-  console.log('ID', projectId);
-
-  const rs = await __getProject(projectId);
-  const project = JSON.parse(JSON.stringify(rs));
-
-  return {
-    props: { user: user as SessionUser, project: project },
-  };
-}, sessionOptions);

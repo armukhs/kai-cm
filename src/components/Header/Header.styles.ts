@@ -19,6 +19,7 @@ export default createStyles((theme) => ({
 
   left: {
     display: 'flex',
+    height: 30,
     alignItems: 'start',
     margin: 0,
     flexGrow: 0,
