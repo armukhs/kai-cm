@@ -13,7 +13,6 @@ export default function ProjectCard({ project }: { project: any }) {
       <Link href={`${cfg.PROJECTPATH}/${project.id}`}>
         <a style={{ display: 'block', textDecoration: 'none', borderWidth: 0 }}>
           <Paper
-            key={project.id}
             withBorder
             sx={(theme) => ({
               overflow: 'hidden',

@@ -1,50 +1,42 @@
-import Layout from 'components/Layout/Layout';
-import { Space } from '@mantine/core';
-import { __getProjects } from 'lib/queries/getProjects';
-import Projects from 'components/Projects/Projects';
-import PageTitle from 'components/PageTitle/PageTitle';
-import Block from 'components/Block';
-import useAuthApi from 'lib/useAuthApi';
 import { useContext } from 'react';
-import ProjectsEmpty from 'components/Projects/ProjectsEmpty';
-import SessionContext from 'components/SessionProvider/SessionProvider';
+import useAuthApi from 'lib/useAuthApi';
 import useUser from 'lib/useUser';
-import { useRouter } from 'next/router';
+import Layout from 'components/Layout/Layout';
+import SessionContext from 'components/SessionProvider/SessionProvider';
+import UserProjects from 'components/Projects/UserProjects';
+import AdminProjects from 'components/Projects/AdminProjects';
 
 export default function Page() {
   const { sessionUser: user } = useContext(SessionContext);
   const { mutateUser } = useUser({ redirectTo: '/' });
 
-  const router = useRouter();
-  const id = router.query['id'] as string;
-  const { data, error, mutate } = useAuthApi('projects', id);
+  // projects, assignments
+  const { data, error, mutate } = useAuthApi('projects');
 
-  const hasProjects = user.roles.includes('project');
-  const hasAssignments = user.roles.includes('mentor');
+  // projects, newProjects, mentors
+  const { data: data2, error: error2, mutate: mutate2 } = useAuthApi('admin-projects');
 
-  return (
-    <Layout title="My Projects" user={user}>
-      {!data && <>...</>}
-      {data && (
-        <>
-          <Block info="__USER_PROJECT__" show={hasProjects}>
-            <PageTitle
-              title="My Projects"
-              button={data.projects.length > 0 ? 'New Project' : ''}
-              clickHandler={() => {}}
-            />
-            {data.projects.length == 0 && <ProjectsEmpty canCreate={true} onClick={() => {}} />}
-            {data.projects.length > 0 && <Projects projects={data.projects} />}
-          </Block>
+  const isAdmin = user.roles.includes('admin');
 
-          {hasProjects && hasAssignments && <Space h={20} />}
+  if (!data || !data2) {
+    return (
+      <Layout title="KAI CM Projects" user={user}>
+        <>&nbsp;</>
+      </Layout>
+    );
+  }
 
-          <Block info="__USER_PROJECT__" show={hasAssignments}>
-            <PageTitle title="My Assigments" />
-            <Projects projects={data.assignments} />
-          </Block>
-        </>
-      )}
-    </Layout>
-  );
+  if (isAdmin) {
+    return (
+      <AdminProjects
+        user={user}
+        projects={data2.projects}
+        newProjects={data2.newProjects}
+        mentors={data2.mentors}
+        mutate={mutate2}
+      />
+    );
+  }
+
+  return <UserProjects user={user} projects={data.projects} assignments={data.assignments} />;
 }

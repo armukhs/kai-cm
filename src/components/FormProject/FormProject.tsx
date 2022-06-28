@@ -1,13 +1,14 @@
-import { Button, LoadingOverlay, Textarea, TextInput, Title } from '@mantine/core';
+import { Dispatch, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { createStyles } from '@mantine/core';
+import { Button, LoadingOverlay, Textarea, TextInput } from '@mantine/core';
 import { DatePicker } from '@mantine/dates';
 import { useForm } from '@mantine/form';
-import Show from 'components/Show';
+import cfg from 'lib/config';
 import fetchJson from 'lib/fetchJson';
 import { SessionUser } from 'lib/session';
 import { createPostData } from 'lib/utils';
-import { useRouter } from 'next/router';
-import { Dispatch, useEffect, useState } from 'react';
-import { createStyles } from '@mantine/core';
+import Show from 'components/Show';
 
 const useStyles = createStyles((theme) => ({
   label: {
@@ -70,7 +71,7 @@ export default function FormProject({
       if (data) {
         callback(rs);
         onCancel();
-      } else router.push(`/project/${rs?.id}`);
+      } else router.push(`${cfg.PROJECTPATH}/${rs?.id}`);
     } catch (error) {}
     setSubmitting(false);
   }

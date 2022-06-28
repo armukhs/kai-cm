@@ -1,3 +1,4 @@
+import getAdminProjects from './getAdminProjects';
 import getAnalisis from './getAnalisis';
 import getKomentar from './getKomentar';
 import getOrganization from './getOrganization';
@@ -10,6 +11,7 @@ export const QUERIES = {
   organisasi: getOrganization,
 };
 export const AUTH_QUERIES = {
+  'admin-projects': getAdminProjects,
   project: getProject,
   perubahan: getPerubahan,
   komentar: getKomentar,
