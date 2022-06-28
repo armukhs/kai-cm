@@ -6,6 +6,8 @@ import SessionContext from 'components/SessionProvider/SessionProvider';
 import Perubahan from 'components/Perubahan/Perubahan';
 import Layout from 'components/Layout/Layout';
 import PageTitle from 'components/PageTitle/PageTitle';
+import useSWR from 'swr';
+import { projectPrefetchLinks } from 'lib/utils';
 
 const TYPE = 'kompetensi';
 const TITLE = 'Perubahan Kompetensi';
@@ -17,6 +19,11 @@ export default function CSR() {
   const router = useRouter();
   const id = router.query['id'] as string;
   const { data, error, mutate } = useAuthApi('perubahan', TYPE, id);
+
+  const links = projectPrefetchLinks(id);
+  links.forEach((link) => {
+    useSWR(link);
+  });
 
   return (
     <Layout title={`${TITLE} - ${data ? data.project.judul : '...'}`} user={user} projectId={id}>

@@ -6,6 +6,8 @@ import SessionContext from 'components/SessionProvider/SessionProvider';
 import Layout from 'components/Layout/Layout';
 import PageTitle from 'components/PageTitle/PageTitle';
 import Rencana from 'components/Rencana/Rencana';
+import useSWR from 'swr';
+import { projectPrefetchLinks } from 'lib/utils';
 
 const TYPE = 'development';
 const TITLE = 'Rencana Development';
@@ -17,6 +19,11 @@ export default function CSR() {
   const router = useRouter();
   const id = router.query['id'] as string;
   const { data, mutate } = useAuthApi('rencana', TYPE, id);
+
+  const links = projectPrefetchLinks(id);
+  links.forEach((link) => {
+    useSWR(link);
+  });
 
   return (
     <Layout title={`${TITLE} - ${data ? data.project.judul : '...'}`} user={user} projectId={id}>

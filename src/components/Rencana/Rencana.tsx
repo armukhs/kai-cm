@@ -81,7 +81,7 @@ export default function Rencana({
     <>
       <PageTitle
         title={title}
-        button={titleHasButton ? 'New Perubahan' : ''}
+        button={titleHasButton ? 'New Rencana' : ''}
         clickHandler={() => setRencana(newRencana())}
       />
 

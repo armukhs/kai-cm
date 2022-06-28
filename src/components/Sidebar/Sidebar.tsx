@@ -1,4 +1,4 @@
-// import { useStyles } from './Sidebar.styles';
+import cfg from 'lib/config';
 import SidebarItem from './SidebarItem';
 
 const adminLinks = [
@@ -13,26 +13,26 @@ const userLinks = [
 ];
 
 export default function Sidebar({ isAdmin, projectId }: { isAdmin: boolean; projectId?: any }) {
-  // const { classes, cx } = useStyles();
+  const id = projectId;
   const links = isAdmin ? adminLinks : userLinks;
 
   if (projectId)
     return (
       <>
-        <SidebarItem href={`/csr/${projectId}`} label="Project Info" />
-        <SidebarItem href={`/csr/${projectId}/proses`} label="Perubahan Proses" />
-        <SidebarItem href={`/csr/${projectId}/teknologi`} label="Perubahan Teknologi" />
-        <SidebarItem href={`/csr/${projectId}/struktur`} label="Perubahan Struktur" />
-        <SidebarItem href={`/csr/${projectId}/peran`} label="Perubahan Peran" />
-        <SidebarItem href={`/csr/${projectId}/budaya`} label="Perubahan Budaya" />
-        <SidebarItem href={`/csr/${projectId}/kompetensi`} label="Perubahan Kompetensi" />
-        <SidebarItem href={`/csr/${projectId}/lainnya`} label="Perubahan Lainnya" />
+        <SidebarItem href={`${cfg.PROJECTPATH}/${id}`} label="Project Info" />
+        <SidebarItem href={`${cfg.PROJECTPATH}/${id}/proses`} label="Perubahan Proses" />
+        <SidebarItem href={`${cfg.PROJECTPATH}/${id}/teknologi`} label="Perubahan Teknologi" />
+        <SidebarItem href={`${cfg.PROJECTPATH}/${id}/struktur`} label="Perubahan Struktur" />
+        <SidebarItem href={`${cfg.PROJECTPATH}/${id}/peran`} label="Perubahan Peran" />
+        <SidebarItem href={`${cfg.PROJECTPATH}/${id}/budaya`} label="Perubahan Budaya" />
+        <SidebarItem href={`${cfg.PROJECTPATH}/${id}/kompetensi`} label="Perubahan Kompetensi" />
+        <SidebarItem href={`${cfg.PROJECTPATH}/${id}/lainnya`} label="Perubahan Lainnya" />
         <br />
-        <SidebarItem href={`/csr/${projectId}/analisis`} label="Analisis" />
+        <SidebarItem href={`${cfg.PROJECTPATH}/${id}/analisis`} label="Analisis" />
         <br />
-        <SidebarItem href={`/csr/${projectId}/komunikasi`} label="Rencana Komunikasi" />
-        <SidebarItem href={`/csr/${projectId}/sponsorship`} label="Rencana Sponsorship" />
-        <SidebarItem href={`/csr/${projectId}/development`} label="Rencana Development" />
+        <SidebarItem href={`${cfg.PROJECTPATH}/${id}/komunikasi`} label="Rencana Komunikasi" />
+        <SidebarItem href={`${cfg.PROJECTPATH}/${id}/sponsorship`} label="Rencana Sponsorship" />
+        <SidebarItem href={`${cfg.PROJECTPATH}/${id}/development`} label="Rencana Development" />
       </>
     );
 

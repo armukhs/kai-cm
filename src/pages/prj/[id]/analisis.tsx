@@ -3,12 +3,14 @@ import { useRouter } from 'next/router';
 import useAuthApi from 'lib/useAuthApi';
 import useUser from 'lib/useUser';
 import SessionContext from 'components/SessionProvider/SessionProvider';
-import Perubahan from 'components/Perubahan/Perubahan';
 import Layout from 'components/Layout/Layout';
 import PageTitle from 'components/PageTitle/PageTitle';
+import Analisis from 'components/Analisis/Analisis';
+import useSWR from 'swr';
+import { projectPrefetchLinks } from 'lib/utils';
 
-const TYPE = 'peran';
-const TITLE = 'Perubahan Peran & Tanggungjawab';
+const TYPE = 'analisis';
+const TITLE = 'Analisis';
 
 export default function CSR() {
   const { sessionUser: user } = useContext(SessionContext);
@@ -16,18 +18,26 @@ export default function CSR() {
 
   const router = useRouter();
   const id = router.query['id'] as string;
-  const { data, error, mutate } = useAuthApi('perubahan', TYPE, id);
+  // project, bobot, kesiapan, units
+  const { data, error, mutate } = useAuthApi('analisis', id);
+
+  const links = projectPrefetchLinks(id);
+  links.forEach((link) => {
+    useSWR(link);
+  });
 
   return (
     <Layout title={`${TITLE} - ${data ? data.project.judul : '...'}`} user={user} projectId={id}>
-      {!data && <PageTitle title={TITLE} />}
+      <PageTitle title={TITLE} />
       {data && (
-        <Perubahan
-          type={TYPE}
-          title={TITLE}
+        <Analisis
+          title="Analisis"
           user={user}
           project={data.project}
-          perubahans={data.perubahans}
+          bobot={data.bobot}
+          kesiapan={data.kesiapan}
+          units={data.units}
+          mutate={mutate}
         />
       )}
     </Layout>
