@@ -19,16 +19,16 @@ export default function Sidebar({ isAdmin, project }: { isAdmin: boolean; projec
   if (project)
     return (
       <>
-        <SidebarItem href={`/project/${project.id}`} label="Project Info" />
-        <SidebarItem href={`/project/${project.id}/proses`} label="Perubahan Proses" />
-        <SidebarItem href={`/project/${project.id}/teknologi`} label="Perubahan Teknologi" />
-        <SidebarItem href={`/project/${project.id}/struktur`} label="Perubahan Struktur" />
+        <SidebarItem href={`/csr/${project.id}`} label="Project Info" />
+        <SidebarItem href={`/csr/${project.id}/proses`} label="Perubahan Proses" />
+        <SidebarItem href={`/csr/${project.id}/teknologi`} label="Perubahan Teknologi" />
+        <SidebarItem href={`/csr/${project.id}/struktur`} label="Perubahan Struktur" />
         <SidebarItem href={`/project/${project.id}/peran`} label="Perubahan Peran" />
         <SidebarItem href={`/project/${project.id}/budaya`} label="Perubahan Budaya" />
         <SidebarItem href={`/project/${project.id}/kompetensi`} label="Perubahan Kompetensi" />
         <SidebarItem href={`/project/${project.id}/lainnya`} label="Perubahan Lainnya" />
         <br />
-        <SidebarItem href={`/project/${project.id}/analisis`} label="Analisis" />
+        <SidebarItem href={`/csr/${project.id}/analisis`} label="Analisis" />
         <br />
         <SidebarItem href={`/project/${project.id}/komunikasi`} label="Rencana Komunikasi" />
         <SidebarItem href={`/project/${project.id}/sponsorship`} label="Rencana Sponsorship" />

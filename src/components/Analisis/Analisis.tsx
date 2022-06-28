@@ -49,7 +49,7 @@ export default function Analisis({
 
   return (
     <Layout title={`Analisis & Rekomendasi - ${project.judul}`} user={user} project={project}>
-      <PageTitle prefix="" title="Analisis" />
+      <PageTitle title={title} />
 
       <Tabs
         variant="default"

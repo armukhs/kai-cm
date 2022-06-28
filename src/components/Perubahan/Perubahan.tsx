@@ -29,10 +29,21 @@ export default function Perubahan({
   const { data: syncData, mutate } = useAuthApi('perubahan', type, project.id);
   const { data: org } = useApi('organisasi');
 
+  const [data, setData] = useState(perubahans);
+  const [perubahan, setPerubahan] = useState<any>(null);
+  const [PIC, setPIC] = useState<any>(null);
+  const [activeTab, setActiveTab] = useState(0);
+
+  useEffect(() => {
+    if (syncData) setData(syncData.perubahans);
+    return () => {};
+  }, [syncData]);
+
   const canEdit = user.id == project.managerId || user.id == project.staffId;
   const allowEdit = !project.tglKonfirmasi;
   const isMentor = user.id == project.mentorId;
   const canCreate = canEdit && allowEdit;
+  const titleHasButton = canCreate && perubahans.length > 0 && !perubahan;
 
   function newPerubahan() {
     return {
@@ -56,23 +67,13 @@ export default function Perubahan({
     return null;
   }
 
-  const [data, setData] = useState(perubahans);
-  const [perubahan, setPerubahan] = useState<any>(null);
-  const [PIC, setPIC] = useState<any>(null);
-  const [activeTab, setActiveTab] = useState(0);
-
-  useEffect(() => {
-    if (syncData) setData(syncData.perubahans);
-    return () => {};
-  }, [syncData]);
-
   return (
-    <Layout title={`Perubahan ${title} - ${project.judul}`} user={user} project={project}>
-      <PageTitle prefix="Perubahan" title={title}>
-        {canCreate && perubahans.length > 0 && !perubahan && (
-          <ButtonPrimary label="Add Perubahan" onClick={() => setPerubahan(newPerubahan())} />
-        )}
-      </PageTitle>
+    <Layout title={`${title} - ${project.judul}`} user={user} project={project}>
+      <PageTitle
+        title={title}
+        button={titleHasButton ? 'New Perubahan' : ''}
+        clickHandler={() => setPerubahan(newPerubahan())}
+      />
 
       <Block info="__FORM_VIEW__" show={perubahan != null} mode="new">
         <FormPerubahan

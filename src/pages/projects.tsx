@@ -38,9 +38,11 @@ export default function Page({
   return (
     <Layout title="Honocoroko" user={user}>
       <Block info="__USER_PROJECT__" show={hasProjects}>
-        <PageTitle prefix="" title="My Projects">
-          {projectsSync.length > 0 && <ButtonPrimary label="New Projects" onClick={() => {}} />}
-        </PageTitle>
+        <PageTitle
+          title="My Projects"
+          button={projectsSync.length > 0 ? 'New Project' : ''}
+          clickHandler={() => {}}
+        />
         {projectsSync.length == 0 && <ProjectsEmpty canCreate={true} onClick={() => {}} />}
         {projectsSync.length > 0 && <Projects projects={projectsSync} />}
       </Block>
@@ -48,7 +50,7 @@ export default function Page({
       {hasProjects && hasAssignments && <Space h={20} />}
 
       <Block info="__USER_PROJECT__" show={hasAssignments}>
-        <PageTitle prefix="" title="My Assigments" />
+        <PageTitle title="My Assigments" />
         <Projects projects={assignmentsSync} />
       </Block>
     </Layout>

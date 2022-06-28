@@ -41,6 +41,7 @@ export default function Rencana({
   const canEdit = user.id == project.managerId || user.id == project.staffId;
   const allowEdit = !project.tglKonfirmasi;
   const canCreate = canEdit && project.tglApproval != null;
+  const titleHasButton = canCreate && data.length > 0 && !rencana;
 
   function newRencana() {
     return {
@@ -75,11 +76,11 @@ export default function Rencana({
   //
   return (
     <Layout title={`Rencana ${title} - ${project.judul}`} user={user} project={project}>
-      <PageTitle prefix="Rencana" title={title}>
-        {canCreate && data.length > 0 && !rencana && (
-          <ButtonPrimary label="Add Rencana" onClick={() => setRencana(newRencana())} />
-        )}
-      </PageTitle>
+      <PageTitle
+        title={title}
+        button={titleHasButton ? 'New Perubahan' : ''}
+        clickHandler={() => setRencana(newRencana())}
+      />
 
       <Block info="__FORM_VIEW__" show={rencana != null} mode="new">
         <FormRencana

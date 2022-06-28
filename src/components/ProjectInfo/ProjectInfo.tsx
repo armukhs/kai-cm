@@ -29,7 +29,7 @@ export default function ProjectInfo({ user, project }: { user: SessionUser; proj
 
   return (
     <Layout title={`Project: ${project.judul}`} user={user} project={project}>
-      <PageTitle prefix="" title="Project Info" />
+      <PageTitle title="Project Info" />
 
       <Block info="__FORM_VIEW__" show={showForm} mode="new">
         <FormProject

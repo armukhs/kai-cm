@@ -23,6 +23,7 @@ export default function ButtonPrimary({ label, onClick }: { label: string; onCli
         color="indigo"
         radius={0}
         onClick={onClick}
+        sx={{ paddingLeft: 12 }}
       >
         {text}
       </Button>
