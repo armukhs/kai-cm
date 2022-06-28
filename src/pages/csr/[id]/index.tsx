@@ -13,7 +13,7 @@ export default function CSR() {
   const id = router.query['id'] as string;
   const { data, error, mutate } = useAuthApi('project', id);
 
-  if (!user || !user.isLoggedIn || !data) return <></>;
+  // if (!user || !user.isLoggedIn || !data) return <></>;
 
   return <ProjectInfo user={user} project={data} />;
 }

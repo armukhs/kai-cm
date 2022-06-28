@@ -17,7 +17,7 @@ export default function CSR() {
   const { data, error, mutate } = useAuthApi('perubahan', TYPE, id);
 
   // Loading...
-  if (!user || !user.isLoggedIn || !data) return <></>;
+  // if (!user || !user.isLoggedIn || !data) return <></>;
 
   return (
     <Perubahan
