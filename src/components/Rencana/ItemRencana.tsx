@@ -2,6 +2,7 @@ import { Box, Button, Checkbox, LoadingOverlay, Paper, Table, Text } from '@mant
 import ButtonXS from 'components/ButtonXS';
 import DaftarUnitTerdampak from 'components/DaftarUnitTerdampak/DaftarUnitTerdampak';
 import Pojo from 'components/Pojo';
+import UnitOrJabatan from 'components/UnitOrJabatan/UnitOrJabatan';
 import fetchJson from 'lib/fetchJson';
 import { createPostData } from 'lib/utils';
 import Link from 'next/link';
@@ -121,7 +122,10 @@ export default function ItemRencana({
             </tr>
             <tr>
               <td style={{ width: 120, paddingLeft: 14, whiteSpace: 'nowrap' }}>PIC Kegiatan:</td>
-              <td>{pic(data.picId) ? pic(data.picId)?.nama : '(belum ditentukan)'}</td>
+              <td>
+                {/* {pic(data.picId) ? pic(data.picId)?.nama : '(belum ditentukan)'} */}
+                {pic(data.picId) ? <UnitOrJabatan type="jabatan" uoj={pic(data.picId)} /> : '---'}
+              </td>
             </tr>
             {canEdit && !deleteDialog && (
               <tr style={{ backgroundColor: '#f8f8f8' }}>

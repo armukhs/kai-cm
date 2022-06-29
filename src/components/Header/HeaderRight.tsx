@@ -34,6 +34,7 @@ export default function HeaderRight() {
         <Menu
           control={<Avatar src={null} size={30} alt="User menu" color="indigo" />}
           sx={{
+            cursor: 'pointer',
             '@media (max-width: 320px)': {
               display: 'none',
             },

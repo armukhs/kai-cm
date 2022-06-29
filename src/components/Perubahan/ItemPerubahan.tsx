@@ -1,6 +1,7 @@
 import { Box, Button, Checkbox, LoadingOverlay, Paper, Table } from '@mantine/core';
 import ButtonXS from 'components/ButtonXS';
 import DaftarUnitTerdampak from 'components/DaftarUnitTerdampak/DaftarUnitTerdampak';
+import UnitOrJabatan from 'components/UnitOrJabatan/UnitOrJabatan';
 import fetchJson from 'lib/fetchJson';
 import { createPostData } from 'lib/utils';
 import { useEffect, useState } from 'react';
@@ -79,7 +80,8 @@ export default function ItemPerubahan({
             <tr>
               <td className={classes.tdLeft}>PIC Perubahan:</td>
               <td style={{ fontWeight: 500 }}>
-                {pic(data.picId) ? pic(data.picId)?.nama : '(belum ditentukan)'}
+                {/* {pic(data.picId) ? pic(data.picId)?.nama : '(belum ditentukan)'} */}
+                {pic(data.picId) ? <UnitOrJabatan type="jabatan" uoj={pic(data.picId)} /> : '---'}
               </td>
             </tr>
             {canEdit && !deleteDialog && (

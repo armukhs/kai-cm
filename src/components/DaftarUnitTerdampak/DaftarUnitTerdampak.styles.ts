@@ -17,11 +17,11 @@ export const useStyles = createStyles((theme) => ({
   },
 
   kode: {
-    width: 55,
+    width: 52,
     padding: 3,
     paddingLeft: 8,
     paddingRight: 5,
-    fontWeight: 600,
+    fontWeight: 500,
     color: theme.colors.indigo[7],
     backgroundColor: theme.colors.indigo[1],
   },
@@ -30,7 +30,7 @@ export const useStyles = createStyles((theme) => ({
   unit: {
     position: 'absolute',
     top: 3,
-    left: 55,
+    left: 52,
     right: 0,
     paddingLeft: 6,
     paddingRight: 6,
