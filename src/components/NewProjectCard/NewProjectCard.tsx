@@ -73,7 +73,9 @@ export default function NewProjectCard({
                 onClick={(e) => e.stopPropagation()}
               >
                 <Text className={classes.truncate}>
-                  {project.judul} preloading the data when the user
+                  {project.judul} - dibikin panjang untuk mencoba{' '}
+                  <span style={{ color: 'orange', fontWeight: 700 }}>fitur ellipsis</span>{' '}
+                  preloading the data when the user
                 </Text>
               </a>
             </Link>

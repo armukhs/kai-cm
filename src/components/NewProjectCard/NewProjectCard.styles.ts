@@ -49,8 +49,9 @@ export const useStyles = createStyles((theme) => ({
     marginRight: -16,
     paddingLeft: 16,
     paddingRight: 16,
-    paddingTop: 10,
-    paddingBottom: 10,
+    marginTop: 7,
+    paddingTop: 3,
+    paddingBottom: 3,
   },
 
   formWrap: {

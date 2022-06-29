@@ -40,6 +40,20 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
             theme={{
               colorScheme,
               primaryColor: 'indigo',
+              colors: {
+                yellow: [
+                  '#FFFBE5',
+                  '#FFF5B8',
+                  '#FFEE8A',
+                  '#FFE85C',
+                  '#FFE12E',
+                  '#FFDA00',
+                  '#CCAF00',
+                  '#998300',
+                  '#665700',
+                  '#332c00',
+                ],
+              },
               fontSizes: {
                 sm: 13.75,
                 md: 14.5,
