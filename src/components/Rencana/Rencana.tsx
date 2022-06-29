@@ -36,13 +36,8 @@ export default function Rencana({
   const [PIC, setPIC] = useState<any>(null);
   const [activeTab, setActiveTab] = useState(0);
 
-  const isReady = project.tglApproval != null;
-  const isEmpty = data.length == 0;
-
-  const canEdit = user.id == project.managerId || user.id == project.staffId;
-  const allowEdit = !project.tglKonfirmasi;
-  const canCreate = canEdit && project.tglApproval != null;
-  const titleHasButton = canCreate && data.length > 0 && !rencana;
+  const userIsOwner = user.id == project.managerId || user.id == project.staffId;
+  const titleHasButton = userIsOwner && data.length > 0 && !rencana;
 
   function newRencana() {
     return {
@@ -73,6 +68,16 @@ export default function Rencana({
     return () => {};
   }, [syncData]);
 
+  // Project analysis hasnt been confirmed
+  if (!project.tglKonfirmasi || !syncData.project.tglKonfirmasi) {
+    return (
+      <>
+        <PageTitle title={title} />
+        <RencanaNotReady />
+      </>
+    );
+  }
+
   return (
     <>
       <PageTitle
@@ -80,6 +85,9 @@ export default function Rencana({
         button={titleHasButton ? 'New Rencana' : ''}
         clickHandler={() => setRencana(newRencana())}
       />
+
+      {/* <Pojo object={syncData.project.tglKonfirmasi} /> */}
+      {/* <Pojo object={data.length} /> */}
 
       <Block info="__FORM_VIEW__" show={rencana != null} mode="new">
         <FormRencana
@@ -97,20 +105,32 @@ export default function Rencana({
         />
       </Block>
 
-      <Block info="__NOT_READY__" show={!rencana && !isReady} mode="block">
-        <RencanaNotReady />
-      </Block>
-
-      <Block info="__IS_EMPTY__IS_READY" show={!rencana && isReady && isEmpty} mode="block">
+      <Block info="__IS_EMPTY__IS_READY" show={data.length == 0 && !rencana} mode="block">
         <RencanaEmpty
           title={title}
-          canCreate={canCreate}
+          canCreate={userIsOwner}
           onClick={() => setRencana(newRencana())}
         />
       </Block>
 
-      <Block info="__NOT_EMPTY__IS_READY" show={!rencana && isReady && !isEmpty} mode="block">
-        {data.length > 0 && (
+      <Block info="__NOT_EMPTY__IS_READY" show={data.length > 0 && !rencana} mode="block">
+        {data.length == 1 && (
+          <ItemRencana
+            data={data[0]}
+            units={org?.units}
+            mutate={mutate}
+            index={0}
+            canEdit={userIsOwner}
+            pic={getJabatan}
+            onDelete={setActiveTab}
+            onClick={() => {
+              window.scrollTo(0, 0);
+              setRencana(data[0]);
+              setPIC(getJabatan(data[0].picId));
+            }}
+          />
+        )}
+        {data.length > 1 && (
           <Tabs
             active={activeTab}
             onTabChange={setActiveTab}
@@ -129,7 +149,7 @@ export default function Rencana({
                   units={org?.units}
                   mutate={mutate}
                   index={index}
-                  canEdit={canEdit}
+                  canEdit={userIsOwner}
                   pic={getJabatan}
                   onDelete={setActiveTab}
                   onClick={() => {

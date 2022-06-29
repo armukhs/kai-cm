@@ -12,6 +12,7 @@ import { useForm } from '@mantine/form';
 import PICSelector from 'components/PICSelector/PICSelector';
 import Pojo from 'components/Pojo';
 import TopUnitSelect from 'components/TopUnitSelect/TopUnitSelect';
+import UnitOrJabatan from 'components/UnitOrJabatan/UnitOrJabatan';
 import fetchJson from 'lib/fetchJson';
 import { createPostData } from 'lib/utils';
 import { Dispatch, useEffect, useRef, useState } from 'react';
@@ -177,11 +178,20 @@ export default function FormPerubahan({
         <Box mb={10}>
           <Text className={classes.label}>Unit Tedampak</Text>
           <Paper withBorder sx={{ borderColor: '#d4d4d4' }}>
-            <div className={classes.unitsWrap}>
+            <ScrollArea
+              style={{
+                padding: 7,
+                paddingLeft: 10,
+                paddingRight: 10,
+                paddingBottom: 0,
+                height: 100,
+                borderBottom: '1px solid #d4d4d4',
+              }}
+            >
               {daftarUnitTerdampak.map((unit) => (
-                <UnitTerdampak key={unit.kode} unit={unit} />
+                <UnitOrJabatan key={unit.kode} uoj={unit} />
               ))}
-            </div>
+            </ScrollArea>
             <div className={classes.topUnitsWrap}>
               <TopUnitSelect
                 parents={topUnits}

@@ -8,6 +8,7 @@ import DaftarUnitTerdampak, {
 } from 'components/DaftarUnitTerdampak/DaftarUnitTerdampak';
 import UnitOrJabatan from 'components/UnitOrJabatan/UnitOrJabatan';
 import { useStyles } from './ItemPerubahan.styles';
+import { KeyedMutator } from 'swr';
 
 export default function ItemPerubahan({
   data,
@@ -23,7 +24,7 @@ export default function ItemPerubahan({
   index: number;
   pic: (id: string) => any;
   canEdit?: boolean;
-  mutate: () => void;
+  mutate: KeyedMutator<any>;
   onClick: () => void;
 }) {
   const { classes, cx } = useStyles();

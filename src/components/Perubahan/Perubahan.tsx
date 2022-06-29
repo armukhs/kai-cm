@@ -27,21 +27,32 @@ export default function Perubahan({
   const { data: syncData, mutate } = useAuthApi('perubahan', type, project.id);
   const { data: org } = useApi('organisasi');
 
+  const [projectSync, setProjectSync] = useState(project);
   const [data, setData] = useState(perubahans);
   const [perubahan, setPerubahan] = useState<any>(null);
   const [PIC, setPIC] = useState<any>(null);
   const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
-    if (syncData) setData(syncData.perubahans);
+    if (syncData) {
+      setData(syncData.perubahans);
+      setProjectSync(syncData.project);
+    }
     return () => {};
-  }, [syncData]);
+  }, [syncData, setData, setProjectSync]);
 
-  const canEdit = user.id == project.managerId || user.id == project.staffId;
-  const allowEdit = !project.tglKonfirmasi;
+  const canEdit =
+    user.id == project.managerId ||
+    user.id == project.staffId ||
+    user.id == syncData.project.managerId ||
+    user.id == syncData.project.staffId;
+  const allowEdit = !projectSync.tglKonfirmasi;
   const isMentor = user.id == project.mentorId;
   const canCreate = canEdit && allowEdit;
-  const titleHasButton = canCreate && perubahans.length > 0 && !perubahan;
+
+  const isConfirmed = projectSync.tglKonfirmasi != null && projectSync.tglKonfirmasi != '';
+  const userIsOwner = user.id == projectSync.managerId || user.id == projectSync.staffId;
+  const titleHasButton = userIsOwner && data.length > 0 && !isConfirmed && !perubahan;
 
   function newPerubahan() {
     return {
@@ -91,8 +102,23 @@ export default function Perubahan({
       </Block>
 
       <Block info="__" show={!perubahan && data.length > 0} mode="block">
+        {data.length == 1 && (
+          <ItemPerubahan
+            data={data[0]}
+            units={org?.units}
+            mutate={mutate}
+            index={0}
+            canEdit={canEdit && allowEdit}
+            pic={getJabatan}
+            onClick={() => {
+              window.scrollTo(0, 0);
+              setPerubahan(data[0]);
+              setPIC(getJabatan(data[0].picId));
+            }}
+          />
+        )}
         {/* Prevents <Tabs> being rendered (which cause error if data is empty), since Block parent is server-rendered */}
-        {data.length > 0 && (
+        {data.length > 1 && (
           <Tabs
             active={activeTab}
             onTabChange={setActiveTab}
