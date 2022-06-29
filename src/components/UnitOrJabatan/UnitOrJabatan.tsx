@@ -25,10 +25,9 @@ export const useStyles = createStyles((theme) => ({
     position: 'relative',
     display: 'flex',
     width: '100%',
-    fontSize: 12.5,
-    fontWeight: 500,
+    fontSize: 12,
     height: 24,
-    // backgroundColor: theme.colors.indigo[0],
+    backgroundColor: theme.colors.indigo[0],
     marginBottom: 3,
     borderRadius: 0,
     overflow: 'hidden',
@@ -40,10 +39,9 @@ export const useStyles = createStyles((theme) => ({
   kode: {
     width: 52,
     padding: 3,
-    paddingTop: 2,
+    paddingTop: 4,
     paddingLeft: 8,
     paddingRight: 5,
-    fontWeight: 500,
     color: theme.colors.indigo[7],
     backgroundColor: theme.colors.indigo[1],
   },
@@ -51,7 +49,7 @@ export const useStyles = createStyles((theme) => ({
   entity: {
     position: 'absolute',
     top: 0,
-    paddingTop: 2,
+    paddingTop: 4,
     left: 52,
     right: 0,
     height: 24,
@@ -65,7 +63,6 @@ export const useStyles = createStyles((theme) => ({
 
   kodeJabatan: {
     width: 64,
-    paddingTop: 4,
     backgroundColor: theme.colors.yellow[3],
     color: theme.colors.red[5],
     fontSize: 12,

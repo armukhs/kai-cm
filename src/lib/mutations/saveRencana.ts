@@ -4,6 +4,8 @@ import cuid from 'cuid';
 import { __getRencana } from 'lib/queries/getRencana';
 
 export default async function saveRencana(req: NextApiRequest, res: NextApiResponse) {
+  console.log('BODY', req.body);
+
   try {
     const {
       id,

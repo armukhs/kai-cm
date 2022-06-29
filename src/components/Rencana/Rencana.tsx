@@ -21,14 +21,12 @@ export default function Rencana({
   user,
   project,
   rencanas,
-}: // mutate,
-{
+}: {
   user: SessionUser;
   type: string;
   title: string;
   project: any;
   rencanas: any[];
-  // mutate: KeyedMutator<any>;
 }) {
   const { data: syncData, mutate } = useAuthApi('rencana', type, project.id);
   const { data: org } = useApi('organisasi');
@@ -63,10 +61,7 @@ export default function Rencana({
 
   function getJabatan(id: string) {
     if (org) {
-      const filtered: any[] = org.jabatans.filter((j: any) => j.id == id);
-      if (filtered.length > 0) {
-        return filtered[0];
-      }
+      return org.jabatans.find((j: any) => j.id == id);
     }
     return null;
   }
@@ -75,6 +70,7 @@ export default function Rencana({
     if (syncData) {
       setData(syncData.rencanas);
     }
+    return () => {};
   }, [syncData]);
 
   return (

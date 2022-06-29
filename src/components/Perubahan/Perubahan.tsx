@@ -57,10 +57,7 @@ export default function Perubahan({
 
   function getJabatan(id: string) {
     if (org) {
-      const filtered: any[] = org.jabatans.filter((j: any) => j.id == id);
-      if (filtered.length > 0) {
-        return filtered[0];
-      }
+      return org.jabatans.find((j: any) => j.id == id);
     }
     return null;
   }
@@ -94,7 +91,7 @@ export default function Perubahan({
       </Block>
 
       <Block info="__" show={!perubahan && data.length > 0} mode="block">
-        {/* Prevents Tabs being rendered (which cause error if data is empty), since Block parent is server-rendered */}
+        {/* Prevents <Tabs> being rendered (which cause error if data is empty), since Block parent is server-rendered */}
         {data.length > 0 && (
           <Tabs
             active={activeTab}

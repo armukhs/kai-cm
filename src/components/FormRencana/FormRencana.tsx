@@ -11,6 +11,7 @@ import {
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import PICSelector from 'components/PICSelector/PICSelector';
+import Pojo from 'components/Pojo';
 import TopUnitSelect from 'components/TopUnitSelect/TopUnitSelect';
 import fetchJson from 'lib/fetchJson';
 import { createPostData } from 'lib/utils';
@@ -36,6 +37,7 @@ export default function FormRencana({
   onCancel: () => void;
 }) {
   const [submitting, setSubmitting] = useState(false);
+  const [init, setInit] = useState(false);
   const [kodeInduk, setKodeInduk] = useState(topUnits ? topUnits[0]?.kode : '');
   const [daftarIDTerdampak, setDaftarIDTerdampak] = useState<string[]>([]);
   const [daftarUnitTerdampak, setDaftarUnitTerdampak] = useState<any[]>([]);
@@ -43,7 +45,18 @@ export default function FormRencana({
   const [picId, setPicId] = useState('');
 
   const form = useForm({
-    initialValues: { ...data },
+    initialValues: {
+      id: '',
+      projectId: '',
+      picId: '',
+      type: '',
+      rencana: '',
+      audien: '',
+      waktu: '',
+      tempat: '',
+      tolokUkur: '',
+      monitoring: '',
+    },
   });
 
   useEffect(() => {
@@ -54,11 +67,62 @@ export default function FormRencana({
 
   useEffect(() => {
     if (units) {
-      setDaftarUnitTerdampak(units.filter((unit) => daftarIDTerdampak.includes(unit.id)));
+      const daftar = units.filter((unit) => daftarIDTerdampak.includes(unit.id));
+      setDaftarUnitTerdampak(daftar);
+      const kodes: string[] = [];
+      daftar.forEach((d) => kodes.push(d.kode));
+      if (kodes.length > 0) {
+        kodes.sort();
+        if (!init) {
+          setKodeInduk(kodes[0].charAt(0));
+          setInit(!init);
+        }
+      }
     }
 
     return () => {};
-  }, [daftarIDTerdampak, setDaftarUnitTerdampak]);
+  }, [daftarIDTerdampak, setDaftarUnitTerdampak, setKodeInduk, init, setInit]);
+
+  useEffect(() => {
+    if (data?.projectId) {
+      form.setFieldValue('type', data.type);
+      form.setFieldValue('projectId', data.projectId);
+    }
+    if (data?.id) {
+      form.setFieldValue('id', data.id);
+      form.setFieldValue('picId', data.picId || '');
+      form.setFieldValue('projectId', data.projectId);
+      form.setFieldValue('type', data.type);
+      form.setFieldValue('rencana', data.rencana);
+      form.setFieldValue('audien', data.audien);
+      form.setFieldValue('waktu', data.waktu);
+      form.setFieldValue('tempat', data.tempat);
+      form.setFieldValue('tolokUkur', data.tolokUkur);
+      form.setFieldValue('monitoring', data.monitoring);
+
+      if (data.UnitRencana.length > 0) {
+        const ids: string[] = [];
+        data.UnitRencana.forEach((d: any) => ids.push(d.unitId));
+        setDaftarIDTerdampak(ids);
+      }
+    }
+
+    return () => {};
+  }, [data]);
+
+  function reset() {
+    setDaftarIDTerdampak([]);
+    setDaftarUnitTerdampak([]);
+    setKodeInduk(topUnits[0].kode);
+    form.setFieldValue('id', '');
+    form.setFieldValue('picId', '');
+    form.setFieldValue('rencana', '');
+    form.setFieldValue('audien', '');
+    form.setFieldValue('waktu', '');
+    form.setFieldValue('tempat', '');
+    form.setFieldValue('tolokUkur', '');
+    form.setFieldValue('monitoring', '');
+  }
 
   function cleanUp(param: string) {
     const lines = param.split('\n');
@@ -76,14 +140,14 @@ export default function FormRencana({
     const body = { ...values, unitTerdampak: [''] };
     body.tolokUkur = cleanUp(values['tolokUkur']);
     body.unitTerdampak = daftarIDTerdampak;
-    console.log(body);
+    console.log('BODY', body);
 
     try {
       const url = '/api/auth/post?subject=save-rencana';
       const rs: any = await fetchJson(url, createPostData(body));
       if (rs) {
         mutate(rs?.rencanas);
-        onSuccess(rs?.rencanas.length - 1);
+        // onSuccess(rs?.rencanas.length - 1);
       }
       onCancel();
       window.scrollTo(0, 0);
@@ -99,6 +163,9 @@ export default function FormRencana({
   return (
     <div style={{ position: 'relative' }}>
       <LoadingOverlay visible={submitting} />
+      {/* <Pojo object={kodeInduk} /> */}
+      {/* <Pojo object={daftarIDTerdampak} /> */}
+      {/* <Pojo object={daftarUnitTerdampak} /> */}
       <form onSubmit={form.onSubmit((values) => handleSubmit(values))}>
         <Textarea
           {...form.getInputProps('rencana')}

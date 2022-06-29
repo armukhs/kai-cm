@@ -38,6 +38,7 @@ export default function FormPerubahan({
 }) {
   const { classes } = useStyles();
   const [submitting, setSubmitting] = useState(false);
+  const [init, setInit] = useState(false);
   const [kodeInduk, setKodeInduk] = useState(topUnits ? topUnits[0]?.kode : '');
   const [daftarIDTerdampak, setDaftarIDTerdampak] = useState<string[]>([]);
   const [daftarUnitTerdampak, setDaftarUnitTerdampak] = useState<any[]>([]);
@@ -62,7 +63,17 @@ export default function FormPerubahan({
 
   useEffect(() => {
     if (units) {
-      setDaftarUnitTerdampak(units.filter((unit) => daftarIDTerdampak.includes(unit.id)));
+      const daftar = units.filter((unit) => daftarIDTerdampak.includes(unit.id));
+      setDaftarUnitTerdampak(daftar);
+      const kodes: string[] = [];
+      daftar.forEach((d) => kodes.push(d.kode));
+      if (kodes.length > 0) {
+        kodes.sort();
+        if (!init) {
+          setKodeInduk(kodes[0].charAt(0));
+          setInit(!init);
+        }
+      }
     }
 
     return () => {};
@@ -111,7 +122,7 @@ export default function FormPerubahan({
       const rs: any = await fetchJson(url, createPostData(body));
       if (rs) {
         mutate(rs?.perubahans);
-        onSuccess(rs?.perubahans.length - 1);
+        // onSuccess(rs?.perubahans.length - 1);
       }
       onCancel();
       window.scrollTo(0, 0);
@@ -127,8 +138,9 @@ export default function FormPerubahan({
   return (
     <div style={{ position: 'relative' }}>
       <LoadingOverlay visible={submitting} />
-      {/* <Pojo object={form.values} /> */}
+      {/* <Pojo object={daftarIDTerdampak} /> */}
       {/* <Pojo object={data} /> */}
+      {/* <Pojo object={form.values} /> */}
       <form onSubmit={form.onSubmit((values) => handleSubmit(values))}>
         {data && (data.type == 'proses' || data.type == 'teknologi') && (
           <Box mb={10}>

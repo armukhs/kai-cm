@@ -1,33 +1,11 @@
-import { useElementSize, useResizeObserver } from '@mantine/hooks';
-import { useEffect, useState } from 'react';
-import { useStyles } from './DaftarUnitTerdampak.styles';
+import UnitOrJabatan from 'components/UnitOrJabatan/UnitOrJabatan';
 
-export default function DaftarUnitTerdampak({ ids, units }: { ids: string[]; units: any[] }) {
-  const { classes, cx } = useStyles();
-  const { ref, width } = useElementSize();
-  // const [ref, rect] = useResizeObserver();
+export interface ITerdampak {
+  kode: string;
+  nama: string;
+}
 
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  const [daftar, setDaftar] = useState<{ kode: string; nama: string }[]>([]);
-
-  useEffect(() => {
-    if (units) {
-      setDaftar(units.filter((u) => ids.includes(u.id)));
-    }
-    return () => {};
-  }, [ids]);
-
-  return (
-    <div>
-      {daftar.map((d) => (
-        <div ref={ref} key={d.kode} className={classes.wrapper}>
-          <div className={cx(classes.kode)}>{d.kode}</div>
-          <div className={cx(classes.unit)}>{d.nama}</div>
-        </div>
-      ))}
-    </div>
-  );
+export default function DaftarUnitTerdampak({ daftar }: { daftar: ITerdampak[] }) {
+  if (!daftar || daftar.length == 0) return <>--</>;
+  return <div>{daftar && daftar.map((d) => <UnitOrJabatan key={d.kode} uoj={d} />)}</div>;
 }

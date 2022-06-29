@@ -1,10 +1,12 @@
-import { Box, Button, Checkbox, LoadingOverlay, Paper, Table } from '@mantine/core';
-import ButtonXS from 'components/ButtonXS';
-import DaftarUnitTerdampak from 'components/DaftarUnitTerdampak/DaftarUnitTerdampak';
-import UnitOrJabatan from 'components/UnitOrJabatan/UnitOrJabatan';
+import { useState } from 'react';
+import { Box, Checkbox, LoadingOverlay, Paper, Table } from '@mantine/core';
 import fetchJson from 'lib/fetchJson';
 import { createPostData } from 'lib/utils';
-import { useEffect, useState } from 'react';
+import ButtonXS from 'components/ButtonXS';
+import DaftarUnitTerdampak, {
+  ITerdampak,
+} from 'components/DaftarUnitTerdampak/DaftarUnitTerdampak';
+import UnitOrJabatan from 'components/UnitOrJabatan/UnitOrJabatan';
 import { useStyles } from './ItemPerubahan.styles';
 
 export default function ItemPerubahan({
@@ -30,7 +32,7 @@ export default function ItemPerubahan({
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  async function handelDelete() {
+  async function handleDelete() {
     setSubmitting(true);
     try {
       const url = '/api/auth/post?subject=delete-perubahan';
@@ -42,10 +44,14 @@ export default function ItemPerubahan({
     setSubmitting(false);
   }
 
-  function daftarIdTerdampak() {
-    const array: string[] = [];
-    data.UnitPerubahan.forEach((unit: { unitId: string }) => array.push(unit.unitId));
-    return array;
+  function daftarUnitTerdampak() {
+    const daftar: ITerdampak[] = [];
+    if (!units) return daftar; // Prevent missing `units` when refreshed manually
+    data.UnitPerubahan.forEach((up: any) => {
+      const unit = units.find((u) => u.id == up.unitId);
+      if (unit) daftar.push({ kode: unit.kode, nama: unit.nama });
+    });
+    return daftar;
   }
 
   return (
@@ -74,13 +80,12 @@ export default function ItemPerubahan({
             <tr>
               <td className={classes.tdLeft}>Unit Terdampak:</td>
               <td>
-                <DaftarUnitTerdampak ids={daftarIdTerdampak()} units={units} />
+                <DaftarUnitTerdampak daftar={daftarUnitTerdampak()} />
               </td>
             </tr>
             <tr>
               <td className={classes.tdLeft}>PIC Perubahan:</td>
-              <td style={{ fontWeight: 500 }}>
-                {/* {pic(data.picId) ? pic(data.picId)?.nama : '(belum ditentukan)'} */}
+              <td>
                 {pic(data.picId) ? <UnitOrJabatan type="jabatan" uoj={pic(data.picId)} /> : '---'}
               </td>
             </tr>
@@ -121,7 +126,7 @@ export default function ItemPerubahan({
                       disabled={!confirmDelete}
                       label="Delete"
                       sx={{ marginRight: 10, marginBottom: 10 }}
-                      onClick={handelDelete}
+                      onClick={handleDelete}
                     />
                     <ButtonXS
                       type="red-outline"

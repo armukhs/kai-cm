@@ -1,6 +1,8 @@
 import { Box, Button, Checkbox, LoadingOverlay, Paper, Table, Text } from '@mantine/core';
 import ButtonXS from 'components/ButtonXS';
-import DaftarUnitTerdampak from 'components/DaftarUnitTerdampak/DaftarUnitTerdampak';
+import DaftarUnitTerdampak, {
+  ITerdampak,
+} from 'components/DaftarUnitTerdampak/DaftarUnitTerdampak';
 import Pojo from 'components/Pojo';
 import UnitOrJabatan from 'components/UnitOrJabatan/UnitOrJabatan';
 import fetchJson from 'lib/fetchJson';
@@ -50,6 +52,16 @@ export default function ItemRencana({
     const array: string[] = [];
     data.UnitRencana.forEach((unit: { unitId: string }) => array.push(unit.unitId));
     return array;
+  }
+
+  function daftarUnitTerdampak() {
+    const daftar: ITerdampak[] = [];
+    if (!units) return daftar; // Prevent missing `units` when refreshed manually
+    data.UnitRencana.forEach((up: any) => {
+      const unit = units.find((u) => u.id == up.unitId);
+      if (unit) daftar.push({ kode: unit.kode, nama: unit.nama });
+    });
+    return daftar;
   }
 
   function parseAsLines(param: string) {
@@ -111,14 +123,14 @@ export default function ItemRencana({
               <td>{parseAsLines(data.tolokUkur)}</td>
             </tr>
             <tr>
-              <td style={{ width: 120, paddingLeft: 14, whiteSpace: 'nowrap' }}>Unit Terdampak:</td>
-              <td>
-                <DaftarUnitTerdampak ids={daftarIdTerdampak()} units={units} />
-              </td>
-            </tr>
-            <tr>
               <td style={{ width: 120, paddingLeft: 14, whiteSpace: 'nowrap' }}>Monitoring:</td>
               <td>{data.monitoring}</td>
+            </tr>
+            <tr>
+              <td style={{ width: 120, paddingLeft: 14, whiteSpace: 'nowrap' }}>Unit Terdampak:</td>
+              <td>
+                <DaftarUnitTerdampak daftar={daftarUnitTerdampak()} />
+              </td>
             </tr>
             <tr>
               <td style={{ width: 120, paddingLeft: 14, whiteSpace: 'nowrap' }}>PIC Kegiatan:</td>
