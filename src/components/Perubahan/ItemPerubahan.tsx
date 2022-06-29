@@ -1,7 +1,10 @@
 import { Box, Button, Checkbox, LoadingOverlay, Paper, Table } from '@mantine/core';
+import ButtonXS from 'components/ButtonXS';
+import DaftarUnitTerdampak from 'components/DaftarUnitTerdampak/DaftarUnitTerdampak';
 import fetchJson from 'lib/fetchJson';
 import { createPostData } from 'lib/utils';
 import { useEffect, useState } from 'react';
+import { useStyles } from './ItemPerubahan.styles';
 
 export default function ItemPerubahan({
   data,
@@ -20,6 +23,8 @@ export default function ItemPerubahan({
   mutate: () => void;
   onClick: () => void;
 }) {
+  const { classes, cx } = useStyles();
+
   const [deleteDialog, setDeleteDialog] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -44,9 +49,6 @@ export default function ItemPerubahan({
 
   return (
     <div style={{ marginBottom: 30, position: 'relative' }}>
-      {/* <Overlay opacity={0.4} color="#000" p={16}>
-        <Box color="white">asas</Box>
-      </Overlay> */}
       <LoadingOverlay visible={submitting} />
       <Paper withBorder sx={(theme) => ({ borderColor: theme.colors.gray[5], overflow: 'hidden' })}>
         <Table fontSize={13.5}>
@@ -60,56 +62,43 @@ export default function ItemPerubahan({
             </tr>
             {data.kondisi && (
               <tr>
-                <td style={{ width: 110, paddingLeft: 14, whiteSpace: 'nowrap' }}>
-                  Kondisi sekarang:
-                </td>
+                <td className={classes.tdLeft}>Kondisi sekarang:</td>
                 <td>{data.kondisi}</td>
               </tr>
             )}
             <tr>
-              <td style={{ width: 110, paddingLeft: 14, whiteSpace: 'nowrap' }}>
-                Bentuk Perubahan:
-              </td>
+              <td className={classes.tdLeft}>Bentuk Perubahan:</td>
               <td>{data.perubahan}</td>
             </tr>
             <tr>
-              <td style={{ width: 110, paddingLeft: 14, whiteSpace: 'nowrap' }}>Unit Terdampak:</td>
+              <td className={classes.tdLeft}>Unit Terdampak:</td>
               <td>
                 <DaftarUnitTerdampak ids={daftarIdTerdampak()} units={units} />
               </td>
             </tr>
             <tr>
-              <td style={{ width: 110, paddingLeft: 14, whiteSpace: 'nowrap' }}>PIC Perubahan:</td>
-              <td>{pic(data.picId) ? pic(data.picId)?.nama : '(belum ditentukan)'}</td>
+              <td className={classes.tdLeft}>PIC Perubahan:</td>
+              <td style={{ fontWeight: 500 }}>
+                {pic(data.picId) ? pic(data.picId)?.nama : '(belum ditentukan)'}
+              </td>
             </tr>
             {canEdit && !deleteDialog && (
               <tr style={{ backgroundColor: '#f8f8f8' }}>
                 <td></td>
                 <td>
                   <Box py={5}>
-                    <Button
-                      size="xs"
-                      mr={10}
-                      mb={10}
-                      radius={0}
-                      color="dark"
-                      variant="filled"
+                    <ButtonXS
+                      type="dark"
+                      label="Edit Perubahan"
+                      sx={{ marginRight: 10, marginBottom: 10 }}
                       onClick={onClick}
-                    >
-                      Edit Perubahan
-                    </Button>
-                    <Button
-                      size="xs"
-                      mb={10}
-                      color="red"
-                      radius={0}
-                      variant="filled"
-                      onClick={() => {
-                        setDeleteDialog(true);
-                      }}
-                    >
-                      Delete
-                    </Button>
+                    />
+                    <ButtonXS
+                      type="red"
+                      label="Delete"
+                      sx={{ marginBottom: 10 }}
+                      onClick={() => setDeleteDialog(true)}
+                    />
                   </Box>
                 </td>
               </tr>
@@ -122,33 +111,25 @@ export default function ItemPerubahan({
                     <Checkbox
                       label="Delete perubahan ini"
                       checked={confirmDelete}
+                      mb={8}
                       onChange={(event) => setConfirmDelete(event.currentTarget.checked)}
                     />
-                    <Button
+                    <ButtonXS
+                      type="red"
                       disabled={!confirmDelete}
-                      size="xs"
-                      mt={6}
-                      color="red"
-                      radius={0}
-                      variant="filled"
+                      label="Delete"
+                      sx={{ marginRight: 10, marginBottom: 10 }}
                       onClick={handelDelete}
-                    >
-                      Delete
-                    </Button>
-                    <Button
-                      size="xs"
-                      mt={6}
-                      ml={10}
-                      radius={0}
-                      color="red"
-                      variant="outline"
+                    />
+                    <ButtonXS
+                      type="red-outline"
+                      label="Cancel"
+                      sx={{ marginBottom: 10 }}
                       onClick={() => {
                         setConfirmDelete(false);
                         setDeleteDialog(false);
                       }}
-                    >
-                      Cancel
-                    </Button>
+                    />
                   </Box>
                 </td>
               </tr>
@@ -156,25 +137,6 @@ export default function ItemPerubahan({
           </tbody>
         </Table>
       </Paper>
-    </div>
-  );
-}
-
-function DaftarUnitTerdampak({ ids, units }: { ids: string[]; units: any[] }) {
-  const [daftar, setDaftar] = useState<{ kode: string; nama: string }[]>([]);
-  useEffect(() => {
-    if (units) {
-      setDaftar(units.filter((u) => ids.includes(u.id)));
-    }
-  }, [ids]);
-
-  return (
-    <div>
-      {daftar.map((d) => (
-        <div key={d.kode}>
-          {d.kode} - {d.nama}
-        </div>
-      ))}
     </div>
   );
 }

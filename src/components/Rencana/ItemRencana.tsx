@@ -1,8 +1,12 @@
 import { Box, Button, Checkbox, LoadingOverlay, Paper, Table, Text } from '@mantine/core';
+import ButtonXS from 'components/ButtonXS';
+import DaftarUnitTerdampak from 'components/DaftarUnitTerdampak/DaftarUnitTerdampak';
+import Pojo from 'components/Pojo';
 import fetchJson from 'lib/fetchJson';
 import { createPostData } from 'lib/utils';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { Dispatch, useEffect, useState } from 'react';
+import { KeyedMutator } from 'swr';
 
 export default function ItemRencana({
   data,
@@ -12,25 +16,29 @@ export default function ItemRencana({
   mutate,
   canEdit = false,
   onClick,
+  onDelete,
 }: {
   data: any;
   units: any[];
   index: number;
   pic: (id: string) => any;
   canEdit?: boolean;
-  mutate: () => void;
+  mutate: KeyedMutator<any>;
   onClick: () => void;
+  onDelete: Dispatch<number>;
 }) {
   const [deleteDialog, setDeleteDialog] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  async function handelDelete() {
+  async function handleDelete() {
     setSubmitting(true);
     try {
       const url = '/api/auth/post?subject=delete-rencana';
       await fetchJson(url, createPostData({ id: data.id }));
       mutate();
+      setDeleteDialog(false);
+      onDelete(index > 0 ? index - 1 : 0);
     } catch (error) {
       console.log(error);
     }
@@ -120,29 +128,18 @@ export default function ItemRencana({
                 <td></td>
                 <td>
                   <Box py={5}>
-                    <Button
-                      size="xs"
-                      mr={10}
-                      mb={10}
-                      radius={0}
-                      color="dark"
-                      variant="filled"
+                    <ButtonXS
+                      type="dark"
+                      label="Edit Rencana"
+                      sx={{ marginRight: 10, marginBottom: 10 }}
                       onClick={onClick}
-                    >
-                      Edit Rencana
-                    </Button>
-                    <Button
-                      size="xs"
-                      mb={10}
-                      color="red"
-                      radius={0}
-                      variant="filled"
-                      onClick={() => {
-                        setDeleteDialog(true);
-                      }}
-                    >
-                      Delete
-                    </Button>
+                    />
+                    <ButtonXS
+                      type="red"
+                      label="Delete"
+                      sx={{ marginBottom: 10 }}
+                      onClick={() => setDeleteDialog(true)}
+                    />
                   </Box>
                 </td>
               </tr>
@@ -155,33 +152,24 @@ export default function ItemRencana({
                     <Checkbox
                       label="Delete rencana ini"
                       checked={confirmDelete}
+                      mb={6}
                       onChange={(event) => setConfirmDelete(event.currentTarget.checked)}
                     />
-                    <Button
+                    <ButtonXS
+                      type="red"
                       disabled={!confirmDelete}
-                      size="xs"
-                      mt={6}
-                      color="red"
-                      radius={0}
-                      variant="filled"
-                      onClick={handelDelete}
-                    >
-                      Delete
-                    </Button>
-                    <Button
-                      size="xs"
-                      mt={6}
-                      ml={10}
-                      radius={0}
-                      color="red"
-                      variant="outline"
+                      label="Delete"
+                      sx={{ marginRight: 10 }}
+                      onClick={handleDelete}
+                    />
+                    <ButtonXS
+                      type="red-outline"
+                      label="Cancel"
                       onClick={() => {
                         setConfirmDelete(false);
                         setDeleteDialog(false);
                       }}
-                    >
-                      Cancel
-                    </Button>
+                    />
                   </Box>
                 </td>
               </tr>
@@ -189,25 +177,6 @@ export default function ItemRencana({
           </tbody>
         </Table>
       </Paper>
-    </div>
-  );
-}
-
-function DaftarUnitTerdampak({ ids, units }: { ids: string[]; units: any[] }) {
-  const [daftar, setDaftar] = useState<{ kode: string; nama: string }[]>([]);
-  useEffect(() => {
-    if (units) {
-      setDaftar(units.filter((u) => ids.includes(u.id)));
-    }
-  }, [ids]);
-
-  return (
-    <div>
-      {daftar.map((d) => (
-        <div key={d.kode}>
-          {d.kode} - {d.nama}
-        </div>
-      ))}
     </div>
   );
 }

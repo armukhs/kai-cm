@@ -4,6 +4,7 @@ import prisma from 'lib/db';
 export default async function deleteRencana(req: NextApiRequest, res: NextApiResponse) {
   try {
     const { id } = req.body;
+    console.log('ID', id);
 
     const [deps, rs] = await prisma.$transaction([
       prisma.unitRencana.deleteMany({
@@ -14,11 +15,11 @@ export default async function deleteRencana(req: NextApiRequest, res: NextApiRes
       }),
     ]);
 
-    if (!rs) {
-      console.log('Error');
-    } else {
-      console.log(deps);
-    }
+    // if (!rs) {
+    console.log('RS', rs);
+    // } else {
+    console.log('DEPS', deps);
+    // }
 
     res.json(rs);
   } catch (error) {

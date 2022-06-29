@@ -21,16 +21,16 @@ export default function Rencana({
   user,
   project,
   rencanas,
-  mutate,
-}: {
+}: // mutate,
+{
   user: SessionUser;
   type: string;
   title: string;
   project: any;
   rencanas: any[];
-  mutate: KeyedMutator<any>;
+  // mutate: KeyedMutator<any>;
 }) {
-  // const { data: syncData, mutate } = useAuthApi('rencana', type, project.id);
+  const { data: syncData, mutate } = useAuthApi('rencana', type, project.id);
   const { data: org } = useApi('organisasi');
 
   const [data, setData] = useState(rencanas);
@@ -71,12 +71,12 @@ export default function Rencana({
     return null;
   }
 
-  // useEffect(() => {
-  //   if (syncData) {
-  //     setData(syncData.rencanas);
-  //   }
-  // }, [syncData]);
-  //
+  useEffect(() => {
+    if (syncData) {
+      setData(syncData.rencanas);
+    }
+  }, [syncData]);
+
   return (
     <>
       <PageTitle
@@ -135,6 +135,7 @@ export default function Rencana({
                   index={index}
                   canEdit={canEdit}
                   pic={getJabatan}
+                  onDelete={setActiveTab}
                   onClick={() => {
                     window.scrollTo(0, 0);
                     setRencana(rencana);

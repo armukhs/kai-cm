@@ -25,19 +25,23 @@ export default function CSR() {
     useSWR(link);
   });
 
+  if (!data) {
+    return (
+      <Layout title={`${TITLE} - ${data ? data.project.judul : '...'}`} user={user} projectId={id}>
+        <PageTitle title={TITLE} />
+      </Layout>
+    );
+  }
+
   return (
     <Layout title={`${TITLE} - ${data ? data.project.judul : '...'}`} user={user} projectId={id}>
-      {!data && <PageTitle title={TITLE} />}
-      {data && (
-        <Rencana
-          type={TYPE}
-          title={TITLE}
-          user={user}
-          project={data.project}
-          rencanas={data.rencanas}
-          mutate={mutate}
-        />
-      )}
+      <Rencana
+        type={TYPE}
+        title={TITLE}
+        user={user}
+        project={data.project}
+        rencanas={data.rencanas}
+      />
     </Layout>
   );
 }
