@@ -80,7 +80,7 @@ export default function Perubahan({
           topUnits={org?.parents}
           pic={PIC}
           mutate={setData}
-          onSuccess={() => {}}
+          onSuccess={setActiveTab}
           dataJabatan={org?.jabatans}
           onCancel={() => {
             setPerubahan(null);
