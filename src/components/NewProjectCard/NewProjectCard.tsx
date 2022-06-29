@@ -72,11 +72,7 @@ export default function NewProjectCard({
                 style={{ maxWidth: width - 10 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <Text className={classes.truncate}>
-                  {project.judul} - dibikin panjang untuk mencoba{' '}
-                  <span style={{ color: 'orange', fontWeight: 700 }}>fitur ellipsis</span>{' '}
-                  preloading the data when the user
-                </Text>
+                <Text className={classes.truncate}>{project.judul}</Text>
               </a>
             </Link>
             <div style={{ flexGrow: 1 }}>&nbsp;</div>
