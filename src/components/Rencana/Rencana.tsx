@@ -31,13 +31,13 @@ export default function Rencana({
   const { data: syncData, mutate } = useAuthApi('rencana', type, project.id);
   const { data: org } = useApi('organisasi');
 
-  const [data, setData] = useState(rencanas);
+  const [theData, setTheData] = useState(rencanas);
   const [rencana, setRencana] = useState<any | null>(null);
   const [PIC, setPIC] = useState<any>(null);
   const [activeTab, setActiveTab] = useState(0);
 
   const userIsOwner = user.id == project.managerId || user.id == project.staffId;
-  const titleHasButton = userIsOwner && data.length > 0 && !rencana;
+  const titleHasButton = userIsOwner && theData.length > 0 && !rencana;
 
   function newRencana() {
     return {
@@ -63,7 +63,7 @@ export default function Rencana({
 
   useEffect(() => {
     if (syncData) {
-      setData(syncData.rencanas);
+      setTheData(syncData.rencanas);
     }
     return () => {};
   }, [syncData]);
@@ -95,7 +95,7 @@ export default function Rencana({
           units={org?.units}
           topUnits={org?.parents}
           pic={PIC}
-          mutate={setData}
+          mutate={setTheData}
           onSuccess={setActiveTab}
           dataJabatan={org?.jabatans}
           onCancel={() => {
@@ -105,7 +105,7 @@ export default function Rencana({
         />
       </Block>
 
-      <Block info="__IS_EMPTY__IS_READY" show={data.length == 0 && !rencana} mode="block">
+      <Block info="__IS_EMPTY__IS_READY" show={theData.length == 0 && !rencana} mode="block">
         <RencanaEmpty
           title={title}
           canCreate={userIsOwner}
@@ -113,10 +113,10 @@ export default function Rencana({
         />
       </Block>
 
-      <Block info="__NOT_EMPTY__IS_READY" show={data.length > 0 && !rencana} mode="block">
-        {data.length == 1 && (
+      <Block info="__NOT_EMPTY__IS_READY" show={theData.length > 0 && !rencana} mode="block">
+        {theData.length == 1 && (
           <ItemRencana
-            data={data[0]}
+            data={theData[0]}
             units={org?.units}
             mutate={mutate}
             index={0}
@@ -125,12 +125,12 @@ export default function Rencana({
             onDelete={setActiveTab}
             onClick={() => {
               window.scrollTo(0, 0);
-              setRencana(data[0]);
-              setPIC(getJabatan(data[0].picId));
+              setRencana(theData[0]);
+              setPIC(getJabatan(theData[0].picId));
             }}
           />
         )}
-        {data.length > 1 && (
+        {theData.length > 1 && (
           <Tabs
             active={activeTab}
             onTabChange={setActiveTab}
@@ -141,7 +141,7 @@ export default function Rencana({
               tabLabel: { fontWeight: 500 },
             }}
           >
-            {data.map((rencana: any, index: number) => (
+            {theData.map((rencana: any, index: number) => (
               <Tabs.Tab key={rencana.id} label={`R${index + 1}`}>
                 <ItemRencana
                   key={rencana.id}

@@ -123,7 +123,7 @@ export default function FormPerubahan({
       const rs: any = await fetchJson(url, createPostData(body));
       if (rs) {
         mutate(rs?.perubahans);
-        // onSuccess(rs?.perubahans.length - 1);
+        if (!form.values['id']) onSuccess(rs?.perubahans.length - 1);
       }
       onCancel();
       window.scrollTo(0, 0);
@@ -264,14 +264,6 @@ export default function FormPerubahan({
           </Button>
         </Box>
       </form>
-    </div>
-  );
-}
-
-function UnitTerdampak({ unit }: { unit: { kode: string; nama: string } }) {
-  return (
-    <div style={{ fontSize: 13 }}>
-      {unit.kode} - {unit.nama}
     </div>
   );
 }

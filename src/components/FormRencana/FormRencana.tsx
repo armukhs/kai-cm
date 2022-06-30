@@ -111,20 +111,6 @@ export default function FormRencana({
     return () => {};
   }, [data]);
 
-  function reset() {
-    setDaftarIDTerdampak([]);
-    setDaftarUnitTerdampak([]);
-    setKodeInduk(topUnits[0].kode);
-    form.setFieldValue('id', '');
-    form.setFieldValue('picId', '');
-    form.setFieldValue('rencana', '');
-    form.setFieldValue('audien', '');
-    form.setFieldValue('waktu', '');
-    form.setFieldValue('tempat', '');
-    form.setFieldValue('tolokUkur', '');
-    form.setFieldValue('monitoring', '');
-  }
-
   function cleanUp(param: string) {
     const lines = param.split('\n');
     let items: string[] = [];
@@ -148,7 +134,7 @@ export default function FormRencana({
       const rs: any = await fetchJson(url, createPostData(body));
       if (rs) {
         mutate(rs?.rencanas);
-        // onSuccess(rs?.rencanas.length - 1);
+        if (!form.values['id']) onSuccess(rs?.rencanas.length - 1);
       }
       onCancel();
       window.scrollTo(0, 0);

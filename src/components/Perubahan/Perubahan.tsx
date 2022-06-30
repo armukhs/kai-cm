@@ -24,35 +24,27 @@ export default function Perubahan({
   type: string;
   title: string;
 }) {
-  const { data: syncData, mutate } = useAuthApi('perubahan', type, project.id);
+  const { data, mutate } = useAuthApi('perubahan', type, project.id);
   const { data: org } = useApi('organisasi');
 
-  const [projectSync, setProjectSync] = useState(project);
-  const [data, setData] = useState(perubahans);
+  const [theProject, setTheProject] = useState(project);
+  const [theData, setTheData] = useState(perubahans);
+
   const [perubahan, setPerubahan] = useState<any>(null);
   const [PIC, setPIC] = useState<any>(null);
   const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
-    if (syncData) {
-      setData(syncData.perubahans);
-      setProjectSync(syncData.project);
+    if (data) {
+      setTheData(data.perubahans);
+      setTheProject(data.project);
     }
     return () => {};
-  }, [syncData, setData, setProjectSync]);
+  }, [data, setTheData, setTheProject]);
 
-  const canEdit =
-    user.id == project.managerId ||
-    user.id == project.staffId ||
-    user.id == syncData.project.managerId ||
-    user.id == syncData.project.staffId;
-  const allowEdit = !projectSync.tglKonfirmasi;
-  const isMentor = user.id == project.mentorId;
-  const canCreate = canEdit && allowEdit;
-
-  const isConfirmed = projectSync.tglKonfirmasi != null && projectSync.tglKonfirmasi != '';
-  const userIsOwner = user.id == projectSync.managerId || user.id == projectSync.staffId;
-  const titleHasButton = userIsOwner && data.length > 0 && !isConfirmed && !perubahan;
+  const userIsOwner = user.id == theProject.managerId || user.id == theProject.staffId;
+  const isConfirmed = theProject.tglKonfirmasi != null && theProject.tglKonfirmasi != '';
+  const titleHasButton = userIsOwner && theData.length > 0 && !isConfirmed && !perubahan;
 
   function newPerubahan() {
     return {
@@ -87,7 +79,7 @@ export default function Perubahan({
           units={org?.units}
           topUnits={org?.parents}
           pic={PIC}
-          mutate={setData}
+          mutate={setTheData}
           onSuccess={setActiveTab}
           dataJabatan={org?.jabatans}
           onCancel={() => {
@@ -97,28 +89,31 @@ export default function Perubahan({
         />
       </Block>
 
-      <Block info="__" show={!perubahan && data.length == 0} mode="block">
-        <PerubahanEmpty canCreate={canCreate} onClick={() => setPerubahan(newPerubahan())} />
+      <Block info="__" show={!perubahan && theData.length == 0} mode="block">
+        <PerubahanEmpty
+          canCreate={userIsOwner && !isConfirmed}
+          onClick={() => setPerubahan(newPerubahan())}
+        />
       </Block>
 
-      <Block info="__" show={!perubahan && data.length > 0} mode="block">
-        {data.length == 1 && (
+      <Block info="__" show={!perubahan && theData.length > 0} mode="block">
+        {theData.length == 1 && (
           <ItemPerubahan
-            data={data[0]}
+            data={theData[0]}
             units={org?.units}
             mutate={mutate}
             index={0}
-            canEdit={canEdit && allowEdit}
+            canEdit={userIsOwner && !isConfirmed}
             pic={getJabatan}
             onClick={() => {
               window.scrollTo(0, 0);
-              setPerubahan(data[0]);
-              setPIC(getJabatan(data[0].picId));
+              setPerubahan(theData[0]);
+              setPIC(getJabatan(theData[0].picId));
             }}
           />
         )}
         {/* Prevents <Tabs> being rendered (which cause error if data is empty), since Block parent is server-rendered */}
-        {data.length > 1 && (
+        {theData.length > 1 && (
           <Tabs
             active={activeTab}
             onTabChange={setActiveTab}
@@ -129,7 +124,7 @@ export default function Perubahan({
               tabLabel: { fontWeight: 500 },
             }}
           >
-            {data.map((perubahan: any, index: number) => (
+            {theData.map((perubahan: any, index: number) => (
               <Tabs.Tab key={perubahan.id} label={`P${index + 1}`}>
                 <ItemPerubahan
                   key={perubahan.id}
@@ -137,7 +132,7 @@ export default function Perubahan({
                   units={org?.units}
                   mutate={mutate}
                   index={index}
-                  canEdit={canEdit && allowEdit}
+                  canEdit={userIsOwner && !isConfirmed}
                   pic={getJabatan}
                   onClick={() => {
                     window.scrollTo(0, 0);
@@ -153,8 +148,8 @@ export default function Perubahan({
       </Block>
 
       <Block info="KOMENTAR" show={!perubahan} mode="block">
-        <Komentar projectId={project.id} type={type} />
-        {allowEdit && <FormKomentar type={type} projectId={project.id} userId={user.id} />}
+        <Komentar projectId={theProject.id} type={type} />
+        {!isConfirmed && <FormKomentar type={type} projectId={theProject.id} userId={user.id} />}
       </Block>
     </>
   );
