@@ -3,6 +3,8 @@ import getAnalisis from './getAnalisis';
 import getKomentar from './getKomentar';
 import getOrganization from './getOrganization';
 import getPerubahan from './getPerubahan';
+import getProgress from './getProgress';
+import getProgressIndex from './getProgressIndex';
 import getProject from './getProject';
 import getProjects from './getProjects';
 import getRencana from './getRencana';
@@ -18,4 +20,6 @@ export const AUTH_QUERIES = {
   analisis: getAnalisis,
   rencana: getRencana,
   projects: getProjects,
+  progress: getProgress,
+  'progress-index': getProgressIndex,
 };
