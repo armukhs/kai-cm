@@ -65,6 +65,12 @@ export default function Perubahan({
     return null;
   }
 
+  // if (theData.length == 0) {
+  //   return (
+
+  //   )
+  // }
+
   return (
     <>
       <PageTitle
@@ -148,8 +154,8 @@ export default function Perubahan({
       </Block>
 
       <Block info="KOMENTAR" show={!perubahan} mode="block">
-        <Komentar projectId={theProject.id} type={type} />
-        {!isConfirmed && <FormKomentar type={type} projectId={theProject.id} userId={user.id} />}
+        {/* <Komentar projectId={theProject.id} type={type} /> */}
+        {/* {!isConfirmed && <FormKomentar type={type} projectId={theProject.id} userId={user.id} />} */}
       </Block>
     </>
   );

@@ -14,6 +14,7 @@ import FormRencana from 'components/FormRencana/FormRencana';
 import OrganizationContext from 'components/OrganizationProvider/OrganizationProvider';
 import Pojo from 'components/Pojo';
 import UnitOrJabatan from 'components/UnitOrJabatan/UnitOrJabatan';
+import Komentar from 'components/Komentar/Komentar';
 
 interface IRencana {
   id: string;
@@ -199,8 +200,14 @@ export default function ItemRencana({
                 />
               )}
             </Paper>
+            {/* <p>KOMENTAR Rencana {data.id}</p> */}
+            <Komentar type={data.type} projectId={data.projectId} targetId={data.id} />
           </Tabs.Tab>
-          <Tabs.Tab label="Progress">Progress</Tabs.Tab>
+          <Tabs.Tab label="Progress">
+            <h3>Progres {data.id}</h3>
+            {/* <p>KOMENTAR Progress {data.id}</p> */}
+            <Komentar type={`progres-${data.type}`} projectId={data.projectId} targetId={data.id} />
+          </Tabs.Tab>
         </FlatTabs>
       </Block>
       {/* <Pojo object={data} /> */}

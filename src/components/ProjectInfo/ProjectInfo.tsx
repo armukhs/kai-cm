@@ -113,8 +113,8 @@ export default function ProjectInfo({ user, project }: { user: SessionUser; proj
       </Block>
 
       <Block info="KOMENTAR" show={!showForm} mode="block">
-        <Komentar projectId={project.id} type="project" />
-        {allowEdit && <FormKomentar type="project" projectId={project.id} userId={user.id} />}
+        {/* <Komentar projectId={project.id} type="project" /> */}
+        {/* {allowEdit && <FormKomentar type="project" projectId={project.id} userId={user.id} />} */}
       </Block>
     </>
   );

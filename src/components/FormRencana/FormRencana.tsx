@@ -206,11 +206,11 @@ export default function FormRencana({
             minRows={3}
             mb={0}
             required
-            onKeyDown={(e) => {
-              if (e.code == 'Enter') {
-                e.preventDefault();
-              }
-            }}
+            // onKeyDown={(e) => {
+            //   if (e.code == 'Enter') {
+            //     e.preventDefault();
+            //   }
+            // }}
           />
         }
       />

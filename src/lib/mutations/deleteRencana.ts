@@ -6,8 +6,11 @@ export default async function deleteRencana(req: NextApiRequest, res: NextApiRes
     const { id } = req.body;
     console.log('ID', id);
 
-    const [deps, rs] = await prisma.$transaction([
+    const [units, progress, rs] = await prisma.$transaction([
       prisma.unitRencana.deleteMany({
+        where: { rencanaId: id },
+      }),
+      prisma.progress.deleteMany({
         where: { rencanaId: id },
       }),
       prisma.rencana.delete({
@@ -18,7 +21,8 @@ export default async function deleteRencana(req: NextApiRequest, res: NextApiRes
     // if (!rs) {
     console.log('RS', rs);
     // } else {
-    console.log('DEPS', deps);
+    console.log('UNITS', units);
+    console.log('PROGRESS', progress);
     // }
 
     res.json(rs);
