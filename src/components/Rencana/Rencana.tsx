@@ -1,20 +1,12 @@
-import { Button, Tabs, Text } from '@mantine/core';
-import Block from 'components/Block';
-import ButtonPrimary from 'components/PageTitle/ButtonPrimary';
-import FormRencana from 'components/FormRencana/FormRencana';
-import Locomotive from 'components/Icons/Locomotive';
-import Layout from 'components/Layout/Layout';
-import PageTitle from 'components/PageTitle/PageTitle';
-import Pojo from 'components/Pojo';
-import { SessionUser } from 'lib/session';
-import useApi from 'lib/useApi';
-import useAuthApi from 'lib/useAuthApi';
 import { useEffect, useState } from 'react';
+import { Tabs } from '@mantine/core';
+import { SessionUser } from 'lib/session';
+import useAuthApi from 'lib/useAuthApi';
+import FormRencana from 'components/FormRencana/FormRencana';
+import PageTitle from 'components/PageTitle/PageTitle';
 import ItemRencana from './ItemRencana';
 import RencanaEmpty from './RencanaEmpty';
-import RencanaNotReady from './RencanaNotReady';
-import { KeyedMutator } from 'swr';
-import ButtonXS from 'components/ButtonXS';
+import Pojo from 'components/Pojo';
 
 export default function Rencana({
   type,
@@ -30,7 +22,6 @@ export default function Rencana({
   rencanas: any[];
 }) {
   const { data: syncData, mutate } = useAuthApi('rencana', type, project.id);
-  const { data: org } = useApi('organisasi');
 
   const [theProject, setTheProject] = useState(project);
   const [theData, setTheData] = useState(rencanas);
@@ -57,13 +48,6 @@ export default function Rencana({
     };
   }
 
-  function getJabatan(id: string) {
-    if (org) {
-      return org.jabatans.find((j: any) => j.id == id);
-    }
-    return null;
-  }
-
   useEffect(() => {
     if (syncData) {
       setTheProject(syncData.project);
@@ -73,13 +57,20 @@ export default function Rencana({
   }, [syncData]);
 
   if (!theProject.tglKonfirmasi || theData.length == 0) {
-    return <RencanaEmpty title={title} ready={theProject.tglKonfirmasi} canCreate={userIsOwner} />;
+    return (
+      <RencanaEmpty
+        title={title}
+        data={newRencana()}
+        ready={theProject.tglKonfirmasi}
+        canCreate={userIsOwner}
+      />
+    );
   }
 
   return (
     <>
       <PageTitle
-        title={title}
+        title={`${title}`}
         button={titleHasButton ? 'New Rencana' : ''}
         clickHandler={() => {
           setRencana(newRencana());
@@ -112,13 +103,17 @@ export default function Rencana({
         ))}
         {rencana && (
           <Tabs.Tab label="New" color="gray">
-            {`NEW`}
-            <ButtonXS
-              type="red-outline"
-              label="Cancel"
-              onClick={() => {
-                setActiveTab(theData.length - 1);
+            <FormRencana
+              title={`New Rencana`}
+              data={rencana}
+              pic={null}
+              setActiveTab={setActiveTab}
+              onSuccess={() => {
                 setRencana(null);
+              }}
+              onCancel={() => {
+                setRencana(null);
+                setActiveTab(0);
               }}
             />
           </Tabs.Tab>

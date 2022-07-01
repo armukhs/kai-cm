@@ -1,4 +1,8 @@
+import { Dispatch, useContext, useState } from 'react';
+import { KeyedMutator } from 'swr';
 import { Box, Checkbox, LoadingOverlay, Paper, Tabs, Text } from '@mantine/core';
+import fetchJson from 'lib/fetchJson';
+import { createPostData } from 'lib/utils';
 import Block from 'components/Block';
 import ButtonXS from 'components/ButtonXS';
 import DaftarUnitTerdampak, {
@@ -6,14 +10,10 @@ import DaftarUnitTerdampak, {
 } from 'components/DaftarUnitTerdampak/DaftarUnitTerdampak';
 import Datum from 'components/Datum/Datum';
 import FlatTabs from 'components/FlatTabs/FlatTabs';
-import FormRencana2 from 'components/FormRencana/FormRencana2';
+import FormRencana from 'components/FormRencana/FormRencana';
 import OrganizationContext from 'components/OrganizationProvider/OrganizationProvider';
 import Pojo from 'components/Pojo';
 import UnitOrJabatan from 'components/UnitOrJabatan/UnitOrJabatan';
-import fetchJson from 'lib/fetchJson';
-import { createPostData } from 'lib/utils';
-import { Dispatch, useContext, useEffect, useState } from 'react';
-import { KeyedMutator } from 'swr';
 
 interface IRencana {
   id: string;
@@ -102,7 +102,7 @@ export default function ItemRencana({
       <LoadingOverlay visible={submitting} />
 
       <Block mode="new" show={editing}>
-        <FormRencana2
+        <FormRencana
           title={`Edit Rencana ${index + 1}`}
           data={data}
           pic={getJabatan(data.picId)}

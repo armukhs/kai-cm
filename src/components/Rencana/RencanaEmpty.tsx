@@ -1,15 +1,18 @@
+import { useState } from 'react';
 import { Button, Paper, Text } from '@mantine/core';
 import Block from 'components/Block';
+import FormRencana from 'components/FormRencana/FormRencana';
 import PageTitle from 'components/PageTitle/PageTitle';
-import { Dispatch, useState } from 'react';
 
 export default function RencanaEmpty({
   title,
   ready,
+  data,
   canCreate,
 }: {
   title: string;
   ready: boolean;
+  data: any;
   canCreate: boolean;
 }) {
   const [showForm, setShowForm] = useState(false);
@@ -19,7 +22,12 @@ export default function RencanaEmpty({
       <PageTitle title={title} />
 
       <Block show={showForm}>
-        <div>FORM</div>
+        <FormRencana
+          title={`New Rencana`}
+          data={data}
+          pic={null}
+          onCancel={() => setShowForm(!showForm)}
+        />
       </Block>
 
       <Block show={!showForm}>
@@ -29,7 +37,7 @@ export default function RencanaEmpty({
               Halaman ini baru dapat diisi setelah mendapat persetujuan dari Petugas CM-KAI.
             </Text>
           )}
-          {ready && <Text size="sm">Proyek ini belum/tidak memiliki Rencana {title}.</Text>}
+          {ready && <Text size="sm">Proyek ini belum/tidak memiliki {title}.</Text>}
 
           {canCreate && (
             <Button
