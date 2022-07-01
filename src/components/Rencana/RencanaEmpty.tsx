@@ -39,7 +39,7 @@ export default function RencanaEmpty({
           )}
           {ready && <Text size="sm">Proyek ini belum/tidak memiliki {title}.</Text>}
 
-          {canCreate && (
+          {canCreate && ready && (
             <Button
               mt={20}
               style={{ fontWeight: 500 }}
