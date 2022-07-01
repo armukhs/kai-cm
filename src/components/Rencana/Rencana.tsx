@@ -14,6 +14,7 @@ import ItemRencana from './ItemRencana';
 import RencanaEmpty from './RencanaEmpty';
 import RencanaNotReady from './RencanaNotReady';
 import { KeyedMutator } from 'swr';
+import ButtonXS from 'components/ButtonXS';
 
 export default function Rencana({
   type,
@@ -31,13 +32,15 @@ export default function Rencana({
   const { data: syncData, mutate } = useAuthApi('rencana', type, project.id);
   const { data: org } = useApi('organisasi');
 
+  const [theProject, setTheProject] = useState(project);
   const [theData, setTheData] = useState(rencanas);
   const [rencana, setRencana] = useState<any | null>(null);
   const [PIC, setPIC] = useState<any>(null);
   const [activeTab, setActiveTab] = useState(0);
+  const [editing, setEditing] = useState(false);
 
   const userIsOwner = user.id == project.managerId || user.id == project.staffId;
-  const titleHasButton = userIsOwner && theData.length > 0 && !rencana;
+  const titleHasButton = userIsOwner && theData.length > 0 && !rencana && !editing;
 
   function newRencana() {
     return {
@@ -63,19 +66,14 @@ export default function Rencana({
 
   useEffect(() => {
     if (syncData) {
+      setTheProject(syncData.project);
       setTheData(syncData.rencanas);
     }
     return () => {};
   }, [syncData]);
 
-  // Project analysis hasnt been confirmed
-  if (!project.tglKonfirmasi || !syncData.project.tglKonfirmasi) {
-    return (
-      <>
-        <PageTitle title={title} />
-        <RencanaNotReady />
-      </>
-    );
+  if (!theProject.tglKonfirmasi || theData.length == 0) {
+    return <RencanaEmpty title={title} ready={theProject.tglKonfirmasi} canCreate={userIsOwner} />;
   }
 
   return (
@@ -83,86 +81,49 @@ export default function Rencana({
       <PageTitle
         title={title}
         button={titleHasButton ? 'New Rencana' : ''}
-        clickHandler={() => setRencana(newRencana())}
+        clickHandler={() => {
+          setRencana(newRencana());
+          setActiveTab(theData.length);
+        }}
       />
 
-      {/* <Pojo object={syncData.project.tglKonfirmasi} /> */}
-      {/* <Pojo object={data.length} /> */}
-
-      <Block info="__FORM_VIEW__" show={rencana != null} mode="new">
-        <FormRencana
-          data={rencana}
-          units={org?.units}
-          topUnits={org?.parents}
-          pic={PIC}
-          mutate={setTheData}
-          onSuccess={setActiveTab}
-          dataJabatan={org?.jabatans}
-          onCancel={() => {
-            setRencana(null);
-            setPIC(null);
-          }}
-        />
-      </Block>
-
-      <Block info="__IS_EMPTY__IS_READY" show={theData.length == 0 && !rencana} mode="block">
-        <RencanaEmpty
-          title={title}
-          canCreate={userIsOwner}
-          onClick={() => setRencana(newRencana())}
-        />
-      </Block>
-
-      <Block info="__NOT_EMPTY__IS_READY" show={theData.length > 0 && !rencana} mode="block">
-        {theData.length == 1 && (
-          <ItemRencana
-            data={theData[0]}
-            units={org?.units}
-            mutate={mutate}
-            index={0}
-            canEdit={userIsOwner}
-            pic={getJabatan}
-            onDelete={setActiveTab}
-            onClick={() => {
-              window.scrollTo(0, 0);
-              setRencana(theData[0]);
-              setPIC(getJabatan(theData[0].picId));
-            }}
-          />
+      <Tabs
+        active={activeTab}
+        onTabChange={setActiveTab}
+        variant="default"
+        styles={{
+          root: { marginTop: -12 },
+          body: { paddingTop: 12 },
+          tabLabel: { fontWeight: 500 },
+        }}
+      >
+        {theData.map((item: any, index: number) => (
+          <Tabs.Tab key={item.id} disabled={rencana != null || editing} label={`R${index + 1}`}>
+            <ItemRencana
+              key={item.id}
+              data={item}
+              mutate={mutate}
+              index={index}
+              canEdit={userIsOwner}
+              onEdit={setEditing}
+              setActiveTab={setActiveTab}
+            />
+          </Tabs.Tab>
+        ))}
+        {rencana && (
+          <Tabs.Tab label="New" color="gray">
+            {`NEW`}
+            <ButtonXS
+              type="red-outline"
+              label="Cancel"
+              onClick={() => {
+                setActiveTab(theData.length - 1);
+                setRencana(null);
+              }}
+            />
+          </Tabs.Tab>
         )}
-        {theData.length > 1 && (
-          <Tabs
-            active={activeTab}
-            onTabChange={setActiveTab}
-            variant="default"
-            styles={{
-              root: { marginTop: -12 },
-              body: { paddingTop: 20 },
-              tabLabel: { fontWeight: 500 },
-            }}
-          >
-            {theData.map((rencana: any, index: number) => (
-              <Tabs.Tab key={rencana.id} label={`R${index + 1}`}>
-                <ItemRencana
-                  key={rencana.id}
-                  data={rencana}
-                  units={org?.units}
-                  mutate={mutate}
-                  index={index}
-                  canEdit={userIsOwner}
-                  pic={getJabatan}
-                  onDelete={setActiveTab}
-                  onClick={() => {
-                    window.scrollTo(0, 0);
-                    setRencana(rencana);
-                    setPIC(getJabatan(rencana.picId));
-                  }}
-                />
-              </Tabs.Tab>
-            ))}
-          </Tabs>
-        )}
-      </Block>
+      </Tabs>
     </>
   );
 }

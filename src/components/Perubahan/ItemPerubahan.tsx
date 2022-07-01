@@ -98,15 +98,10 @@ export default function ItemPerubahan({
                     <ButtonXS
                       type="dark"
                       label="Edit Perubahan"
-                      sx={{ marginRight: 10, marginBottom: 10 }}
+                      sx={{ marginRight: 10 }}
                       onClick={onClick}
                     />
-                    <ButtonXS
-                      type="red"
-                      label="Delete"
-                      sx={{ marginBottom: 10 }}
-                      onClick={() => setDeleteDialog(true)}
-                    />
+                    <ButtonXS type="red" label="Delete" onClick={() => setDeleteDialog(true)} />
                   </Box>
                 </td>
               </tr>
@@ -126,13 +121,12 @@ export default function ItemPerubahan({
                       type="red"
                       disabled={!confirmDelete}
                       label="Delete"
-                      sx={{ marginRight: 10, marginBottom: 10 }}
+                      sx={{ marginRight: 10 }}
                       onClick={handleDelete}
                     />
                     <ButtonXS
                       type="red-outline"
                       label="Cancel"
-                      sx={{ marginBottom: 10 }}
                       onClick={() => {
                         setConfirmDelete(false);
                         setDeleteDialog(false);

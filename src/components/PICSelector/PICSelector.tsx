@@ -35,6 +35,7 @@ export default function PICSelector({
           setKodeInduk(u.kode);
           form.setFieldValue('unit', selected.unitid);
           form.setFieldValue('jabatan', selected.id);
+          setInit(true);
         }
       });
       // setInit(true);
@@ -42,8 +43,8 @@ export default function PICSelector({
       const kode = dataInduk ? dataInduk[0]?.kode : '';
       setKodePrev(kode);
       setKodeInduk(kode);
-      form.setFieldValue('unit', '');
-      form.setFieldValue('jabatan', '');
+      // form.setFieldValue('unit', '');
+      // form.setFieldValue('jabatan', '');
       setInit(true);
     }
     // setInit(true);
@@ -51,10 +52,11 @@ export default function PICSelector({
   }, [selected]);
 
   useEffect(() => {
-    if (init && kodeInduk != kodePrev) {
+    if (kodeInduk != kodePrev) {
       form.setFieldValue('unit', '');
       form.setFieldValue('jabatan', '');
       setKodePrev(kodeInduk);
+      callback('');
     }
     return () => {};
   }, [kodeInduk]);
@@ -62,7 +64,12 @@ export default function PICSelector({
   useEffect(() => {
     if (init) {
       form.setFieldValue('jabatan', '');
+    } else {
+      setInit(true);
     }
+    // setInit(true);
+    // form.setFieldValue('jabatan', '');
+    callback(form.values['jabatan']);
 
     return () => {};
   }, [form.values['unit']]);
@@ -97,6 +104,7 @@ export default function PICSelector({
         <div style={{ fontSize: 13 }}>Pilih Jabatan</div>
         <Select
           {...form.getInputProps('jabatan')}
+          onFocus={() => setInit(true)}
           data={dataJabatan ? dataJabatan.filter((j) => j.unitid == form.values['unit']) : []}
         />
       </div>

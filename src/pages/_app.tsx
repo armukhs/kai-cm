@@ -8,6 +8,7 @@ import { NotificationsProvider } from '@mantine/notifications';
 import { SWRConfig } from 'swr';
 import fetchJson from 'lib/fetchJson';
 import { SessionProvider } from 'components/SessionProvider/SessionProvider';
+import { OrganizationProvider } from 'components/OrganizationProvider/OrganizationProvider';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -65,7 +66,9 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
           >
             <NotificationsProvider>
               <SessionProvider>
-                <Component {...pageProps} />
+                <OrganizationProvider>
+                  <Component {...pageProps} />
+                </OrganizationProvider>
               </SessionProvider>
             </NotificationsProvider>
           </MantineProvider>

@@ -21,9 +21,10 @@ export default function TopUnitSelect({
             // color={unit.kode == selected ? 'indigo' : 'gray'}
             size="xs"
             sx={(theme) => ({
-              width: 32,
-              paddingLeft: 4,
-              paddingRight: 4,
+              width: 28,
+              height: 28,
+              paddingLeft: 2,
+              paddingRight: 2,
               backgroundColor:
                 unit.kode == selected ? theme.colors.indigo[8] : theme.colors.gray[4],
             })}
