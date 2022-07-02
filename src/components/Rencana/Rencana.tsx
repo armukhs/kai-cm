@@ -26,7 +26,6 @@ export default function Rencana({
   const [theProject, setTheProject] = useState(project);
   const [theData, setTheData] = useState(rencanas);
   const [rencana, setRencana] = useState<any | null>(null);
-  const [PIC, setPIC] = useState<any>(null);
   const [activeTab, setActiveTab] = useState(0);
   const [editing, setEditing] = useState(false);
 

@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Box, Checkbox, LoadingOverlay, Paper, Table } from '@mantine/core';
+import { Dispatch, useContext, useState } from 'react';
+import { Box, Checkbox, LoadingOverlay, Paper, Table, Text } from '@mantine/core';
 import fetchJson from 'lib/fetchJson';
 import { createPostData } from 'lib/utils';
 import ButtonXS from 'components/ButtonXS';
@@ -9,29 +9,38 @@ import DaftarUnitTerdampak, {
 import UnitOrJabatan from 'components/UnitOrJabatan/UnitOrJabatan';
 import { useStyles } from './ItemPerubahan.styles';
 import { KeyedMutator } from 'swr';
+import OrganizationContext from 'components/OrganizationProvider/OrganizationProvider';
+import Block from 'components/Block';
+import FormPerubahan from 'components/FormPerubahan/FormPerubahan';
+import Datum from 'components/Datum/Datum';
 
 export default function ItemPerubahan({
   data,
-  units,
   index,
-  pic,
   mutate,
   canEdit = false,
-  onClick,
+  onEdit,
+  setActiveTab,
 }: {
   data: any;
-  units: any[];
   index: number;
-  pic: (id: string) => any;
   canEdit?: boolean;
+  onEdit: Dispatch<boolean>;
   mutate: KeyedMutator<any>;
-  onClick: () => void;
+  setActiveTab: Dispatch<number>;
 }) {
+  const { units, jabatans } = useContext(OrganizationContext);
+
   const { classes, cx } = useStyles();
 
   const [deleteDialog, setDeleteDialog] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
+  const [editing, setEditing] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  function getJabatan(id: string) {
+    return jabatans.find((j: any) => j.id == id);
+  }
 
   async function handleDelete() {
     setSubmitting(true);
@@ -39,6 +48,8 @@ export default function ItemPerubahan({
       const url = '/api/auth/post?subject=delete-perubahan';
       await fetchJson(url, createPostData({ id: data.id }));
       mutate();
+      setDeleteDialog(false);
+      setActiveTab(index > 0 ? index - 1 : 0);
     } catch (error) {
       console.log(error);
     }
@@ -58,87 +69,100 @@ export default function ItemPerubahan({
   return (
     <div style={{ marginBottom: 30, position: 'relative' }}>
       <LoadingOverlay visible={submitting} />
-      <Paper withBorder sx={(theme) => ({ borderColor: theme.colors.gray[5], overflow: 'hidden' })}>
-        <Table fontSize={13.5}>
-          <tbody style={{ verticalAlign: 'top' }}>
-            <tr>
-              <td colSpan={2} style={{ paddingLeft: 14, paddingRight: 14 }}>
-                <Box my={5}>
-                  <strong>Perubahan {index + 1}</strong>
+
+      <Block mode="new" show={editing}>
+        <FormPerubahan
+          title={`Edit Rencana ${index + 1}`}
+          data={data}
+          pic={getJabatan(data.picId)}
+          setActiveTab={setActiveTab}
+          onCancel={() => {
+            setEditing(false);
+            onEdit(false);
+          }}
+        />
+      </Block>
+
+      <Block mode="new" show={!editing}>
+        <Paper
+          withBorder
+          sx={(theme) => ({ borderColor: theme.colors.gray[5], overflow: 'hidden' })}
+        >
+          <Text p={14} weight={600}>
+            Perubahan {index + 1}
+          </Text>
+          <Datum borderBottom borderTop label="Kondisi sekarang" value={data.kondisi} />
+          <Datum borderBottom label="Bentuk Perubahan" value={data.perubahan} />
+          <Datum
+            borderBottom
+            label="Unit Terdampak"
+            value={<DaftarUnitTerdampak daftar={daftarUnitTerdampak()} />}
+          />
+          <Datum
+            borderBottom
+            label="PIC Perubahan"
+            value={
+              getJabatan(data.picId) ? (
+                <UnitOrJabatan type="jabatan" uoj={getJabatan(data.picId)} />
+              ) : (
+                '---'
+              )
+            }
+          />
+
+          {canEdit && !deleteDialog && (
+            <Datum
+              borderBottom
+              value={
+                <Box py={5}>
+                  <ButtonXS
+                    type="dark"
+                    label="Edit Rencana"
+                    sx={{ marginRight: 10 }}
+                    onClick={() => {
+                      setEditing(true);
+                      onEdit(true);
+                    }}
+                  />
+                  <ButtonXS
+                    type="red"
+                    label="Delete"
+                    sx={{}}
+                    onClick={() => setDeleteDialog(true)}
+                  />
                 </Box>
-              </td>
-            </tr>
-            {data.kondisi && (
-              <tr>
-                <td className={classes.tdLeft}>Kondisi sekarang:</td>
-                <td>{data.kondisi}</td>
-              </tr>
-            )}
-            <tr>
-              <td className={classes.tdLeft}>Bentuk Perubahan:</td>
-              <td>{data.perubahan}</td>
-            </tr>
-            <tr>
-              <td className={classes.tdLeft}>Unit Terdampak:</td>
-              <td>
-                <DaftarUnitTerdampak daftar={daftarUnitTerdampak()} />
-              </td>
-            </tr>
-            <tr>
-              <td className={classes.tdLeft}>PIC Perubahan:</td>
-              <td>
-                {pic(data.picId) ? <UnitOrJabatan type="jabatan" uoj={pic(data.picId)} /> : '---'}
-              </td>
-            </tr>
-            {canEdit && !deleteDialog && (
-              <tr style={{ backgroundColor: '#f8f8f8' }}>
-                <td></td>
-                <td>
-                  <Box py={5}>
-                    <ButtonXS
-                      type="dark"
-                      label="Edit Perubahan"
-                      sx={{ marginRight: 10 }}
-                      onClick={onClick}
-                    />
-                    <ButtonXS type="red" label="Delete" onClick={() => setDeleteDialog(true)} />
-                  </Box>
-                </td>
-              </tr>
-            )}
-            {deleteDialog && (
-              <tr style={{ backgroundColor: '#f8f8f8' }}>
-                <td></td>
-                <td>
-                  <Box py={5}>
-                    <Checkbox
-                      label="Delete perubahan ini"
-                      checked={confirmDelete}
-                      mb={8}
-                      onChange={(event) => setConfirmDelete(event.currentTarget.checked)}
-                    />
-                    <ButtonXS
-                      type="red"
-                      disabled={!confirmDelete}
-                      label="Delete"
-                      sx={{ marginRight: 10 }}
-                      onClick={handleDelete}
-                    />
-                    <ButtonXS
-                      type="red-outline"
-                      label="Cancel"
-                      onClick={() => {
-                        setConfirmDelete(false);
-                        setDeleteDialog(false);
-                      }}
-                    />
-                  </Box>
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </Table>
-      </Paper>
+              }
+            />
+          )}
+          {deleteDialog && (
+            <Datum
+              borderBottom
+              value={
+                <Box py={5}>
+                  <Checkbox
+                    label="Delete rencana ini"
+                    checked={confirmDelete}
+                    mb={6}
+                    onChange={(event) => setConfirmDelete(event.currentTarget.checked)}
+                  />
+                  <ButtonXS
+                    type="red"
+                    disabled={!confirmDelete}
+                    label="Delete"
+                    sx={{ marginRight: 10 }}
+                    onClick={handleDelete}
+                  />
+                  <ButtonXS
+                    type="red-outline"
+                    label="Cancel"
+                    onClick={() => setDeleteDialog(false)}
+                  />
+                </Box>
+              }
+            />
+          )}
+        </Paper>
+      </Block>
     </div>
   );
 }

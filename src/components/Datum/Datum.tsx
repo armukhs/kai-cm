@@ -22,7 +22,8 @@ const useStyles = createStyles((theme) => ({
   },
 
   column: {
-    flexFlow: 'column',
+    // flexFlow: 'column',
+    display: 'block',
   },
 
   label: {
@@ -76,7 +77,11 @@ export default function Datum({
           {label}:
         </div>
       )}
-      <div className={cx(classes.data, { [classes.dataCol]: width ? width < 450 : false })}>
+      <div
+        className={cx('VALUEWRAP', classes.data, {
+          [classes.dataCol]: width ? width < 450 : false,
+        })}
+      >
         {value}
       </div>
     </div>

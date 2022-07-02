@@ -8,7 +8,6 @@ import PageTitle from 'components/PageTitle/PageTitle';
 import Rencana from 'components/Rencana/Rencana';
 import useSWR from 'swr';
 import { projectPrefetchLinks } from 'lib/utils';
-import OrganizationProvider from 'components/OrganizationProvider/OrganizationProvider';
 
 const TYPE = 'komunikasi';
 const TITLE = 'Rencana Komunikasi';
@@ -36,7 +35,6 @@ export default function CSR() {
 
   return (
     <Layout title={`${TITLE} - ${data ? data.project.judul : '...'}`} user={user} projectId={id}>
-      {/* <OrganizationProvider> */}
       <Rencana
         type={TYPE}
         title={TITLE}
@@ -44,7 +42,6 @@ export default function CSR() {
         project={data.project}
         rencanas={data.rencanas}
       />
-      {/* </OrganizationProvider> */}
     </Layout>
   );
 }

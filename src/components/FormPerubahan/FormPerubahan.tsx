@@ -9,38 +9,41 @@ import {
   Textarea,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import ButtonXS from 'components/ButtonXS';
+import Datum from 'components/Datum/Datum';
+import OrganizationContext from 'components/OrganizationProvider/OrganizationProvider';
 import PICSelector from 'components/PICSelector/PICSelector';
 import Pojo from 'components/Pojo';
 import TopUnitSelect from 'components/TopUnitSelect/TopUnitSelect';
 import UnitOrJabatan from 'components/UnitOrJabatan/UnitOrJabatan';
 import fetchJson from 'lib/fetchJson';
+import useAuthApi from 'lib/useAuthApi';
 import { createPostData } from 'lib/utils';
-import { Dispatch, useEffect, useRef, useState } from 'react';
+import { Dispatch, useContext, useEffect, useRef, useState } from 'react';
 import { useStyles } from './FormPerubahan.styles';
 
 export default function FormPerubahan({
+  title,
   data,
-  units,
-  topUnits,
   pic,
-  dataJabatan,
-  mutate,
+  setActiveTab,
   onSuccess,
   onCancel,
 }: {
+  title: string;
   data: any;
-  units: any[];
-  topUnits: any[];
   pic: any;
-  dataJabatan: any[];
-  mutate: Dispatch<any>;
-  onSuccess: Dispatch<any>;
+  setActiveTab?: Dispatch<number>;
+  onSuccess?: () => void;
   onCancel: () => void;
 }) {
+  const { mutate } = useAuthApi('perubahan', data.type, data.projectId);
+  const { units, parents, jabatans } = useContext(OrganizationContext);
+
   const { classes } = useStyles();
   const [submitting, setSubmitting] = useState(false);
   const [init, setInit] = useState(false);
-  const [kodeInduk, setKodeInduk] = useState(topUnits ? topUnits[0]?.kode : '');
+  const [kodeInduk, setKodeInduk] = useState(parents[0].kode);
   const [daftarIDTerdampak, setDaftarIDTerdampak] = useState<string[]>([]);
   const [daftarUnitTerdampak, setDaftarUnitTerdampak] = useState<any[]>([]);
   const [picId, setPicId] = useState('');
@@ -55,12 +58,6 @@ export default function FormPerubahan({
       perubahan: '',
     },
   });
-
-  useEffect(() => {
-    form.setFieldValue('picId', picId);
-
-    return () => {};
-  }, [picId]);
 
   useEffect(() => {
     if (units) {
@@ -78,7 +75,13 @@ export default function FormPerubahan({
     }
 
     return () => {};
-  }, [daftarIDTerdampak, setDaftarUnitTerdampak]);
+  }, [daftarIDTerdampak, setDaftarUnitTerdampak, setKodeInduk, init, setInit]);
+
+  useEffect(() => {
+    form.setFieldValue('picId', picId);
+
+    return () => {};
+  }, [picId]);
 
   useEffect(() => {
     if (data?.projectId) {
@@ -103,29 +106,35 @@ export default function FormPerubahan({
     return () => {};
   }, [data]);
 
-  function reset() {
-    setDaftarIDTerdampak([]);
-    setDaftarUnitTerdampak([]);
-    setKodeInduk(topUnits[0].kode);
-    form.setFieldValue('id', '');
-    form.setFieldValue('kondisi', '');
-    form.setFieldValue('perubahan', '');
-  }
+  // function reset() {
+  //   setDaftarIDTerdampak([]);
+  //   setDaftarUnitTerdampak([]);
+  //   setKodeInduk(topUnits[0].kode);
+  //   form.setFieldValue('id', '');
+  //   form.setFieldValue('kondisi', '');
+  //   form.setFieldValue('perubahan', '');
+  // }
 
-  async function handleSubmit(values: typeof form.values) {
+  async function handleSubmit() {
     setSubmitting(true);
-    const body = { ...values, unitTerdampak: [''] };
+    const body = { ...form.values, unitTerdampak: [''] };
     body.unitTerdampak = daftarIDTerdampak;
     console.log(body);
 
     try {
       const url = '/api/auth/post?subject=save-perubahan';
       const rs: any = await fetchJson(url, createPostData(body));
-      if (rs) {
-        mutate(rs?.perubahans);
-        if (!form.values['id']) onSuccess(rs?.perubahans.length - 1);
+      mutate();
+      if (onSuccess) {
+        onSuccess();
+        if (setActiveTab) setActiveTab(rs?.perubahans.length - 1);
+      } else {
+        if (rs.perubahans.length == 1) {
+          setTimeout(() => {}, 200);
+        }
+        onCancel();
       }
-      onCancel();
+
       window.scrollTo(0, 0);
     } catch (error) {
       console.log(error);
@@ -137,19 +146,74 @@ export default function FormPerubahan({
   const scrollToTop = () => viewport.current?.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <div style={{ position: 'relative' }}>
+    <Paper
+      withBorder
+      sx={(theme) => ({
+        position: 'relative',
+        borderColor: theme.colors.gray[5],
+        overflow: 'hidden',
+      })}
+    >
       <LoadingOverlay visible={submitting} />
-      {/* <Pojo object={daftarIDTerdampak} /> */}
-      {/* <Pojo object={data} /> */}
-      {/* <Pojo object={form.values} /> */}
-      <form onSubmit={form.onSubmit((values) => handleSubmit(values))}>
-        {data && (data.type == 'proses' || data.type == 'teknologi') && (
-          <Box mb={10}>
-            <Text className={classes.label}>Kondisi Sekarang</Text>
+
+      <Text p={14} weight={600}>
+        {title}
+      </Text>
+
+      {(data.type == 'proses' || data.type == 'teknologi') && (
+        <>
+          <Datum
+            borderTop
+            borderBottom
+            label="Kondisi Sekarang"
+            value={
+              <Textarea
+                {...form.getInputProps('kondisi')}
+                autosize
+                minRows={3}
+                mb={0}
+                required
+                onKeyDown={(e) => {
+                  if (e.code == 'Enter') {
+                    e.preventDefault();
+                  }
+                }}
+              />
+            }
+          />
+          <Datum
+            borderTop={false}
+            borderBottom
+            label="Bentuk Perubahan"
+            value={
+              <Textarea
+                {...form.getInputProps('perubahan')}
+                autosize
+                minRows={3}
+                mb={0}
+                required
+                onKeyDown={(e) => {
+                  if (e.code == 'Enter') {
+                    e.preventDefault();
+                  }
+                }}
+              />
+            }
+          />
+        </>
+      )}
+
+      {data.type != 'proses' && data.type != 'teknologi' && (
+        <Datum
+          borderTop
+          borderBottom
+          label="Bentuk Perubahan"
+          value={
             <Textarea
-              {...form.getInputProps('kondisi')}
+              {...form.getInputProps('perubahan')}
               autosize
               minRows={3}
+              mb={0}
               required
               onKeyDown={(e) => {
                 if (e.code == 'Enter') {
@@ -157,113 +221,124 @@ export default function FormPerubahan({
                 }
               }}
             />
-          </Box>
-        )}
+          }
+        />
+      )}
 
-        <Box mb={10}>
-          <Text className={classes.label}>Bentuk Perubahan</Text>
-          <Textarea
-            {...form.getInputProps('perubahan')}
-            autosize
-            minRows={3}
-            required
-            onKeyDown={(e) => {
-              if (e.code == 'Enter') {
-                e.preventDefault();
-              }
-            }}
-          />
-        </Box>
-
-        <Box mb={10}>
-          <Text className={classes.label}>Unit Tedampak</Text>
-          <Paper withBorder sx={{ borderColor: '#d4d4d4' }}>
-            <ScrollArea
-              style={{
-                padding: 7,
-                paddingLeft: 10,
-                paddingRight: 10,
-                paddingBottom: 0,
-                height: 100,
-                borderBottom: '1px solid #d4d4d4',
-              }}
-            >
-              {daftarUnitTerdampak.map((unit) => (
-                <UnitOrJabatan key={unit.kode} uoj={unit} />
-              ))}
-            </ScrollArea>
-            <div className={classes.topUnitsWrap}>
-              <TopUnitSelect
-                parents={topUnits}
-                selected={kodeInduk}
-                callback={setKodeInduk}
-                effect={scrollToTop}
-              />
-            </div>
-
-            <ScrollArea
-              className={classes.scrollArea}
-              // @ts-ignore
-              viewportRef={viewport}
-            >
-              {units &&
-                units
-                  .filter((unit) => unit.kode.startsWith(kodeInduk))
-                  .map((unit) => (
-                    <Checkbox
-                      key={unit.kode}
-                      value={unit.id}
-                      label={unit.nama}
-                      width="100%"
-                      size="sm"
-                      py={2}
-                      checked={daftarIDTerdampak.includes(unit.id)}
-                      onChange={(e) => {
-                        if (e.currentTarget.checked) {
-                          setDaftarIDTerdampak([...daftarIDTerdampak, unit.id]);
-                        } else {
-                          setDaftarIDTerdampak(daftarIDTerdampak.filter((id) => id != unit.id));
-                        }
-                      }}
-                    />
-                  ))}
-            </ScrollArea>
-          </Paper>
-        </Box>
-
-        <Box my={20}>
-          <Text className={classes.label}>PIC Perubahan</Text>
-          <Text sx={{ fontSize: 13, fontWeight: 500, marginBottom: 4, color: 'gray' }}>
-            {pic ? pic.label : 'Pilih PIC'}
-          </Text>
-          <PICSelector
-            dataInduk={topUnits}
-            dataUnit={units}
-            dataJabatan={dataJabatan}
-            selected={pic}
-            callback={setPicId}
-          />
-        </Box>
-
-        <Box mt={20}>
-          <Button type="submit" radius={0} color="indigo">
-            Save Perubahan
-          </Button>
-          <Button
-            ml={10}
-            variant="outline"
-            radius={0}
-            color="red"
-            onClick={() => {
-              reset();
-              onCancel();
-              window.scrollTo(0, 0);
+      <Box
+        sx={(theme) => ({
+          padding: `7px 10px 7px 14px`,
+          // borderTop: `1px solid ${theme.colors.gray[4]}`,
+        })}
+      >
+        <Text
+          sx={(theme) => ({
+            fontSize: 13,
+            fontWeight: 400,
+            marginBottom: 4,
+            color: theme.colors.gray[7],
+          })}
+        >
+          Unit Tedampak:
+        </Text>
+        <Paper withBorder sx={{ borderColor: '#d4d4d4' }}>
+          <ScrollArea
+            style={{
+              padding: 7,
+              paddingLeft: 10,
+              paddingRight: 10,
+              paddingBottom: 0,
+              height: 100,
+              borderBottom: '1px solid #d4d4d4',
             }}
           >
-            Cancel
-          </Button>
-        </Box>
-      </form>
-    </div>
+            {daftarUnitTerdampak.map((unit) => (
+              <UnitOrJabatan key={unit.kode} uoj={unit} />
+            ))}
+          </ScrollArea>
+          <div style={{ padding: 7, borderBottom: '1px solid #d4d4d4' }}>
+            <TopUnitSelect
+              parents={parents}
+              selected={kodeInduk}
+              callback={setKodeInduk}
+              effect={scrollToTop}
+            />
+          </div>
+
+          <ScrollArea
+            style={{
+              height: 168,
+              paddingTop: 7,
+              paddingLeft: 10,
+            }}
+            // @ts-ignore
+            viewportRef={viewport}
+          >
+            {units &&
+              units
+                .filter((unit) => unit.kode.startsWith(kodeInduk))
+                .map((unit) => (
+                  <Checkbox
+                    key={unit.kode}
+                    value={unit.id}
+                    label={unit.nama}
+                    width="100%"
+                    size="sm"
+                    py={2}
+                    checked={daftarIDTerdampak.includes(unit.id)}
+                    onChange={(e) => {
+                      if (e.currentTarget.checked) {
+                        setDaftarIDTerdampak([...daftarIDTerdampak, unit.id]);
+                      } else {
+                        setDaftarIDTerdampak(daftarIDTerdampak.filter((id) => id != unit.id));
+                      }
+                    }}
+                  />
+                ))}
+          </ScrollArea>
+        </Paper>
+      </Box>
+
+      <Box
+        sx={(theme) => ({
+          padding: `7px 10px 7px 14px`,
+          borderTop: `1px solid ${theme.colors.gray[4]}`,
+        })}
+      >
+        <Text
+          sx={(theme) => ({
+            fontSize: 13,
+            fontWeight: 400,
+            marginBottom: 4,
+            color: theme.colors.gray[7],
+          })}
+        >
+          PIC Perubahan: {form.values['picId']} - {picId ? picId : 'NOE'}
+        </Text>
+        <PICSelector
+          dataInduk={parents}
+          dataUnit={units}
+          dataJabatan={jabatans}
+          selected={pic}
+          callback={setPicId}
+        />
+      </Box>
+
+      <Datum
+        borderTop
+        borderBottom
+        value={
+          <Box py={5}>
+            <ButtonXS
+              type="dark"
+              label="Save Rencana"
+              sx={{ marginRight: 10 }}
+              onClick={() => handleSubmit()}
+            />
+            <ButtonXS type="red" label="Cancel" sx={{}} onClick={onCancel} />
+          </Box>
+        }
+      />
+    </Paper>
   );
 }

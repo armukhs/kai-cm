@@ -9,7 +9,7 @@ export default function UnitOrJabatan({
 }) {
   const { classes, cx } = useStyles();
   return (
-    <div key={uoj.kode} className={classes.wrapper}>
+    <div className={cx(classes.wrapper, 'WRAPPER')}>
       <div className={cx(classes.kode, { [classes.kodeJabatan]: type == 'jabatan' })}>
         {uoj.kode}
       </div>

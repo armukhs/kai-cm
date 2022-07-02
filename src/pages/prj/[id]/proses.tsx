@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import useAuthApi from 'lib/useAuthApi';
 import useUser from 'lib/useUser';
@@ -25,18 +25,23 @@ export default function CSR() {
     useSWR(link);
   });
 
+  if (!data) {
+    return (
+      <Layout title={`${TITLE} - ${data ? data.project.judul : '...'}`} user={user} projectId={id}>
+        <PageTitle title={TITLE} />
+      </Layout>
+    );
+  }
+
   return (
     <Layout title={`${TITLE} - ${data ? data.project.judul : '...'}`} user={user} projectId={id}>
-      {!data && <PageTitle title={TITLE} />}
-      {data && (
-        <Perubahan
-          type={TYPE}
-          title={TITLE}
-          user={user}
-          project={data.project}
-          perubahans={data.perubahans}
-        />
-      )}
+      <Perubahan
+        type={TYPE}
+        title={TITLE}
+        user={user}
+        project={data.project}
+        perubahans={data.perubahans}
+      />
     </Layout>
   );
 }
