@@ -13,6 +13,7 @@ import OrganizationContext from 'components/OrganizationProvider/OrganizationPro
 import Block from 'components/Block';
 import FormPerubahan from 'components/FormPerubahan/FormPerubahan';
 import Datum from 'components/Datum/Datum';
+import Komentar from 'components/Komentar/Komentar';
 
 export default function ItemPerubahan({
   data,
@@ -162,6 +163,7 @@ export default function ItemPerubahan({
             />
           )}
         </Paper>
+        <Komentar type={data.type} projectId={data.projectId} targetId={data.id} />
       </Block>
     </div>
   );

@@ -68,10 +68,10 @@ export default function Komentar({
   return (
     <Box my={40}>
       {/* <Pojo object={form.values} /> */}
-      <Block show={data.length == 0}>
+      {/* <Block show={data.length == 0}>
         <div>Kosong</div>
-      </Block>
-      <Block show={data.length > 0}>
+      </Block> */}
+      <Block show={data}>
         <p
           style={{
             marginBottom: 15,
