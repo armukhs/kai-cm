@@ -51,11 +51,13 @@ export default function Datum({
   value,
   borderTop = false,
   borderBottom = false,
+  center = false,
 }: {
   label?: string;
   value: any;
   borderTop?: boolean;
   borderBottom?: boolean;
+  center?: boolean;
 }) {
   const { classes, cx } = useStyles();
   const { ref, width } = useElementSize();
@@ -67,6 +69,7 @@ export default function Datum({
         [classes.borderBottom]: borderBottom,
         [classes.column]: width ? width < 450 : false,
       })}
+      style={{ alignItems: center ? 'center' : 'start' }}
     >
       {/*
       width ? width < 450 : false

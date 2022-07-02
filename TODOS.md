@@ -10,3 +10,4 @@ Emoji ✅ ❌ 🔲
 - ✅ ItemRencana and ItemPerubahan should collapse to 1 column on small viewport
 - ✅ Fix handle deletion on Perubahan and Rencana
 - ✅ Merubah model Perubahan menjadi seperti model Rencana
+- ✅ Profile and password

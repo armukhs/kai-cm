@@ -7,6 +7,8 @@ import saveMentor from './saveMentor';
 import savePerubahan from './savePerubahan';
 import saveProject from './saveProject';
 import saveRencana from './saveRencana';
+import updatePassword from './updatePassword';
+import updateProfile from './updateProfile';
 
 export const MUTATIONS = {};
 export const AUTH_MUTATIONS = {
@@ -19,4 +21,6 @@ export const AUTH_MUTATIONS = {
   'delete-rencana': deleteRencana,
   'save-analisis': saveAnalisis,
   'save-mentor': saveMentor,
+  'update-profile': updateProfile,
+  'update-password': updatePassword,
 };

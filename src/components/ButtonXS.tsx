@@ -4,10 +4,12 @@ export default function ButtonXS({
   label,
   sx,
   type = 'primary',
+  submit = false,
   disabled = false,
   onClick,
 }: {
   label: string;
+  submit?: boolean;
   type?:
     | 'primary'
     | 'outline'
@@ -27,6 +29,7 @@ export default function ButtonXS({
     <Button
       disabled={disabled}
       size="xs"
+      type={submit ? 'submit' : 'button'}
       radius={0}
       color={color}
       variant={variant}
