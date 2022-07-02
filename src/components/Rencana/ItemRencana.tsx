@@ -15,6 +15,7 @@ import OrganizationContext from 'components/OrganizationProvider/OrganizationPro
 import Pojo from 'components/Pojo';
 import UnitOrJabatan from 'components/UnitOrJabatan/UnitOrJabatan';
 import Komentar from 'components/Komentar/Komentar';
+import Progress from 'components/Progress/Progress';
 
 interface IRencana {
   id: string;
@@ -200,12 +201,10 @@ export default function ItemRencana({
                 />
               )}
             </Paper>
-            {/* <p>KOMENTAR Rencana {data.id}</p> */}
             <Komentar canAdd type={data.type} projectId={data.projectId} targetId={data.id} />
           </Tabs.Tab>
           <Tabs.Tab label="Progress">
-            <h3>Progres {data.id}</h3>
-            {/* <p>KOMENTAR Progress {data.id}</p> */}
+            <Progress rencanaId={data.id} canAdd={canEdit} />
             <Komentar
               canAdd
               type={`progres-${data.type}`}

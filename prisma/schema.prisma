@@ -233,7 +233,8 @@ model Progress {
   id        String    @id
   rencanaId String
   type      String
-  progress  String
+  laporan   String
+  progress  Int
   created   DateTime? @default(now())
   //
   Rencana   Rencana   @relation(fields: [rencanaId], references: [id])

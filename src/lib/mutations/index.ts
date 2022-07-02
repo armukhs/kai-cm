@@ -5,6 +5,7 @@ import saveAnalisis from './saveAnalisis';
 import saveKomentar from './saveKomentar';
 import saveMentor from './saveMentor';
 import savePerubahan from './savePerubahan';
+import saveProgress from './saveProgress';
 import saveProject from './saveProject';
 import saveRencana from './saveRencana';
 import updatePassword from './updatePassword';
@@ -23,4 +24,5 @@ export const AUTH_MUTATIONS = {
   'save-mentor': saveMentor,
   'update-profile': updateProfile,
   'update-password': updatePassword,
+  'save-progress': saveProgress,
 };
