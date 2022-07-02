@@ -72,7 +72,7 @@ export default function Perubahan({
   return (
     <>
       <PageTitle
-        title={`${title} ${titleHasButton ? 'BTN' : '-'}`}
+        title={title}
         button={titleHasButton ? 'New Perubahan' : ''}
         clickHandler={() => {
           setPerubahan(newPerubahan());
