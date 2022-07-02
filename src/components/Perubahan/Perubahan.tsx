@@ -36,7 +36,8 @@ export default function Perubahan({
 
   const userIsOwner = user.id == theProject.managerId || user.id == theProject.staffId;
   const isConfirmed = theProject.tglKonfirmasi != null && theProject.tglKonfirmasi != '';
-  const titleHasButton = userIsOwner && theData.length > 0 && !perubahan && !editing;
+  const titleHasButton =
+    userIsOwner && theData.length > 0 && !perubahan && !editing && !isConfirmed;
 
   function newPerubahan() {
     return {
@@ -66,7 +67,9 @@ export default function Perubahan({
   }
 
   if (theData.length == 0) {
-    return <PerubahanEmpty title={title} data={newPerubahan()} canCreate={userIsOwner} />;
+    return (
+      <PerubahanEmpty title={title} data={newPerubahan()} canCreate={userIsOwner && !isConfirmed} />
+    );
   }
 
   return (
@@ -95,9 +98,10 @@ export default function Perubahan({
             <ItemPerubahan
               key={item.id}
               data={item}
+              isConfirmed={isConfirmed}
               mutate={mutate}
               index={index}
-              canEdit={userIsOwner}
+              canEdit={userIsOwner && !isConfirmed}
               onEdit={setEditing}
               setActiveTab={setActiveTab}
             />

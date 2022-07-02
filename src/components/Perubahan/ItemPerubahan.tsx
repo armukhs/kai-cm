@@ -17,6 +17,7 @@ import Komentar from 'components/Komentar/Komentar';
 
 export default function ItemPerubahan({
   data,
+  isConfirmed,
   index,
   mutate,
   canEdit = false,
@@ -24,6 +25,7 @@ export default function ItemPerubahan({
   setActiveTab,
 }: {
   data: any;
+  isConfirmed: boolean;
   index: number;
   canEdit?: boolean;
   onEdit: Dispatch<boolean>;
@@ -163,7 +165,12 @@ export default function ItemPerubahan({
             />
           )}
         </Paper>
-        <Komentar type={data.type} projectId={data.projectId} targetId={data.id} />
+        <Komentar
+          canAdd={!isConfirmed}
+          type={data.type}
+          projectId={data.projectId}
+          targetId={data.id}
+        />
       </Block>
     </div>
   );

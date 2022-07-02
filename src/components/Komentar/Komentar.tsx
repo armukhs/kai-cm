@@ -12,10 +12,12 @@ export default function Komentar({
   type,
   targetId,
   projectId,
+  canAdd,
 }: {
   type: string;
   targetId: string;
   projectId: string;
+  canAdd: boolean;
 }) {
   const { sessionUser: user } = useContext(SessionContext);
   const { data, error, mutate } = useAuthApi('komentar', type, targetId);
@@ -93,28 +95,31 @@ export default function Komentar({
         ))}
       </Block>
 
-      <Divider my={20} variant="dashed" />
-
-      <p
-        style={{
-          marginBottom: 0,
-          fontWeight: 500,
-          fontSize: 13,
-          color: '#567',
-          paddingBottom: 4,
-        }}
-      >
-        Komentar Anda
-      </p>
-      <div style={{ position: 'relative', marginTop: 0 }}>
-        <LoadingOverlay visible={submitting} />
-        <form onSubmit={form.onSubmit((values) => handleSubmit(values))}>
-          <Textarea {...form.getInputProps('value')} minRows={3} required />
-          <Button type="submit" size="xs" variant="outline" radius={0} color="dark" mt={10}>
-            Submit
-          </Button>
-        </form>
-      </div>
+      {canAdd && (
+        <div>
+          <Divider my={20} variant="dashed" />
+          <p
+            style={{
+              marginBottom: 0,
+              fontWeight: 500,
+              fontSize: 13,
+              color: '#567',
+              paddingBottom: 4,
+            }}
+          >
+            Komentar Anda
+          </p>
+          <div style={{ position: 'relative', marginTop: 0 }}>
+            <LoadingOverlay visible={submitting} />
+            <form onSubmit={form.onSubmit((values) => handleSubmit(values))}>
+              <Textarea {...form.getInputProps('value')} minRows={3} required />
+              <Button type="submit" size="xs" variant="outline" radius={0} color="dark" mt={10}>
+                Submit
+              </Button>
+            </form>
+          </div>
+        </div>
+      )}
     </Box>
   );
 }

@@ -201,12 +201,17 @@ export default function ItemRencana({
               )}
             </Paper>
             {/* <p>KOMENTAR Rencana {data.id}</p> */}
-            <Komentar type={data.type} projectId={data.projectId} targetId={data.id} />
+            <Komentar canAdd type={data.type} projectId={data.projectId} targetId={data.id} />
           </Tabs.Tab>
           <Tabs.Tab label="Progress">
             <h3>Progres {data.id}</h3>
             {/* <p>KOMENTAR Progress {data.id}</p> */}
-            <Komentar type={`progres-${data.type}`} projectId={data.projectId} targetId={data.id} />
+            <Komentar
+              canAdd
+              type={`progres-${data.type}`}
+              projectId={data.projectId}
+              targetId={data.id}
+            />
           </Tabs.Tab>
         </FlatTabs>
       </Block>
