@@ -8,6 +8,7 @@ export default async function getProject(req: NextApiRequest, res: NextApiRespon
     return res.json(project);
   } catch (error) {
     console.log(error);
+    res.status(500).json(error);
   }
 }
 

@@ -3,6 +3,7 @@ import checkJabatan from './checkJabatan';
 import checkNipp from './checkNipp';
 import getAdminProjects from './getAdminProjects';
 import getAnalisis from './getAnalisis';
+import getInvitation from './getInvitation';
 import getInvitations from './getInvitations';
 import getKomentar from './getKomentar';
 import getOrganization from './getOrganization';
@@ -15,6 +16,7 @@ import getRencana from './getRencana';
 import getUsers from './getUsers';
 
 export const QUERIES = {
+  invitation: getInvitation,
   organisasi: getOrganization,
 };
 export const AUTH_QUERIES = {

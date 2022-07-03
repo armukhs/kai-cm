@@ -3,6 +3,7 @@ import createInvitation from './createInvitation';
 import deactivateUser from './deactivateUser';
 import deletePerubahan from './deletePerubahan';
 import deleteRencana from './deleteRencana';
+import newUser from './newUser';
 import registerProject from './registerProject';
 import saveAnalisis from './saveAnalisis';
 import saveKomentar from './saveKomentar';
@@ -14,7 +15,9 @@ import saveRencana from './saveRencana';
 import updatePassword from './updatePassword';
 import updateProfile from './updateProfile';
 
-export const MUTATIONS = {};
+export const MUTATIONS = {
+  'new-user': newUser,
+};
 export const AUTH_MUTATIONS = {
   'register-project': registerProject,
   'save-project': saveProject,

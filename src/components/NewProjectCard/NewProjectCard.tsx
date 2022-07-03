@@ -94,6 +94,7 @@ export default function NewProjectCard({
                 item: classes.selectItem,
               }}
               data={mentors}
+              placeholder="Pilih mentor untuk proyek ini"
               clearable
               value={mentorId}
               disabled={submitting}
