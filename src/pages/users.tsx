@@ -75,16 +75,17 @@ export default function Page() {
                 {index + 1}
               </td>
               <td width="" className={classes.td}>
-                {user.nama}
+                <span style={{ fontWeight: 600 }}>{user.nama}</span> (
+                {user.roles.split(' ').join(', ')})
                 <div style={{ fontSize: 12.25, color: '#789' }}>
                   {user.Jabatan.nama}, {user.Unit.nama}
                 </div>
               </td>
               <td className={cx(classes.td, classes.tdx)}>
-                {user.deleted && (
+                {!user.roles.includes('admin') && user.deleted && (
                   <ButtonXS type="dark" label="Reactivate" onClick={() => setActivate(user)} />
                 )}
-                {!user.deleted && (
+                {!user.roles.includes('admin') && !user.deleted && (
                   <ButtonXS type="red" label="Deactivate" onClick={() => setDeactivate(user)} />
                 )}
               </td>

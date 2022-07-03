@@ -14,18 +14,9 @@ export default function ProjectsEmpty({
       <Text size="sm">Tidak ada data perubahan teknlogi dalam proyek ini.</Text>
 
       {canCreate && (
-        <Link href="/new" passHref>
-          <Button
-            component="a"
-            mt={20}
-            style={{ fontWeight: 500 }}
-            color="indigo"
-            radius={0}
-            onClick={() => {}}
-          >
-            Create Perubahan
-          </Button>
-        </Link>
+        <Button mt={20} style={{ fontWeight: 500 }} color="indigo" radius={0} onClick={onClick}>
+          Create Project
+        </Button>
       )}
     </Paper>
   );

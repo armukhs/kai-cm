@@ -34,7 +34,9 @@ export default function UserProjects({
           button={projects.length > 0 ? 'New Project' : ''}
           clickHandler={() => setShowForm(true)}
         />
-        {projects.length == 0 && <ProjectsEmpty canCreate={true} onClick={() => {}} />}
+        {projects.length == 0 && (
+          <ProjectsEmpty canCreate={true} onClick={() => setShowForm(true)} />
+        )}
         {projects.length > 0 && <Projects projects={projects} />}
       </Block>
 

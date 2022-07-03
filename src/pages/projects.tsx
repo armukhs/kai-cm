@@ -26,7 +26,7 @@ export default function Page() {
     );
   }
 
-  if (isAdmin) {
+  if (isAdmin && data2) {
     return (
       <AdminProjects
         user={user}
