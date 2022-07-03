@@ -9,6 +9,14 @@ export default function Page() {
   const { sessionUser: user } = useContext(SessionContext);
   const { mutateUser } = useUser({ redirectTo: '/' });
 
+  if (!user.roles.includes('admin')) {
+    return (
+      <Layout title="Unauthorized Access" user={user}>
+        <PageTitle title="Unauthorized Access" />
+      </Layout>
+    );
+  }
+
   return (
     <Layout title="Invitations - KAI CM Projects" user={user}>
       <PageTitle title="Invitations" />

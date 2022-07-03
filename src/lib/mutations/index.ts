@@ -1,3 +1,5 @@
+import activateUser from './activateUser';
+import deactivateUser from './deactivateUser';
 import deletePerubahan from './deletePerubahan';
 import deleteRencana from './deleteRencana';
 import registerProject from './registerProject';
@@ -25,4 +27,6 @@ export const AUTH_MUTATIONS = {
   'update-profile': updateProfile,
   'update-password': updatePassword,
   'save-progress': saveProgress,
+  'activate-user': activateUser,
+  'deactivate-user': deactivateUser,
 };

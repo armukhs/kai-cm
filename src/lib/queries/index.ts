@@ -8,6 +8,7 @@ import getProgressIndex from './getProgressIndex';
 import getProject from './getProject';
 import getProjects from './getProjects';
 import getRencana from './getRencana';
+import getUsers from './getUsers';
 
 export const QUERIES = {
   organisasi: getOrganization,
@@ -21,5 +22,6 @@ export const AUTH_QUERIES = {
   rencana: getRencana,
   projects: getProjects,
   progress: getProgress,
+  users: getUsers,
   'progress-index': getProgressIndex,
 };
