@@ -1,5 +1,9 @@
+import checkEmail from './checkEmail';
+import checkJabatan from './checkJabatan';
+import checkNipp from './checkNipp';
 import getAdminProjects from './getAdminProjects';
 import getAnalisis from './getAnalisis';
+import getInvitations from './getInvitations';
 import getKomentar from './getKomentar';
 import getOrganization from './getOrganization';
 import getPerubahan from './getPerubahan';
@@ -23,5 +27,9 @@ export const AUTH_QUERIES = {
   projects: getProjects,
   progress: getProgress,
   users: getUsers,
+  invitations: getInvitations,
+  'check-nipp': checkNipp,
+  'check-email': checkEmail,
+  'check-jabatan': checkJabatan,
   'progress-index': getProgressIndex,
 };

@@ -1,4 +1,5 @@
 import activateUser from './activateUser';
+import createInvitation from './createInvitation';
 import deactivateUser from './deactivateUser';
 import deletePerubahan from './deletePerubahan';
 import deleteRencana from './deleteRencana';
@@ -29,4 +30,5 @@ export const AUTH_MUTATIONS = {
   'save-progress': saveProgress,
   'activate-user': activateUser,
   'deactivate-user': deactivateUser,
+  'create-invitation': createInvitation,
 };
