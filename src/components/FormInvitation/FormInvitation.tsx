@@ -9,7 +9,7 @@ import { createPostData } from 'lib/utils';
 import { useContext, useEffect, useState } from 'react';
 import { KeyedMutator } from 'swr';
 
-const protocol = process.env.NODE_ENV === 'production' ? 'https:' : 'http:';
+// const protocol = process.env.NODE_ENV === 'production' ? 'https:' : 'http:';
 
 export default function FormInvitation({
   mutate,
@@ -63,7 +63,10 @@ export default function FormInvitation({
   const [superguest, setSuperguest] = useState(false);
 
   useEffect(() => {
-    form.setFieldValue('baseUrl', protocol + '//' + window.location.host);
+    if (window) {
+      form.setFieldValue('baseUrl', window.location.origin);
+    }
+    // form.setFieldValue('baseUrl', protocol + '//' + window.location.host);
     return () => {};
   }, []);
 
@@ -153,6 +156,9 @@ export default function FormInvitation({
 
   return (
     <div style={{ position: 'relative' }}>
+      <Text mt={-15} mb={20} size="xs" color="#789">
+        BaseURL: {form.values['baseUrl']}
+      </Text>
       <div>
         <TextInput
           {...form.getInputProps('nama')}
@@ -187,7 +193,7 @@ export default function FormInvitation({
         />
 
         <Text size="sm" mb={4} weight={500}>
-          Pilih Jabatan: {form.values['baseUrl']}
+          Pilih Jabatan:
         </Text>
 
         <Paper withBorder sx={{ borderColor: '#d4d4d4' }}>
