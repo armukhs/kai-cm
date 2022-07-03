@@ -28,17 +28,17 @@ export default function Progress({ rencanaId, canAdd }: { rencanaId: string; can
       <Box
         sx={(theme) => ({
           fontSize: 13,
-          color: item.type == 'kemajuan' ? '#333' : '#d33',
+          color: item.type == 'kemajuan' ? '#393' : '#d33',
         })}
       >
         {item.created.substring(0, 10)}
         {item.type == 'kemajuan' && (
-          <span style={{ marginLeft: 6, color: '#333', fontWeight: 600 }}>
-            Progress {item.progress}%
+          <span style={{ marginLeft: 6, color: '#393', fontWeight: 500 }}>
+            Progress: {item.progress}%
           </span>
         )}
         {item.type != 'kemajuan' && (
-          <span style={{ marginLeft: 6, color: '#d33', fontWeight: 600 }}>(Masalah)</span>
+          <span style={{ marginLeft: 6, color: '#d33', fontWeight: 500 }}>(Masalah)</span>
         )}
       </Box>
     );
@@ -47,7 +47,14 @@ export default function Progress({ rencanaId, canAdd }: { rencanaId: string; can
   return (
     <div style={{ marginTop: 16 }}>
       <Block show={data.length == 0}>
-        <Text>Belum ada</Text>
+        <Text
+          sx={(theme) => ({
+            fontSize: 13.5,
+            color: '#999',
+          })}
+        >
+          Belum ada laporan implementasi.
+        </Text>
       </Block>
       <Block show={data.length > 0}>
         <Timeline color="gray" active={data.length - 1} bulletSize={20} lineWidth={1}>
@@ -69,7 +76,7 @@ export default function Progress({ rencanaId, canAdd }: { rencanaId: string; can
           ))}
         </Timeline>
       </Block>
-      {!form && (
+      {canAdd && !form && (
         <Box mt={20}>
           <ButtonXS type="dark" label="Create Progress" onClick={() => setForm(true)} />
         </Box>

@@ -41,7 +41,7 @@ export default function FormProgress({
     try {
       const url = `/api/auth/post?subject=save-progress`;
       await fetchJson(url, createPostData(values));
-      form.reset();
+      onCancel();
       mutate();
     } catch (error) {
       console.log(error);
