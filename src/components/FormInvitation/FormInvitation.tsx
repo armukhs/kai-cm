@@ -187,7 +187,7 @@ export default function FormInvitation({
         />
 
         <Text size="sm" mb={4} weight={500}>
-          Pilih Jabatan: {form.values['unitId']}
+          Pilih Jabatan: {form.values['baseUrl']}
         </Text>
 
         <Paper withBorder sx={{ borderColor: '#d4d4d4' }}>

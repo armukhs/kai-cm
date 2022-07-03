@@ -4,7 +4,8 @@ import nodemailer from 'nodemailer';
 import cuid from 'cuid';
 
 export default async function createInvitation(req: NextApiRequest, res: NextApiResponse) {
-  console.log(Date.now());
+  // console.log(Date.now());
+  console.log(req.body);
 
   try {
     const { fromName, fromEmail, nama, nipp, email, jabatan, jabatanId, roles, unitId, baseUrl } =

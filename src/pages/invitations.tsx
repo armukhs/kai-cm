@@ -84,7 +84,7 @@ export default function Page() {
       <Block show={showForm}>
         <FormInvitation mutate={mutate} onCancel={() => setShowForm(false)} />
       </Block>
-      <Pojo object={user} />
+      {/* <Pojo object={data} /> */}
     </Layout>
   );
 }
