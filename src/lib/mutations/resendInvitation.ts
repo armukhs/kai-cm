@@ -3,32 +3,19 @@ import prisma from 'lib/db';
 import nodemailer from 'nodemailer';
 import cuid from 'cuid';
 
-export default async function createInvitation(req: NextApiRequest, res: NextApiResponse) {
+export default async function resendInvitation(req: NextApiRequest, res: NextApiResponse) {
   // console.log(Date.now());
   console.log(req.body);
 
   try {
-    const { fromName, fromEmail, nama, nipp, email, jabatan, jabatanId, roles, unitId, baseUrl } =
-      req.body;
-    const token = cuid();
-    const rs = await prisma.invitation.create({
-      data: {
-        fromName: fromName,
-        fromEmail: fromEmail,
-        nama: nama,
-        nipp: nipp,
-        email: email,
-        jabatan: jabatan,
-        jabatanId: jabatanId,
-        unitId: unitId,
-        roles: roles,
-        token: token,
-        baseUrl: baseUrl,
-      },
+    const { id } = req.body;
+    const found = await prisma.invitation.findFirst({
+      where: { id },
     });
 
-    // Early respond
-    res.json(rs);
+    if (!found) return res.status(500).json({ message: 'Not found' });
+
+    console.log('RS', found);
 
     const transport = nodemailer.createTransport({
       // @ts-ignore
@@ -41,18 +28,19 @@ export default async function createInvitation(req: NextApiRequest, res: NextApi
     });
 
     const verifyPath = '/token';
-    const path = baseUrl + verifyPath;
+    const path = found.baseUrl + verifyPath;
 
     var mailOptions = {
       from: '"KAI Mail" <ptkj@hotmail.com>',
-      to: email,
+      to: found.email,
       subject: 'KAI Nodemailer',
       text: 'Hey there, it’s our first message sent with Nodemailer ;) ',
-      html: htmlEmail(path, token),
+      html: htmlEmail(path, found.token),
     };
 
     const mailrs = await transport.sendMail(mailOptions);
     console.log(Date.now(), mailrs);
+    return res.json(mailrs);
 
     // res.json(mailrs);
   } catch (error) {

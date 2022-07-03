@@ -5,6 +5,7 @@ import deletePerubahan from './deletePerubahan';
 import deleteRencana from './deleteRencana';
 import newUser from './newUser';
 import registerProject from './registerProject';
+import resendInvitation from './resendInvitation';
 import saveAnalisis from './saveAnalisis';
 import saveKomentar from './saveKomentar';
 import saveMentor from './saveMentor';
@@ -34,4 +35,5 @@ export const AUTH_MUTATIONS = {
   'activate-user': activateUser,
   'deactivate-user': deactivateUser,
   'create-invitation': createInvitation,
+  'resend-invitation': resendInvitation,
 };

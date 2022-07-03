@@ -9,6 +9,9 @@ import { Button, LoadingOverlay, Table } from '@mantine/core';
 import { PlusIcon } from '@modulz/radix-icons';
 import Block from 'components/Block';
 import FormInvitation from 'components/FormInvitation/FormInvitation';
+import ButtonXS from 'components/ButtonXS';
+import fetchJson from 'lib/fetchJson';
+import { createPostData } from 'lib/utils';
 
 const title = 'Invitations - KAI CM Projects';
 export default function Page() {
@@ -17,6 +20,14 @@ export default function Page() {
   const { data, error, mutate } = useAuthApi('invitations');
 
   const [showForm, setShowForm] = useState(false);
+
+  async function resendInvitation(id: string) {
+    try {
+      await fetchJson('/api/auth/post?subject=resend-invitation', createPostData({ id }));
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   if (!data) {
     return (
@@ -59,7 +70,7 @@ export default function Page() {
           <tbody>
             <tr style={{ fontWeight: 500 }}>
               <td>Tanggal</td>
-              <td>Nama &amp; Jabatan</td>
+              <td colSpan={2}>Nama &amp; Jabatan</td>
             </tr>
             {data &&
               data.map((item: any) => (
@@ -68,13 +79,22 @@ export default function Page() {
                   style={{ backgroundColor: item.token.length < 5 ? '#f4f4fc' : '' }}
                 >
                   <td>{item.created.substring(0, 10)}</td>
-                  <td>
+                  <td colSpan={item.token.length < 5 ? 2 : 1}>
                     <span style={{ fontWeight: 600 }}>{item.nama}</span>
                     {` `}
                     <span style={{ color: 'gray' }}>({item.email})</span>
                     <br />
                     {item.jabatan}
                   </td>
+                  {item.token.length > 5 && (
+                    <td align="right">
+                      <ButtonXS
+                        type="dark-outline"
+                        label="Resend"
+                        onClick={() => resendInvitation(item.id)}
+                      />
+                    </td>
+                  )}
                 </tr>
               ))}
           </tbody>

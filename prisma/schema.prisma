@@ -160,6 +160,7 @@ model Komentar {
 model Invitation {
   id        Int       @id @default(autoincrement())
   token     String    @default(cuid())
+  baseUrl   String    @default("http://localhost:3000")
   fromName  String
   fromEmail String
   nama      String

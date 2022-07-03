@@ -66,7 +66,6 @@ export default function FormInvitation({
     if (window) {
       form.setFieldValue('baseUrl', window.location.origin);
     }
-    // form.setFieldValue('baseUrl', protocol + '//' + window.location.host);
     return () => {};
   }, []);
 
