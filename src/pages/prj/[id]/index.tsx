@@ -33,7 +33,7 @@ export default function CSR() {
   }
 
   return (
-    <Layout title={`${TITLE} - ${data ? data.judul : '...'}`} user={user} projectId={id}>
+    <Layout title={`${TITLE} - ${data.judul}`} user={user} projectId={id}>
       <ProjectInfo user={user} project={data} />
     </Layout>
   );

@@ -9,6 +9,7 @@ import fetchJson from 'lib/fetchJson';
 import { SessionUser } from 'lib/session';
 import { createPostData } from 'lib/utils';
 import Show from 'components/Show';
+import Pojo from 'components/Pojo';
 
 const useStyles = createStyles((theme) => ({
   label: {
@@ -53,10 +54,13 @@ export default function FormProject({
       form.setFieldValue('deskripsi', data.deskripsi);
       form.setFieldValue('tujuan', data.tujuan);
       form.setFieldValue('target', data.target);
-      // @ts-ignore
-      form.setFieldValue('tglMulai', data.tglMulai ? new Date(data.tglMulai) : '');
-      // @ts-ignore
-      form.setFieldValue('tglSelesai', data.tglSelesai ? new Date(data.tglSelesai) : '');
+
+      if (new Date(data.tglMulai) !== undefined) {
+        form.setFieldValue('tglMulai', new Date(data.tglMulai).toISOString());
+      }
+      if (new Date(data.tglSelesai) !== undefined) {
+        form.setFieldValue('tglSelesai', new Date(data.tglSelesai).toISOString());
+      }
     }
     return () => {};
   }, []);
@@ -125,10 +129,7 @@ export default function FormProject({
         <DatePicker
           value={form.values['tglMulai'] ? new Date(form.values['tglMulai']) : null}
           onChange={(e) => {
-            form.setFieldValue(
-              'tglMulai',
-              e ? e.toLocaleDateString().split('/').reverse().join('-') : ''
-            );
+            form.setFieldValue('tglMulai', e ? e.toISOString() : '');
           }}
           label="Tanggal Mulai"
           classNames={classes}
@@ -137,16 +138,11 @@ export default function FormProject({
           mb={7}
         />
         <DatePicker
-          // {...form.getInputProps('tglSelesai')}
           value={form.values['tglSelesai'] ? new Date(form.values['tglSelesai']) : null}
           onChange={(e) => {
-            form.setFieldValue(
-              'tglSelesai',
-              e ? e.toLocaleDateString().split('/').reverse().join('-') : ''
-            );
+            form.setFieldValue('tglSelesai', e ? e.toISOString() : '');
           }}
           label="Tanggal Selesai"
-          // locale="id"
           classNames={classes}
           inputFormat="DD MMMM YYYY"
           required
