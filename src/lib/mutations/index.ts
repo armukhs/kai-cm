@@ -1,8 +1,10 @@
 import activateUser from './activateUser';
+import changePassword from './changePassword';
 import createInvitation from './createInvitation';
 import deactivateUser from './deactivateUser';
 import deletePerubahan from './deletePerubahan';
 import deleteRencana from './deleteRencana';
+import forgotPassword from './forgotPassword';
 import newUser from './newUser';
 import registerProject from './registerProject';
 import resendInvitation from './resendInvitation';
@@ -18,6 +20,8 @@ import updateProfile from './updateProfile';
 
 export const MUTATIONS = {
   'new-user': newUser,
+  'forgot-password': forgotPassword,
+  'change-password': changePassword,
 };
 export const AUTH_MUTATIONS = {
   'register-project': registerProject,

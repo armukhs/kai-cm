@@ -252,3 +252,12 @@ model KomentarProgress {
   Rencana   Rencana   @relation(fields: [rencanaId], references: [id])
   User      User      @relation(fields: [userId], references: [id])
 }
+
+model ResetPassword {
+  id      Int       @id @default(autoincrement())
+  userId  String
+  email   String
+  token   String    @unique @default(cuid())
+  baseUrl String //    @default("http://localhost:3000")
+  created DateTime? @default(now())
+}

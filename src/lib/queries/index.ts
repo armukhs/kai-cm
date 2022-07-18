@@ -13,11 +13,13 @@ import getProgressIndex from './getProgressIndex';
 import getProject from './getProject';
 import getProjects from './getProjects';
 import getRencana from './getRencana';
+import getResetPassword from './getResetPassword';
 import getUsers from './getUsers';
 
 export const QUERIES = {
   invitation: getInvitation,
   organisasi: getOrganization,
+  'reset-password': getResetPassword,
 };
 export const AUTH_QUERIES = {
   'admin-projects': getAdminProjects,
