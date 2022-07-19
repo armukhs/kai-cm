@@ -26,15 +26,19 @@ export default function Page() {
     );
   }
 
-  if (isAdmin && data2) {
+  if (isAdmin) {
     return (
-      <AdminProjects
-        user={user}
-        projects={data2.projects}
-        newProjects={data2.newProjects}
-        mentors={data2.mentors}
-        mutate={mutate2}
-      />
+      <>
+        {data2 && (
+          <AdminProjects
+            user={user}
+            projects={data2.projects}
+            newProjects={data2.newProjects}
+            mentors={data2.mentors}
+            mutate={mutate2}
+          />
+        )}
+      </>
     );
   }
 
