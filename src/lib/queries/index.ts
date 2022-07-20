@@ -5,6 +5,7 @@ import getAdminProjects from './getAdminProjects';
 import getAnalisis from './getAnalisis';
 import getInvitation from './getInvitation';
 import getInvitations from './getInvitations';
+import getKesiapan from './getKesiapan';
 import getKomentar from './getKomentar';
 import getOrganization from './getOrganization';
 import getPerubahan from './getPerubahan';
@@ -27,6 +28,7 @@ export const AUTH_QUERIES = {
   perubahan: getPerubahan,
   komentar: getKomentar,
   analisis: getAnalisis,
+  kesiapan: getKesiapan,
   rencana: getRencana,
   projects: getProjects,
   progress: getProgress,

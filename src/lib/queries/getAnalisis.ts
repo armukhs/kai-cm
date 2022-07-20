@@ -121,6 +121,16 @@ export async function __getAnalisis(projectId: string) {
 
     if (topLevel == 4 && topLevelCount > 1) topLevel = 5;
 
+    const total =
+      topLevel +
+      unitStrukturVal +
+      unitPeranVal +
+      unitBudayaVal +
+      unitKompetensiVal +
+      unitLainnyaVal +
+      topProsesLevel +
+      topTeknologiLevel;
+
     const bobot = {
       topLevel,
       topLevelCount,
@@ -138,6 +148,7 @@ export async function __getAnalisis(projectId: string) {
       unitBudayaVal,
       unitKompetensiVal,
       unitLainnyaVal,
+      total,
     };
 
     const _kesiapan = { ...kesiapan };

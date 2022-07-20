@@ -2,22 +2,14 @@ import { Button, Checkbox, NativeSelect, Paper, Table, Text } from '@mantine/cor
 import { useForm } from '@mantine/form';
 import Pojo from 'components/Pojo';
 import fetchJson from 'lib/fetchJson';
+import useAuthApi from 'lib/useAuthApi';
 import { createPostData } from 'lib/utils';
 import { useEffect, useState } from 'react';
-import { KeyedMutator } from 'swr';
 import BobotNilai from './BobotNilai';
 
-export default function FormAnalisis({
-  data,
-  project,
-  canEdit,
-  mutate,
-}: {
-  data: any;
-  project: any;
-  canEdit: boolean;
-  mutate: KeyedMutator<any>;
-}) {
+export default function FormAnalisis({ project, canEdit }: { project: any; canEdit: boolean }) {
+  const { data, error, mutate } = useAuthApi('kesiapan', project.id);
+
   const form = useForm({
     initialValues: { ...data },
   });
@@ -64,7 +56,30 @@ export default function FormAnalisis({
   }
 
   useEffect(() => {
+    if (!data) return;
+    form.setFieldValue('projectId', data.projectId);
+    form.setFieldValue('sepakat_dengan_misi', data.sepakat_dengan_misi);
+    form.setFieldValue('komunikasi_terbuka', data.komunikasi_terbuka);
+    form.setFieldValue('percaya_bawahan', data.percaya_bawahan);
+    form.setFieldValue('ide_bawahan', data.ide_bawahan);
+    form.setFieldValue('interaksi_bersahabat', data.interaksi_bersahabat);
+    form.setFieldValue('saling_percaya', data.saling_percaya);
+    form.setFieldValue('kinerja_teamwork', data.kinerja_teamwork);
+    form.setFieldValue('lingkungan_koperatif', data.lingkungan_koperatif);
+    form.setFieldValue('saling_menghargai', data.saling_menghargai);
+    form.setFieldValue('kompetensi_memadai', data.kompetensi_memadai);
+    form.setFieldValue('ekspektasi_realistis', data.ekspektasi_realistis);
+    form.setFieldValue('komunikasi_intens', data.komunikasi_intens);
+    form.setFieldValue('tanpa_isu_otoritas', data.tanpa_isu_otoritas);
+    form.setFieldValue('tanpa_isu_hilang_kerja', data.tanpa_isu_hilang_kerja);
+    form.setFieldValue('optimis_terhadap_hasil', data.optimis_terhadap_hasil);
+    form.setFieldValue('nyaman_dengan_hasil', data.nyaman_dengan_hasil);
+    form.setFieldValue('total', data.total);
+  }, [data]);
+
+  useEffect(() => {
     if (!hasAllValues()) setFinal(false);
+    form.setFieldValue('total', nilaiKesiapan());
   }, [form.values]);
 
   function postValues() {
@@ -109,7 +124,7 @@ export default function FormAnalisis({
 
   return (
     <div>
-      <BobotNilai nilai={nilaiKesiapan()} info="Berdasar hasil analisis 16 aspek." />
+      <BobotNilai nilai={form.values['total'] || 0} info="Berdasar hasil analisis 16 aspek." />
       <Paper withBorder sx={(theme) => ({ borderColor: theme.colors.gray[5], overflow: 'hidden' })}>
         <Table fontSize={13.5}>
           <tbody style={{ verticalAlign: 'middle' }}>
@@ -247,6 +262,8 @@ export default function FormAnalisis({
         </Table>
       </Paper>
 
+      {/* <Pojo object={data} /> */}
+
       <p style={{ fontSize: 13 }}>
         Tgl Konfirmasi:{' '}
         {project.tglKonfirmasi ? project.tglKonfirmasi.substring(0, 10) : 'Belum ditetapkan'}
@@ -261,7 +278,12 @@ export default function FormAnalisis({
             checked={final}
             onChange={(event) => setFinal(event.currentTarget.checked)}
           />
-          <Button my={20} onClick={() => saveAnalisis()} loading={submitting}>
+          <Button
+            my={20}
+            // disabled={project.tglKonfirmasi}
+            onClick={() => saveAnalisis()}
+            loading={submitting}
+          >
             Save Analysis
           </Button>
         </>

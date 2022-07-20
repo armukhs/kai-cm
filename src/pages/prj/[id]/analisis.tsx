@@ -8,6 +8,7 @@ import PageTitle from 'components/PageTitle/PageTitle';
 import Analisis from 'components/Analisis/Analisis';
 import useSWR from 'swr';
 import { projectPrefetchLinks } from 'lib/utils';
+import Pojo from 'components/Pojo';
 
 const TYPE = 'analisis';
 const TITLE = 'Analisis';
@@ -40,6 +41,7 @@ export default function CSR() {
           mutate={mutate}
         />
       )}
+      {/* {data && <Pojo object={data} />} */}
     </Layout>
   );
 }

@@ -29,26 +29,7 @@ export default function Analisis({
   // const { data, mutate } = useAuthApi('analisis', project.id);
   const isMentor = user.id == project.mentorId;
 
-  const [syncData, setSyncData] = useState(kesiapan);
-
-  // useEffect(() => {
-  //   if (data) {
-  //     setSyncData(data.kesiapan);
-  //   }
-  // }, [data]);
-
-  function bobotVal() {
-    return (
-      bobot.topLevel +
-      bobot.unitStrukturVal +
-      bobot.unitPeranVal +
-      bobot.unitBudayaVal +
-      bobot.unitKompetensiVal +
-      bobot.unitLainnyaVal +
-      bobot.topProsesLevel +
-      bobot.topTeknologiLevel
-    );
-  }
+  // const [syncData, setSyncData] = useState(kesiapan);
 
   return (
     <>
@@ -60,7 +41,7 @@ export default function Analisis({
       >
         <Tabs.Tab label="Bobot Perubahan">
           <BobotNilai
-            nilai={bobotVal()}
+            nilai={bobot.total}
             info="Berdasar jumlah dan jenis unit-unit terdampak beserta level organisasinya."
           />
 
@@ -137,10 +118,104 @@ export default function Analisis({
             </Table>
           </Paper>
         </Tabs.Tab>
+
         <Tabs.Tab label="Analisis Kesiapan">
-          <FormAnalisis project={project} data={syncData} canEdit={isMentor} mutate={mutate} />
+          <FormAnalisis project={project} canEdit={isMentor} />
         </Tabs.Tab>
+
+        {project.tglKonfirmasi && (
+          <Tabs.Tab label="Risiko Perubahan">
+            <h3>Risiko Perubahan dan Rekomendasi</h3>
+            <table style={{ borderCollapse: 'collapse' }}>
+              <tbody style={{ verticalAlign: 'middle' }}>
+                <tr style={{ borderTop: '1px solid #ccc', borderBottom: '1px solid #ccc' }}>
+                  <td style={{ padding: '6px 20px 6px 0' }}>Bobot&nbsp;Perubahan</td>
+                  <td style={{ padding: '6px 0 6px 20px' }}>{bobot.total}</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #ccc' }}>
+                  <td style={{ padding: '6px 20px 6px 0' }}>Kesiapan</td>
+                  <td style={{ padding: '6px 0 6px 20px' }}>{kesiapan.total.toPrecision(3)}</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #ccc' }}>
+                  <td style={{ padding: '6px 20px 6px 0' }}>Kategori Risiko</td>
+                  <td style={{ padding: '6px 0 6px 20px', fontWeight: 700 }}>
+                    {kategoriRisiko(bobot.total, kesiapan.total)}
+                  </td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #ccc' }}>
+                  <td style={{ padding: '6px 20px 6px 0' }}>Keterangan</td>
+                  <td style={{ padding: '6px 0 6px 20px', fontWeight: 400 }}>
+                    {deskripsiRisiko(kategoriRisiko(bobot.total, kesiapan.total))}
+                  </td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #ccc' }}>
+                  <td style={{ padding: '6px 20px 6px 0' }}>Rekomendasi</td>
+                  <td style={{ padding: '6px 0 6px 20px', fontWeight: 400 }}>
+                    {rekomendasi(kategoriRisiko(bobot.total, kesiapan.total))}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </Tabs.Tab>
+        )}
       </Tabs>
     </>
   );
 }
+
+function kategoriRisiko(bobot: number, kesiapan: number) {
+  let kategori = 'Low Risk';
+  if (bobot >= 10 && kesiapan < 10) kategori = 'High Risk';
+  else if (bobot >= 10 && kesiapan >= 10) kategori = 'Medium 1';
+  else if (bobot < 10 && kesiapan < 10) kategori = 'Medium 2';
+  return kategori;
+}
+
+function deskripsiRisiko(kategori: string) {
+  switch (kategori) {
+    case 'Low Risk':
+      return 'Perubahan berdampak kecil pada organisasi dan kesiapan organisasi dalam menghadapi perubahan tinggi.';
+    case 'High Risk':
+      return 'Perubahan berdampak besar pada organisasi dan kesiapan organisasi dalam menghadapi perubahan rendah.';
+    case 'Medium 1':
+      return 'Perubahan berdampak besar pada organisasi dan kesiapan organisasi dalam menghadapi perubahan tinggi.';
+    case 'Medium 2':
+      return 'Perubahan berdampak kecil pada organisasi dan kesiapan organisasi dalam menghadapi perubahan rendah.';
+    default:
+      return 'Error';
+  }
+}
+
+function rekomendasi(kategori: string) {
+  switch (kategori) {
+    case 'Low Risk':
+      return 'Role & Responsibility pada Manajer Proyek, Monitoring & Evaluasi oleh CM Officer.';
+    case 'High Risk':
+      return 'Role & Responsibility kolaborasi antara Manajer Proyek & CM Officer, Monitoring & Evaluasi oleh CM Head.';
+    case 'Medium 1':
+      return 'Role & Responsibility kolaborasi antara Manajer Proyek & CM Officer, Monitoring & Evaluasi oleh CM Head.';
+    case 'Medium 2':
+      return 'Role & Responsibility oleh CM Officer dibantu Manajer Proyek; Monitoring & Evaluasi oleh CM Head.';
+    default:
+      return 'Error';
+  }
+}
+
+/*
+
+20.	Kategori Risiko Perubahan terdiri dari 4 (empat) kategori, yaitu:
+a.	High Risk, adalah situasi dimana perubahan berdampak besar pada organisasi dan kesiapan organisasi dalam menghadapi perubahan rendah
+b.	Medium Risk, terbagi menjadi 2 (dua) kategori, dimana:
+i.	Medium Risk Tipe 1, adalah situasi dimana perubahan berdampak besar pada organisasi dan kesiapan organisasi dalam menghadapi perubahan tinggi;
+ii.	Medium Risk Tipe 2, adalah situasi dimana perubahan berdampak kecil pada organisasi dan kesiapan organisasi dalam menghadapi perubahan rendah;
+c.	Low Risk, adalah situasi dimana perubahan berdampak kecil pada organisasi dan kesiapan organisasi dalam menghadapi perubahan tinggi.
+
+
+
+4.	Rekomendasi yang muncul terdiri dari 3 (tiga) kategori:
+a.	LOW RISK – Role & Responsibility pada Manajer Proyek, Monitoring & Evaluasi oleh CM Officer.
+b.	MEDIUM RISK - Role & Responsibility kolaborasi antara Manajer Proyek & CM Officer, Monitoring & Evaluasi oleh CM Head.
+c.	HIGH RISK - Role & Responsibility oleh CM Officer dibantu Manajer Proyek; Monitoring & Evaluasi oleh CM Head
+
+
+*/

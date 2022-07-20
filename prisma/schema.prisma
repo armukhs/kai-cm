@@ -186,6 +186,8 @@ model Rencana {
   monitoring       String
   created          DateTime?          @default(now())
   updated          DateTime?          @updatedAt
+  tglKonfirmasi    DateTime?
+  tglSelesai       DateTime?
   //
   Project          Project            @relation(fields: [projectId], references: [id])
   PIC              Jabatan?           @relation(fields: [picId], references: [id])
@@ -222,6 +224,7 @@ model Kesiapan {
   tanpa_isu_hilang_kerja Int       @default(0)
   optimis_terhadap_hasil Int       @default(0)
   nyaman_dengan_hasil    Int       @default(0)
+  total                  Float     @default(0)
   updated                DateTime? @updatedAt
   //
   Project                Project   @relation(fields: [projectId], references: [id])
