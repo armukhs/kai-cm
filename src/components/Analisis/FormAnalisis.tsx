@@ -5,10 +5,11 @@ import fetchJson from 'lib/fetchJson';
 import useAuthApi from 'lib/useAuthApi';
 import { createPostData } from 'lib/utils';
 import { useEffect, useState } from 'react';
+import { mutate } from 'swr';
 import BobotNilai from './BobotNilai';
 
 export default function FormAnalisis({ project, canEdit }: { project: any; canEdit: boolean }) {
-  const { data, error, mutate } = useAuthApi('kesiapan', project.id);
+  const { data, error, mutate: mutateKesiapan } = useAuthApi('kesiapan', project.id);
 
   const form = useForm({
     initialValues: { ...data },
@@ -115,7 +116,8 @@ export default function FormAnalisis({ project, canEdit }: { project: any; canEd
     setSubmitting(true);
     try {
       await fetchJson('/api/auth/post?subject=save-analisis', createPostData(postValues()));
-      mutate();
+      mutateKesiapan();
+      mutate(`/api/auth/get?subject=analisis&option=${project.id}`);
     } catch (error) {
       console.log(error);
     }
