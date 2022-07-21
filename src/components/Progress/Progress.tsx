@@ -3,11 +3,11 @@ import Block from 'components/Block';
 import ButtonXS from 'components/ButtonXS';
 import useAuthApi from 'lib/useAuthApi';
 import { useEffect, useState } from 'react';
-import { GitBranch, Plus, X } from 'tabler-icons-react';
+import { Plus, X } from 'tabler-icons-react';
 import FormProgress from './FormProgress';
 
-export default function Progress({ rencanaId, canAdd }: { rencanaId: string; canAdd: boolean }) {
-  const { data, error, mutate } = useAuthApi('progress', rencanaId);
+export default function Progress({ rencana, canAdd }: { rencana: any; canAdd: boolean }) {
+  const { data, error, mutate } = useAuthApi('progress', rencana.id);
   const [form, setForm] = useState(false);
   const [progress, setProgress] = useState(0);
 
@@ -76,14 +76,14 @@ export default function Progress({ rencanaId, canAdd }: { rencanaId: string; can
           ))}
         </Timeline>
       </Block>
-      {canAdd && !form && (
+      {canAdd && rencana.tglSelesai == null && !form && (
         <Box mt={20}>
           <ButtonXS type="dark" label="Create Progress" onClick={() => setForm(true)} />
         </Box>
       )}
       <Block show={canAdd && form}>
         <FormProgress
-          rencanaId={rencanaId}
+          rencanaId={rencana.id}
           progress={progress}
           mutate={mutate}
           onCancel={() => setForm(false)}

@@ -56,7 +56,7 @@ export default function FormRencana({
 
   const [submitting, setSubmitting] = useState(false);
   const [init, setInit] = useState(false);
-  const [kodeInduk, setKodeInduk] = useState(parents[0].kode);
+  const [kodeInduk, setKodeInduk] = useState(parents[0] ? parents[0].kode : '');
   const [daftarIDTerdampak, setDaftarIDTerdampak] = useState<string[]>([]);
   const [daftarUnitTerdampak, setDaftarUnitTerdampak] = useState<any[]>([]);
   const [picId, setPicId] = useState('');

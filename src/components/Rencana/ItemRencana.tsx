@@ -1,6 +1,6 @@
 import { Dispatch, useContext, useState } from 'react';
 import { KeyedMutator } from 'swr';
-import { Box, Checkbox, LoadingOverlay, Paper, Tabs, Text } from '@mantine/core';
+import { Box, Button, Checkbox, LoadingOverlay, Paper, Tabs, Text } from '@mantine/core';
 import fetchJson from 'lib/fetchJson';
 import { createPostData } from 'lib/utils';
 import Block from 'components/Block';
@@ -16,6 +16,7 @@ import Pojo from 'components/Pojo';
 import UnitOrJabatan from 'components/UnitOrJabatan/UnitOrJabatan';
 import Komentar from 'components/Komentar/Komentar';
 import Progress from 'components/Progress/Progress';
+import SessionContext from 'components/SessionProvider/SessionProvider';
 
 interface IRencana {
   id: string;
@@ -47,12 +48,15 @@ export default function ItemRencana({
   mutate: KeyedMutator<any>;
   setActiveTab: Dispatch<number>;
 }) {
+  const { sessionUser: user } = useContext(SessionContext);
   const { units, jabatans } = useContext(OrganizationContext);
 
   const [deleteDialog, setDeleteDialog] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [editing, setEditing] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [checked, setChecked] = useState(data.tglKonfirmasi != null);
+  const [selesai, setSelesai] = useState(data.tglSelesai != null);
 
   function getJabatan(id: string) {
     return jabatans.find((j: any) => j.id == id);
@@ -97,6 +101,26 @@ export default function ItemRencana({
     }
 
     return <></>;
+  }
+
+  async function confirmRencana() {
+    try {
+      const url = `/api/auth/post?subject=confirm-rencana`;
+      await fetchJson(url, createPostData({ id: data.id, confirm: checked }));
+      mutate();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function confirmProgress() {
+    try {
+      const url = `/api/auth/post?subject=confirm-progress`;
+      await fetchJson(url, createPostData({ id: data.id, confirm: selesai }));
+      mutate();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -149,7 +173,7 @@ export default function ItemRencana({
                 value={<DaftarUnitTerdampak daftar={daftarUnitTerdampak()} />}
               />
 
-              {canEdit && !deleteDialog && (
+              {canEdit && data.tglKonfirmasi == null && !deleteDialog && (
                 <Datum
                   borderBottom
                   value={
@@ -201,12 +225,86 @@ export default function ItemRencana({
                 />
               )}
             </Paper>
-            <Komentar canAdd type={data.type} projectId={data.projectId} targetId={data.id} />
+
+            {user.roles.includes('mentor') && !data.tglKonfirmasi && (
+              <div style={{ margin: '20px 0', padding: 15, border: '1px solid #ccc' }}>
+                Tandai rencana ini sebagai final: {data.tglKonfirmasi}
+                <div style={{ marginTop: 5, display: 'flex', gap: 10 }}>
+                  <Checkbox
+                    checked={checked}
+                    onChange={(event) => setChecked(event.currentTarget.checked)}
+                  />
+                  <Button
+                    size="xs"
+                    radius={0}
+                    color="dark"
+                    disabled={!checked}
+                    onClick={() => confirmRencana()}
+                  >
+                    Confirm
+                  </Button>
+                </div>
+              </div>
+            )}
+            {data.tglKonfirmasi && (
+              <div
+                style={{
+                  margin: '20px 0',
+                  padding: 15,
+                  border: '1px solid #ccc',
+                  backgroundColor: '#eee',
+                }}
+              >
+                Rencana ini telah dikonfirmasi pada: {data.tglKonfirmasi.substring(0, 10)}
+              </div>
+            )}
+
+            <Komentar
+              canAdd={data.tglKonfirmasi == null}
+              type={data.type}
+              projectId={data.projectId}
+              targetId={data.id}
+            />
           </Tabs.Tab>
           <Tabs.Tab label="Progress">
-            <Progress rencanaId={data.id} canAdd={canEdit} />
+            <Progress rencana={data} canAdd={canEdit} />
+
+            {user.roles.includes('mentor') && !data.tglSelesai && (
+              <div style={{ margin: '20px 0', padding: 15, border: '1px solid #ccc' }}>
+                Tandai progress ini sebagai final: {data.tglSelesai}
+                <div style={{ marginTop: 5, display: 'flex', gap: 10 }}>
+                  <Checkbox
+                    checked={selesai}
+                    onChange={(event) => setSelesai(event.currentTarget.checked)}
+                  />
+                  <Button
+                    size="xs"
+                    radius={0}
+                    color="dark"
+                    disabled={!selesai}
+                    onClick={() => confirmProgress()}
+                  >
+                    Confirm
+                  </Button>
+                </div>
+              </div>
+            )}
+            {data.tglSelesai && (
+              <div
+                style={{
+                  margin: '20px 0',
+                  padding: 15,
+                  border: '1px solid #ccc',
+                  backgroundColor: '#eee',
+                }}
+              >
+                Progress ini telah dinyatakan selesai (closed):{' '}
+                {data.tglKonfirmasi.substring(0, 10)}
+              </div>
+            )}
+
             <Komentar
-              canAdd
+              canAdd={data.tglSelesai == null}
               type={`progres-${data.type}`}
               projectId={data.projectId}
               targetId={data.id}
