@@ -7,7 +7,6 @@ export default async function saveAnalisis(req: NextApiRequest, res: NextApiResp
 
     console.log('projectId', projectId);
     console.log('isFinal', isFinal);
-    // console.log('data', data);
     const total =
       (data.sepakat_dengan_misi +
         data.komunikasi_terbuka +
@@ -29,27 +28,39 @@ export default async function saveAnalisis(req: NextApiRequest, res: NextApiResp
 
     const dataKesiapan = { ...data };
     dataKesiapan.total = total;
-    console.log('dataKesiapan', dataKesiapan);
+    // console.log('dataKesiapan', dataKesiapan);
 
     const rs = await prisma.kesiapan.update({
       where: { projectId: projectId },
-      data: dataKesiapan, // { ...data, total: total },
+      data: {
+        sepakat_dengan_misi: data.sepakat_dengan_misi,
+        komunikasi_terbuka: data.komunikasi_terbuka,
+        percaya_bawahan: data.percaya_bawahan,
+        ide_bawahan: data.ide_bawahan,
+        interaksi_bersahabat: data.interaksi_bersahabat,
+        saling_percaya: data.saling_percaya,
+        kinerja_teamwork: data.kinerja_teamwork,
+        lingkungan_koperatif: data.lingkungan_koperatif,
+        saling_menghargai: data.saling_menghargai,
+        kompetensi_memadai: data.kompetensi_memadai,
+        ekspektasi_realistis: data.ekspektasi_realistis,
+        komunikasi_intens: data.komunikasi_intens,
+        tanpa_isu_otoritas: data.tanpa_isu_otoritas,
+        tanpa_isu_hilang_kerja: data.tanpa_isu_hilang_kerja,
+        optimis_terhadap_hasil: data.optimis_terhadap_hasil,
+        nyaman_dengan_hasil: data.nyaman_dengan_hasil,
+        total: total,
+      },
     });
 
-    console.log('rs', rs);
-    if (isFinal) {
-      await prisma.project.update({
-        where: { id: projectId },
-        data: { tglKonfirmasi: new Date() },
-      });
-    } else {
-      await prisma.project.update({
-        where: { id: projectId },
-        data: { tglKonfirmasi: null },
-      });
-    }
+    // console.log('RS', rs);
+    const rs2 = await prisma.project.update({
+      where: { id: projectId },
+      data: { tglKonfirmasi: isFinal ? new Date() : null },
+    });
+    // console.log(rs2);
 
-    res.json(rs);
+    return res.json(rs);
   } catch (error) {
     res.status(500).json(error);
   }
