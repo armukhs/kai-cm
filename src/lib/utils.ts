@@ -30,3 +30,21 @@ export function projectPrefetchLinks(id: string) {
   });
   return links;
 }
+
+export function simpleCaptcha() {
+  const len = 5;
+  const max = 10;
+  const numbers = '123456789012345678901234567890'.split('').sort(() => Math.random() - 0.5);
+  const stack: { value: string; on: boolean }[] = [];
+  for (let i = 0; i < max; i++) {
+    stack.push({ value: numbers[i], on: i < len });
+  }
+
+  let captcha = '';
+  stack.sort(() => Math.random() - 0.5);
+  for (let i = 0; i < stack.length; i++) {
+    if (stack[i].on) captcha += stack[i].value;
+  }
+
+  return { captcha, stack };
+}

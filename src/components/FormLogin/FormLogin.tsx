@@ -1,8 +1,9 @@
-import { FormEvent, useContext, useState } from 'react';
+import { FormEvent, useContext, useEffect, useState } from 'react';
 import { KeyedMutator, mutate } from 'swr';
 import { useForm } from '@mantine/form';
-import { Button, LoadingOverlay, Stack, Text, TextInput } from '@mantine/core';
+import { Button, Group, LoadingOverlay, Stack, Text, TextInput } from '@mantine/core';
 import fetchJson, { FetchError } from 'lib/fetchJson';
+import { simpleCaptcha } from 'lib/utils';
 import { SessionUser } from 'lib/session';
 import SessionContext from 'components/SessionProvider/SessionProvider';
 import Show from 'components/Show';
@@ -21,16 +22,30 @@ export default function FormLogin({
     initialValues: {
       username: '',
       password: '',
+      captcha: '',
+    },
+    validate: {
+      captcha: (value) => (value == captcha ? null : 'Tidak tepat'),
     },
   });
 
   const theForm = formInput || form;
 
+  const [stack, setStack] = useState<{ value: string; on: boolean }[]>([]);
+  const [captcha, setCaptcha] = useState('');
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
-  const submitHandler = async (e: FormEvent) => {
-    e.preventDefault();
+  useEffect(() => {
+    const { captcha, stack } = simpleCaptcha();
+    setStack(stack);
+    setCaptcha(captcha);
+    return () => {};
+  }, []);
+
+  // const submitHandler = async (e: FormEvent) => {
+  const submitHandler = async (values: typeof form.values) => {
+    // e.preventDefault();
     console.log(new Date(), Date.now(), 'Sending login...');
 
     setSubmitting(true);
@@ -72,7 +87,8 @@ export default function FormLogin({
   return (
     <div style={{ position: 'relative' }}>
       <LoadingOverlay visible={submitting} />
-      <form onSubmit={handler || submitHandler}>
+      {/* <form onSubmit={handler || submitHandler}> */}
+      <form onSubmit={form.onSubmit((values) => submitHandler(values))}>
         <Stack spacing="sm">
           <TextInput
             {...theForm.getInputProps('username')}
@@ -95,6 +111,32 @@ export default function FormLogin({
               {errorMsg}
             </Text>
           </Show>
+
+          <div style={{ paddingTop: 10 }}>
+            <div style={{ height: 25 }}>
+              <Group spacing={2}>
+                {stack.map((s, i) => (
+                  <div
+                    key={`c-${i}`}
+                    style={{
+                      border: '1px solid #ccc',
+                      width: 24,
+                      textAlign: 'center',
+                      color: s.on ? '' : '#999',
+                      fontWeight: s.on ? 800 : 400,
+                    }}
+                  >
+                    {s.value}
+                  </div>
+                ))}
+              </Group>
+            </div>
+            <Text size="sm" mt={5}>
+              Masukkan 5 angka yang tercetak tebal:
+            </Text>
+          </div>
+
+          <TextInput {...theForm.getInputProps('captcha')} required />
 
           <Button mt={10} type="submit">
             Submit
