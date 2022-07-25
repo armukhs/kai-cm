@@ -57,9 +57,9 @@ export default async function forgotPassword(req: NextApiRequest, res: NextApiRe
 
 function htmlEmail(path: string, token: string) {
   return `
-    <p>Terimasih atas minat Anda untuk mencoba Aces.</p>
-    <p>Kami telah menyiapkan halaman khusus bagi Anda untuk membuat password. Silakan klik tautan di bawah ini:</p>
-    <p><a href="${path}/${token}">Klik disini untuk login.</a></p>
+    <p>Terimakasih,</p>
+    <p>Anda dapat mengganti password CM KAI melalui tautan di bawah ini:</p>
+    <p><a href="${path}/${token}">Ganti password.</a></p>
     <p>Tautan tersebut berlaku selama 48 jam sejak Anda melakukan sign-up.</p>
   `;
 }
