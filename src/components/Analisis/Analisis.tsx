@@ -193,7 +193,7 @@ function rekomendasi(kategori: string) {
     case 'High Risk':
       return 'Role & Responsibility kolaborasi antara Manajer Proyek & CM Officer, Monitoring & Evaluasi oleh CM Head.';
     case 'Medium 1':
-      return 'Role & Responsibility kolaborasi antara Manajer Proyek & CM Officer, Monitoring & Evaluasi oleh CM Head.';
+      return 'Role & Responsibility oleh CM Officer dibantu Manajer Proyek; Monitoring & Evaluasi oleh CM Head.';
     case 'Medium 2':
       return 'Role & Responsibility oleh CM Officer dibantu Manajer Proyek; Monitoring & Evaluasi oleh CM Head.';
     default:
