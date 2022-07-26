@@ -191,11 +191,11 @@ function rekomendasi(kategori: string) {
     case 'Low Risk':
       return 'Role & Responsibility pada Manajer Proyek, Monitoring & Evaluasi oleh CM Officer.';
     case 'High Risk':
-      return 'Role & Responsibility kolaborasi antara Manajer Proyek & CM Officer, Monitoring & Evaluasi oleh CM Head.';
+      return 'Role & Responsibility oleh CM Officer dibantu Manajer Proyek; Monitoring & Evaluasi oleh CM Head.';
     case 'Medium 1':
-      return 'Role & Responsibility oleh CM Officer dibantu Manajer Proyek; Monitoring & Evaluasi oleh CM Head.';
+      return 'Role & Responsibility kolaborasi antara Manajer Proyek & CM Officer, Monitoring & Evaluasi oleh CM Head.';
     case 'Medium 2':
-      return 'Role & Responsibility oleh CM Officer dibantu Manajer Proyek; Monitoring & Evaluasi oleh CM Head.';
+      return 'Role & Responsibility kolaborasi antara Manajer Proyek & CM Officer, Monitoring & Evaluasi oleh CM Head.';
     default:
       return 'Error';
   }
@@ -203,19 +203,9 @@ function rekomendasi(kategori: string) {
 
 /*
 
-20.	Kategori Risiko Perubahan terdiri dari 4 (empat) kategori, yaitu:
-a.	High Risk, adalah situasi dimana perubahan berdampak besar pada organisasi dan kesiapan organisasi dalam menghadapi perubahan rendah
-b.	Medium Risk, terbagi menjadi 2 (dua) kategori, dimana:
-i.	Medium Risk Tipe 1, adalah situasi dimana perubahan berdampak besar pada organisasi dan kesiapan organisasi dalam menghadapi perubahan tinggi;
-ii.	Medium Risk Tipe 2, adalah situasi dimana perubahan berdampak kecil pada organisasi dan kesiapan organisasi dalam menghadapi perubahan rendah;
-c.	Low Risk, adalah situasi dimana perubahan berdampak kecil pada organisasi dan kesiapan organisasi dalam menghadapi perubahan tinggi.
-
-
-
 4.	Rekomendasi yang muncul terdiri dari 3 (tiga) kategori:
-a.	LOW RISK – Role & Responsibility pada Manajer Proyek, Monitoring & Evaluasi oleh CM Officer.
-b.	MEDIUM RISK - Role & Responsibility kolaborasi antara Manajer Proyek & CM Officer, Monitoring & Evaluasi oleh CM Head.
-c.	HIGH RISK - Role & Responsibility oleh CM Officer dibantu Manajer Proyek; Monitoring & Evaluasi oleh CM Head
-
+a.	*LOW RISK* – Role & Responsibility pada Manajer Proyek, Monitoring & Evaluasi oleh CM Officer.
+b.	*MEDIUM RISK* - Role & Responsibility kolaborasi antara Manajer Proyek & CM Officer, Monitoring & Evaluasi oleh CM Head.
+c.	*HIGH RISK* - Role & Responsibility oleh CM Officer dibantu Manajer Proyek; Monitoring & Evaluasi oleh CM Head
 
 */
